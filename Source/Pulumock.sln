@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+#
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{8877662F-2EC1-4F33-8235-DCA4196BC757}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulumock.Core", "Pulumock.Core\Pulumock.Core.csproj", "{EE28BDA5-C092-4D33-88F9-16926E7E9EFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE28BDA5-C092-4D33-88F9-16926E7E9EFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE28BDA5-C092-4D33-88F9-16926E7E9EFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE28BDA5-C092-4D33-88F9-16926E7E9EFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE28BDA5-C092-4D33-88F9-16926E7E9EFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{520BAED4-1E41-415F-9549-68B7B4195537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{520BAED4-1E41-415F-9549-68B7B4195537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{520BAED4-1E41-415F-9549-68B7B4195537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{520BAED4-1E41-415F-9549-68B7B4195537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FA3F21A-A6E3-4898-AE2F-623751899878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FA3F21A-A6E3-4898-AE2F-623751899878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FA3F21A-A6E3-4898-AE2F-623751899878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FA3F21A-A6E3-4898-AE2F-623751899878}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53149579-0736-4EDD-8D1B-C176C702EE5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53149579-0736-4EDD-8D1B-C176C702EE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53149579-0736-4EDD-8D1B-C176C702EE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53149579-0736-4EDD-8D1B-C176C702EE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
