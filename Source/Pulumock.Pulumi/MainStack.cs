@@ -2,7 +2,7 @@ using Pulumi;
 
 namespace Pulumock.Pulumi;
 
-internal class MainStack : Stack
+internal sealed class MainStack : Stack
 {
     public MainStack()
     {

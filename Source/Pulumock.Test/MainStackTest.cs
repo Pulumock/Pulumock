@@ -1,5 +1,5 @@
 ﻿namespace Pulumock.Test;
 
-internal class MainStackTest
+internal sealed class MainStackTest
 {
 }
