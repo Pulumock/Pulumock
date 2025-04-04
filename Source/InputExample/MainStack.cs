@@ -1,6 +1,6 @@
 using Pulumi;
 
-namespace Pulumock.Pulumi;
+namespace InputExample;
 
 internal sealed class MainStack : Stack
 {

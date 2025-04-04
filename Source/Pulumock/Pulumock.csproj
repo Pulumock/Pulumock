@@ -9,13 +9,12 @@
         <PackageId>Pulumock</PackageId>
 
         <Version>$(GitVersion_FullSemVer)</Version>
-        <Authors>Pulumock</Authors>
-        <Company>Pulumock</Company>
-        <Description>This is a base package for using Pulumock.</Description>
+        <Authors>Albin Rönnkvist;Piran Amedi</Authors>
+        <Company>Hoolit</Company>
+        <Description>A library that simplifies unit testing and mocking in Pulumi .NET by abstracting away complexity through APIs.</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageOutputPath>./nupkg</PackageOutputPath>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageSourceUrl>TProjectPackageSourceValue</PackageSourceUrl>
         <RepositoryType>git</RepositoryType>
 
         <ImplicitUsings>enable</ImplicitUsings>
@@ -27,16 +26,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="GitVersion.MsBuild" Version="6.1.0">
+        <PackageReference Include="GitVersion.MsBuild" Version="6.2.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Pulumi" Version="3.73.0" />
+        <PackageReference Include="Pulumi" Version="3.77.0" />
     </ItemGroup>
-
-    <!--#if DefaultFalse-->
-    <PropertyGroup>
-        <PackageOutputPath>./nupkg</PackageOutputPath>
-    </PropertyGroup>
-    <!--#endif -->
 </Project>

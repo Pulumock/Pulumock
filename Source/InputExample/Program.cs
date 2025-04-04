@@ -1,3 +1,3 @@
-﻿using Pulumock.Pulumi;
+﻿using InputExample;
 
 return await Pulumi.Deployment.RunAsync<MainStack>();
