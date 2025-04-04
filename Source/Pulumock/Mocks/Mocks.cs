@@ -1,5 +1,4 @@
 using System.Collections.Immutable;
-using Pulumi;
 using Pulumi.Testing;
 using Pulumock.Mocks.Constants;
 
@@ -14,7 +13,7 @@ internal sealed class Mocks : IMocks
         
         if (string.Equals(args.Type, ResourceTypeConstants.StackReference, StringComparison.Ordinal))
         {
-            // TODO: implement
+            // TODO: implement ability to intercept specific tokens (args.Token)
             var mocks = new Dictionary<string, object> { };
             
             outputs.Add("outputs", mocks);
@@ -22,7 +21,7 @@ internal sealed class Mocks : IMocks
         }
         else
         {
-            // TODO: implement
+            // TODO: implement ability to intercept specific types (args.Type)
             outputs.Add("name", outputs.GetValueOrDefault("name") ?? $"{args.Name}_name");
         }
         
