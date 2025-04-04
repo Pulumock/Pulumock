@@ -1,6 +1,6 @@
 using Pulumi;
 
-namespace InputExample;
+namespace MainExample;
 
 internal sealed class MainStack : Stack
 {

@@ -2,7 +2,6 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <RootNamespace>InputExample</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

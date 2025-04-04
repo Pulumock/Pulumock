@@ -1,0 +1,3 @@
+name: MainExample
+description: An example of unit testing with Pulumock
+runtime: dotnet
