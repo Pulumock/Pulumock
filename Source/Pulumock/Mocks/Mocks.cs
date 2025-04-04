@@ -31,5 +31,10 @@ internal sealed class Mocks : IMocks
         return Task.FromResult<(string?, object)>((resourceId, outputs));
     }
 
-    public Task<object> CallAsync(MockCallArgs args) => throw new NotImplementedException();
+    public Task<object> CallAsync(MockCallArgs args)
+    {
+        ImmutableDictionary<string, object>.Builder outputs = ImmutableDictionary.CreateBuilder<string, object>();
+        
+        return Task.FromResult<object>(outputs);
+    }
 }
