@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+        <ImportPackagesProps>false</ImportPackagesProps>
+        <ImportDirectoryBuildProps>false</ImportDirectoryBuildProps>
+
+        <TargetFramework>net9.0</TargetFramework>
+        <PackageId>Pulumock</PackageId>
+
+        <Version>$(GitVersion_FullSemVer)</Version>
+        <Authors>Albin Rönnkvist;Piran Amedi</Authors>
+        <Company>Hoolit</Company>
+        <Description>A library that simplifies unit testing and mocking in Pulumi .NET by abstracting away complexity through APIs.</Description>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageOutputPath>./nupkg</PackageOutputPath>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <RepositoryType>git</RepositoryType>
+
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+        <AnalysisLevel>latest</AnalysisLevel>
+        <AnalysisMode>All</AnalysisMode>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="GitVersion.MsBuild" Version="6.2.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Pulumi" Version="3.77.0" />
+    </ItemGroup>
+</Project>
