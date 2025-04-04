@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{887766
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulumock", "Pulumock\Pulumock.csproj", "{EE28BDA5-C092-4D33-88F9-16926E7E9EFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulumock.Pulumi", "Pulumock.Pulumi\Pulumock.Pulumi.csproj", "{6C877147-99F3-426B-BEA2-782220F9C8D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulumock.Test", "Pulumock.Test\Pulumock.Test.csproj", "{A6CD4E68-AB3A-4A96-BFCB-33E96F9826B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,5 +37,13 @@ Global
 		{53149579-0736-4EDD-8D1B-C176C702EE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53149579-0736-4EDD-8D1B-C176C702EE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53149579-0736-4EDD-8D1B-C176C702EE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C877147-99F3-426B-BEA2-782220F9C8D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C877147-99F3-426B-BEA2-782220F9C8D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C877147-99F3-426B-BEA2-782220F9C8D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C877147-99F3-426B-BEA2-782220F9C8D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6CD4E68-AB3A-4A96-BFCB-33E96F9826B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6CD4E68-AB3A-4A96-BFCB-33E96F9826B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6CD4E68-AB3A-4A96-BFCB-33E96F9826B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6CD4E68-AB3A-4A96-BFCB-33E96F9826B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

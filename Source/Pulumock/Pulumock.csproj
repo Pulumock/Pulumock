@@ -9,7 +9,6 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.NET.Test.Sdk" />
-        <PackageReference Include="Pulumi" />
     </ItemGroup>
     
 
