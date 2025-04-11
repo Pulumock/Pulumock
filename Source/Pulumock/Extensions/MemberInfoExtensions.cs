@@ -2,9 +2,11 @@ using System.Reflection;
 
 namespace Pulumock.Extensions;
 
+/// <summary>
+/// Provides extension methods for working with <see cref="MemberInfo"/>.
+/// </summary>
 public static class MemberInfoExtensions
 {
-        
     /// <summary>
     /// Determines whether the given type has a Pulumi resource attribute with the specified type token.
     /// </summary>
@@ -26,7 +28,7 @@ public static class MemberInfoExtensions
             .Select(attr => attr
                 .GetType()
                 .GetProperty(PulumiTypeTokenPropertyName)?
-                .GetValue(attr) as string)
+                .GetValue(attr))
             .OfType<string>()
             .Where(token => !string.IsNullOrWhiteSpace(token));
     
