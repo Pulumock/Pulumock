@@ -8,4 +8,8 @@
         <PackageReference Include="Pulumi" />
         <PackageReference Include="Pulumi.AzureNative" />  
     </ItemGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="MainExample.Tests" />
+    </ItemGroup>
 </Project>
