@@ -1,0 +1,4 @@
+config:
+  azure-native:location: swedencentral
+  exampleSecret:
+    secure: AAABAD8PEG4idWnbhICkJ/S9ZnsI1c0DY2kxu2tY5SLJfUSVYGoDxcYdh6ZE
