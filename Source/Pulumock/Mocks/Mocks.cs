@@ -31,7 +31,7 @@ internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IRe
         {
             // TODO: implement ability to intercept specific types (args.Type)
             IEnumerable<ImmutableDictionary<string, object>> resourceMockOutputs = mockResources
-                .Where(mockResource => mockResource.Type.MatchesPulumiTypeToken(args.Type))
+                .Where(mockResource => mockResource.Type.MatchesResourceTypeToken(args.Type))
                 .Select(mockResource => mockResource.MockOutputs);
             
             foreach (ImmutableDictionary<string, object> mockOutputs in resourceMockOutputs)
@@ -51,9 +51,10 @@ internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IRe
     public Task<object> CallAsync(MockCallArgs args)
     {
         // TODO: implement ability to intercept specific tokens (args.Token)
-        IReadOnlyCollection<MockCall> mocks = mockCalls; // TODO: extract...
-        ImmutableDictionary<string, object>.Builder outputs = ImmutableDictionary.CreateBuilder<string, object>();
+        IEnumerable<ImmutableDictionary<string, object>> callMockOutputs = mockCalls
+            //.Where(mockCall => mockCall.Type)
+            .Select(mockCall => mockCall.MockOutputs);
         
-        return Task.FromResult<object>(outputs);
+        return Task.FromResult<object>(callMockOutputs);
     }
 }

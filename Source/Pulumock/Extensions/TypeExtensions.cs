@@ -1,11 +1,9 @@
-using System.Reflection;
-
 namespace Pulumock.Extensions;
 
 /// <summary>
-/// Provides extension methods for working with <see cref="MemberInfo"/>.
+/// Provides extension methods for working with <see cref="Type"/>.
 /// </summary>
-public static class MemberInfoExtensions
+public static class TypeExtensions
 {
     /// <summary>
     /// Determines whether the given type has a Pulumi resource attribute with the specified type token.
@@ -13,16 +11,16 @@ public static class MemberInfoExtensions
     /// <param name="type">The type to inspect.</param>
     /// <param name="token">The Pulumi type token to match.</param>
     /// <returns><c>true</c> if the type has an attribute with a matching type token; otherwise, <c>false</c>.</returns>
-    public static bool MatchesPulumiTypeToken(this MemberInfo type, string? token) => 
+    public static bool MatchesResourceTypeToken(this Type type, string? token) => 
         !string.IsNullOrWhiteSpace(token) && 
-        type.GetPulumiTypeTokens().Contains(token);
+        type.GetResourceTypeTokens().Contains(token);
 
     /// <summary>
     /// Retrieves all Pulumi type tokens declared via resource type attributes on the given type (primary token or any alias).
     /// </summary>
     /// <param name="type">The type to inspect.</param>
     /// <returns>A sequence of Pulumi type tokens defined on the type via resource attributes.</returns>
-    private static IEnumerable<string> GetPulumiTypeTokens(this MemberInfo type) =>
+    private static IEnumerable<string> GetResourceTypeTokens(this Type type) =>
         type
             .GetCustomAttributes(inherit: false)
             .Select(attr => attr

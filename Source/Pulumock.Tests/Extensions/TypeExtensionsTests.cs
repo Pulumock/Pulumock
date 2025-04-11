@@ -1,4 +1,3 @@
-using System.Reflection;
 using Pulumi;
 using Pulumock.Extensions;
 using Shouldly;
@@ -6,14 +5,14 @@ using Xunit;
 
 namespace Pulumock.Tests.Extensions;
 
-public class MemberInfoExtensionsTests
+public class TypeExtensionsTests
 {
     [Theory]
     [InlineData(typeof(TestCustomResource), "test:custom:TestCustomResource")]
     [InlineData(typeof(TestComponentResource), "test:custom:TestComponentResource")]
-    public void MatchesPulumiTypeToken_ShouldReturnTrue_WhenTokenMatches(Type resourceType, string token)
+    public void MatchesResourceTypeToken_ShouldReturnTrue_WhenTokenMatches(Type resourceType, string token)
     {
-        bool result = resourceType.MatchesPulumiTypeToken(token);
+        bool result = resourceType.MatchesResourceTypeToken(token);
         
         result.ShouldBeTrue();
     }
@@ -23,22 +22,23 @@ public class MemberInfoExtensionsTests
     [InlineData(typeof(TestComponentResource), "test:custom:TestCustomResource")]
     [InlineData(typeof(TestCustomResource), "other:custom:resource")]
     [InlineData(typeof(TestComponentResource), "other:custom:resource")]
-    public void MatchesPulumiTypeToken_ShouldReturnFalse_WhenTokenDoesNotMatch(Type resourceType, string token)
+    public void MatchesResourceTypeToken_ShouldReturnFalse_WhenTokenDoesNotMatch(Type resourceType, string token)
     {
-        bool result = resourceType.MatchesPulumiTypeToken(token);
+        bool result = resourceType.MatchesResourceTypeToken(token);
         
         result.ShouldBeFalse();
     }
 
     [Theory]
-    [InlineData(null)]
-    [InlineData("")]
-    [InlineData("   ")]
-    public void MatchesPulumiTypeToken_ShouldReturnFalse_ForNullOrEmptyOrWhitespaceToken(string? token)
+    [InlineData(typeof(TestCustomResource), null)]
+    [InlineData(typeof(TestCustomResource), "")]
+    [InlineData(typeof(TestCustomResource), "    ")]
+    [InlineData(typeof(TestComponentResource), null)]
+    [InlineData(typeof(TestComponentResource), "")]
+    [InlineData(typeof(TestComponentResource), "    ")]
+    public void MatchesResourceTypeToken_ShouldReturnFalse_ForNullOrEmptyOrWhitespaceToken(Type resourceType, string? token)
     {
-        TypeInfo memberInfo = typeof(TestCustomResource).GetTypeInfo();
-
-        bool result = memberInfo.MatchesPulumiTypeToken(token);
+        bool result = resourceType.MatchesResourceTypeToken(token);
 
         result.ShouldBeFalse();
     }
