@@ -14,6 +14,17 @@ public static class TypeExtensions
     public static bool MatchesResourceTypeToken(this Type type, string? token) => 
         !string.IsNullOrWhiteSpace(token) && 
         type.GetResourceTypeTokens().Contains(token);
+    
+    /// <summary>
+    /// Determines whether the given provider function type is referenced by the specified call type token,
+    /// based on a case-insensitive match of the type's name within the token.
+    /// </summary>
+    /// <param name="type">The type to inspect.</param>
+    /// <param name="token">The Pulumi provider function type token to match.</param>
+    /// <returns><c>true</c> if the token contains the type name; otherwise, <c>false</c>.</returns>
+    public static bool MatchesCallTypeToken(this Type type, string? token) => 
+        !string.IsNullOrWhiteSpace(token) && 
+        token.Contains(type.Name, StringComparison.OrdinalIgnoreCase);
 
     /// <summary>
     /// Retrieves all Pulumi type tokens declared via resource type attributes on the given type (primary token or any alias).

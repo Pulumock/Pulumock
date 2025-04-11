@@ -9,6 +9,7 @@ public class TypeExtensionsTests
 {
     private const string TestCustomResourceTypeToken = "test:custom:TestCustomResource";
     private const string TestComponentResourceTypeToken = "test:custom:TestComponentResource";
+    private const string TestProviderFunctionTypeToken = "test:custom/testProviderFunction:testProviderFunction";
     
     [Theory]
     [InlineData(typeof(TestCustomResource), TestCustomResourceTypeToken)]
@@ -46,9 +47,45 @@ public class TypeExtensionsTests
         result.ShouldBeFalse();
     }
     
+    [Fact]
+    public void MatchesCallTypeToken_ShouldReturnTrue_WhenTokenContainsFunctionTypeName()
+    {
+        Type functionType = typeof(TestProviderFunction);
+        bool result = functionType.MatchesCallTypeToken(TestProviderFunctionTypeToken);
+
+        result.ShouldBeTrue();
+    }
+
+    [Fact]
+    public void MatchesCallTypeToken_ShouldReturnFalse_WhenTokenDoesNotContainFunctionTypeName()
+    {
+        Type functionType = typeof(TestProviderFunction);
+        bool result = functionType.MatchesCallTypeToken("test:custom/testOther:testOther");
+
+        result.ShouldBeFalse();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void MatchesCallTypeToken_ShouldReturnFalse_WhenTokenIsNullOrWhitespace(string? token)
+    {
+        Type functionType = typeof(TestProviderFunction);
+        bool result = functionType.MatchesCallTypeToken(token);
+
+        result.ShouldBeFalse();
+    }
+    
     [ResourceType(TestCustomResourceTypeToken, null)]
     private sealed class TestCustomResource(string name) : CustomResource(TestCustomResourceTypeToken, name, null, null);
     
     [ResourceType(TestComponentResourceTypeToken, null)]
     private sealed class TestComponentResource(string name) : ComponentResource(TestComponentResourceTypeToken, name);
+
+    private static class TestProviderFunction
+    {
+        public static Task<object> InvokeAsync()
+            => Deployment.Instance.InvokeAsync<object>(TestProviderFunctionTypeToken, InvokeArgs.Empty);
+    }
 }
