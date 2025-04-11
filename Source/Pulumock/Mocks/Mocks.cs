@@ -38,7 +38,7 @@ internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IRe
             {
                 outputs.AddRange(mockOutputs);
             }
-
+            
             object physicalResourceName = outputs.GetValueOrDefault("name") ?? $"{args.Name}_name";
             outputs.Add("name", physicalResourceName);
         }
