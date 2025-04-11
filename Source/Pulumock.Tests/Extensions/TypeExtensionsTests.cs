@@ -7,9 +7,12 @@ namespace Pulumock.Tests.Extensions;
 
 public class TypeExtensionsTests
 {
+    private const string TestCustomResourceTypeToken = "test:custom:TestCustomResource";
+    private const string TestComponentResourceTypeToken = "test:custom:TestComponentResource";
+    
     [Theory]
-    [InlineData(typeof(TestCustomResource), "test:custom:TestCustomResource")]
-    [InlineData(typeof(TestComponentResource), "test:custom:TestComponentResource")]
+    [InlineData(typeof(TestCustomResource), TestCustomResourceTypeToken)]
+    [InlineData(typeof(TestComponentResource), TestComponentResourceTypeToken)]
     public void MatchesResourceTypeToken_ShouldReturnTrue_WhenTokenMatches(Type resourceType, string token)
     {
         bool result = resourceType.MatchesResourceTypeToken(token);
@@ -18,8 +21,8 @@ public class TypeExtensionsTests
     }
     
     [Theory]
-    [InlineData(typeof(TestCustomResource), "test:custom:TestComponentResource")]
-    [InlineData(typeof(TestComponentResource), "test:custom:TestCustomResource")]
+    [InlineData(typeof(TestCustomResource), TestComponentResourceTypeToken)]
+    [InlineData(typeof(TestComponentResource), TestCustomResourceTypeToken)]
     [InlineData(typeof(TestCustomResource), "other:custom:resource")]
     [InlineData(typeof(TestComponentResource), "other:custom:resource")]
     public void MatchesResourceTypeToken_ShouldReturnFalse_WhenTokenDoesNotMatch(Type resourceType, string token)
@@ -43,9 +46,9 @@ public class TypeExtensionsTests
         result.ShouldBeFalse();
     }
     
-    [ResourceType("test:custom:TestCustomResource", null)]
-    private sealed class TestCustomResource(string name) : CustomResource("test:custom:TestCustomResource", name, null, null);
+    [ResourceType(TestCustomResourceTypeToken, null)]
+    private sealed class TestCustomResource(string name) : CustomResource(TestCustomResourceTypeToken, name, null, null);
     
-    [ResourceType("test:custom:TestComponentResource", null)]
-    private sealed class TestComponentResource(string name) : ComponentResource("test:custom:TestComponentResource", name);
+    [ResourceType(TestComponentResourceTypeToken, null)]
+    private sealed class TestComponentResource(string name) : ComponentResource(TestComponentResourceTypeToken, name);
 }
