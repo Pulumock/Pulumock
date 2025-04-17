@@ -17,6 +17,7 @@ var services = new ServiceCollection();
 services.Configure<GitHubOptions>(options => configuration.GetSection(GitHubOptions.Key).Bind(options));
 services.Configure<PulumiRepositoryOptions>(options => configuration.GetSection(PulumiRepositoryOptions.Key).Bind(options));
 services.Configure<ProtiRepositoryOptions>(options => configuration.GetSection(ProtiRepositoryOptions.Key).Bind(options));
+services.Configure<DatasetOptions>(options => configuration.GetSection(DatasetOptions.Key).Bind(options));
 
 services.AddHttpClient<IGitHubClient, GitHubClient>((provider, client) =>
 {
