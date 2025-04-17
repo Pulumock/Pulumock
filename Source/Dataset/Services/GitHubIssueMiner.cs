@@ -1,9 +1,12 @@
+using Dataset.Clients;
+using Dataset.Clients.Responses;
 using Dataset.Options;
 using Microsoft.Extensions.Options;
 
 namespace Dataset.Services;
 
-internal sealed class GitHubIssueMiner(IOptions<GitHubOptions> options) : IGitHubIssueMiner
+internal sealed class GitHubIssueMiner<T>(IGitHubClient gitHubClient, IOptions<T> options) : IGitHubIssueMiner<T> where T : RepositoryOptionsBase
 {
-    public string GetResponse() => options.Value.Token;
+    // TODO: add to CSV file
+    public async Task<IReadOnlyCollection<GetGitHubIssuesAsyncResponse>> GetGitHubIssuesAsync() => await gitHubClient.GetGitHubIssuesAsync(options);
 }

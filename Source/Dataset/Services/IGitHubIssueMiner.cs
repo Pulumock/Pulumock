@@ -1,6 +1,9 @@
+using Dataset.Clients.Responses;
+using Dataset.Options;
+
 namespace Dataset.Services;
 
-internal interface IGitHubIssueMiner
+internal interface IGitHubIssueMiner<T> where T : RepositoryOptionsBase
 {
-    public string GetResponse();
+    public Task<IReadOnlyCollection<GetGitHubIssuesAsyncResponse>> GetGitHubIssuesAsync();
 }
