@@ -28,11 +28,12 @@ services.AddHttpClient<IGitHubClient, GitHubClient>((provider, client) =>
     client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("Pulumock-Dataset", "1.0.0"));
 });
 
-services.AddTransient<IGitHubIssueMiner<PulumiRepositoryOptions>, GitHubIssueMiner<PulumiRepositoryOptions>>();
-services.AddTransient<IGitHubIssueMiner<ProtiRepositoryOptions>, GitHubIssueMiner<ProtiRepositoryOptions>>();
+services.AddTransient<IGitHubMiner, GitHubMiner<PulumiRepositoryOptions>>();
+services.AddTransient<IGitHubMiner, GitHubMiner<ProtiRepositoryOptions>>();
+services.AddTransient<IDatasetGenerator, DatasetGenerator>();
 
 ServiceProvider provider = services.BuildServiceProvider();
 
-// TODO: run from a DatasetGenerator class
-IGitHubIssueMiner<PulumiRepositoryOptions> pulumiMiner = provider.GetRequiredService<IGitHubIssueMiner<PulumiRepositoryOptions>>();
-IGitHubIssueMiner<ProtiRepositoryOptions> protiMiner = provider.GetRequiredService<IGitHubIssueMiner<ProtiRepositoryOptions>>();
+IDatasetGenerator datasetGenerator = provider.GetRequiredService<IDatasetGenerator>();
+
+await datasetGenerator.GenerateDatasetAsync();

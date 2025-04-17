@@ -3,7 +3,9 @@ using Dataset.Options;
 
 namespace Dataset.Services;
 
-internal interface IGitHubIssueMiner<T> where T : RepositoryOptionsBase
+internal interface IGitHubMiner
 {
     public Task<IReadOnlyCollection<GetGitHubIssuesAsyncResponse>> GetGitHubIssuesAsync();
 }
+
+internal interface IGitHubMiner<T>: IGitHubMiner where T : RepositoryOptionsBase;
