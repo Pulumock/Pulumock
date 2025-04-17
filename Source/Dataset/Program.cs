@@ -16,18 +16,23 @@ var services = new ServiceCollection();
 
 services.Configure<GitHubOptions>(options => configuration.GetSection(GitHubOptions.Key).Bind(options));
 services.Configure<PulumiRepositoryOptions>(options => configuration.GetSection(PulumiRepositoryOptions.Key).Bind(options));
+services.Configure<ProtiRepositoryOptions>(options => configuration.GetSection(ProtiRepositoryOptions.Key).Bind(options));
+
 services.AddHttpClient<IGitHubClient, GitHubClient>((provider, client) =>
 {
     GitHubOptions gitHubOptions = provider.GetRequiredService<IOptions<GitHubOptions>>().Value;
 
-    client.BaseAddress = new Uri("https://api.github.com");
+    client.BaseAddress = gitHubOptions.BaseUri;
     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", gitHubOptions.Token);
-    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github+json"));
+    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(gitHubOptions.MediaType));
     client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("Pulumock-Dataset", "1.0.0"));
 });
+
 services.AddTransient<IGitHubIssueMiner<PulumiRepositoryOptions>, GitHubIssueMiner<PulumiRepositoryOptions>>();
+services.AddTransient<IGitHubIssueMiner<ProtiRepositoryOptions>, GitHubIssueMiner<ProtiRepositoryOptions>>();
 
 ServiceProvider provider = services.BuildServiceProvider();
 
 // TODO: run from a DatasetGenerator class
 IGitHubIssueMiner<PulumiRepositoryOptions> pulumiMiner = provider.GetRequiredService<IGitHubIssueMiner<PulumiRepositoryOptions>>();
+IGitHubIssueMiner<ProtiRepositoryOptions> protiMiner = provider.GetRequiredService<IGitHubIssueMiner<ProtiRepositoryOptions>>();
