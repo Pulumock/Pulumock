@@ -15,6 +15,7 @@ internal sealed class DatasetGenerator(IEnumerable<IGitHubMiner> miners) : IData
         foreach (IReadOnlyCollection<GetGitHubIssuesAsyncResponse> issueSet in results)
         {
             Console.WriteLine(issueSet.FirstOrDefault()?.Title ?? "No issues");
+            Console.WriteLine(issueSet.FirstOrDefault()?.PullRequest ?? "Not a PR");
         }
     }
 }
