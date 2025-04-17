@@ -1,3 +1,3 @@
 ﻿using MainExample;
 
-return await Pulumi.Deployment.RunAsync<MainStack>();
+return await Pulumi.Deployment.RunAsync(async () => await CoreStack.DefineResourcesAsync());

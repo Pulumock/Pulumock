@@ -21,4 +21,8 @@
         <PackageReference Include="TestCentric.Metadata" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\MainExample\MainExample.csproj" />
+    </ItemGroup>
+
 </Project>
