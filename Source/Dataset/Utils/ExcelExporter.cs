@@ -14,19 +14,17 @@ internal static class ExcelExporter
         foreach (GitHubMinerResult result in results)
         {
             IXLWorksheet sheet = workbook.Worksheets.Add(result.Repository);
-
-            sheet.Cell(1, 1).Value = "Status";
-            sheet.Cell(1,2).Value = "Url";
-            sheet.Cell(1, 3).Value = "Title";
-            sheet.Cell(1, 4).Value = "Body";
+            
+            sheet.Cell(1,1).Value = "Url";
+            sheet.Cell(1, 2).Value = "Title";
+            sheet.Cell(1, 3).Value = "Body";
 
             int row = 2;
             foreach (GetGitHubIssuesAsyncResponse issue in result.Issues)
             {
-                sheet.Cell(row, 1).Value = issue.State;
-                sheet.Cell(row, 2).Value = issue.HtmlUrl;
-                sheet.Cell(row, 3).Value = issue.Title;
-                sheet.Cell(row, 4).Value = issue.Body;
+                sheet.Cell(row, 1).Value = issue.HtmlUrl;
+                sheet.Cell(row, 2).Value = issue.Title;
+                sheet.Cell(row, 3).Value = issue.Body;
                 row++;
             }
 
