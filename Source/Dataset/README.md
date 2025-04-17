@@ -1,0 +1,3 @@
+Create a GitHub PAT and add to user secrets: `dotnet user-secrets set "GitHub:Token" "ghp_your_token_here"`
+
+Run the program...
