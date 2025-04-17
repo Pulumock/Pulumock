@@ -10,12 +10,11 @@ internal sealed class DatasetGenerator(IEnumerable<IGitHubMiner> miners) : IData
         Console.WriteLine("Generating dataset...");
         
         Console.WriteLine($"Running {miners.Count()} miners in parallel...");
-        IReadOnlyCollection<GetGitHubIssuesAsyncResponse>[] results = await Task.WhenAll(miners.Select(m => m.GetGitHubIssuesAsync()));
+        GitHubMinerResult[] results = await Task.WhenAll(miners.Select(m => m.GetGitHubIssuesAsync()));
 
-        foreach (IReadOnlyCollection<GetGitHubIssuesAsyncResponse> issueSet in results)
+        foreach (GitHubMinerResult issueSet in results)
         {
-            Console.WriteLine(issueSet.FirstOrDefault()?.Title ?? "No issues");
-            Console.WriteLine(issueSet.FirstOrDefault()?.PullRequest ?? "Not a PR");
+            Console.WriteLine($"{issueSet.Issues.Count} issues found.");
         }
     }
 }

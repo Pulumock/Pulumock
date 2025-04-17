@@ -6,5 +6,5 @@ namespace Dataset.Clients;
 
 internal interface IGitHubClient
 {
-    public Task<IReadOnlyCollection<GetGitHubIssuesAsyncResponse>> GetGitHubIssuesAsync<T>(IOptions<T> options) where T : RepositoryOptionsBase;
+    public Task<IReadOnlyCollection<GetGitHubIssuesAsyncResponse>> GetGitHubIssuesAsync<T>(IOptions<T> options, int page, int pageSize) where T : RepositoryOptionsBase;
 }
