@@ -17,14 +17,20 @@ internal static class ExcelExporter
             
             sheet.Cell(1,1).Value = "Url";
             sheet.Cell(1, 2).Value = "Title";
-            sheet.Cell(1, 3).Value = "Body";
+            sheet.Cell(1, 3).Value = "Created (UTC)";
+            sheet.Cell(1, 4).Value = "Reactions";
+            sheet.Cell(1, 5).Value = "Upvote Reactions";
+            sheet.Cell(1, 6).Value = "Body";
 
             int row = 2;
             foreach (GetGitHubIssuesAsyncResponse issue in result.Issues)
             {
                 sheet.Cell(row, 1).Value = issue.HtmlUrl;
                 sheet.Cell(row, 2).Value = issue.Title;
-                sheet.Cell(row, 3).Value = issue.Body;
+                sheet.Cell(row, 3).Value = issue.CreatedAtUtc;
+                sheet.Cell(row, 4).Value = issue.Reactions.TotalCount;
+                sheet.Cell(row, 5).Value = issue.Reactions.ThumbsUp;
+                sheet.Cell(row, 6).Value = issue.Body;
                 row++;
             }
 
