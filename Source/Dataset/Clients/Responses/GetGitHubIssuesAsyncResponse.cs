@@ -5,7 +5,7 @@ namespace Dataset.Clients.Responses;
 internal sealed record GetGitHubIssuesAsyncResponse
 {
     [JsonPropertyName("html_url")]
-    public string? HtmlUrl { get; init; }
+    public required string HtmlUrl { get; init; } 
     public required string Title { get; init; }
     public required string Body { get; init; }
     
