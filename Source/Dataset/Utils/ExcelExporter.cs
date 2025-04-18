@@ -1,4 +1,3 @@
-using System.Data;
 using ClosedXML.Excel;
 using Dataset.Clients.Responses;
 using Dataset.Services;
@@ -21,6 +20,11 @@ internal static class ExcelExporter
             sheet.Cell(1, 4).Value = "Reactions";
             sheet.Cell(1, 5).Value = "Upvote Reactions";
             sheet.Cell(1, 6).Value = "Body";
+            
+            for (int col = 1; col <= 6; col++)
+            {
+                sheet.Cell(1, col).Style.Font.SetBold(true);
+            }
 
             int row = 2;
             foreach (GetGitHubIssuesAsyncResponse issue in result.Issues)
