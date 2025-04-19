@@ -39,10 +39,7 @@ internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IRe
                 .Select(mockResource => mockResource.MockOutputs);
             
             // TODO: don't add all, select latest added (or merge somehow so we can append new config without having to pass the entire object again?)
-            foreach (ImmutableDictionary<string, object> mockOutputs in resourceMockOutputs)
-            {
-                outputs.AddRange(mockOutputs);
-            }
+            outputs.AddRange(resourceMockOutputs.First());
             
             object physicalResourceName = outputs.GetValueOrDefault("name") ?? $"{GetLogicalResourceName(args.Name)}_physical";
             outputs.Add("name", physicalResourceName);
@@ -68,10 +65,7 @@ internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IRe
             .Select(mockCall => mockCall.MockOutputs);
         
         // TODO: don't add all, select latest added (or merge somehow so we can append new config without having to pass the entire object again?)
-        foreach (ImmutableDictionary<string, object> mockOutputs in callMockOutputs)
-        {
-            outputs.AddRange(mockOutputs);
-        }
+        outputs.AddRange(callMockOutputs.First());
         
         ImmutableDictionary<string, object> finalOutputs = outputs.ToImmutable();
         

@@ -11,5 +11,6 @@
 
     <ItemGroup>
         <InternalsVisibleTo Include="MainExample.Tests" />
+        <InternalsVisibleTo Include="MainExample.Tests.WithPulumock" />
     </ItemGroup>
 </Project>
