@@ -13,12 +13,16 @@ namespace Pulumock.Mocks;
 /// </summary>
 internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IReadOnlyCollection<MockCall> mockCalls) : IMocks
 {
+    private readonly List<Input> _inputs = [];
+    public ImmutableList<Input> Inputs => _inputs.ToImmutableList();
+    
     public Task<(string? id, object state)> NewResourceAsync(MockResourceArgs args)
     {
         ImmutableDictionary<string, object>.Builder outputs = ImmutableDictionary.CreateBuilder<string, object>();
         
         if (string.Equals(args.Type, ResourceTypeTokenConstants.StackReference, StringComparison.Ordinal))
         {
+            // TODO: what if more than one ref is defined (merge somehow so we can append new config without having to pass the entire object again?)
             ImmutableDictionary<string, object> mockOutputs = mockResources
                 .OfType<MockStackReference>()
                 .Single(stackReferences => string.Equals(stackReferences.FullyQualifiedStackName, args.Name, StringComparison.Ordinal))
@@ -29,30 +33,60 @@ internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IRe
         }
         else
         {
+            // TODO: enable mocking specifically by logical name
             IEnumerable<ImmutableDictionary<string, object>> resourceMockOutputs = mockResources
                 .Where(mockResource => mockResource.Type.MatchesResourceTypeToken(args.Type))
                 .Select(mockResource => mockResource.MockOutputs);
             
+            // TODO: don't add all, select latest added (or merge somehow so we can append new config without having to pass the entire object again?)
             foreach (ImmutableDictionary<string, object> mockOutputs in resourceMockOutputs)
             {
                 outputs.AddRange(mockOutputs);
             }
             
-            object physicalResourceName = outputs.GetValueOrDefault("name") ?? $"{args.Name}_name";
+            object physicalResourceName = outputs.GetValueOrDefault("name") ?? $"{GetLogicalResourceName(args.Name)}_physical";
             outputs.Add("name", physicalResourceName);
         }
         
-        string resourceId = string.IsNullOrWhiteSpace(args.Id) ? $"{args.Name}_id" : args.Id;
         outputs.AddRange(args.Inputs);
-        return Task.FromResult<(string?, object)>((resourceId, outputs));
+        ImmutableDictionary<string, object> finalOutputs = outputs.ToImmutable();
+        
+        string resourceName = GetLogicalResourceName(args.Name);
+        string resourceId = GetResourceId(args.Id, $"{resourceName}_id");
+        
+        _inputs.Add(new Input(resourceName, finalOutputs));
+        return Task.FromResult<(string?, object)>((resourceId, finalOutputs));
     }
 
     public Task<object> CallAsync(MockCallArgs args)
     {
+        ImmutableDictionary<string, object>.Builder outputs = ImmutableDictionary.CreateBuilder<string, object>();
+        
+        // TODO: enable mocking specifically by logical name
         IEnumerable<ImmutableDictionary<string, object>> callMockOutputs = mockCalls
-            .Where(mockCall => mockCall.Type.MatchesCallTypeToken(args.Token))
+            .Where(mockCall => mockCall.Type.MatchesCallTypeToken(GetCallToken(args.Token)))
             .Select(mockCall => mockCall.MockOutputs);
         
-        return Task.FromResult<object>(callMockOutputs);
+        // TODO: don't add all, select latest added (or merge somehow so we can append new config without having to pass the entire object again?)
+        foreach (ImmutableDictionary<string, object> mockOutputs in callMockOutputs)
+        {
+            outputs.AddRange(mockOutputs);
+        }
+        
+        ImmutableDictionary<string, object> finalOutputs = outputs.ToImmutable();
+        
+        // TODO: what if two calls are made with the same token?
+        _inputs.Add(new Input(GetCallToken(args.Token), finalOutputs));
+        
+        return Task.FromResult<object>(finalOutputs);
     }
+    
+    private static string GetLogicalResourceName(string? name) =>
+        string.IsNullOrWhiteSpace(name) ? throw new ArgumentNullException(nameof(name)) : name;
+    
+    private static string GetResourceId(string? id, string fallbackId) =>
+        string.IsNullOrWhiteSpace(id) ? fallbackId : id;
+    
+    private static string GetCallToken(string? token) =>
+        string.IsNullOrWhiteSpace(token) ? throw new ArgumentNullException(nameof(token)) : token;
 }

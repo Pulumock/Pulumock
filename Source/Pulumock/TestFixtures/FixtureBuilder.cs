@@ -10,10 +10,30 @@ namespace Pulumock.TestFixtures;
 public class FixtureBuilder
 {
     private MockConfiguration? _mockConfiguration;
+    private List<MockResource> _mockResources = [];
+    private List<MockCall> _mockCalls = [];
 
     public FixtureBuilder WithMockConfiguration(MockConfiguration mockConfiguration)
     {
         _mockConfiguration = mockConfiguration;
+        return this;
+    }
+    
+    public FixtureBuilder WithMockStackReference(MockStackReference mockStackReference)
+    {
+        _mockResources.Add(mockStackReference);
+        return this;
+    }
+    
+    public FixtureBuilder WithMockResource(MockResource mockResource)
+    {
+        _mockResources.Add(mockResource);
+        return this;
+    }
+    
+    public FixtureBuilder WithMockCall(MockCall mockCall)
+    {
+        _mockCalls.Add(mockCall);
         return this;
     }
         
@@ -24,12 +44,14 @@ public class FixtureBuilder
             Environment.SetEnvironmentVariable(PulumiConfigurationConstants.EnvironmentVariable, 
                 JsonSerializer.Serialize(_mockConfiguration.MockConfigurations));
         }
+
+        var mocks = new Mocks.Mocks(_mockResources, _mockCalls);
         
         (ImmutableArray<Resource> stackResources, IDictionary<string, object?> stackOutputs) = await Deployment.TestAsync(
-            new EmptyMocks(), 
-            testOptions ?? new TestOptions {IsPreview = false},
+            mocks,
+            testOptions ?? new TestOptions { IsPreview = false },
             async () => await createResourcesFunc());
-        
-        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary());
+
+        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.Inputs);
     }
 }
