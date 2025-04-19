@@ -1,4 +1,6 @@
 using System.Collections.Immutable;
+using System.Linq.Expressions;
+using Pulumi;
 using Pulumock.Mocks.Models;
 
 namespace Pulumock.Extensions;
@@ -56,8 +58,76 @@ public static class InputExtensions
     /// </returns>
     public static T? GetValue<T>(this ImmutableList<Input> inputs, string id, string inputsKey)
     {
-        Input input = inputs.Single(x => x.Id.Equals(id, StringComparison.Ordinal));
-        if (!input.Inputs.TryGetValue(inputsKey, out object? value) || value is not T typedValue)
+        Input? input = inputs.SingleOrDefault(x => x.Id.Equals(inputsKey, StringComparison.Ordinal));
+        if (input is null 
+            || !input.Inputs.TryGetValue(inputsKey, out object? value) 
+            || value is not T typedValue)
+        {
+            return default;
+        }
+
+        return typedValue;
+    }
+    
+    /// <summary>
+    /// Retrieves a required input value from a Pulumi resource mock based on a strongly typed input property selector.
+    /// </summary>
+    /// <typeparam name="TResource">
+    /// The Pulumi <see cref="ResourceArgs"/> type that defines the resource inputs (e.g., <c>ResourceGroupArgs</c>).
+    /// </typeparam>
+    /// <typeparam name="TValue">The expected type of the value to retrieve.</typeparam>
+    /// <param name="inputs">The list of mocked inputs for the Pulumi test environment.</param>
+    /// <param name="logicalName">The logical name (ID) of the resource to match in the input list.</param>
+    /// <param name="propertySelector">
+    /// An expression selecting the desired input property (e.g., <c>x => x.Location</c>).
+    /// </param>
+    /// <returns>The value of type <typeparamref name="TValue"/> from the matching resource input.</returns>
+    /// <exception cref="KeyNotFoundException">
+    /// Thrown if the resource with the specified <paramref name="logicalName"/> is not found,
+    /// or if the value for the selected input property is missing or not of the expected type.
+    /// </exception>
+    public static TValue RequireValue<TResource, TValue>(this ImmutableList<Input> inputs,
+        string logicalName, Expression<Func<TResource, object?>> propertySelector)
+        where TResource : ResourceArgs
+    {
+        string outputKey = propertySelector.GetInputName();
+        
+        Input input = inputs.Single(x => x.Id.Equals(logicalName, StringComparison.Ordinal));
+        if (!input.Inputs.TryGetValue(outputKey, out object? value) || value is not TValue typedValue)
+        {
+            throw new KeyNotFoundException($"Value for property '{outputKey}' on resource '{logicalName}' was not found or is not of type {typeof(TValue).Name}.");
+        }
+
+        return typedValue;
+    }
+    
+    /// <summary>
+    /// Safely retrieves a typed value from a Pulumi resource mock input based on a strongly typed input property selector.
+    /// Returns the default value if the input is missing or the value cannot be cast to the expected type.
+    /// </summary>
+    /// <typeparam name="TResource">
+    /// The Pulumi <see cref="ResourceArgs"/> type that defines the resource inputs (e.g., <c>ResourceGroupArgs</c>).
+    /// </typeparam>
+    /// <typeparam name="TValue">The expected type of the value to retrieve.</typeparam>
+    /// <param name="inputs">The list of mocked inputs for the Pulumi test environment.</param>
+    /// <param name="logicalName">The logical name (ID) of the resource to match in the input list.</param>
+    /// <param name="propertySelector">
+    /// An expression selecting the desired input property (e.g., <c>x => x.Location</c>).
+    /// The property name is automatically converted to camelCase to match Pulumi’s input schema.
+    /// </param>
+    /// <returns>
+    /// The value of type <typeparamref name="TValue"/> if found and castable; otherwise, the default value for <typeparamref name="TValue"/>.
+    /// </returns>
+    public static TValue? GetValue<TResource, TValue>(this ImmutableList<Input> inputs, 
+        string logicalName, Expression<Func<TResource, object?>> propertySelector)
+        where TResource : ResourceArgs
+    {
+        string key = propertySelector.GetInputName();
+
+        Input? input = inputs.SingleOrDefault(x => x.Id.Equals(logicalName, StringComparison.Ordinal));
+        if (input is null 
+            || !input.Inputs.TryGetValue(key, out object? value) 
+            || value is not TValue typedValue)
         {
             return default;
         }

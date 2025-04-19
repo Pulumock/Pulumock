@@ -34,8 +34,8 @@ public class ProgramTests
 
         ResourceGroup resourceGroup = result.StackResources.GetResourceByLogicalName<ResourceGroup>("example-rg");
         result.StackOutputs.TryGetValue("exampleStackOutput", out object? exampleStackOutputValue);
-        string input = result.Inputs.RequireValue<string>("example-rg", "resourceGroupName");
-        
+        string input = result.Inputs.RequireValue<ResourceGroupArgs, string>("example-rg", x => x.ResourceGroupName);
+
         resourceGroup.ShouldNotBeNull();
         (await resourceGroup.Location.GetValueAsync()).ShouldBe("swedencentral");
         (await resourceGroup.AzureApiVersion.GetValueAsync()).ShouldBe("2021-04-01");

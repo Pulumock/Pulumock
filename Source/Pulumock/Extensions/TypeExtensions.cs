@@ -72,6 +72,33 @@ public static class TypeExtensions
     }
     
     /// <summary>
+    /// Resolves the input key name from a strongly typed property selector,
+    /// applying Pulumi-compatible camelCase conversion.
+    /// </summary>
+    /// <typeparam name="T">The type containing the input property (usually a <see cref="ResourceArgs"/> type).</typeparam>
+    /// <param name="propertySelector">
+    /// An expression pointing to the input property (e.g., <c>x => x.Location</c>).
+    /// </param>
+    /// <returns>
+    /// The Pulumi input key name as a camelCase string (e.g., <c>"resourceGroupName"</c> for <c>ResourceGroupName</c>).
+    /// </returns>
+    /// <exception cref="ArgumentException">
+    /// Thrown if the expression is not a valid member selector (e.g., a method call or constant).
+    /// </exception>
+    public static string GetInputName<T>(this Expression<Func<T, object?>> propertySelector)
+    {
+        MemberInfo member = propertySelector.Body switch
+        {
+            MemberExpression m => m.Member,
+            UnaryExpression { Operand: MemberExpression m } => m.Member,
+            _ => throw new ArgumentException("Invalid property selector")
+        };
+        
+        // InputAttribute is internal
+        return member.Name.ToCamelCase();
+    }
+    
+    /// <summary>
     /// The name of the property on Pulumi resource attributes that contains the type token.
     /// </summary>
     private const string PulumiTypeTokenPropertyName = "Type";
