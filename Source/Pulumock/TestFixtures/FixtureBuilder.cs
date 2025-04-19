@@ -10,8 +10,8 @@ namespace Pulumock.TestFixtures;
 public class FixtureBuilder
 {
     private MockConfiguration? _mockConfiguration;
-    private List<MockResource> _mockResources = [];
-    private List<MockCall> _mockCalls = [];
+    private readonly List<MockResource> _mockResources = [];
+    private readonly List<MockCall> _mockCalls = [];
 
     public FixtureBuilder WithMockConfiguration(MockConfiguration mockConfiguration)
     {

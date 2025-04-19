@@ -14,6 +14,9 @@ public class ProgramTests
             .WithConfiguration(PulumiConfigurationNamespace.AzureNative, "swedencentral", "location")
             .WithSecretConfiguration(PulumiConfigurationNamespace.Default, "very-secret-value", "exampleSecret")
             .Build())
+        .WithMockStackReference(new MockStackReferenceBuilder("org/project/stack")
+            .WithOutput("resourceGroupName", "test-rg-name")
+            .Build())
         .WithMockResource(new MockResourceBuilder<ResourceGroup>()
             .WithOutput("azureApiVersion", "2021-04-01")
             .Build());
@@ -25,9 +28,13 @@ public class ProgramTests
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
 
         ResourceGroup resourceGroup = result.StackResources.GetResourceByLogicalName<ResourceGroup>("example-rg");
+        result.StackOutputs.TryGetValue("exampleStackOutput", out object? exampleStackOutputValue);
+        string input = result.Inputs.RequireValue<string>("example-rg", "resourceGroupName");
         
         resourceGroup.ShouldNotBeNull();
         (await resourceGroup.Location.GetValueAsync()).ShouldBe("swedencentral");
         (await resourceGroup.AzureApiVersion.GetValueAsync()).ShouldBe("2021-04-01");
+        input.ShouldBe("test-rg-name");
+        exampleStackOutputValue.ShouldBe("value");
     }
 }
