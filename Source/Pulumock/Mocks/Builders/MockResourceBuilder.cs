@@ -1,4 +1,7 @@
 using System.Collections.Immutable;
+using System.Linq.Expressions;
+using Pulumi;
+using Pulumock.Extensions;
 using Pulumock.Mocks.Models;
 
 namespace Pulumock.Mocks.Builders;
@@ -19,6 +22,20 @@ public class MockResourceBuilder<T>
     public MockResourceBuilder<T> WithOutput(string key, object value)
     {
         _outputs.Add(key, value);
+        return this;
+    }
+    
+    /// <summary>
+    /// Adds a mocked output key and value to the resource using a strongly typed property selector.
+    /// </summary>
+    /// <param name="propertySelector">
+    /// An expression selecting the <see cref="Output{T}"/> property on the resource to mock.
+    /// This should point to a property decorated with Pulumi's <see cref="OutputAttribute"/>.
+    /// </param>
+    /// <param name="value">The mocked value.</param>
+    public MockResourceBuilder<T> WithOutput(Expression<Func<T, object>> propertySelector, object value)
+    {
+        _outputs.Add(propertySelector.GetResourceOutputName(), value);
         return this;
     }
 

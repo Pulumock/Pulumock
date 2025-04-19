@@ -1,7 +1,6 @@
 using Pulumi;
 using Pulumi.AzureNative.Authorization;
 using Pulumi.AzureNative.Resources;
-using Type = System.Type;
 
 namespace MainExample;
 
@@ -20,8 +19,6 @@ internal static class CoreStack
         }
         
         GetClientConfigResult azureClientConfig = await GetClientConfig.InvokeAsync();
-
-        Type ty = typeof(GetClientConfig);
 
         _ = new ResourceGroup("example-rg", new()
         {
