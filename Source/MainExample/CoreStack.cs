@@ -1,5 +1,7 @@
 using Pulumi;
+using Pulumi.AzureNative.Authorization;
 using Pulumi.AzureNative.Resources;
+using Type = System.Type;
 
 namespace MainExample;
 
@@ -16,11 +18,19 @@ internal static class CoreStack
         {
             throw new InvalidCastException("Invalid stack ref: expected a string.");
         }
+        
+        GetClientConfigResult azureClientConfig = await GetClientConfig.InvokeAsync();
+
+        Type ty = typeof(GetClientConfig);
 
         _ = new ResourceGroup("example-rg", new()
         {
             Location = config.Location,
-            ResourceGroupName = resourceGroupName
+            ResourceGroupName = resourceGroupName,
+            Tags = new InputMap<string>()
+            {
+                {"subscriptionId", azureClientConfig.SubscriptionId}
+            },
         });
 
         return new Dictionary<string, object?>

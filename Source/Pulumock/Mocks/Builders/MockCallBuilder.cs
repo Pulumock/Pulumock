@@ -6,8 +6,7 @@ namespace Pulumock.Mocks.Builders;
 /// <summary>
 /// A fluent builder for creating a <see cref="MockCall"/>.
 /// </summary>
-/// <typeparam name="T">The Pulumi invoke function type to be mocked.</typeparam>
-public class MockCallBuilder<T>
+public class MockCallBuilder
 {
     private readonly Dictionary<string, object> _outputs = new();
 
@@ -16,7 +15,7 @@ public class MockCallBuilder<T>
     /// </summary>
     /// <param name="key">The output property name.</param>
     /// <param name="value">The mocked return value for the property.</param>
-    public MockCallBuilder<T> WithOutput(string key, object value)
+    public MockCallBuilder WithOutput(string key, object value)
     {
         _outputs.Add(key, value);
         return this;
@@ -24,7 +23,8 @@ public class MockCallBuilder<T>
 
     /// <summary>
     /// Builds the <see cref="MockCall"/> instance with the specified function type and mocked outputs.
+    /// <param name="type">The provider function <see cref="Type"/>.</param>
     /// </summary>
-    public MockCall Build() =>
-        new(typeof(T), _outputs.ToImmutableDictionary());
+    public MockCall Build(Type type) =>
+        new(type, _outputs.ToImmutableDictionary());
 }

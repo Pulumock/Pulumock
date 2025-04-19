@@ -1,3 +1,5 @@
+using System.Collections.Immutable;
+using Pulumi.AzureNative.Authorization;
 using Pulumi.AzureNative.Resources;
 using Pulumock.Extensions;
 using Pulumock.Mocks.Builders;
@@ -19,7 +21,10 @@ public class ProgramTests
             .Build())
         .WithMockResource(new MockResourceBuilder<ResourceGroup>()
             .WithOutput("azureApiVersion", "2021-04-01")
-            .Build());
+            .Build())
+        .WithMockCall(new MockCallBuilder()
+            .WithOutput("subscriptionId", "test-subscription-id")
+            .Build(typeof(GetClientConfig)));
 
     [Fact]
     public async Task TestRun()
@@ -34,6 +39,7 @@ public class ProgramTests
         resourceGroup.ShouldNotBeNull();
         (await resourceGroup.Location.GetValueAsync()).ShouldBe("swedencentral");
         (await resourceGroup.AzureApiVersion.GetValueAsync()).ShouldBe("2021-04-01");
+        (await resourceGroup.Tags.GetValueAsync())?.GetValueOrDefault("subscriptionId").ShouldBe("test-subscription-id");
         input.ShouldBe("test-rg-name");
         exampleStackOutputValue.ShouldBe("value");
     }
