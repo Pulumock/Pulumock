@@ -35,7 +35,7 @@ public class MockResourceBuilder<T>
     /// <param name="value">The mocked value.</param>
     public MockResourceBuilder<T> WithOutput(Expression<Func<T, object>> propertySelector, object value)
     {
-        _outputs.Add(propertySelector.GetResourceOutputName(), value);
+        _outputs.Add(propertySelector.GetOutputName(), value);
         return this;
     }
 

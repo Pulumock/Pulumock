@@ -1,4 +1,6 @@
 using System.Collections.Immutable;
+using System.Linq.Expressions;
+using Pulumock.Extensions;
 using Pulumock.Mocks.Models;
 
 namespace Pulumock.Mocks.Builders;
@@ -18,6 +20,18 @@ public class MockCallBuilder
     public MockCallBuilder WithOutput(string key, object value)
     {
         _outputs.Add(key, value);
+        return this;
+    }
+    
+    /// <summary>
+    /// Adds a mocked output property for the function call result.
+    /// </summary>
+    /// <typeparam name="T">The function result type.</typeparam>
+    /// <param name="propertySelector">A lambda expression selecting the output property.</param>
+    /// <param name="value">The mocked return value for the property.</param>
+    public MockCallBuilder WithOutput<T>(Expression<Func<T, object>> propertySelector, object value)
+    {
+        _outputs.Add(propertySelector.GetOutputName(), value);
         return this;
     }
 

@@ -23,7 +23,7 @@ public class ProgramTests
             .WithOutput(x => x.AzureApiVersion, "2021-04-01")
             .Build())
         .WithMockCall(new MockCallBuilder()
-            .WithOutput("subscriptionId", "test-subscription-id")
+            .WithOutput<GetClientConfigResult>(x => x.SubscriptionId, "test-subscription-id")
             .Build(typeof(GetClientConfig)));
 
     [Fact]
