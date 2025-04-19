@@ -1,3 +1,7 @@
+using System.Linq.Expressions;
+using System.Reflection;
+using Pulumi;
+
 namespace Pulumock.Extensions;
 
 /// <summary>
@@ -40,6 +44,59 @@ public static class TypeExtensions
                 .GetValue(attr))
             .OfType<string>()
             .Where(token => !string.IsNullOrWhiteSpace(token));
+    
+    /// <summary>
+    /// Retrieves the Pulumi output key name from a strongly typed expression pointing to a property or field.
+    /// </summary>
+    /// <typeparam name="T">The type containing the output member.</typeparam>
+    /// <param name="propertySelector">
+    /// An expression pointing to the output member (e.g., <c>x => x.SubscriptionId</c>).
+    /// </param>
+    /// <returns>
+    /// The name of the output key to be used in Pulumi mocks. If the member has an <see cref="OutputAttribute"/>,
+    /// its <c>Name</c> value is used; otherwise, the member name is converted to camelCase.
+    /// </returns>
+    /// <exception cref="ArgumentException">
+    /// Thrown when the expression is not a valid property or field selector.
+    /// </exception>
+    public static string GetOutputName<T>(this Expression<Func<T, object>> propertySelector)
+    {
+        MemberInfo member = propertySelector.Body switch
+        {
+            MemberExpression m => m.Member,
+            UnaryExpression { Operand: MemberExpression m } => m.Member,
+            _ => throw new ArgumentException("Invalid property selector")
+        };
+
+        return member.GetCustomAttribute<OutputAttribute>()?.Name ?? member.Name.ToCamelCase();
+    }
+    
+    /// <summary>
+    /// Resolves the input key name from a strongly typed property selector,
+    /// applying Pulumi-compatible camelCase conversion.
+    /// </summary>
+    /// <typeparam name="T">The type containing the input property (usually a <see cref="ResourceArgs"/> type).</typeparam>
+    /// <param name="propertySelector">
+    /// An expression pointing to the input property (e.g., <c>x => x.Location</c>).
+    /// </param>
+    /// <returns>
+    /// The Pulumi input key name as a camelCase string (e.g., <c>"resourceGroupName"</c> for <c>ResourceGroupName</c>).
+    /// </returns>
+    /// <exception cref="ArgumentException">
+    /// Thrown if the expression is not a valid member selector (e.g., a method call or constant).
+    /// </exception>
+    public static string GetInputName<T>(this Expression<Func<T, object?>> propertySelector)
+    {
+        MemberInfo member = propertySelector.Body switch
+        {
+            MemberExpression m => m.Member,
+            UnaryExpression { Operand: MemberExpression m } => m.Member,
+            _ => throw new ArgumentException("Invalid property selector")
+        };
+        
+        // InputAttribute is internal
+        return member.Name.ToCamelCase();
+    }
     
     /// <summary>
     /// The name of the property on Pulumi resource attributes that contains the type token.
