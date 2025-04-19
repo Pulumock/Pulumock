@@ -13,8 +13,8 @@ public class ProgramTests
 {
     private readonly FixtureBuilder _fixtureBuilder = new FixtureBuilder()
         .WithMockConfiguration(new MockConfigurationBuilder()
-            .WithConfiguration(PulumiConfigurationNamespace.AzureNative, "swedencentral", "location")
-            .WithSecretConfiguration(PulumiConfigurationNamespace.Default, "very-secret-value", "exampleSecret")
+            .WithConfiguration(PulumiConfigurationNamespace.AzureNative, "location", "swedencentral")
+            .WithSecretConfiguration(PulumiConfigurationNamespace.Default, "exampleSecret", "very-secret-value")
             .Build())
         .WithMockStackReference(new MockStackReferenceBuilder("org/project/stack")
             .WithOutput("resourceGroupName", "test-rg-name")

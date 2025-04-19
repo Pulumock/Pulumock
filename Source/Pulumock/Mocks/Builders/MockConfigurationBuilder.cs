@@ -46,7 +46,7 @@ public class MockConfigurationBuilder
     /// <param name="namespace">The configuration namespace (e.g., "project", "azure-native").</param>
     /// <param name="value">The configuration value.</param>
     /// <param name="keyName">The optional key name within the namespace.</param>
-    public MockConfigurationBuilder WithConfiguration(PulumiConfigurationNamespace @namespace, object value, string? keyName = null)
+    public MockConfigurationBuilder WithConfiguration(PulumiConfigurationNamespace @namespace, string keyName, object value)
     {
         string key = FormatKey(@namespace.Value, keyName);
         
@@ -62,7 +62,7 @@ public class MockConfigurationBuilder
     /// <param name="namespace">The configuration namespace (e.g., "project", "azure-native").</param>
     /// <param name="value">The secret value.</param>
     /// <param name="keyName">The optional key name within the namespace.</param>
-    public MockConfigurationBuilder WithSecretConfiguration(PulumiConfigurationNamespace @namespace, string value, string? keyName = null)
+    public MockConfigurationBuilder WithSecretConfiguration(PulumiConfigurationNamespace @namespace, string keyName, string value)
     {
         string key = FormatKey(@namespace.Value, keyName);
         
