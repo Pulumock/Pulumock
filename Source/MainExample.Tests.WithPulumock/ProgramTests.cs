@@ -26,6 +26,27 @@ public class ProgramTests
             .WithOutput<GetClientConfigResult>(x => x.SubscriptionId, "test-subscription-id")
             .Build(typeof(GetClientConfig)));
 
+    // TODO: test stack
+    // - Config
+    // - Secret
+    // - Stack reference 
+    //   - Resource dependency on stack
+    // - Resource
+    //   - Input only
+    //   - Output only
+    //   - Input & Output
+    //   - Resource dependencies
+    // - Creates Vault with/without component resource
+    // - Input diff based on stack name
+    // - Call
+    //   - With/Without args
+    //   - Resource dependencies on call
+    // - Stack outputs
+    
+    // TODO: test component resource
+    // - Required args
+    // - Parent
+    
     [Fact]
     public async Task TestRun()
     {
