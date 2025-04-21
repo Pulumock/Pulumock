@@ -20,23 +20,29 @@ internal sealed class KeyVaultWithSecretsComponentResource : ComponentResource
                 {
                     Family = SkuFamily.A,
                     Name = SkuName.Standard
-                }
+                },
+                TenantId = args.TenantId
             }
         }, new() { Parent = this });
-
-        foreach (KeyValuePair<string, Input<string>> kv in args.Secrets)
+        
+        args.Secrets.Apply(secrets =>
         {
-            _ = new Secret("microservice-example-secret", new SecretArgs
+            foreach (KeyValuePair<string, string> kv in secrets)
             {
-                SecretName = kv.Key,
-                Properties = new SecretPropertiesArgs
+                _ = new Secret($"{name}-secret-{kv.Key}", new SecretArgs
                 {
-                    Value = kv.Value
-                },
-                ResourceGroupName = args.ResourceGroupName,
-                VaultName = keyVault.Name
-            }, new() { Parent = this });
-        }
+                    SecretName = kv.Key,
+                    Properties = new SecretPropertiesArgs
+                    {
+                        Value = kv.Value
+                    },
+                    ResourceGroupName = args.ResourceGroupName,
+                    VaultName = keyVault.Name
+                }, new CustomResourceOptions { Parent = this });
+            }
+
+            return secrets;
+        });
 
         KeyVault = keyVault;
         RegisterOutputs(new Dictionary<string, object?>
@@ -55,6 +61,9 @@ internal sealed class KeyVaultWithSecretsComponentResourceArgs : ResourceArgs
     
     [Input("resourceGroupName", required: true)]
     public required Input<string> ResourceGroupName { get; init; }
+    
+    [Input("tenantId", required: true)]
+    public required Input<string> TenantId { get; init; }
     
     [Input("secrets")]
     public required InputMap<string> Secrets { get; init; }

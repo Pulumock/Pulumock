@@ -15,6 +15,6 @@ return await Pulumi.Deployment.RunAsync(() =>
     
     return new Dictionary<string, object?>
     {
-        {"microserviceManagedIdentityId", managedIdentity.Id }
+        {"microserviceManagedIdentityPrincipalId", managedIdentity.PrincipalId }
     };
 });

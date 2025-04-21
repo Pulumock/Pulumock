@@ -9,6 +9,8 @@ namespace MainExample;
 
 internal static class CoreStack
 {
+    private const string OrgName = "hoolit";
+    private const string IdentityProjectName = "Identity";
     private static readonly string Environment = Deployment.Instance.StackName;
     
     public static async Task<Dictionary<string, object?>> DefineResourcesAsync()
@@ -17,8 +19,8 @@ internal static class CoreStack
         var config = new PulumiConfig();
 
         // Stack ref
-        var stackReference = new StackReference($"org/Identity/{Environment}");
-        object? stackReferenceValue = await stackReference.GetValueAsync("microserviceManagedIdentityId");
+        var stackReference = new StackReference($"{OrgName}/{IdentityProjectName}/{Environment}");
+        object? stackReferenceValue = await stackReference.GetValueAsync("microserviceManagedIdentityPrincipalId");
         if (stackReferenceValue is not string managedIdentity)
         {
             throw new InvalidCastException("Invalid stack ref: expected a string.");
@@ -38,6 +40,7 @@ internal static class CoreStack
             {
                 VaultName = $"microservice-kv-{Environment}",
                 ResourceGroupName = resourceGroup.Name,
+                TenantId = config.TenantId,
                 Secrets = new()
                 {
                     {"Database--ConnectionString", config.DatabaseConnectionString}
@@ -47,7 +50,7 @@ internal static class CoreStack
         else
         {
             // Resource with dep
-            keyVault = new Vault("microservice-kv", new()
+            keyVault = new Vault("microservice-kv-vault", new()
             {
                 VaultName = $"microservice-kv-{Environment}", // Input with diff on stack name
                 ResourceGroupName = resourceGroup.Name, // Dep on resource
@@ -58,11 +61,12 @@ internal static class CoreStack
                     {
                         Family = SkuFamily.A,
                         Name = SkuName.Standard
-                    }
+                    },
+                    TenantId = config.TenantId
                 }
             });
         
-            _ = new Secret("microservice-secret-databaseConnectionString", new SecretArgs
+            _ = new Secret("microservice-kv-secret-Database--ConnectionString", new SecretArgs
             {
                 SecretName = "Database--ConnectionString",
                 Properties = new SecretPropertiesArgs
@@ -76,15 +80,17 @@ internal static class CoreStack
         
         ArgumentNullException.ThrowIfNull(keyVault);
         
+        // Provider function (call)
         GetRoleDefinitionResult roleDefinition = await GetRoleDefinition.InvokeAsync(new GetRoleDefinitionArgs
         {
             RoleDefinitionId = "b24988ac-6180-42a0-ab88-20f7382dd24c",
             Scope = $"/subscriptions/{config.SubscriptionId}"
         });
         
-        _ = new RoleAssignment("kv-reader-access", new RoleAssignmentArgs
+        _ = new RoleAssignment("microservice-ra-kvReader", new RoleAssignmentArgs
         {
             PrincipalId = managedIdentity, // Dep on stack ref input
+            PrincipalType = PrincipalType.ServicePrincipal,
             RoleDefinitionId = roleDefinition.Id, // Dep on call
             Scope = keyVault.Id // Dep on resource
         });
