@@ -7,8 +7,6 @@ using Deployment = Pulumi.Deployment;
 
 namespace MainExample;
 
-// TODO:
-// - DependsOn
 internal static class CoreStack
 {
     private static readonly string Environment = Deployment.Instance.StackName;
@@ -20,7 +18,7 @@ internal static class CoreStack
 
         // Stack ref
         var stackReference = new StackReference($"org/Identity/{Environment}");
-        object? stackReferenceValue = await stackReference.GetValueAsync("managedIdentity");
+        object? stackReferenceValue = await stackReference.GetValueAsync("microserviceManagedIdentityId");
         if (stackReferenceValue is not string managedIdentity)
         {
             throw new InvalidCastException("Invalid stack ref: expected a string.");

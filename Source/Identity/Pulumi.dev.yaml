@@ -2,6 +2,3 @@ config:
   azure-native:tenantId: "your-tenant-id"
   azure-native:subscriptionId: "your-subscription-id"
   azure-native:location: "swedencentral"
-  useKeyVaultWithSecretsComponentResource: true
-  exampleSecret:
-    secure: AAABAD8PEG4idWnbhICkJ/S9ZnsI1c0DY2kxu2tY5SLJfUSVYGoDxcYdh6ZE
