@@ -1,5 +1,7 @@
 using System.Collections.Immutable;
 using Pulumi.AzureNative.Authorization;
+using Pulumi.AzureNative.KeyVault;
+using Pulumi.AzureNative.KeyVault.Inputs;
 using Pulumi.AzureNative.Resources;
 using Pulumock.Extensions;
 using Pulumock.Mocks.Builders;
@@ -11,20 +13,29 @@ namespace MainExample.Tests.WithPulumock;
 
 public class ProgramTests
 {
+    // Suggestion to test: root of stack (mock all component resources), extract logic to component resources (test in isolation)
+    // TODO: full upsert, partial upsert, set by identifier or for entire type | (with/without methods for all) 
+    // TODO: support both typed and non-typed builders and with() methods
     private readonly FixtureBuilder _fixtureBuilder = new FixtureBuilder()
         .WithMockConfiguration(new MockConfigurationBuilder()
+            .WithConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId", "1f526cdb-1975-4248-ab0f-57813df294cb")
+            .WithConfiguration(PulumiConfigurationNamespace.AzureNative, "subscriptionId", "f2f2c6e5-17c2-4dfa-913d-6509deb6becf")
             .WithConfiguration(PulumiConfigurationNamespace.AzureNative, "location", "swedencentral")
-            .WithSecretConfiguration(PulumiConfigurationNamespace.Default, "exampleSecret", "very-secret-value")
+            .WithConfiguration(PulumiConfigurationNamespace.Default, "useKeyVaultWithSecretsComponentResource", "true")
+            .WithSecretConfiguration(PulumiConfigurationNamespace.Default, "databaseConnectionString", "very-secret-value")
             .Build())
-        .WithMockStackReference(new MockStackReferenceBuilder("org/project/stack")
-            .WithOutput("resourceGroupName", "test-rg-name")
+        .WithMockStackReference(new MockStackReferenceBuilder("hoolit/Identity/stack") // TODO: doesnt become dev or prod (just "stack")
+            .WithOutput("microserviceManagedIdentityPrincipalId", "b95a4aa0-167a-4bc2-baf4-d43a776da1bd")
             .Build())
-        .WithMockResource(new MockResourceBuilder<ResourceGroup>()
-            .WithOutput(x => x.AzureApiVersion, "2021-04-01")
-            .Build())
+        .WithMockResource(new MockResourceBuilder()
+            .WithOutput<ResourceGroup>(x => x.AzureApiVersion, "2021-04-01")
+            .Build<ResourceGroup>())
+        .WithMockResource(new MockResourceBuilder()
+            .WithOutput<GetVaultResult>(x => x.Properties.VaultUri, "https://mocked.vault.azure.net/")
+            .Build<Vault>())
         .WithMockCall(new MockCallBuilder()
-            .WithOutput<GetClientConfigResult>(x => x.SubscriptionId, "test-subscription-id")
-            .Build(typeof(GetClientConfig)));
+            .WithOutput<GetRoleDefinitionResult>(x => x.Id, "13a8e88e-f45f-432b-8b45-019997c19f27")
+            .Build(typeof(GetRoleDefinition)));
 
     // TODO: test stack
     // - Config
@@ -46,6 +57,31 @@ public class ProgramTests
     // TODO: test component resource
     // - Required args
     // - Parent
+    
+    [Fact]
+    public async Task DefineResourcesAsync_Config()
+    {
+        Fixture result = await _fixtureBuilder
+            .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
+
+        VaultPropertiesArgs keyVaultProperties = result.Inputs.RequireValue<VaultArgs, VaultPropertiesArgs>("microservice-kv-vault", x => x.Properties);
+        
+        keyVaultProperties.TenantId.ShouldBe("1f526cdb-1975-4248-ab0f-57813df294cb");
+    }
+    
+    [Fact]
+    public async Task DefineResourcesAsync_ConfigSecret()
+    {
+        Fixture result = await _fixtureBuilder
+            .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
+    }
+    
+    [Fact]
+    public async Task DefineResourcesAsync_StackReference()
+    {
+        Fixture result = await _fixtureBuilder
+            .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
+    }
     
     [Fact]
     public async Task TestRun()

@@ -36,10 +36,14 @@ internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IRe
             // TODO: enable mocking specifically by logical name
             IEnumerable<ImmutableDictionary<string, object>> resourceMockOutputs = mockResources
                 .Where(mockResource => mockResource.Type.MatchesResourceTypeToken(args.Type))
-                .Select(mockResource => mockResource.MockOutputs);
+                .Select(mockResource => mockResource.MockOutputs)
+                .ToList();
             
             // TODO: don't add all, select latest added (or merge somehow so we can append new config without having to pass the entire object again?)
-            outputs.AddRange(resourceMockOutputs.First());
+            if (resourceMockOutputs.Any())
+            {
+                outputs.AddRange(resourceMockOutputs.First());
+            }
             
             object physicalResourceName = outputs.GetValueOrDefault("name") ?? $"{GetLogicalResourceName(args.Name)}_physical";
             outputs.Add("name", physicalResourceName);
@@ -61,10 +65,14 @@ internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IRe
         
         IEnumerable<ImmutableDictionary<string, object>> callMockOutputs = mockCalls
             .Where(mockCall => mockCall.Type.MatchesCallTypeToken(GetCallToken(args.Token)))
-            .Select(mockCall => mockCall.MockOutputs);
+            .Select(mockCall => mockCall.MockOutputs)
+            .ToList();
         
         // TODO: don't add all, select latest added (or merge somehow so we can append new config without having to pass the entire object again?)
-        outputs.AddRange(callMockOutputs.First());
+        if (callMockOutputs.Any())
+        {
+            outputs.AddRange(callMockOutputs.First());
+        }
         
         ImmutableDictionary<string, object> finalOutputs = outputs.ToImmutable();
         
