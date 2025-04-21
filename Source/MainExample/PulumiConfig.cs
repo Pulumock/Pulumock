@@ -11,5 +11,6 @@ internal sealed class PulumiConfig
     public string SubscriptionId => _azureNativeConfig.Require("subscriptionId");
     public string Location => _azureNativeConfig.Require("location");
     
-    public Output<string> ExampleSecret => _defaultConfig.RequireSecret("exampleSecret");
+    public bool UseKeyVaultWithSecretsComponentResource => _defaultConfig.RequireBoolean("useKeyVaultWithSecretsComponentResource");
+    public Output<string> DatabaseConnectionString => _defaultConfig.RequireSecret("databaseConnectionString");
 }

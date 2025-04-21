@@ -8,8 +8,7 @@ using Deployment = Pulumi.Deployment;
 namespace MainExample;
 
 // TODO:
-// - ComponentResource
-// - Parent
+// - DependsOn
 internal static class CoreStack
 {
     private static readonly string Environment = Deployment.Instance.StackName;
@@ -20,7 +19,7 @@ internal static class CoreStack
         var config = new PulumiConfig();
 
         // Stack ref
-        var stackReference = new StackReference($"org/identity/{Environment}");
+        var stackReference = new StackReference($"org/Identity/{Environment}");
         object? stackReferenceValue = await stackReference.GetValueAsync("managedIdentity");
         if (stackReferenceValue is not string managedIdentity)
         {
@@ -28,38 +27,56 @@ internal static class CoreStack
         }
 
         // Resource
-        var resourceGroup = new ResourceGroup("example-rg", new()
+        var resourceGroup = new ResourceGroup("microservice-rg", new()
         {
-            ResourceGroupName = "resourceGroupName" // Not an output, so assert on input
+            ResourceGroupName = "microservice-rg" // Not an output, so assert on input
             // Outputs version which is not an input
         });
 
-        // Resource with dep
-        var keyVault = new Vault("microservice-vault", new()
+        Vault? keyVault;
+        if (config.UseKeyVaultWithSecretsComponentResource)
         {
-            VaultName = $"microservice-{Environment}", // Input with diff on stack name
-            ResourceGroupName = resourceGroup.Name, // Dep on resource
-            Properties = new VaultPropertiesArgs
+            keyVault = new KeyVaultWithSecretsComponentResource("microservice-kv", new()
             {
-                EnableRbacAuthorization = true,
-                Sku = new SkuArgs
+                VaultName = $"microservice-kv-{Environment}",
+                ResourceGroupName = resourceGroup.Name,
+                Secrets = new()
                 {
-                    Family = SkuFamily.A,
-                    Name = SkuName.Standard
+                    {"Database--ConnectionString", config.DatabaseConnectionString}
                 }
-            }
-        });
-        
-        _ = new Secret("microservice-example-secret", new SecretArgs
+            }).KeyVault;
+        }
+        else
         {
-            SecretName = "example-secret",
-            Properties = new SecretPropertiesArgs
+            // Resource with dep
+            keyVault = new Vault("microservice-kv", new()
             {
-                Value = config.ExampleSecret // Secret
-            },
-            ResourceGroupName = resourceGroup.Name, // Dep on resource
-            VaultName = keyVault.Name // Dep on resource
-        });
+                VaultName = $"microservice-kv-{Environment}", // Input with diff on stack name
+                ResourceGroupName = resourceGroup.Name, // Dep on resource
+                Properties = new VaultPropertiesArgs
+                {
+                    EnableRbacAuthorization = true,
+                    Sku = new SkuArgs
+                    {
+                        Family = SkuFamily.A,
+                        Name = SkuName.Standard
+                    }
+                }
+            });
+        
+            _ = new Secret("microservice-secret-databaseConnectionString", new SecretArgs
+            {
+                SecretName = "Database--ConnectionString",
+                Properties = new SecretPropertiesArgs
+                {
+                    Value = config.DatabaseConnectionString // Secret
+                },
+                ResourceGroupName = resourceGroup.Name, // Dep on resource
+                VaultName = keyVault.Name // Dep on resource
+            });   
+        }
+        
+        ArgumentNullException.ThrowIfNull(keyVault);
         
         GetRoleDefinitionResult roleDefinition = await GetRoleDefinition.InvokeAsync(new GetRoleDefinitionArgs
         {
