@@ -14,10 +14,8 @@ internal static class CoreStack
 
     public static async Task<Dictionary<string, object?>> DefineResourcesAsync(string stackName)
     {
-        // Config
         var config = new PulumiConfig();
 
-        // Stack ref
         var stackReference = new StackReference($"{OrgName}/{IdentityProjectName}/{stackName}");
         object? stackReferenceValue = await stackReference.GetValueAsync("microserviceManagedIdentityPrincipalId");
         if (stackReferenceValue is not string managedIdentity)
@@ -25,12 +23,10 @@ internal static class CoreStack
             throw new InvalidCastException("Invalid stack ref: expected a string.");
         }
 
-        // Resource
         var resourceGroup = new ResourceGroup("microservice-rg", new()
         {
-            ResourceGroupName = "microservice-rg", // Not an output, so assert on input
-            Location = config.Location // Input and Output
-            // Outputs version which is not an input
+            ResourceGroupName = "microservice-rg",
+            Location = config.Location
         });
 
         Vault? keyVault;
@@ -49,11 +45,10 @@ internal static class CoreStack
         }
         else
         {
-            // Resource with dep
             keyVault = new Vault("microservice-kv-vault", new()
             {
-                VaultName = $"microservice-kv-{stackName}", // Input with diff on stack name
-                ResourceGroupName = resourceGroup.Name, // Dep on resource
+                VaultName = $"microservice-kv-{stackName}",
+                ResourceGroupName = resourceGroup.Name,
                 Properties = new VaultPropertiesArgs
                 {
                     EnableRbacAuthorization = true,
@@ -71,24 +66,23 @@ internal static class CoreStack
                 SecretName = "Database--ConnectionString",
                 Properties = new SecretPropertiesArgs
                 {
-                    Value = config.DatabaseConnectionString // Secret
+                    Value = config.DatabaseConnectionString
                 },
-                ResourceGroupName = resourceGroup.Name, // Dep on resource
-                VaultName = keyVault.Name // Dep on resource
+                ResourceGroupName = resourceGroup.Name,
+                VaultName = keyVault.Name
             });   
         }
         
         ArgumentNullException.ThrowIfNull(keyVault);
         
-        // Provider function (call)
         GetRoleDefinitionResult roleDefinition = await GetRoleDefinition.InvokeAsync(new GetRoleDefinitionArgs
         {
             RoleDefinitionId = "b24988ac-6180-42a0-ab88-20f7382dd24c",
             Scope = $"/subscriptions/{config.SubscriptionId}"
         });
         
-        // For testing purposes only
-        GetRoleDefinitionResult roleDefinitionSecondCall = await GetRoleDefinition.InvokeAsync(new GetRoleDefinitionArgs
+        // This exists to test multiple calls from the same provider function
+        _ = await GetRoleDefinition.InvokeAsync(new GetRoleDefinitionArgs
         {
             RoleDefinitionId = "88fa32db-c830-43a9-88bc-fa482a8401e8",
             Scope = $"/subscriptions/{config.SubscriptionId}"
@@ -96,13 +90,12 @@ internal static class CoreStack
         
         _ = new RoleAssignment("microservice-ra-kvReader", new RoleAssignmentArgs
         {
-            PrincipalId = managedIdentity, // Dep on stack ref input
+            PrincipalId = managedIdentity,
             PrincipalType = PrincipalType.ServicePrincipal,
-            RoleDefinitionId = roleDefinition.Id, // Dep on call
-            Scope = keyVault.Id // Dep on resource
+            RoleDefinitionId = roleDefinition.Id,
+            Scope = keyVault.Id
         });
-
-        // Stack outputs
+        
         return new Dictionary<string, object?>
         {
             {"keyVaultUri", keyVault.Properties.Apply(x => x.VaultUri) }
