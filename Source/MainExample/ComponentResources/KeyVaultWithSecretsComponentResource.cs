@@ -24,25 +24,28 @@ internal sealed class KeyVaultWithSecretsComponentResource : ComponentResource
                 TenantId = args.TenantId
             }
         }, new() { Parent = this });
-        
-        args.Secrets.Apply(secrets =>
-        {
-            foreach (KeyValuePair<string, string> kv in secrets)
-            {
-                _ = new Secret($"{name}-secret-{kv.Key}", new SecretArgs
-                {
-                    SecretName = kv.Key,
-                    Properties = new SecretPropertiesArgs
-                    {
-                        Value = kv.Value
-                    },
-                    ResourceGroupName = args.ResourceGroupName,
-                    VaultName = keyVault.Name
-                }, new CustomResourceOptions { Parent = this });
-            }
 
-            return secrets;
-        });
+        if (args.Secrets is not null)
+        {
+            args.Secrets.Apply(secrets =>
+            {
+                foreach (KeyValuePair<string, string> kv in secrets)
+                {
+                    _ = new Secret($"{name}-secret-{kv.Key}", new SecretArgs
+                    {
+                        SecretName = kv.Key,
+                        Properties = new SecretPropertiesArgs
+                        {
+                            Value = kv.Value
+                        },
+                        ResourceGroupName = args.ResourceGroupName,
+                        VaultName = keyVault.Name
+                    }, new CustomResourceOptions { Parent = this });
+                }
+
+                return secrets;
+            });
+        }
 
         KeyVault = keyVault;
         RegisterOutputs(new Dictionary<string, object?>
@@ -66,5 +69,5 @@ internal sealed class KeyVaultWithSecretsComponentResourceArgs : ResourceArgs
     public required Input<string> TenantId { get; init; }
     
     [Input("secrets")]
-    public required InputMap<string> Secrets { get; init; }
+    public InputMap<string>? Secrets { get; init; }
 }
