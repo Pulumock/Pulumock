@@ -19,6 +19,7 @@ internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IRe
     public Task<(string? id, object state)> NewResourceAsync(MockResourceArgs args)
     {
         ImmutableDictionary<string, object>.Builder outputs = ImmutableDictionary.CreateBuilder<string, object>();
+        outputs.AddRange(args.Inputs);
         
         if (string.Equals(args.Type, ResourceTypeTokenConstants.StackReference, StringComparison.Ordinal))
         {
@@ -49,7 +50,6 @@ internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IRe
             outputs.Add("name", physicalResourceName);
         }
         
-        outputs.AddRange(args.Inputs);
         ImmutableDictionary<string, object> finalOutputs = outputs.ToImmutable();
         
         string resourceName = GetLogicalResourceName(args.Name);
