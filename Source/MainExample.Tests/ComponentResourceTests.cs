@@ -59,7 +59,7 @@ public class ComponentResourceTests : TestBase
     }
     
     [Fact]
-    public async Task ComponentResource_NoSecrets()
+    public async Task ComponentResource_MissingNonRequiredResourceArg()
     {
         var mocks = new Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> Outputs) result = await Deployment.TestAsync(
@@ -127,5 +127,35 @@ public class ComponentResourceTests : TestBase
         
         TestHelpers.IsChildOf(keyVault, componentResource).ShouldBeTrue();
         TestHelpers.IsChildOf(secret, componentResource).ShouldBeTrue();
+    }
+    
+    [Fact]
+    public async Task ComponentResource_Outputs()
+    {
+        var mocks = new Mocks();
+        (ImmutableArray<Resource> Resources, IDictionary<string, object?> Outputs) result = await Deployment.TestAsync(
+            mocks, 
+            new TestOptions {IsPreview = false},
+            () =>
+            {
+                var componentResource = new KeyVaultWithSecretsComponentResource("microservice-kv", new()
+                {
+                    VaultName = "microservice-kv-vault",
+                    ResourceGroupName = "microservice-rg",
+                    TenantId = "1f526cdb-1975-4248-ab0f-57813df294cb"
+                });
+                
+                return new Dictionary<string, object?>
+                {
+                    { "keyVault", componentResource.KeyVault }
+                };
+            });
+
+        if (!result.Outputs.TryGetValue("keyVault", out object? keyVaultObj) || keyVaultObj is not Vault keyVault)
+        {
+            throw new KeyNotFoundException("Output with key 'keyVault' was not found or is not of type Vault.");
+        }
+        
+        keyVault.GetResourceName().ShouldBe("microservice-kv-vault");
     }
 }
