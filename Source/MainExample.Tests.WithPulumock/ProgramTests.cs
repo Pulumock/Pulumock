@@ -13,6 +13,7 @@ namespace MainExample.Tests.WithPulumock;
 
 public class ProgramTests
 {
+    private const string DevStackName = "dev";
     // Suggestion to test: root of stack (mock all component resources), extract logic to component resources (test in isolation)
     // TODO: full upsert, partial upsert, set by identifier or for entire type | (with/without methods for all) 
     // TODO: support both typed and non-typed builders and with() methods
@@ -24,7 +25,7 @@ public class ProgramTests
             .WithConfiguration(PulumiConfigurationNamespace.Default, "useKeyVaultWithSecretsComponentResource", "true")
             .WithSecretConfiguration(PulumiConfigurationNamespace.Default, "databaseConnectionString", "very-secret-value")
             .Build())
-        .WithMockStackReference(new MockStackReferenceBuilder("hoolit/Identity/stack") // TODO: doesnt become dev or prod (just "stack")
+        .WithMockStackReference(new MockStackReferenceBuilder($"hoolit/Identity/{DevStackName}")
             .WithOutput("microserviceManagedIdentityPrincipalId", "b95a4aa0-167a-4bc2-baf4-d43a776da1bd")
             .Build())
         .WithMockResource(new MockResourceBuilder()
@@ -62,7 +63,7 @@ public class ProgramTests
     public async Task DefineResourcesAsync_Config()
     {
         Fixture result = await _fixtureBuilder
-            .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
+            .BuildAsync(async () => await CoreStack.DefineResourcesAsync(DevStackName));
 
         VaultPropertiesArgs keyVaultProperties = result.Inputs.RequireValue<VaultArgs, VaultPropertiesArgs>("microservice-kv-vault", x => x.Properties);
         
@@ -73,21 +74,21 @@ public class ProgramTests
     public async Task DefineResourcesAsync_ConfigSecret()
     {
         Fixture result = await _fixtureBuilder
-            .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
+            .BuildAsync(async () => await CoreStack.DefineResourcesAsync(DevStackName));
     }
     
     [Fact]
     public async Task DefineResourcesAsync_StackReference()
     {
         Fixture result = await _fixtureBuilder
-            .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
+            .BuildAsync(async () => await CoreStack.DefineResourcesAsync(DevStackName));
     }
     
     [Fact]
     public async Task TestRun()
     {
         Fixture result = await _fixtureBuilder
-            .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
+            .BuildAsync(async () => await CoreStack.DefineResourcesAsync(DevStackName));
 
         ResourceGroup resourceGroup = result.StackResources.GetResourceByLogicalName<ResourceGroup>("example-rg");
         result.StackOutputs.TryGetValue("exampleStackOutput", out object? exampleStackOutputValue);

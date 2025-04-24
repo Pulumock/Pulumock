@@ -3,7 +3,6 @@ using Pulumi.AzureNative.Authorization;
 using Pulumi.AzureNative.KeyVault;
 using Pulumi.AzureNative.KeyVault.Inputs;
 using Pulumi.AzureNative.Resources;
-using Deployment = Pulumi.Deployment;
 
 namespace MainExample;
 
@@ -11,15 +10,14 @@ internal static class CoreStack
 {
     private const string OrgName = "hoolit";
     private const string IdentityProjectName = "Identity";
-    private static readonly string Environment = Deployment.Instance.StackName;
-    
-    public static async Task<Dictionary<string, object?>> DefineResourcesAsync()
+
+    public static async Task<Dictionary<string, object?>> DefineResourcesAsync(string stackName)
     {
         // Config
         var config = new PulumiConfig();
 
         // Stack ref
-        var stackReference = new StackReference($"{OrgName}/{IdentityProjectName}/{Environment}");
+        var stackReference = new StackReference($"{OrgName}/{IdentityProjectName}/{stackName}");
         object? stackReferenceValue = await stackReference.GetValueAsync("microserviceManagedIdentityPrincipalId");
         if (stackReferenceValue is not string managedIdentity)
         {
@@ -38,7 +36,7 @@ internal static class CoreStack
         {
             keyVault = new KeyVaultWithSecretsComponentResource("microservice-kv", new()
             {
-                VaultName = $"microservice-kv-{Environment}",
+                VaultName = $"microservice-kv-{stackName}",
                 ResourceGroupName = resourceGroup.Name,
                 TenantId = config.TenantId,
                 Secrets = new()
@@ -52,7 +50,7 @@ internal static class CoreStack
             // Resource with dep
             keyVault = new Vault("microservice-kv-vault", new()
             {
-                VaultName = $"microservice-kv-{Environment}", // Input with diff on stack name
+                VaultName = $"microservice-kv-{stackName}", // Input with diff on stack name
                 ResourceGroupName = resourceGroup.Name, // Dep on resource
                 Properties = new VaultPropertiesArgs
                 {

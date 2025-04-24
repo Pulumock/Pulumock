@@ -23,7 +23,7 @@ public class ProgramTests
     {
         // TODO: should Outputs be named StackOutputs (?)
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> Outputs) result = await Deployment.TestAsync(new EmptyMocks(), new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync());
+            async () => await CoreStack.DefineResourcesAsync(""));
 
         ResourceGroup resourceGroup = result.Resources
             .OfType<ResourceGroup>()
