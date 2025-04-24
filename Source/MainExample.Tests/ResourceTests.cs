@@ -21,7 +21,7 @@ public class ResourceTests : TestBase
     [Fact]
     public async Task Resource_InputOnly()
     {
-        var mocks = new Mocks();
+        var mocks = new Mocks.Mocks();
         _ = await Deployment.TestAsync(
             mocks, 
             new TestOptions {IsPreview = false},
@@ -44,7 +44,7 @@ public class ResourceTests : TestBase
     public async Task Resource_OutputOnly()
     {
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
-            new Mocks(), 
+            new Mocks.Mocks(), 
             new TestOptions {IsPreview = false},
             async () => await CoreStack.DefineResourcesAsync(StackName));
         
@@ -74,7 +74,7 @@ public class ResourceTests : TestBase
     [Fact]
     public async Task Resource_InputOutput()
     {
-        var mocks = new Mocks();
+        var mocks = new Mocks.Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             mocks, 
             new TestOptions {IsPreview = false},
@@ -103,7 +103,7 @@ public class ResourceTests : TestBase
     [Fact]
     public async Task Resource_Dependency()
     {
-        var mocks = new Mocks();
+        var mocks = new Mocks.Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             mocks, 
             new TestOptions {IsPreview = false},
@@ -129,7 +129,7 @@ public class ResourceTests : TestBase
     public async Task Resource_Multiple()
     {
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
-            new Mocks(), 
+            new Mocks.Mocks(), 
             new TestOptions {IsPreview = false},
             async () => await CoreStack.DefineResourcesAsync(StackName));
 

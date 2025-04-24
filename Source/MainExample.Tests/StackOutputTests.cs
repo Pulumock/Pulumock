@@ -16,7 +16,7 @@ public class StackOutputTests : TestBase
     public async Task StackOutputs_ShouldOutputMockedValue()
     {
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
-            new Mocks(), 
+            new Mocks.Mocks(), 
             new TestOptions {IsPreview = false},
             async () => await CoreStack.DefineResourcesAsync(StackName));
         

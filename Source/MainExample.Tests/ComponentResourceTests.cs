@@ -15,7 +15,7 @@ public class ComponentResourceTests : TestBase
     [Fact]
     public async Task ComponentResource()
     {
-        var mocks = new Mocks();
+        var mocks = new Mocks.Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> Outputs) result = await Deployment.TestAsync(
             mocks, 
             new TestOptions {IsPreview = false},
@@ -61,7 +61,7 @@ public class ComponentResourceTests : TestBase
     [Fact]
     public async Task ComponentResource_MissingNonRequiredResourceArg()
     {
-        var mocks = new Mocks();
+        var mocks = new Mocks.Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> Outputs) result = await Deployment.TestAsync(
             mocks, 
             new TestOptions {IsPreview = false},
@@ -90,7 +90,7 @@ public class ComponentResourceTests : TestBase
     [Fact]
     public async Task ComponentResource_Parent()
     {
-        var mocks = new Mocks();
+        var mocks = new Mocks.Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> Outputs) result = await Deployment.TestAsync(
             mocks, 
             new TestOptions {IsPreview = false},
@@ -132,7 +132,7 @@ public class ComponentResourceTests : TestBase
     [Fact]
     public async Task ComponentResource_Outputs()
     {
-        var mocks = new Mocks();
+        var mocks = new Mocks.Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> Outputs) result = await Deployment.TestAsync(
             mocks, 
             new TestOptions {IsPreview = false},

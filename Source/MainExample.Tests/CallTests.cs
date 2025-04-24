@@ -26,7 +26,7 @@ public class CallTests : TestBase
     [Fact]
     public async Task Call_Input()
     {
-        var mocks = new Mocks();
+        var mocks = new Mocks.Mocks();
         _ = await Deployment.TestAsync(
             mocks, 
             new TestOptions {IsPreview = false},
@@ -49,7 +49,7 @@ public class CallTests : TestBase
     [Fact]
     public async Task Call_Output()
     {
-        var mocks = new Mocks();
+        var mocks = new Mocks.Mocks();
         _ = await Deployment.TestAsync(
             mocks, 
             new TestOptions {IsPreview = false},
@@ -75,7 +75,7 @@ public class CallTests : TestBase
     [Fact]
     public async Task Call_ResourceDependency()
     {
-        var mocks = new Mocks();
+        var mocks = new Mocks.Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             mocks, 
             new TestOptions {IsPreview = false},

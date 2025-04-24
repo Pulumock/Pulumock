@@ -15,7 +15,7 @@ public sealed class ConfigurationTests : TestBase
     [Fact]
     public async Task Config_MockedConfigurationInResource()
     {
-        var mocks = new Mocks();
+        var mocks = new Mocks.Mocks();
         _ = await Deployment.TestAsync(
             mocks, 
             new TestOptions {IsPreview = false},
@@ -41,7 +41,7 @@ public sealed class ConfigurationTests : TestBase
     public async Task Config_MockedSecretInResource()
     {
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
-            new Mocks(), 
+            new Mocks.Mocks(), 
             new TestOptions {IsPreview = false},
             async () => await CoreStack.DefineResourcesAsync(StackName));
 
