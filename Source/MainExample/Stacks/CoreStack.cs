@@ -28,7 +28,8 @@ internal static class CoreStack
         // Resource
         var resourceGroup = new ResourceGroup("microservice-rg", new()
         {
-            ResourceGroupName = "microservice-rg" // Not an output, so assert on input
+            ResourceGroupName = "microservice-rg", // Not an output, so assert on input
+            Location = config.Location // Input and Output
             // Outputs version which is not an input
         });
 
@@ -83,6 +84,13 @@ internal static class CoreStack
         GetRoleDefinitionResult roleDefinition = await GetRoleDefinition.InvokeAsync(new GetRoleDefinitionArgs
         {
             RoleDefinitionId = "b24988ac-6180-42a0-ab88-20f7382dd24c",
+            Scope = $"/subscriptions/{config.SubscriptionId}"
+        });
+        
+        // For testing purposes only
+        GetRoleDefinitionResult roleDefinitionSecondCall = await GetRoleDefinition.InvokeAsync(new GetRoleDefinitionArgs
+        {
+            RoleDefinitionId = "88fa32db-c830-43a9-88bc-fa482a8401e8",
             Scope = $"/subscriptions/{config.SubscriptionId}"
         });
         

@@ -12,12 +12,12 @@ using Shouldly;
 
 namespace MainExample.Tests.WithPulumock;
 
+// TODO: full upsert, partial upsert, set by identifier or for entire type | (with/without methods for all) 
+// TODO: support both typed and non-typed builders and with() methods
 public class ProgramTests
 {
     private const string DevStackName = "dev";
-    // Suggestion to test: root of stack (mock all component resources), extract logic to component resources (test in isolation)
-    // TODO: full upsert, partial upsert, set by identifier or for entire type | (with/without methods for all) 
-    // TODO: support both typed and non-typed builders and with() methods
+    
     private readonly FixtureBuilder _fixtureBuilder = new FixtureBuilder()
         .WithMockConfiguration(new MockConfigurationBuilder()
             .WithConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId", "1f526cdb-1975-4248-ab0f-57813df294cb")
@@ -38,27 +38,6 @@ public class ProgramTests
         .WithMockCall(new MockCallBuilder()
             .WithOutput<GetRoleDefinitionResult>(x => x.Id, "13a8e88e-f45f-432b-8b45-019997c19f27")
             .Build(typeof(GetRoleDefinition)));
-
-    // TODO: test stack
-    // - Config
-    // - Secret
-    // - Stack reference 
-    //   - Resource dependency on stack
-    // - Resource
-    //   - Input only
-    //   - Output only
-    //   - Input & Output
-    //   - Resource dependencies
-    // - Creates Vault with/without component resource
-    // - Input diff based on stack name
-    // - Call
-    //   - With/Without args
-    //   - Resource dependencies on call
-    // - Stack outputs
-    
-    // TODO: test component resource
-    // - Required args
-    // - Parent
     
     // TODO: Config
     [Fact]
@@ -66,10 +45,6 @@ public class ProgramTests
     {
         Fixture result = await _fixtureBuilder
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync(DevStackName));
-
-        string ay = result.Inputs.RequireValue<VaultArgs, string>("microservice-kv-vault", x => x.ResourceGroupName);
-        string ayy = result.Inputs.RequireValue<string>("microservice-kv-vault", "resourceGroupName");
-        string nested = result.Inputs.RequireValue<string>("microservice-kv-vault", "properties.tenantId");
 
         VaultPropertiesArgs keyVaultProperties = result.Inputs.RequireValue<VaultArgs, VaultPropertiesArgs>("microservice-kv-vault", x => x.Properties);
         
