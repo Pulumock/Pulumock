@@ -63,6 +63,8 @@ internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IRe
     {
         ImmutableDictionary<string, object>.Builder outputs = ImmutableDictionary.CreateBuilder<string, object>();
         
+        outputs.AddRange(args.Args);
+        
         IEnumerable<ImmutableDictionary<string, object>> callMockOutputs = mockCalls
             .Where(mockCall => mockCall.Type.MatchesCallTypeToken(GetCallToken(args.Token)))
             .Select(mockCall => mockCall.MockOutputs)
