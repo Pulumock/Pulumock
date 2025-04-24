@@ -60,11 +60,16 @@ public class ProgramTests
     // - Required args
     // - Parent
     
+    // TODO: Config
     [Fact]
     public async Task DefineResourcesAsync_Config()
     {
         Fixture result = await _fixtureBuilder
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync(DevStackName));
+
+        string ay = result.Inputs.RequireValue<VaultArgs, string>("microservice-kv-vault", x => x.ResourceGroupName);
+        string ayy = result.Inputs.RequireValue<string>("microservice-kv-vault", "resourceGroupName");
+        string nested = result.Inputs.RequireValue<string>("microservice-kv-vault", "properties.tenantId");
 
         VaultPropertiesArgs keyVaultProperties = result.Inputs.RequireValue<VaultArgs, VaultPropertiesArgs>("microservice-kv-vault", x => x.Properties);
         
