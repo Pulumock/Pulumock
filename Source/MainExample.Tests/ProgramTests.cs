@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using System.Text.Json;
+using MainExample.Stacks;
 using Pulumi.AzureNative.Resources;
 using Pulumi.Testing;
 using Pulumi.Utilities;

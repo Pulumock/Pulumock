@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using MainExample.Stacks;
 using Pulumi.AzureNative.Authorization;
 using Pulumi.AzureNative.KeyVault;
 using Pulumi.AzureNative.KeyVault.Inputs;

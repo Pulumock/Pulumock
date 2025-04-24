@@ -1,10 +1,11 @@
+using MainExample.ComponentResources;
 using Pulumi;
 using Pulumi.AzureNative.Authorization;
 using Pulumi.AzureNative.KeyVault;
 using Pulumi.AzureNative.KeyVault.Inputs;
 using Pulumi.AzureNative.Resources;
 
-namespace MainExample;
+namespace MainExample.Stacks;
 
 internal static class CoreStack
 {
