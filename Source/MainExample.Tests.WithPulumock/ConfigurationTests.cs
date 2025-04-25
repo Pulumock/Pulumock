@@ -14,7 +14,7 @@ public class ConfigurationTests : TestBase, IConfigurationTests
         Fixture fixture = await FixtureBuilder
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync(StackName));
         
-        ResourceSnapshot resourceSnapshot = fixture.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-kv-vault", StringComparison.Ordinal));
+        // ResourceSnapshot resourceSnapshot = fixture.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-kv-vault", StringComparison.Ordinal));
         
         // ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-kv-vault", StringComparison.Ordinal));
         // if (!resourceSnapshot.Inputs.TryGetValue("properties", out object? propertiesObj) ||
@@ -33,18 +33,5 @@ public class ConfigurationTests : TestBase, IConfigurationTests
     }
     
     [Fact]
-    public Task Config_MockedSecretInResource()
-    {
-        // (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
-        //     new Mocks.Mocks(), 
-        //     new TestOptions {IsPreview = false},
-        //     async () => await CoreStack.DefineResourcesAsync(StackName));
-        //
-        // Secret secret = result.Resources
-        //     .OfType<Secret>()
-        //     .Single(x => x.GetResourceName().Equals("microservice-kv-secret-Database--ConnectionString", StringComparison.Ordinal));
-        //
-        // SecretPropertiesResponse secretProperties = await OutputUtilities.GetValueAsync(secret.Properties);
-        // secretProperties.Value.ShouldBe("very-secret-value");
-    }
+    public Task Config_MockedSecretInResource() => throw new NotImplementedException();
 }

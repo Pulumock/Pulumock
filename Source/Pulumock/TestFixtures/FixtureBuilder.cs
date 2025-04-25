@@ -7,13 +7,14 @@ using Pulumock.TestFixtures.Constants;
 
 namespace Pulumock.TestFixtures;
 
+// TODO: full/partial upsert and delete
+// TODO: support both typed and non-typed builders and with() methods
 public class FixtureBuilder
 {
     private MockConfiguration? _mockConfiguration;
     private readonly Dictionary<(Type Type, string? LogicalName), MockResource> _mockResources = new();
     private readonly Dictionary<MockCallToken, MockCall> _mockCalls = new();
-
-    // TODO: enable adding/removing single values
+    
     public FixtureBuilder WithMockConfiguration(MockConfiguration mockConfiguration)
     {
         _mockConfiguration = mockConfiguration;

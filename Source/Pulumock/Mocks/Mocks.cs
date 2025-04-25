@@ -1,13 +1,12 @@
 using System.Collections.Immutable;
+using Pulumi;
 using Pulumi.Testing;
-using Pulumock.Extensions;
-using Pulumock.Mocks.Constants;
 using Pulumock.Mocks.Models;
+using Pulumock.Utilities;
 
 namespace Pulumock.Mocks;
 
-// TODO: full upsert, partial upsert | (with/without methods for all) 
-// TODO: support both typed and non-typed builders and with() methods
+// TODO: full/partial upsert (can be conflicts with inputs and mocked outputs)
 
 /// <summary>
 /// Provides an implementation of <see cref="Pulumi.Testing.IMocks"/> for unit testing Pulumi stacks.
@@ -20,90 +19,57 @@ internal sealed class Mocks(ImmutableDictionary<(Type Type, string? LogicalName)
     private readonly List<ResourceSnapshot> _resourceSnapshots = [];
     private readonly List<CallSnapshot> _callSnapshots = [];
     
-    public ImmutableList<ResourceSnapshot> ResourceSnapshots => _resourceSnapshots.ToImmutableList();
-    public ImmutableList<CallSnapshot> CallSnapshots => _callSnapshots.ToImmutableList();
-    
     public Task<(string? id, object state)> NewResourceAsync(MockResourceArgs args)
     {
         ImmutableDictionary<string, object>.Builder outputs = ImmutableDictionary.CreateBuilder<string, object>();
-        outputs.AddRange(args.Inputs);
         
-        if (string.Equals(args.Type, ResourceTypeTokenConstants.StackReference, StringComparison.Ordinal))
+        if (MockHelper.IsStackReference(args))
         {
-            if (mockResources.TryGetValue((typeof(MockStackReference), GetLogicalResourceName(args.Name)), out MockResource? mockResource))
+            if (mockResources.TryGetValue((typeof(StackReference), MockHelper.GetLogicalResourceName(args.Name)), out MockResource? mockResource))
             {
                 outputs.Add("outputs", mockResource.MockOutputs);
+                outputs.Add("secretOutputNames", ImmutableArray<string>.Empty);
             }
-            
-            outputs.Add("secretOutputNames", ImmutableArray<string>.Empty);
         }
         else
         {
-            MockResource? mockResource = mockResources
-                .SingleOrDefault(kvp =>
-                    kvp.Key.Type.MatchesResourceTypeToken(args.Type) &&
-                    string.Equals(kvp.Key.LogicalName, args.Name, StringComparison.Ordinal))
-                .Value;
-            
-            mockResource ??= mockResources
-                .SingleOrDefault(kvp =>
-                    kvp.Key.Type.MatchesResourceTypeToken(args.Type) &&
-                    kvp.Key.LogicalName is null)
-                .Value;
-
+            MockResource? mockResource = MockHelper.GetMockResourceOrDefault(mockResources, args.Type, args.Name);
             if (mockResource is not null)
             {
                 outputs.AddRange(mockResource.MockOutputs);
             }
             
-            object physicalResourceName = outputs.GetValueOrDefault("name") ?? $"{GetLogicalResourceName(args.Name)}_physical";
-            outputs.Add("name", physicalResourceName);
+            outputs.Add("name", MockHelper.GetPhysicalResourceName(args, outputs));
         }
         
-        string resourceName = GetLogicalResourceName(args.Name);
-        string resourceId = GetResourceId(args.Id, $"{resourceName}_id");
+        string resourceName = MockHelper.GetLogicalResourceName(args.Name);
+        string resourceId = MockHelper.GetResourceId(args.Id, $"{resourceName}_id");
+        
+        ImmutableDictionary<string, object> mergedOutputs = OutputMerger.Merge(args.Inputs, outputs);
         
         _resourceSnapshots.Add(new ResourceSnapshot(resourceName, args.Inputs));
-        return Task.FromResult<(string?, object)>((resourceId, outputs.ToImmutable()));
+        return Task.FromResult<(string?, object)>((resourceId, mergedOutputs));
     }
-
+    
     public Task<object> CallAsync(MockCallArgs args)
     {
-        string callToken = GetCallToken(args.Token);
+        string callToken = MockHelper.GetCallToken(args.Token);
         
         ImmutableDictionary<string, object>.Builder outputs = ImmutableDictionary.CreateBuilder<string, object>();
-        outputs.AddRange(args.Args);
         
-        MockCall? mockCall = mockCalls
-            .FirstOrDefault(kvp =>
-                kvp.Key.IsStringToken &&
-                string.Equals(kvp.Key.StringTokenValue, callToken, StringComparison.Ordinal))
-            .Value;
-
-        mockCall ??= mockCalls
-            .FirstOrDefault(kvp =>
-                kvp.Key.IsTypeToken &&
-                kvp.Key.TypeTokenValue.MatchesCallTypeToken(callToken))
-            .Value;
-
+        MockCall? mockCall = MockHelper.GetMockCallOrDefault(mockCalls, callToken);
         if (mockCall is not null)
         {
             outputs.AddRange(mockCall.MockOutputs);
         }
+
+        ImmutableDictionary<string, object> mergedOutputs = OutputMerger.Merge(args.Args, outputs);
         
-        ImmutableDictionary<string, object> finalOutputs = outputs.ToImmutable();
+        _callSnapshots.Add(new CallSnapshot(callToken, args.Args, mergedOutputs));
         
-        _callSnapshots.Add(new CallSnapshot(callToken, args.Args, finalOutputs));
-        
-        return Task.FromResult<object>(finalOutputs);
+        return Task.FromResult<object>(mergedOutputs);
     }
     
-    private static string GetLogicalResourceName(string? name) =>
-        string.IsNullOrWhiteSpace(name) ? throw new ArgumentNullException(nameof(name)) : name;
-    
-    private static string GetResourceId(string? id, string fallbackId) =>
-        string.IsNullOrWhiteSpace(id) ? fallbackId : id;
-    
-    private static string GetCallToken(string? token) =>
-        string.IsNullOrWhiteSpace(token) ? throw new ArgumentNullException(nameof(token)) : token;
+    public ImmutableList<ResourceSnapshot> ResourceSnapshots => _resourceSnapshots.ToImmutableList();
+    public ImmutableList<CallSnapshot> CallSnapshots => _callSnapshots.ToImmutableList();
 }

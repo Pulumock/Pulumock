@@ -38,10 +38,57 @@ public class MockResourceBuilder
         _outputs.Add(propertySelector.GetOutputName(), value);
         return this;
     }
+    
+    public MockResourceBuilder WithOutput<T, TNested>(
+        Expression<Func<T, object>> propertySelector,
+        Func<OutputPathBuilder<TNested>, OutputPathBuilder<TNested>> nestedBuilder)
+    {
+        string[] path = propertySelector.GetOutputPath();
+
+        Dictionary<string, object> nestedValues = nestedBuilder(new OutputPathBuilder<TNested>()).Build();
+
+        SetNestedValue(_outputs, path, nestedValues);
+
+        return this;
+    }
 
     /// <summary>
     /// Builds the <see cref="MockResource"/> mock.
     /// </summary>
     public MockResource Build<T>(string? logicalName = null) => 
         new(typeof(T), _outputs.ToImmutableDictionary(), logicalName);
+    
+    #pragma warning disable CA1859
+    private static void SetNestedValue(IDictionary<string, object> dict, string[] path, object value)
+    #pragma warning restore CA1859
+    {
+        for (int i = 0; i < path.Length - 1; i++)
+        {
+            string key = path[i];
+
+            if (!dict.TryGetValue(key, out object? next) || next is not IDictionary<string, object> nextDict)
+            {
+                nextDict = new Dictionary<string, object>();
+                dict[key] = nextDict;
+            }
+
+            dict = nextDict;
+        }
+
+        dict[path[^1]] = value;
+    }
+}
+
+public class OutputPathBuilder<T>
+{
+    private readonly Dictionary<string, object> _values = new();
+
+    public OutputPathBuilder<T> Prop<TNested>(Expression<Func<TNested, object>> selector, object value)
+    {
+        string key = selector.GetOutputName();
+        _values[key] = value;
+        return this;
+    }
+
+    public Dictionary<string, object> Build() => _values;
 }

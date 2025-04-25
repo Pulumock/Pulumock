@@ -71,6 +71,25 @@ public static class TypeExtensions
         return member.GetCustomAttribute<OutputAttribute>()?.Name ?? member.Name.ToCamelCase();
     }
     
+    public static string[] GetOutputPath<T>(this Expression<Func<T, object>> expression)
+    {
+        var names = new List<string>();
+        Expression? current = expression.Body;
+
+        while (current is UnaryExpression { Operand: MemberExpression } unary)
+        {
+            current = unary.Operand;
+        }
+
+        while (current is MemberExpression memberExpr)
+        {
+            names.Insert(0, memberExpr.Member.GetPulumiOutputName());
+            current = memberExpr.Expression;
+        }
+
+        return names.ToArray();
+    }
+    
     /// <summary>
     /// Resolves the input key name from a strongly typed property selector,
     /// applying Pulumi-compatible camelCase conversion.
@@ -102,4 +121,6 @@ public static class TypeExtensions
     /// The name of the property on Pulumi resource attributes that contains the type token.
     /// </summary>
     private const string PulumiTypeTokenPropertyName = "Type";
+    
+    private static string GetPulumiOutputName(this MemberInfo member) => member.GetCustomAttribute<OutputAttribute>()?.Name ?? member.Name.ToCamelCase();
 }
