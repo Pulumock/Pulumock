@@ -1,5 +1,4 @@
 using System.Collections.Immutable;
-using Pulumi;
 using Pulumi.Testing;
 using Pulumock.Extensions;
 using Pulumock.Mocks.Constants;
