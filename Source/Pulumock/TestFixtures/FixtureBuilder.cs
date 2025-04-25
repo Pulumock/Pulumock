@@ -10,9 +10,10 @@ namespace Pulumock.TestFixtures;
 public class FixtureBuilder
 {
     private MockConfiguration? _mockConfiguration;
-    private readonly List<MockResource> _mockResources = [];
-    private readonly List<MockCall> _mockCalls = [];
+    private readonly Dictionary<(Type Type, string? LogicalName), MockResource> _mockResources = new();
+    private readonly Dictionary<MockCallToken, MockCall> _mockCalls = new();
 
+    // TODO: enable adding/removing single values
     public FixtureBuilder WithMockConfiguration(MockConfiguration mockConfiguration)
     {
         _mockConfiguration = mockConfiguration;
@@ -21,19 +22,28 @@ public class FixtureBuilder
     
     public FixtureBuilder WithMockStackReference(MockStackReference mockStackReference)
     {
-        _mockResources.Add(mockStackReference);
+        _mockResources[(mockStackReference.Type, mockStackReference.FullyQualifiedStackName)] = mockStackReference;
         return this;
     }
     
     public FixtureBuilder WithMockResource(MockResource mockResource)
     {
-        _mockResources.Add(mockResource);
+        _mockResources[(mockResource.Type, mockResource.LogicalName)] = mockResource;
         return this;
     }
     
     public FixtureBuilder WithMockCall(MockCall mockCall)
     {
-        _mockCalls.Add(mockCall);
+        MockCallToken newKey = mockCall.Token;
+
+        foreach (MockCallToken existingKey in _mockCalls.Keys
+                     .Where(existingKey => existingKey.ConflictsWith(newKey)))
+        {
+            _mockCalls.Remove(existingKey);
+            break;
+        }
+
+        _mockCalls[newKey] = mockCall;
         return this;
     }
         
@@ -45,7 +55,7 @@ public class FixtureBuilder
                 JsonSerializer.Serialize(_mockConfiguration.MockConfigurations));
         }
         
-        var mocks = new Mocks.Mocks(_mockResources, _mockCalls);
+        var mocks = new Mocks.Mocks(_mockResources.ToImmutableDictionary(), _mockCalls.ToImmutableDictionary());
         
         (ImmutableArray<Resource> stackResources, IDictionary<string, object?> stackOutputs) = await Deployment.TestAsync(
             mocks,

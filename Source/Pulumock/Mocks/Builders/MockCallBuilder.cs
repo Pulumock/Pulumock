@@ -40,5 +40,12 @@ public class MockCallBuilder
     /// <param name="type">The provider function <see cref="Type"/>.</param>
     /// </summary>
     public MockCall Build(Type type) =>
-        new(type, _outputs.ToImmutableDictionary());
+        new(MockCallToken.FromTypeToken(type), _outputs.ToImmutableDictionary());
+    
+    /// <summary>
+    /// Builds the <see cref="MockCall"/> instance with the specified function token and mocked outputs.
+    /// <param name="token">The provider function token identifier.</param>
+    /// </summary>
+    public MockCall Build(string token) =>
+        new(MockCallToken.FromStringToken(token), _outputs.ToImmutableDictionary());
 }

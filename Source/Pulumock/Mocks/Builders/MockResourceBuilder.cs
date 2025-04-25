@@ -42,6 +42,6 @@ public class MockResourceBuilder
     /// <summary>
     /// Builds the <see cref="MockResource"/> mock.
     /// </summary>
-    public MockResource Build<T>() => 
-        new(typeof(T), _outputs.ToImmutableDictionary());
+    public MockResource Build<T>(string? logicalName = null) => 
+        new(typeof(T), _outputs.ToImmutableDictionary(), logicalName);
 }
