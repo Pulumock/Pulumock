@@ -1,4 +1,5 @@
 using Pulumi.AzureNative.Authorization;
+using Pulumi.AzureNative.Authorization.Outputs;
 using Pulumi.AzureNative.KeyVault;
 using Pulumi.AzureNative.KeyVault.Outputs;
 using Pulumi.AzureNative.Resources;
@@ -34,8 +35,9 @@ public class TestBase
                 .Build<Vault>())
             .WithMockCall(new MockCallBuilder()
                 .WithOutput<GetRoleDefinitionResult>(x => x.Id, "13a8e88e-f45f-432b-8b45-019997c19f27")
+                .WithOutput<GetRoleDefinitionResult, PermissionResponse>(x => x.Permissions, p => 
+                    p.WithNestedOutput(x => x.Condition, "condition"))
                 .Build(typeof(GetRoleDefinition)));
-
     protected FixtureBuilder FixtureBuilder { get; }
 
     protected const string StackName = "dev";

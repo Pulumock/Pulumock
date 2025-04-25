@@ -34,6 +34,17 @@ public class MockCallBuilder
         _outputs.Add(propertySelector.GetOutputName(), value);
         return this;
     }
+    
+    public MockCallBuilder WithOutput<T, TNested>(
+        Expression<Func<T, object>> propertySelector,
+        Func<NestedOutputsBuilder<TNested>, NestedOutputsBuilder<TNested>> nestedOutputsBuilder)
+    {
+        Dictionary<string, object> nestedOutputs = nestedOutputsBuilder(new NestedOutputsBuilder<TNested>())
+            .Build();
+        
+        _outputs.Add(propertySelector.GetOutputName(), nestedOutputs);
+        return this;
+    }
 
     /// <summary>
     /// Builds the <see cref="MockCall"/> instance with the specified function type and mocked outputs.

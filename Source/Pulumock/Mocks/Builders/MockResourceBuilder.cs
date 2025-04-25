@@ -42,12 +42,10 @@ public class MockResourceBuilder
         Expression<Func<T, object>> propertySelector,
         Func<NestedOutputsBuilder<TNested>, NestedOutputsBuilder<TNested>> nestedOutputsBuilder)
     {
-        string topLevelOutputName = propertySelector.GetOutputName();
-
         Dictionary<string, object> nestedOutputs = nestedOutputsBuilder(new NestedOutputsBuilder<TNested>())
             .Build();
         
-        _outputs[topLevelOutputName] = nestedOutputs;
+        _outputs.Add(propertySelector.GetOutputName(), nestedOutputs);
         return this;
     }
     
