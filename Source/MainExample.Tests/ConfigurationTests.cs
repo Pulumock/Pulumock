@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using MainExample.Stacks;
 using MainExample.Tests.Shared;
+using MainExample.Tests.Shared.Interfaces;
 using Pulumi;
 using Pulumi.AzureNative.KeyVault;
 using Pulumi.AzureNative.KeyVault.Outputs;
@@ -10,7 +11,7 @@ using Shouldly;
 
 namespace MainExample.Tests;
 
-public sealed class ConfigurationTests : TestBase
+public sealed class ConfigurationTests : TestBase, IConfigurationTests
 {
     [Fact]
     public async Task Config_MockedConfigurationInResource()

@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using MainExample.Stacks;
 using MainExample.Tests.Shared;
+using MainExample.Tests.Shared.Interfaces;
 using Pulumi;
 using Pulumi.AzureNative.Authorization;
 using Pulumi.Testing;
@@ -9,7 +10,7 @@ using Shouldly;
 
 namespace MainExample.Tests;
 
-public class StackReferenceTests : TestBase
+public class StackReferenceTests : TestBase, IStackReferenceTests
 {
     [Fact]
     public async Task StackReference_ShouldUseMockedStackReferenceInResource()

@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using MainExample.Stacks;
 using MainExample.Tests.Shared;
+using MainExample.Tests.Shared.Interfaces;
 using Pulumi;
 using Pulumi.AzureNative.KeyVault;
 using Pulumi.AzureNative.Resources;
@@ -12,12 +13,8 @@ using Resource = Pulumi.Resource;
 
 namespace MainExample.Tests;
 
-public class ResourceTests : TestBase
+public class ResourceTests : TestBase, IResourceTests
 {
-    /// <summary>
-    /// Verifies that an Input-only property (<see cref="Pulumi.AzureNative.Resources.ResourceGroupArgs.ResourceGroupName"/>) is correctly passed to the resource.
-    /// Since Input-only values are not returned from <see cref="CustomResource"/>, they must be tracked in the <see cref="IMocks"/> implementation.
-    /// </summary>
     [Fact]
     public async Task Resource_InputOnly()
     {
@@ -36,10 +33,6 @@ public class ResourceTests : TestBase
         resourceGroupName.ShouldBe("microservice-rg");
     }
     
-    /// <summary>
-    /// Validates an Output-only property (<see cref="Pulumi.AzureNative.Resources.ResourceGroup.AzureApiVersion"/>).
-    /// Since it has no input, its value must be mocked and asserted from the resource's Output.
-    /// </summary>
     [Fact]
     public async Task Resource_OutputOnly()
     {
@@ -56,21 +49,6 @@ public class ResourceTests : TestBase
         azureApiVersion.ShouldBe("2021-04-01");
     }
     
-    /// <summary>
-    /// <para>
-    /// Confirms that a property defined as both an Input and an Output 
-    /// (<see cref="ResourceGroupArgs.Location"/> and <see cref="ResourceGroup.Location"/>) 
-    /// is preserved consistently from the input to the resulting resource output.
-    /// </para>
-    /// 
-    /// <para>
-    /// If a property is defined as both an Input and an Output in the provider schema, 
-    /// and the provider does not compute or override its value, 
-    /// the Input value is implicitly returned as the Output.
-    /// This allows the value to be asserted from either the original input or the resulting resource output
-    /// without requiring explicit mocking.
-    /// </para>
-    /// </summary>
     [Fact]
     public async Task Resource_InputOutput()
     {
@@ -96,10 +74,6 @@ public class ResourceTests : TestBase
         locationFromOutput.ShouldBe("swedencentral");
     }
     
-    /// <summary>
-    /// Tests a dependency where one resource's Input (<see cref="VaultArgs.ResourceGroupName"/>) 
-    /// depends on another resource's Output (<see cref="ResourceGroup.Name"/>), ensuring correct value propagation.
-    /// </summary>
     [Fact]
     public async Task Resource_Dependency()
     {
@@ -122,9 +96,6 @@ public class ResourceTests : TestBase
         resourceGroupName.ShouldBe(await OutputUtilities.GetValueAsync(resourceGroup.Name));
     }
     
-    /// <summary>
-    /// Asserting on multiple resources
-    /// </summary>
     [Fact]
     public async Task Resource_Multiple()
     {

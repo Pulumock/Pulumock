@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using MainExample.ComponentResources;
 using MainExample.Tests.Shared;
+using MainExample.Tests.Shared.Interfaces;
 using Pulumi;
 using Pulumi.AzureNative.KeyVault;
 using Pulumi.AzureNative.KeyVault.Outputs;
@@ -10,7 +11,7 @@ using Shouldly;
 
 namespace MainExample.Tests;
 
-public class ComponentResourceTests : TestBase
+public class ComponentResourceTests : TestBase, IComponentResourceTests
 {
     [Fact]
     public async Task ComponentResource()

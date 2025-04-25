@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using MainExample.Stacks;
 using MainExample.Tests.Shared;
+using MainExample.Tests.Shared.Interfaces;
 using Pulumi;
 using Pulumi.AzureNative.Authorization;
 using Pulumi.Testing;
@@ -9,20 +10,8 @@ using Shouldly;
 
 namespace MainExample.Tests;
 
-public class CallTests : TestBase
+public class CallTests : TestBase, ICallTests
 {
-    /// <summary>
-    /// <para>
-    /// Validates that provider function calls, specifically 
-    /// <c>azure-native:authorization:getRoleDefinition</c>, are made with the correct input arguments.
-    /// </para>
-    /// 
-    /// <para>
-    /// In Pulumi, function calls can be mocked and captured using 
-    /// <see cref="IMocks.CallAsync"/>. This test confirms that the function is invoked exactly twice, 
-    /// and that each invocation includes the expected <c>roleDefinitionId</c> input.
-    /// </para>
-    /// </summary>
     [Fact]
     public async Task Call_Input()
     {
