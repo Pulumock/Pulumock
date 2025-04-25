@@ -25,16 +25,12 @@ public class MockConfigurationBuilder
     
     /// <summary>
     /// Adds a plain configuration secret key and value.
-    /// The value is wrapped in a structure recognized by Pulumi as a secret.
     /// </summary>
-    /// <param name="key">The full configuration key.</param>
-    /// <param name="secret">The secret value to store securely.</param>
+    /// <param name="key">The full configuration key, including namespace if needed.</param>
+    /// <param name="secret">The secret value to assign to the key.</param>
     public MockConfigurationBuilder WithSecretConfiguration(string key, string secret)
     {
-        _configurations.Add(key, new Dictionary<string, string>
-        {
-            { "secure", secret }
-        });
+        WithConfiguration(key, secret);
 
         return this;
     }

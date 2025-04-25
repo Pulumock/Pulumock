@@ -44,7 +44,7 @@ public class FixtureBuilder
             Environment.SetEnvironmentVariable(PulumiConfigurationConstants.EnvironmentVariable, 
                 JsonSerializer.Serialize(_mockConfiguration.MockConfigurations));
         }
-
+        
         var mocks = new Mocks.Mocks(_mockResources, _mockCalls);
         
         (ImmutableArray<Resource> stackResources, IDictionary<string, object?> stackOutputs) = await Deployment.TestAsync(

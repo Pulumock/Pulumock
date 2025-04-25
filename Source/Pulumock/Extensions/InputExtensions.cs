@@ -72,7 +72,7 @@ public static class InputExtensions
     /// <summary>
     /// Retrieves a required input value from a Pulumi resource mock based on a strongly typed input property selector.
     /// </summary>
-    /// <typeparam name="TResource">
+    /// <typeparam name="TResourceArgs">
     /// The Pulumi <see cref="ResourceArgs"/> type that defines the resource inputs (e.g., <c>ResourceGroupArgs</c>).
     /// </typeparam>
     /// <typeparam name="TValue">The expected type of the value to retrieve.</typeparam>
@@ -86,9 +86,9 @@ public static class InputExtensions
     /// Thrown if the resource with the specified <paramref name="logicalName"/> is not found,
     /// or if the value for the selected input property is missing or not of the expected type.
     /// </exception>
-    public static TValue RequireValue<TResource, TValue>(this ImmutableList<Input> inputs,
-        string logicalName, Expression<Func<TResource, object?>> propertySelector)
-        where TResource : ResourceArgs
+    public static TValue RequireValue<TResourceArgs, TValue>(this ImmutableList<Input> inputs,
+        string logicalName, Expression<Func<TResourceArgs, object?>> propertySelector)
+        where TResourceArgs : ResourceArgs
     {
         string outputKey = propertySelector.GetInputName();
         
@@ -105,7 +105,7 @@ public static class InputExtensions
     /// Safely retrieves a typed value from a Pulumi resource mock input based on a strongly typed input property selector.
     /// Returns the default value if the input is missing or the value cannot be cast to the expected type.
     /// </summary>
-    /// <typeparam name="TResource">
+    /// <typeparam name="TResourceArgs">
     /// The Pulumi <see cref="ResourceArgs"/> type that defines the resource inputs (e.g., <c>ResourceGroupArgs</c>).
     /// </typeparam>
     /// <typeparam name="TValue">The expected type of the value to retrieve.</typeparam>
@@ -118,9 +118,9 @@ public static class InputExtensions
     /// <returns>
     /// The value of type <typeparamref name="TValue"/> if found and castable; otherwise, the default value for <typeparamref name="TValue"/>.
     /// </returns>
-    public static TValue? GetValue<TResource, TValue>(this ImmutableList<Input> inputs, 
-        string logicalName, Expression<Func<TResource, object?>> propertySelector)
-        where TResource : ResourceArgs
+    public static TValue? GetValue<TResourceArgs, TValue>(this ImmutableList<Input> inputs, 
+        string logicalName, Expression<Func<TResourceArgs, object?>> propertySelector)
+        where TResourceArgs : ResourceArgs
     {
         string key = propertySelector.GetInputName();
 

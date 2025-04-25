@@ -10,7 +10,7 @@ namespace Pulumock.Mocks.Builders;
 /// A fluent builder for creating a <see cref="MockResource"/>.
 /// </summary>
 /// <typeparam name="T">The Pulumi resource type this mock represents.</typeparam>
-public class MockResourceBuilder<T>
+public class MockResourceBuilder
 {
     private readonly Dictionary<string, object> _outputs = new();
 
@@ -19,7 +19,7 @@ public class MockResourceBuilder<T>
     /// </summary>
     /// <param name="key">The output property name.</param>
     /// <param name="value">The mocked value.</param>
-    public MockResourceBuilder<T> WithOutput(string key, object value)
+    public MockResourceBuilder WithOutput(string key, object value)
     {
         _outputs.Add(key, value);
         return this;
@@ -33,7 +33,7 @@ public class MockResourceBuilder<T>
     /// This should point to a property decorated with Pulumi's <see cref="OutputAttribute"/>.
     /// </param>
     /// <param name="value">The mocked value.</param>
-    public MockResourceBuilder<T> WithOutput(Expression<Func<T, object>> propertySelector, object value)
+    public MockResourceBuilder WithOutput<T>(Expression<Func<T, object>> propertySelector, object value)
     {
         _outputs.Add(propertySelector.GetOutputName(), value);
         return this;
@@ -42,6 +42,6 @@ public class MockResourceBuilder<T>
     /// <summary>
     /// Builds the <see cref="MockResource"/> mock.
     /// </summary>
-    public MockResource Build() => 
+    public MockResource Build<T>() => 
         new(typeof(T), _outputs.ToImmutableDictionary());
 }
