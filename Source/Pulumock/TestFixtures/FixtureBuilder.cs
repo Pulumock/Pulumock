@@ -52,6 +52,6 @@ public class FixtureBuilder
             testOptions ?? new TestOptions { IsPreview = false },
             async () => await createResourcesFunc());
 
-        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.Inputs);
+        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.ResourceSnapshots, mocks.CallSnapshots);
     }
 }

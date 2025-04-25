@@ -6,6 +6,9 @@ using Pulumock.Mocks.Models;
 
 namespace Pulumock.Mocks;
 
+// TODO: full upsert, partial upsert, set by identifier or for entire type | (with/without methods for all) 
+// TODO: support both typed and non-typed builders and with() methods
+
 /// <summary>
 /// Provides an implementation of <see cref="Pulumi.Testing.IMocks"/> for unit testing Pulumi stacks.
 /// This class is responsible for mocking both resource creation and provider function (invoke) calls
@@ -13,8 +16,11 @@ namespace Pulumock.Mocks;
 /// </summary>
 internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IReadOnlyCollection<MockCall> mockCalls) : IMocks
 {
-    private readonly List<Input> _inputs = [];
-    public ImmutableList<Input> Inputs => _inputs.ToImmutableList();
+    private readonly List<ResourceSnapshot> _resourceSnapshots = [];
+    private readonly List<CallSnapshot> _callSnapshots = [];
+    
+    public ImmutableList<ResourceSnapshot> ResourceSnapshots => _resourceSnapshots.ToImmutableList();
+    public ImmutableList<CallSnapshot> CallSnapshots => _callSnapshots.ToImmutableList();
     
     public Task<(string? id, object state)> NewResourceAsync(MockResourceArgs args)
     {
@@ -50,13 +56,11 @@ internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IRe
             outputs.Add("name", physicalResourceName);
         }
         
-        ImmutableDictionary<string, object> finalOutputs = outputs.ToImmutable();
-        
         string resourceName = GetLogicalResourceName(args.Name);
         string resourceId = GetResourceId(args.Id, $"{resourceName}_id");
         
-        _inputs.Add(new Input(resourceName, finalOutputs));
-        return Task.FromResult<(string?, object)>((resourceId, finalOutputs));
+        _resourceSnapshots.Add(new ResourceSnapshot(resourceName, args.Inputs));
+        return Task.FromResult<(string?, object)>((resourceId, outputs.ToImmutable()));
     }
 
     public Task<object> CallAsync(MockCallArgs args)
@@ -79,7 +83,7 @@ internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IRe
         ImmutableDictionary<string, object> finalOutputs = outputs.ToImmutable();
         
         // TODO: what if two calls are made with the same token?
-        _inputs.Add(new Input(GetCallToken(args.Token), finalOutputs));
+        _callSnapshots.Add(new CallSnapshot(GetCallToken(args.Token), args.Args, finalOutputs));
         
         return Task.FromResult<object>(finalOutputs);
     }
