@@ -1,5 +1,6 @@
 using Pulumi.AzureNative.Authorization;
 using Pulumi.AzureNative.KeyVault;
+using Pulumi.AzureNative.KeyVault.Outputs;
 using Pulumi.AzureNative.Resources;
 using Pulumock.Mocks.Builders;
 using Pulumock.Mocks.Enums;
@@ -29,7 +30,7 @@ public class TestBase
                 .WithOutput<ResourceGroup>(x => x.AzureApiVersion, "2021-04-01")
                 .Build<ResourceGroup>())
             .WithMockResource(new MockResourceBuilder()
-                .WithOutput<GetVaultResult>(x => x.Properties.VaultUri, "https://mocked.vault.azure.net/")
+                .WithOutput<Vault>(x => x.Properties, "https://mocked.vault.azure.net/")
                 .Build<Vault>())
             .WithMockCall(new MockCallBuilder()
                 .WithOutput<GetRoleDefinitionResult>(x => x.Id, "13a8e88e-f45f-432b-8b45-019997c19f27")

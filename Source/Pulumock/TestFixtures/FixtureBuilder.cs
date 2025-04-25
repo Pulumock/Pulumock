@@ -20,15 +20,33 @@ public class FixtureBuilder
         return this;
     }
     
+    public FixtureBuilder WithoutMockConfiguration()
+    {
+        _mockConfiguration = null;
+        return this;
+    }
+    
     public FixtureBuilder WithMockStackReference(MockStackReference mockStackReference)
     {
         _mockResources[(mockStackReference.Type, mockStackReference.FullyQualifiedStackName)] = mockStackReference;
         return this;
     }
     
+    public FixtureBuilder WithoutMockStackReference(MockStackReference mockStackReference)
+    {
+        _mockResources.Remove((mockStackReference.Type, mockStackReference.FullyQualifiedStackName));
+        return this;
+    }
+    
     public FixtureBuilder WithMockResource(MockResource mockResource)
     {
         _mockResources[(mockResource.Type, mockResource.LogicalName)] = mockResource;
+        return this;
+    }
+    
+    public FixtureBuilder WithoutMockResource(MockResource mockResource)
+    {
+        _mockResources.Remove((mockResource.Type, mockResource.LogicalName));
         return this;
     }
     
@@ -44,6 +62,19 @@ public class FixtureBuilder
         }
 
         _mockCalls[newKey] = mockCall;
+        return this;
+    }
+    
+    public FixtureBuilder WithoutMockCall(MockCall mockCall)
+    {
+        MockCallToken? existingKey = _mockCalls.Keys
+            .FirstOrDefault(k => k.ConflictsWith(mockCall.Token));
+
+        if (existingKey is not null)
+        {
+            _mockCalls.Remove(existingKey);
+        }
+
         return this;
     }
         
