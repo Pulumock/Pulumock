@@ -13,13 +13,14 @@ using Shouldly;
 
 namespace Example.Tests.WithPulumock;
 
+// TODO: This is flaky when running parallel since tests are using the same global ENV variable?
+// - For example: Add an await Task.Delay(3000); on line 61 and it will fail since StackReferenceTests runs in parallel and overrides env variable.
 public class ConfigurationTests : IConfigurationTests
 {
     private const string TenantId = "1f526cdb-1975-4248-ab0f-57813df294cb";
     
-    // Required -> With mocked config from base
     [Fact]
-    public async Task Config_MockedConfigurationInResource()
+    public async Task ShouldBeTestable_ConfigurationValue()
     {
         Fixture fixture = await TestBase.GetBaseFixtureBuilder()
             .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId", TenantId)
@@ -33,12 +34,26 @@ public class ConfigurationTests : IConfigurationTests
         vaultTenantId.ShouldBe(TenantId);
     }
     
-    // Required -> With modified config
+    [Fact]
+    public async Task ShouldBeTestable_SecretConfigurationValue()
+    {
+        const string databaseConnectionStringSecret = "very-secret-value";
+        
+        Fixture fixture = await TestBase.GetBaseFixtureBuilder()
+            .WithMockStackConfiguration(PulumiConfigurationNamespace.Default, "databaseConnectionString", databaseConnectionStringSecret)
+            .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
+        
+        Secret secret = fixture.StackResources.Require<Secret>("microservice-kvws-secret-Database--ConnectionString");
+
+        SecretPropertiesResponse secretProperties = await secret.Properties.GetValueAsync();
+        secretProperties.Value.ShouldBe(databaseConnectionStringSecret);
+    }
+    
     [Theory]
     [InlineData("75abe3bd-31dd-43be-bdfa-f4e937fac121")]
     [InlineData("e7c808e6-e111-4d82-b023-4075c2eee383")]
     [InlineData("4e5fdc58-8df1-43ab-b15f-ae7aeb7c45f7")]
-    public async Task Config_MockedConfigurationInResource_Override(string tenantId)
+    public async Task ShouldBeTestable_DynamicOverriddenConfigurationValue(string tenantId)
     {
         Fixture fixture = await TestBase.GetBaseFixtureBuilder()
             .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId", tenantId)
@@ -52,9 +67,8 @@ public class ConfigurationTests : IConfigurationTests
         vaultTenantId.ShouldBe(tenantId);
     }
     
-    // Required -> Without mocked config - single
     [Fact]
-    public async Task Config_MockedConfigurationInResource_OverrideRemoveSingle_ThrowsSinceRequired() =>
+    public async Task ShouldBeTestable_MissingSingleRequiredConfigurationValue() =>
         await Should.ThrowAsync<RunException>(async () =>
         {
             _ = await TestBase.GetBaseFixtureBuilder()
@@ -62,30 +76,12 @@ public class ConfigurationTests : IConfigurationTests
                 .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         });
     
-    // Without mocked config -> all
-    // TODO: This will fail when running parallel since using the same global ENV variable
-    // - Maybe have to run this sequentially? 
     [Fact]
-    public async Task Config_MockedConfigurationInResource_OverrideRemoveAll_ThrowsSinceRequired() =>
+    public async Task ShouldBeTestable_MissingAllRequiredConfigurationValue() =>
         await Should.ThrowAsync<RunException>(async () =>
         {
             _ = await TestBase.GetBaseFixtureBuilder()
                 .ClearMockStackConfigurations()
                 .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         });
-
-    [Fact]
-    public async Task Config_MockedSecretInResource()
-    {
-        const string databaseConnectionStringSecret = "very-secret-value";
-        
-        Fixture fixture = await TestBase.GetBaseFixtureBuilder()
-            .WithMockStackConfiguration(PulumiConfigurationNamespace.Default, "databaseConnectionString", databaseConnectionStringSecret)
-            .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
-        
-        Secret secret = fixture.StackResources.Require<Secret>("microservice-kvws-secret-Database--ConnectionString");
-
-        SecretPropertiesResponse secretProperties = await secret.Properties.GetValueAsync();
-        secretProperties.Value.ShouldBe(databaseConnectionStringSecret);
-    }
 }

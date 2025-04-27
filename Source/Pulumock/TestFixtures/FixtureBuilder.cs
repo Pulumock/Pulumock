@@ -109,12 +109,9 @@ public class FixtureBuilder
         
     public async Task<Fixture> BuildAsync(Func<Task<IDictionary<string, object?>>> createResourcesFunc, TestOptions? testOptions = null)
     {
-        if (_mockStackConfigurations.Count > 0)
-        {
-            Environment.SetEnvironmentVariable(PulumiConfigurationConstants.EnvironmentVariable, 
-                JsonSerializer.Serialize(_mockStackConfigurations));
-        }
-        
+        Environment.SetEnvironmentVariable(PulumiConfigurationConstants.EnvironmentVariable,
+            _mockStackConfigurations.Count > 0 ? JsonSerializer.Serialize(_mockStackConfigurations) : null);
+
         var mocks = new Mocks.Mocks(_mockResources.ToImmutableDictionary(), _mockCalls.ToImmutableDictionary());
         
         (ImmutableArray<Resource> stackResources, IDictionary<string, object?> stackOutputs) = await Deployment.TestAsync(
