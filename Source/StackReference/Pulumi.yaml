@@ -1,0 +1,3 @@
+name: StackReference
+description: Stack reference project which Example project depends on
+runtime: dotnet

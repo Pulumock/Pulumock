@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Tests.WithoutPulumo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Tests.WithPulumock", "Example.Tests.WithPulumock\Example.Tests.WithPulumock.csproj", "{A447F9EF-5B32-4A12-A2A4-D5022C5B3449}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity", "Identity\Identity.csproj", "{9489336E-1541-4FC0-A868-977A52A481CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackReference", "StackReference\StackReference.csproj", "{9489336E-1541-4FC0-A868-977A52A481CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Tests.Shared", "Example.Tests.Shared\Example.Tests.Shared.csproj", "{AC8848A1-3718-42C0-B1D7-17F49CBB8CAB}"
 EndProject

@@ -22,7 +22,7 @@ public class TestBase
                 .WithConfiguration(PulumiConfigurationNamespace.Default, "useKeyVaultWithSecretsComponentResource", "true")
                 .WithSecretConfiguration(PulumiConfigurationNamespace.Default, "databaseConnectionString", "very-secret-value")
                 .Build())
-            .WithMockStackReference(new MockStackReferenceBuilder($"hoolit/Identity/{StackName}")
+            .WithMockStackReference(new MockStackReferenceBuilder($"hoolit/StackReference/{StackName}")
                 .WithOutput("microserviceManagedIdentityPrincipalId", "b95a4aa0-167a-4bc2-baf4-d43a776da1bd")
                 .Build())
             .WithMockResource(new MockResourceBuilder()

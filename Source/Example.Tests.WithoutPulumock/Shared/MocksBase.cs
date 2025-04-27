@@ -18,8 +18,8 @@ internal class MocksBase : IMocks
         if (string.Equals(args.Type, "pulumi:pulumi:StackReference", StringComparison.Ordinal))
         {
             var mockOutputs = new Dictionary<string, object>();
-            if (string.Equals($"hoolit/Identity/{DevStackName}", args.Name, StringComparison.Ordinal) 
-                || string.Equals($"hoolit/Identity/{ProdStackName}", args.Name, StringComparison.Ordinal))
+            if (string.Equals($"hoolit/StackReference/{DevStackName}", args.Name, StringComparison.Ordinal) 
+                || string.Equals($"hoolit/StackReference/{ProdStackName}", args.Name, StringComparison.Ordinal))
             {
                 mockOutputs.Add("microserviceManagedIdentityPrincipalId", "b95a4aa0-167a-4bc2-baf4-d43a776da1bd");
             }
