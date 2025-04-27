@@ -2,7 +2,7 @@ using System.Collections.Immutable;
 
 namespace Pulumock.Utilities;
 
-internal sealed class OutputMerger
+internal static class OutputMerger
 {
     public static ImmutableDictionary<string, object> Merge(
         IReadOnlyDictionary<string, object> baseDict,
