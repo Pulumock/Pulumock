@@ -8,14 +8,11 @@ namespace Example.Stacks;
 
 internal static class CoreStack
 {
-    private const string OrgName = "hoolit";
-    private const string StackReferenceProjectName = "StackReference";
-
     public static async Task<Dictionary<string, object?>> DefineResourcesAsync(string stackName)
     {
         var stackConfiguration = new StackConfiguration();
 
-        var stackReference = new StackReference($"{OrgName}/{StackReferenceProjectName}/{stackName}");
+        var stackReference = new StackReference($"{stackConfiguration.StackReferenceOrgName}/{stackConfiguration.StackReferenceProjectName}/{stackName}");
         object? stackReferenceValue = await stackReference.GetValueAsync("microserviceManagedIdentityPrincipalId");
         if (stackReferenceValue is not string managedIdentity)
         {
