@@ -1,14 +1,14 @@
 using System.Collections.Immutable;
 using Example.Stacks;
-using Example.Tests.Shared;
 using Example.Tests.Shared.Interfaces;
+using Example.Tests.WithoutPulumock.Shared;
 using Pulumi;
 using Pulumi.AzureNative.Authorization;
 using Pulumi.Testing;
 using Pulumi.Utilities;
 using Shouldly;
 
-namespace Example.Tests;
+namespace Example.Tests.WithoutPulumock;
 
 public class CallTests : TestBase, ICallTests
 {

@@ -10,7 +10,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <InternalsVisibleTo Include="Example.Tests" />
+        <InternalsVisibleTo Include="Example.Tests.WithoutPulumock" />
         <InternalsVisibleTo Include="Example.Tests.WithPulumock" />
     </ItemGroup>
 </Project>

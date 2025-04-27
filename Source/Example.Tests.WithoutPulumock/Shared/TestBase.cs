@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace Example.Tests.Shared;
+namespace Example.Tests.WithoutPulumock.Shared;
 
 #pragma warning disable CA1515
 public class TestBase

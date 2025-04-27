@@ -1,7 +1,7 @@
 using System.Collections.Immutable;
 using Pulumi.Testing;
 
-namespace Example.Tests.Shared;
+namespace Example.Tests.WithoutPulumock.Shared;
 
 internal class MocksBase : IMocks
 {

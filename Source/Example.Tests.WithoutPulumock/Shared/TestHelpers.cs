@@ -1,7 +1,7 @@
 using System.Reflection;
 using Pulumi;
 
-namespace Example.Tests.Shared;
+namespace Example.Tests.WithoutPulumock.Shared;
 
 internal static class TestHelpers
 {

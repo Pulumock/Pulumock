@@ -1,9 +1,7 @@
 using System.Collections.Immutable;
 using Example.Stacks;
-using Example.Tests.Shared;
 using Example.Tests.Shared.Interfaces;
-using Pulumi;
-using Pulumi.AzureNative.KeyVault;
+using Example.Tests.WithoutPulumock.Shared;
 using Pulumi.AzureNative.Resources;
 using Pulumi.Testing;
 using Pulumi.Utilities;
@@ -11,7 +9,7 @@ using Shouldly;
 using Deployment = Pulumi.Deployment;
 using Resource = Pulumi.Resource;
 
-namespace Example.Tests;
+namespace Example.Tests.WithoutPulumock;
 
 public class ResourceTests : TestBase, IResourceTests
 {

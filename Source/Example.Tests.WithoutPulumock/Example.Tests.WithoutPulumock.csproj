@@ -2,7 +2,7 @@
     <PropertyGroup>
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
-        <RootNamespace>Example.Tests</RootNamespace>
+        <RootNamespace>Example.Tests.WithoutPulumock</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

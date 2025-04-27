@@ -1,7 +1,7 @@
 using System.Collections.Immutable;
 using Example.Stacks;
-using Example.Tests.Shared;
 using Example.Tests.Shared.Interfaces;
+using Example.Tests.WithoutPulumock.Shared;
 using Pulumi;
 using Pulumi.AzureNative.KeyVault;
 using Pulumi.AzureNative.KeyVault.Outputs;
@@ -9,7 +9,7 @@ using Pulumi.Testing;
 using Pulumi.Utilities;
 using Shouldly;
 
-namespace Example.Tests;
+namespace Example.Tests.WithoutPulumock;
 
 public sealed class ConfigurationTests : TestBase, IConfigurationTests
 {

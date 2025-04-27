@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{CC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{D99623AC-3704-4A0A-A5D5-8933E40D0173}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Tests", "Example.Tests\Example.Tests.csproj", "{2BCE4300-2271-4D1D-A5CF-196FDF8B4925}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Tests.WithoutPulumock", "Example.Tests.WithoutPulumock\Example.Tests.WithoutPulumock.csproj", "{2BCE4300-2271-4D1D-A5CF-196FDF8B4925}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Tests.WithPulumock", "Example.Tests.WithPulumock\Example.Tests.WithPulumock.csproj", "{A447F9EF-5B32-4A12-A2A4-D5022C5B3449}"
 EndProject
