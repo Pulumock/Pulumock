@@ -1,1 +1,1 @@
-eRO/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Pulumock.csproj¢net9.0ÚCSharp13
+èRy/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Example.Tests.WithoutPulumock.csproj¢net9.0ÚCSharp13

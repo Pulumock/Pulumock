@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <ProjectName>Example.Tests.WithoutPulumock</ProjectName>
+  <ProjectName>Pulumock</ProjectName>
   <ProjectLanguage>C#</ProjectLanguage>
   <ProjectType>Product</ProjectType>
-  <ProjectGuid>2bce4300-2271-4d1d-a5cf-196fdf8b4925</ProjectGuid>
-  <FullPath>/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Example.Tests.WithoutPulumock.csproj</FullPath>
+  <ProjectGuid>ee28bda5-c092-4d33-88f9-16926e7e9eff</ProjectGuid>
+  <FullPath>/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Pulumock.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResults>
     <AnalysisResult Id="FilesToAnalyze" Location="/Users/robertopiranamedi/RiderProjects/Pulumock/Source/.sonarqube/conf/4/FilesToAnalyze.txt" />

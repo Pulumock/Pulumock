@@ -1,5 +1,4 @@
-c
-a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithPulumock/GlobalUsings.csä
+ä
 d/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithPulumock/Shared/TestBase.cs
 
  
@@ -13,7 +12,8 @@ d/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithPulumo
 ''] ^(( 
 ((' (((, -
 ** + 
-,, $[ d™
+,, $[ dc
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithPulumock/GlobalUsings.cs™
 g/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithPulumock/ConfigurationTests.cs
 
  

@@ -12,38 +12,17 @@
       },
       "results": [
         {
-          "ruleId": "S125",
-          "level": "warning",
-          "message": "Remove this commented out code.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/InputExtensions.cs",
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 39
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
           "ruleId": "S1135",
           "level": "warning",
           "message": "Complete the task associated to this 'TODO' comment.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Mocks.cs",
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Mocks/Mocks.cs",
                 "region": {
-                  "startLine": 9,
+                  "startLine": 5,
                   "startColumn": 4,
-                  "endLine": 9,
+                  "endLine": 5,
                   "endColumn": 8
                 }
               }
@@ -54,18 +33,18 @@
           }
         },
         {
-          "ruleId": "S1135",
+          "ruleId": "S2094",
           "level": "warning",
-          "message": "Complete the task associated to this 'TODO' comment.",
+          "message": "Remove this empty class, write its code or make it an \"interface\".",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.cs",
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Mocks/Mocks.cs",
                 "region": {
-                  "startLine": 10,
-                  "startColumn": 4,
-                  "endLine": 10,
-                  "endColumn": 8
+                  "startLine": 6,
+                  "startColumn": 23,
+                  "endLine": 6,
+                  "endColumn": 28
                 }
               }
             }
@@ -75,39 +54,18 @@
           }
         },
         {
-          "ruleId": "S1135",
+          "ruleId": "S1192",
           "level": "warning",
-          "message": "Complete the task associated to this 'TODO' comment.",
+          "message": "Define a constant instead of using this literal 'b24988ac-6180-42a0-ab88-20f7382dd24c' 4 times.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.cs",
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/CallTests.cs",
                 "region": {
-                  "startLine": 11,
-                  "startColumn": 4,
-                  "endLine": 11,
-                  "endColumn": 8
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S4136",
-          "level": "warning",
-          "message": "All 'WithConfiguration' method overloads should be adjacent.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockConfigurationBuilder.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 37,
-                  "endLine": 20,
-                  "endColumn": 54
+                  "startLine": 34,
+                  "startColumn": 41,
+                  "endLine": 34,
+                  "endColumn": 79
                 }
               }
             }
@@ -115,49 +73,34 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockConfigurationBuilder.cs",
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/CallTests.cs",
                 "region": {
-                  "startLine": 45,
-                  "startColumn": 37,
-                  "endLine": 45,
-                  "endColumn": 54
+                  "startLine": 52,
+                  "startColumn": 30,
+                  "endLine": 52,
+                  "endColumn": 68
                 }
               }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "0": "Non-adjacent overload"
-            }
-          }
-        },
-        {
-          "ruleId": "S4136",
-          "level": "warning",
-          "message": "All 'WithSecretConfiguration' method overloads should be adjacent.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockConfigurationBuilder.cs",
-                "region": {
-                  "startLine": 31,
-                  "startColumn": 37,
-                  "endLine": 31,
-                  "endColumn": 60
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
+            },
             {
               "physicalLocation": {
-                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockConfigurationBuilder.cs",
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/CallTests.cs",
                 "region": {
                   "startLine": 61,
-                  "startColumn": 37,
+                  "startColumn": 66,
                   "endLine": 61,
-                  "endColumn": 60
+                  "endColumn": 104
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/CallTests.cs",
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 35,
+                  "endLine": 78,
+                  "endColumn": 73
                 }
               }
             }
@@ -165,23 +108,484 @@
           "properties": {
             "warningLevel": 1,
             "customProperties": {
-              "0": "Non-adjacent overload"
+              "0": null,
+              "1": null,
+              "2": null
             }
           }
         },
         {
-          "ruleId": "S1751",
+          "ruleId": "S1192",
           "level": "warning",
-          "message": "Refactor the containing loop to do more than one iteration.",
+          "message": "Define a constant instead of using this literal 'microservice-kv' 5 times.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.cs",
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
                 "region": {
-                  "startLine": 62,
-                  "startColumn": 13,
-                  "endLine": 62,
-                  "endColumn": 19
+                  "startLine": 25,
+                  "startColumn": 82,
+                  "endLine": 25,
+                  "endColumn": 99
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 54,
+                  "endLine": 56,
+                  "endColumn": 71
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 71,
+                  "startColumn": 82,
+                  "endLine": 71,
+                  "endColumn": 99
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 100,
+                  "startColumn": 82,
+                  "endLine": 100,
+                  "endColumn": 99
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 142,
+                  "startColumn": 82,
+                  "endLine": 142,
+                  "endColumn": 99
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'microservice-kv-vault' 6 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 33,
+                  "endLine": 27,
+                  "endColumn": 56
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 45,
+                  "endLine": 57,
+                  "endColumn": 68
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 73,
+                  "startColumn": 33,
+                  "endLine": 73,
+                  "endColumn": 56
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 33,
+                  "endLine": 102,
+                  "endColumn": 56
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 144,
+                  "startColumn": 33,
+                  "endLine": 144,
+                  "endColumn": 56
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 160,
+                  "startColumn": 45,
+                  "endLine": 160,
+                  "endColumn": 68
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'microservice-rg' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 41,
+                  "endLine": 28,
+                  "endColumn": 58
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 74,
+                  "startColumn": 41,
+                  "endLine": 74,
+                  "endColumn": 58
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 103,
+                  "startColumn": 41,
+                  "endLine": 103,
+                  "endColumn": 58
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 145,
+                  "startColumn": 41,
+                  "endLine": 145,
+                  "endColumn": 58
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal '1f526cdb-1975-4248-ab0f-57813df294cb' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 32,
+                  "endLine": 29,
+                  "endColumn": 70
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 32,
+                  "endLine": 75,
+                  "endColumn": 70
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 104,
+                  "startColumn": 32,
+                  "endLine": 104,
+                  "endColumn": 70
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 146,
+                  "startColumn": 32,
+                  "endLine": 146,
+                  "endColumn": 70
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'keyVault' 5 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 23,
+                  "endLine": 38,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 80,
+                  "startColumn": 23,
+                  "endLine": 80,
+                  "endColumn": 33
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 113,
+                  "startColumn": 23,
+                  "endLine": 113,
+                  "endColumn": 33
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 151,
+                  "startColumn": 23,
+                  "endLine": 151,
+                  "endColumn": 33
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs",
+                "region": {
+                  "startLine": 155,
+                  "startColumn": 41,
+                  "endLine": 155,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          }
+        },
+        {
+          "ruleId": "CA1515",
+          "level": "error",
+          "message": "Because an application's API isn't typically referenced from outside the assembly, types can be made internal",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Shared/TestBase.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 14,
+                  "endLine": 6,
+                  "endColumn": 22
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'microservice-rg' 6 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ResourceTests.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 102,
+                  "endLine": 25,
+                  "endColumn": 119
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ResourceTests.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 36,
+                  "endLine": 31,
+                  "endColumn": 53
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ResourceTests.cs",
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 53,
+                  "endLine": 44,
+                  "endColumn": 70
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ResourceTests.cs",
+                "region": {
+                  "startLine": 61,
+                  "startColumn": 53,
+                  "endLine": 61,
+                  "endColumn": 70
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ResourceTests.cs",
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 102,
+                  "endLine": 63,
+                  "endColumn": 119
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ResourceTests.cs",
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 53,
+                  "endLine": 86,
+                  "endColumn": 70
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          }
+        },
+        {
+          "ruleId": "S3011",
+          "level": "warning",
+          "message": "Make sure that this accessibility bypass is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Shared/TestHelpers.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 68,
+                  "endLine": 11,
+                  "endColumn": 90
                 }
               }
             }
@@ -192,6 +596,21 @@
         }
       ],
       "rules": {
+        "CA1515": {
+          "id": "CA1515",
+          "shortDescription": "Consider making public types internal",
+          "fullDescription": "Unlike a class library, an application's API isn't typically referenced publicly, so types can be marked internal.",
+          "defaultLevel": "warning",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1515",
+          "properties": {
+            "category": "Maintainability",
+            "isEnabledByDefault": false,
+            "tags": [
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
         "S1135": {
           "id": "S1135",
           "shortDescription": "Track uses of \"TODO\" tags",
@@ -209,46 +628,28 @@
             ]
           }
         },
-        "S125": {
-          "id": "S125",
-          "shortDescription": "Sections of code should not be commented out",
-          "fullDescription": "Commented-out code distracts the focus from the actual executed code. It creates a noise that increases maintenance code. And because it is never executed, it quickly becomes out of date and invalid.",
+        "S1192": {
+          "id": "S1192",
+          "shortDescription": "String literals should not be duplicated",
+          "fullDescription": "Duplicated string literals make the process of refactoring complex and error-prone, as any change would need to be propagated on all occurrences.",
           "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-125",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1192",
           "properties": {
-            "category": "Major Code Smell",
-            "isEnabledByDefault": true,
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": false,
             "tags": [
               "C#",
               "MainSourceScope",
-              "TestSourceScope",
               "SonarWay"
             ]
           }
         },
-        "S1751": {
-          "id": "S1751",
-          "shortDescription": "Loops with at most one iteration should be refactored",
-          "fullDescription": "A loop statement with at most one iteration is equivalent to an if statement; the following block is executed only once.",
+        "S2094": {
+          "id": "S2094",
+          "shortDescription": "Classes should not be empty",
+          "fullDescription": "There is no good excuse for an empty class. If it’s being used simply as a common extension point, it should be replaced with an interface. If it was stubbed in as a placeholder for future development it should be fleshed-out. In any other case, it should be eliminated.",
           "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1751",
-          "properties": {
-            "category": "Major Bug",
-            "isEnabledByDefault": true,
-            "tags": [
-              "C#",
-              "MainSourceScope",
-              "TestSourceScope",
-              "SonarWay"
-            ]
-          }
-        },
-        "S4136": {
-          "id": "S4136",
-          "shortDescription": "Method overloads should be grouped together",
-          "fullDescription": "For clarity, all overloads of the same method should be grouped together. That lets both users and maintainers quickly understand all the current available options.",
-          "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4136",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2094",
           "properties": {
             "category": "Minor Code Smell",
             "isEnabledByDefault": true,
@@ -256,6 +657,22 @@
               "C#",
               "MainSourceScope",
               "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3011": {
+          "id": "S3011",
+          "shortDescription": "Reflection should not be used to increase accessibility of classes, methods, or fields",
+          "fullDescription": "Altering or bypassing the accessibility of classes, methods, or fields through reflection violates the encapsulation principle. This can break the internal contracts of the accessed target and lead to maintainability issues and runtime errors.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3011",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
               "SonarWay"
             ]
           }

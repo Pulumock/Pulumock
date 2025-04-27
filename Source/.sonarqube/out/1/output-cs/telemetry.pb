@@ -1,1 +1,1 @@
-}Rg/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Example.Tests.Shared.csproj¢net9.0òCSharp13
+qR[/Users/robertopiranamedi/RiderProjects/Pulumock/Source/StackReference/StackReference.csproj¢net9.0òCSharp13

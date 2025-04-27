@@ -1,8 +1,4 @@
-Ã
-I/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/Program.cs
- 
- 
-   ! &- 23 <R \©
+©
 
 R/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/Stacks/CoreStack.cs
  
@@ -31,7 +27,11 @@ T/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/StackConfigurati
  9 C 
  B Y 
  F a 
-  S m†
+  S mÃ
+I/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/Program.cs
+ 
+ 
+   ! &- 23 <R \†
 y/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/ComponentResources/KeyVaultWithSecretsComponentResource.cs
  
  

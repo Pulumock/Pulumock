@@ -1,5 +1,4 @@
-K
-I/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/Program.cs„
+„
 R/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/Stacks/CoreStack.cs
 
 		 
@@ -35,7 +34,8 @@ T/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/StackConfigurati
 
  +
 
- 2ó
+ 2K
+I/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/Program.csó
 y/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/ComponentResources/KeyVaultWithSecretsComponentResource.cs
 
  :(

@@ -1,6 +1,28 @@
-Ž
-P/Users/robertopiranamedi/RiderProjects/Pulumock/Source/StackReference/Program.cs
+ß
+q/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IComponentResourceTests.cs
+ 	
+   (    ²
+n/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IStackReferenceTests.cs
+ 	
+   % ¯
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IStackOutputTests.cs
+ 	
+   " º
+h/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IResourceTests.cs
  
  
-      )* 79 < )   23 DF IJ b 
-    " (	 1
+ 
+ 
+ 	
+   
+
+ 	 ¢	 ”    u `     H \ R    X A   =!! l"" +## $$ %% '' (( b)) t** ++ -- .. '// 00 ¿
+m/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IConfigurationTests.cs
+ 	
+   $  ø
+d/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/ICallTests.cs
+ 
+ 	
+     		 =
+
+ g    C g U     

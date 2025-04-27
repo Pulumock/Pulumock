@@ -1,6 +1,3 @@
-﻿/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/ICallTests.cs
-/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IComponentResourceTests.cs
-/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IConfigurationTests.cs
-/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IResourceTests.cs
-/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IStackOutputTests.cs
-/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IStackReferenceTests.cs
+﻿/Users/robertopiranamedi/RiderProjects/Pulumock/Source/StackReference/Program.cs
+/Users/robertopiranamedi/RiderProjects/Pulumock/Source/StackReference/Pulumi.dev.yaml
+/Users/robertopiranamedi/RiderProjects/Pulumock/Source/StackReference/Pulumi.yaml

@@ -1,18 +1,51 @@
-Í
-h/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Shared/MocksBase.cs 8rN	 !"#%&'()+,-/0134689;<=?ABCDEFGHIJKLMOQSTVWYZ\]_`bcdfhxÇ#	 "%'+,/03468=?ACEGKOQS]`cÖ
-g/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Shared/TestBase.cs 8r	Çö
-k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/StackReferenceTests.cs 8r	Çü
-h/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/StackOutputTests.cs 8r	
- "#$xÇ"í
-j/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Shared/TestHelpers.cs 8r	
-xÇ
-Û
-e/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ResourceTests.cs 8r[	
- "#$%&'(*+,./023456789;<=?@ABCEGHIKLMNOPQRTUVXYZ[\^_abcdefgijlmnxÇ"%(*,./69;=?@BEGHORTVXY[^dgilo
-c/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Mocks/Mocks.csjri
-d/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/GlobalUsings.csrπ
-j/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ConfigurationTests.cs 8r0	
- !"#$&')*+,-./1235678xÇ #&,/1356’
-n/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs" 8r™	
- !"$%&'(*+,./0234689:;<>?@ABCDEFGHIJKLNOPQRTUVXY[\]^_`abcdefghijklmopqrsuvwyz{}~ÅÇÉÖÜáàâäãåçéèêëíìïñóòôõúùû†°¢xÇ+$&*.2689:;BENPTX_boquy}ÅÇâåïóõù†–
-a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/CallTests.cs 8rD	!"#$&'()*+,-/012345789:;=>@ABCDEFGIJKMNOPxÇ!"#*-/012478=DGIKMN
+â
+v/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Constants/PulumiConfigurationConstants.csj	
+ri
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.csr·
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.cs 	8j
+rO !"$%&'(*+,-.01234678:;<=>?ABCEFGHJKLMOPRSTUVWXZ\]^_abcxÇ !&',-238:;=>ABGHJLOTVWZ\_a≠
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Utilities/MockHelper.cs 8r0	
+ !"#%&'()*,-./012456789:xÇ !"%&'(./014567¨
+Y/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Utilities/OutputMerger.cs 8r/	
+ !"#$&'()*+,./0234567xÇ !"#(+,/034x
+b/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockStackReference.csj		
+re
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.csr	
+t
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockConfiguration.csj	
+rq
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.csj
+	
+r¥
+N/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Mocks.cs 8j	r5 !"#$%&'(*+-.0234678:<=>?@BDFGIJKxÇ$%'*-.0238:<=?BDFIJ±
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs 
+8r3
+ !#$&')*+,-.01235678:;<=?@Ax	Ç+-0257:<?j
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.csj	
+re
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csrê
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Enums/PulumiConfigurationNamespace.cs 8j	
+rÉ
+m/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Constants/ResourceTypeTokenConstants.csj	r	
+Ñ
+f/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/NestedOutputsBuilder.cs 8r
+Çõ
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockStackReferenceBuilder.cs 8j	
+r Ç∞
+e/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockResourceBuilder.cs 8j	
+ !"456r#$%&')*+,-.012789Ç%&-018 
+j/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockConfigurationBuilder.cs
+ 8j	&'()*+,6789:;<FGHr"
+ !#$-./134=>?ACDIJLMNxÇ!#/13?ACJM±
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockCallBuilder.cs 8j	
+123489:;r  !"#$&'()*+-./56<=>Ç	"#*-.6=ﬂ
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/TypeExtensions.cs 8j5	!"#$%0123456789:;<=JKLMNOPQRSTUVWaefgr+
+&'()*+,-.>?@ABCDEGHXYZ[\]^_bchixÇ'),.@BCGZ\]bå
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/StringExtensions.cs 8j	
+rxÇà
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/ResourceExtensions.cs 8jr
+	
+Ç
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/OutputExtensions.cs 8j	r	
+Ç_
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/InputExtensions.cs

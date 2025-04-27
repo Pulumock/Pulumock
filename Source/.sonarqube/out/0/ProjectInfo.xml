@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <ProjectName>StackReference</ProjectName>
+  <ProjectName>Example.Tests.Shared</ProjectName>
   <ProjectLanguage>C#</ProjectLanguage>
   <ProjectType>Product</ProjectType>
-  <ProjectGuid>9489336e-1541-4fc0-a868-977a52a481cf</ProjectGuid>
-  <FullPath>/Users/robertopiranamedi/RiderProjects/Pulumock/Source/StackReference/StackReference.csproj</FullPath>
+  <ProjectGuid>ac8848a1-3718-42c0-b1d7-17f49cbb8cab</ProjectGuid>
+  <FullPath>/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Example.Tests.Shared.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResults>
     <AnalysisResult Id="FilesToAnalyze" Location="/Users/robertopiranamedi/RiderProjects/Pulumock/Source/.sonarqube/conf/0/FilesToAnalyze.txt" />

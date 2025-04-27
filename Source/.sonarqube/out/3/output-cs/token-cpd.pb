@@ -1,3645 +1,3743 @@
-˜'
-Y/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Utilities/OutputMerger.cs
-	namespace 	
-Pulumock
- 
-. 
-	Utilities 
-; 
-internal 
-static	 
-class 
-OutputMerger "
-{ 
-public 
-
-static 
-ImmutableDictionary %
-<% &
-string& ,
-,, -
-object. 4
->4 5
-Merge6 ;
-(; <
-IReadOnlyDictionary 
-< 
-string "
-," #
-object$ *
->* +
-baseDict, 4
-,4 5
-IReadOnlyDictionary		 
-<		 
-string		 "
-,		" #
-object		$ *
->		* +
-overrideDict		, 8
-)		8 9
-{
-
- 
-
-Dictionary 
-< 
-string 
-, 
-object !
->! "
-result# )
-=* +
-	ToMutable, 5
-(5 6
-baseDict6 >
-)> ?
-;? @
-foreach 
-( 
-( 
-string 
-key 
-, 
-object $
-overrideValue% 2
-)2 3
-in4 6
-overrideDict7 C
-)C D
-{ 	
-if 
-( 
-result 
-. 
-TryGetValue "
-(" #
-key# &
-,& '
-out( +
-object, 2
-?2 3
-	baseValue4 =
-)= >
-&&? A
-TryAsDictionary 
-(  
-	baseValue  )
-,) *
-out+ .
-
-Dictionary/ 9
-<9 :
-string: @
-,@ A
-objectB H
->H I
-
-baseNestedJ T
-)T U
-&&V X
-TryAsDictionary 
-(  
-overrideValue  -
-,- .
-out/ 2
-
-Dictionary3 =
-<= >
-string> D
-,D E
-objectF L
->L M
-overrideNestedN \
-)\ ]
-)] ^
-{ 
-result 
-[ 
-key 
-] 
-= 
-Merge #
-(# $
-
-baseNested$ .
-,. /
-overrideNested0 >
-)> ?
-;? @
-} 
-else 
-{ 
-result 
-[ 
-key 
-] 
-= 
-overrideValue +
-;+ ,
-} 
-} 	
-return 
-result 
-. !
-ToImmutableDictionary +
-(+ ,
-), -
-;- .
-} 
-private 
-static 
-
-Dictionary 
-< 
-string $
-,$ %
-object& ,
->, -
-	ToMutable. 7
-(7 8
-IReadOnlyDictionary8 K
-<K L
-stringL R
-,R S
-objectT Z
->Z [
-dict\ `
-)` a
-=>b d
-dict 
-. 
-ToDictionary 
-( 
-kvp   
-=>   
-kvp   
-.   
-Key   
-,   
-kvp!! 
-=>!! 
-TryAsDictionary!! "
-(!!" #
-kvp!!# &
-.!!& '
-Value!!' ,
-,!!, -
-out!!. 1
-
-Dictionary!!2 <
-<!!< =
-string!!= C
-,!!C D
-object!!E K
->!!K L
-nested!!M S
-)!!S T
-?"" 
-	ToMutable"" 
-("" 
-nested"" "
-)""" #
-:## 
-kvp## 
-.## 
-Value## 
-)$$ 	
-;$$	 
-
-private&& 
-static&& 
-bool&& 
-TryAsDictionary&& '
-(&&' (
-object&&( .
-?&&. /
-obj&&0 3
-,&&3 4
-out&&5 8
-
-Dictionary&&9 C
-<&&C D
-string&&D J
-,&&J K
-object&&L R
->&&R S
-dict&&T X
-)&&X Y
-{'' 
-switch(( 
-((( 
-obj(( 
-)(( 
-{)) 	
-case** 
-ImmutableDictionary** $
-<**$ %
-string**% +
-,**+ ,
-object**- 3
->**3 4
-	immutable**5 >
-:**> ?
-dict++ 
-=++ 
-	immutable++  
-.++  !
-ToDictionary++! -
-(++- .
-kvp++. 1
-=>++2 4
-kvp++5 8
-.++8 9
-Key++9 <
-,++< =
-kvp++> A
-=>++B D
-kvp++E H
-.++H I
-Value++I N
-)++N O
-;++O P
-return,, 
-true,, 
-;,, 
-case.. 
-
-Dictionary.. 
-<.. 
-string.. "
-,.." #
-object..$ *
->..* +
-d.., -
-:..- .
-dict// 
-=// 
-d// 
-;// 
-return00 
-true00 
-;00 
-default22 
-:22 
-dict33 
-=33 
-null33 
-!33 
-;33 
-return44 
-false44 
-;44 
-}55 	
-}66 
-}77 Ï2
-W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Utilities/MockHelper.cs
-	namespace 	
-Pulumock
- 
-. 
-	Utilities 
-; 
-public		 
-static		 
-class		 
-
-MockHelper		 
-{
-
- 
-public 
-
-static 
-bool 
-IsStackReference '
-(' (
-MockResourceArgs( 8
-args9 =
-)= >
-=>? A
-string 
-. 
-Equals 
-( 
-args 
-. 
-Type 
-,  &
-ResourceTypeTokenConstants! ;
-.; <
-StackReference< J
-,J K
-StringComparisonL \
-.\ ]
-Ordinal] d
-)d e
-;e f
-public 
-
-static 
-string "
-GetLogicalResourceName /
-(/ 0
-string0 6
-?6 7
-name8 <
-)< =
-=>> @
-string 
-. 
-IsNullOrWhiteSpace !
-(! "
-name" &
-)& '
-?( )
-throw* /
-new0 3!
-ArgumentNullException4 I
-(I J
-nameofJ P
-(P Q
-nameQ U
-)U V
-)V W
-:X Y
-nameZ ^
-;^ _
-public 
-
-static 
-object #
-GetPhysicalResourceName 0
-(0 1
-MockResourceArgs1 A
-argsB F
-,F G
-ImmutableDictionaryH [
-<[ \
-string\ b
-,b c
-objectd j
->j k
-.k l
-Builderl s
-outputst {
-){ |
-=>} 
-outputs 
-. 
-GetValueOrDefault !
-(! "
-$str" (
-)( )
-??* ,
-$"- /
-{/ 0"
-GetLogicalResourceName0 F
-(F G
-argsG K
-.K L
-NameL P
-)P Q
-}Q R
-$strR [
-"[ \
-;\ ]
-public 
-
-static 
-string 
-GetResourceId &
-(& '
-string' -
-?- .
-id/ 1
-,1 2
-string3 9
-
-fallbackId: D
-)D E
-=>F H
-string 
-. 
-IsNullOrWhiteSpace !
-(! "
-id" $
-)$ %
-?& '
-
-fallbackId( 2
-:3 4
-id5 7
-;7 8
-public 
-
-static 
-string 
-GetCallToken %
-(% &
-string& ,
-?, -
-token. 3
-)3 4
-=>5 7
-string 
-. 
-IsNullOrWhiteSpace !
-(! "
-token" '
-)' (
-?) *
-throw+ 0
-new1 4!
-ArgumentNullException5 J
-(J K
-nameofK Q
-(Q R
-tokenR W
-)W X
-)X Y
-:Z [
-token\ a
-;a b
-public 
-
-static 
-MockResource 
-? $
-GetMockResourceOrDefault  8
-(8 9
-ImmutableDictionary 
-< 
-( 
-Type !
-Type" &
-,& '
-string( .
-?. /
-LogicalName0 ;
-); <
-,< =
-MockResource> J
->J K
-	resourcesL U
-,U V
-string 
-? 
-	typeToken 
-, 
-string 
-? 
-logicalName 
-) 
-{ 
-MockResource 
-? 
-match 
-= 
-	resources '
-.   
-SingleOrDefault   
-(   
-kvp    
-=>  ! #
-kvp!! 
-.!! 
-Key!! 
-.!! 
-Type!! 
-.!! $
-MatchesResourceTypeToken!! 5
-(!!5 6
-	typeToken!!6 ?
-)!!? @
-&&!!A C
-string"" 
-."" 
-Equals"" 
-("" 
-kvp"" !
-.""! "
-Key""" %
-.""% &
-LogicalName""& 1
-,""1 2
-logicalName""3 >
-,""> ?
-StringComparison""@ P
-.""P Q
-Ordinal""Q X
-)""X Y
-)""Y Z
-.## 
-Value## 
-;## 
-return%% 
-match%% 
-??%% 
-	resources%% !
-.&& 
-SingleOrDefault&& 
-(&& 
-kvp&&  
-=>&&! #
-kvp'' 
-.'' 
-Key'' 
-.'' 
-Type'' 
-.'' $
-MatchesResourceTypeToken'' 5
-(''5 6
-	typeToken''6 ?
-)''? @
-&&''A C
-kvp(( 
-.(( 
-Key(( 
-.(( 
-LogicalName(( #
-is(($ &
-null((' +
-)((+ ,
-.)) 
-Value)) 
-;)) 
-}** 
-public,, 
-
-static,, 
-MockCall,, 
-?,,  
-GetMockCallOrDefault,, 0
-(,,0 1
-ImmutableDictionary,,1 D
-<,,D E
-MockCallToken,,E R
-,,,R S
-MockCall,,T \
->,,\ ]
-calls,,^ c
-,,,c d
-string,,e k
-	callToken,,l u
-),,u v
-{-- 
-MockCall.. 
-?.. 
-match.. 
-=.. 
-calls.. 
-.// 
-FirstOrDefault// 
-(// 
-kvp// 
-=>//  "
-kvp00 
-.00 
-Key00 
-.00 
-IsStringToken00 %
-&&00& (
-string11 
-.11 
-Equals11 
-(11 
-kvp11 !
-.11! "
-Key11" %
-.11% &
-StringTokenValue11& 6
-,116 7
-	callToken118 A
-,11A B
-StringComparison11C S
-.11S T
-Ordinal11T [
-)11[ \
-)11\ ]
-.22 
-Value22 
-;22 
-return44 
-match44 
-??44 
-calls44 
-.55 
-FirstOrDefault55 
-(55 
-kvp55 
-=>55  "
-kvp66 
-.66 
-Key66 
-.66 
-IsTypeToken66 #
-&&66$ &
-kvp77 
-.77 
-Key77 
-.77 
-TypeTokenValue77 &
-.77& ' 
-MatchesCallTypeToken77' ;
-(77; <
-	callToken77< E
-)77E F
-)77F G
-.88 
-Value88 
-;88 
-}99 
-}:: õC
-^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.cs
-	namespace 	
-Pulumock
- 
-. 
-TestFixtures 
-;  
-public 
-class 
-FixtureBuilder 
-{ 
-private 
-MockConfiguration 
-? 
-_mockConfiguration 1
-;1 2
-private 
-readonly 
-
-Dictionary 
-<  
-(  !
-Type! %
-Type& *
-,* +
-string, 2
-?2 3
-LogicalName4 ?
-)? @
-,@ A
-MockResourceB N
->N O
-_mockResourcesP ^
-=_ `
-newa d
-(d e
-)e f
-;f g
-private 
-readonly 
-
-Dictionary 
-<  
-MockCallToken  -
-,- .
-MockCall/ 7
->7 8
-
-_mockCalls9 C
-=D E
-newF I
-(I J
-)J K
-;K L
-public 
-
-FixtureBuilder !
-WithMockConfiguration /
-(/ 0
-MockConfiguration0 A
-mockConfigurationB S
-)S T
-{ 
-_mockConfiguration 
-= 
-mockConfiguration .
-;. /
-return 
-this 
-; 
-} 
-public 
-
-FixtureBuilder $
-WithoutMockConfiguration 2
-(2 3
-)3 4
-{ 
-_mockConfiguration 
-= 
-null !
-;! "
-return 
-this 
-; 
-} 
-public 
-
-FixtureBuilder "
-WithMockStackReference 0
-(0 1
-MockStackReference1 C
-mockStackReferenceD V
-)V W
-{ 
-_mockResources   
-[   
-(   
-mockStackReference   *
-.  * +
-Type  + /
-,  / 0
-mockStackReference  1 C
-.  C D#
-FullyQualifiedStackName  D [
-)  [ \
-]  \ ]
-=  ^ _
-mockStackReference  ` r
-;  r s
-return!! 
-this!! 
-;!! 
-}"" 
-public$$ 
-
-FixtureBuilder$$ %
-WithoutMockStackReference$$ 3
-($$3 4
-MockStackReference$$4 F
-mockStackReference$$G Y
-)$$Y Z
-{%% 
-_mockResources&& 
-.&& 
-Remove&& 
-(&& 
-(&& 
-mockStackReference&& 1
-.&&1 2
-Type&&2 6
-,&&6 7
-mockStackReference&&8 J
-.&&J K#
-FullyQualifiedStackName&&K b
-)&&b c
-)&&c d
-;&&d e
-return'' 
-this'' 
-;'' 
-}(( 
-public** 
-
-FixtureBuilder** 
-WithMockResource** *
-(*** +
-MockResource**+ 7
-mockResource**8 D
-)**D E
-{++ 
-_mockResources,, 
-[,, 
-(,, 
-mockResource,, $
-.,,$ %
-Type,,% )
-,,,) *
-mockResource,,+ 7
-.,,7 8
-LogicalName,,8 C
-),,C D
-],,D E
-=,,F G
-mockResource,,H T
-;,,T U
-return-- 
-this-- 
-;-- 
-}.. 
-public00 
-
-FixtureBuilder00 
-WithoutMockResource00 -
-(00- .
-MockResource00. :
-mockResource00; G
-)00G H
-{11 
-_mockResources22 
-.22 
-Remove22 
-(22 
-(22 
-mockResource22 +
-.22+ ,
-Type22, 0
-,220 1
-mockResource222 >
-.22> ?
-LogicalName22? J
-)22J K
-)22K L
-;22L M
-return33 
-this33 
-;33 
-}44 
-public66 
-
-FixtureBuilder66 
-WithMockCall66 &
-(66& '
-MockCall66' /
-mockCall660 8
-)668 9
-{77 
-MockCallToken88 
-newKey88 
-=88 
-mockCall88 '
-.88' (
-Token88( -
-;88- .
-foreach:: 
-(:: 
-MockCallToken:: 
-existingKey:: *
-in::+ -
-
-_mockCalls::. 8
-.::8 9
-Keys::9 =
-.;; 
-Where;; 
-(;; 
-existingKey;; '
-=>;;( *
-existingKey;;+ 6
-.;;6 7
-ConflictsWith;;7 D
-(;;D E
-newKey;;E K
-);;K L
-);;L M
-);;M N
-{<< 	
-
-_mockCalls== 
-.== 
-Remove== 
-(== 
-existingKey== )
-)==) *
-;==* +
-break>> 
-;>> 
-}?? 	
-
-_mockCallsAA 
-[AA 
-newKeyAA 
-]AA 
-=AA 
-mockCallAA %
-;AA% &
-returnBB 
-thisBB 
-;BB 
-}CC 
-publicEE 
-
-FixtureBuilderEE 
-WithoutMockCallEE )
-(EE) *
-MockCallEE* 2
-mockCallEE3 ;
-)EE; <
-{FF 
-MockCallTokenGG 
-?GG 
-existingKeyGG "
-=GG# $
-
-_mockCallsGG% /
-.GG/ 0
-KeysGG0 4
-.HH 
-FirstOrDefaultHH 
-(HH 
-kHH 
-=>HH  
-kHH! "
-.HH" #
-ConflictsWithHH# 0
-(HH0 1
-mockCallHH1 9
-.HH9 :
-TokenHH: ?
-)HH? @
-)HH@ A
-;HHA B
-ifJJ 
-
-(JJ 
-existingKeyJJ 
-isJJ 
-notJJ 
-nullJJ #
-)JJ# $
-{KK 	
-
-_mockCallsLL 
-.LL 
-RemoveLL 
-(LL 
-existingKeyLL )
-)LL) *
-;LL* +
-}MM 	
-returnOO 
-thisOO 
-;OO 
-}PP 
-publicRR 
-
-asyncRR 
-TaskRR 
-<RR 
-FixtureRR 
->RR 
-
-BuildAsyncRR )
-(RR) *
-FuncRR* .
-<RR. /
-TaskRR/ 3
-<RR3 4
-IDictionaryRR4 ?
-<RR? @
-stringRR@ F
-,RRF G
-objectRRH N
-?RRN O
->RRO P
->RRP Q
->RRQ R
-createResourcesFuncRRS f
-,RRf g
-TestOptionsRRh s
-?RRs t
-testOptions	RRu Ä
-=
-RRÅ Ç
-null
-RRÉ á
-)
-RRá à
-{SS 
-ifTT 
-
-(TT 
-_mockConfigurationTT 
-isTT !
-notTT" %
-nullTT& *
-)TT* +
-{UU 	
-EnvironmentVV 
-.VV "
-SetEnvironmentVariableVV .
-(VV. /(
-PulumiConfigurationConstantsVV/ K
-.VVK L
-EnvironmentVariableVVL _
-,VV_ `
-JsonSerializerWW 
-.WW 
-	SerializeWW (
-(WW( )
-_mockConfigurationWW) ;
-.WW; <
-MockConfigurationsWW< N
-)WWN O
-)WWO P
-;WWP Q
-}XX 	
-varZZ 
-mocksZZ 
-=ZZ 
-newZZ 
-MocksZZ 
-.ZZ 
-MocksZZ #
-(ZZ# $
-_mockResourcesZZ$ 2
-.ZZ2 3!
-ToImmutableDictionaryZZ3 H
-(ZZH I
-)ZZI J
-,ZZJ K
-
-_mockCallsZZL V
-.ZZV W!
-ToImmutableDictionaryZZW l
-(ZZl m
-)ZZm n
-)ZZn o
-;ZZo p
-(\\ 	
-ImmutableArray\\	 
-<\\ 
-Resource\\  
->\\  !
-stackResources\\" 0
-,\\0 1
-IDictionary\\2 =
-<\\= >
-string\\> D
-,\\D E
-object\\F L
-?\\L M
->\\M N
-stackOutputs\\O [
-)\\[ \
-=\\] ^
-await\\_ d
-
-Deployment\\e o
-.\\o p
-	TestAsync\\p y
-(\\y z
-mocks]] 
-,]] 
-testOptions^^ 
-??^^ 
-new^^ 
-TestOptions^^ *
-{^^+ ,
-	IsPreview^^- 6
-=^^7 8
-false^^9 >
-}^^? @
-,^^@ A
-async__ 
-(__ 
-)__ 
-=>__ 
-await__ 
-createResourcesFunc__ 1
-(__1 2
-)__2 3
-)__3 4
-;__4 5
-returnaa 
-newaa 
-Fixtureaa 
-(aa 
-stackResourcesaa )
-,aa) *
-stackOutputsaa+ 7
-.aa7 8!
-ToImmutableDictionaryaa8 M
-(aaM N
-)aaN O
-,aaO P
-mocksaaQ V
-.aaV W
-ResourceSnapshotsaaW h
-,aah i
-mocksaaj o
-.aao p
-CallSnapshotsaap }
-)aa} ~
-;aa~ 
-}bb 
-}cc ¿
-W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs
-	namespace 	
-Pulumock
- 
-. 
-TestFixtures 
-;  
-public 
-record 
-Fixture 
-( 
-ImmutableArray $
-<$ %
-Resource% -
->- .
-StackResources/ =
-,= >
-ImmutableDictionary 
-< 
-string 
-, 
-object  &
-?& '
->' (
-StackOutputs) 5
-,5 6
-ImmutableList		 
-<		 
-ResourceSnapshot		 "
->		" #
-ResourceSnapshots		$ 5
-,		5 6
-ImmutableList
-
- 
-<
-
- 
-CallSnapshot
-
- 
->
-
- 
-CallSnapshots
-
-  -
-)
-
-- .
-;
-
-. /ä
-v/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Constants/PulumiConfigurationConstants.cs
-	namespace 	
-Pulumock
- 
-. 
-TestFixtures 
-.  
-	Constants  )
-;) *
-public 
-static 
-class (
-PulumiConfigurationConstants 0
+Í
+j/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Shared/TestHelpers.cs
+	namespace 	
+Example
+ 
+. 
+Tests 
+. 
+WithoutPulumock '
+.' (
+Shared( .
+;. /
+internal 
+static	 
+class 
+TestHelpers !
 { 
-public 
-
-const 
-string 
-EnvironmentVariable +
-=, -
-$str. =
-;= >
-} ¨
-`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-. 
-Models 
-;  
-public 
-sealed 
-record 
-ResourceSnapshot %
-(% &
-string& ,
-LogicalName- 8
-,8 9
-ImmutableDictionary: M
-<M N
-stringN T
-,T U
-objectV \
->\ ]
-Inputs^ d
-)d e
-;e fÍ
-b/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockStackReference.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-. 
-Models 
-;  
-public 
-record 
-MockStackReference  
-(  !
-string! '#
-FullyQualifiedStackName( ?
-,? @
-ImmutableDictionaryA T
-<T U
-stringU [
-,[ \
-object] c
->c d
-MockOutputse p
-)p q
-: 
-MockResource 
-( 
-typeof 
-( 
-StackReference (
-)( )
-,) *
-MockOutputs+ 6
-)6 7
-;7 8¯
-\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-. 
-Models 
-;  
-public 
-record 
-MockResource 
-( 
-Type 
-Type  $
-,$ %
-ImmutableDictionary& 9
-<9 :
-string: @
-,@ A
-objectB H
->H I
-MockOutputsJ U
-,U V
-stringW ]
-?] ^
-LogicalName_ j
-=k l
-nullm q
-)q r
-;r sÍ
-a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockConfiguration.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-. 
-Models 
-;  
-public 
-record 
-MockConfiguration 
-(  
-ImmutableDictionary  3
-<3 4
-string4 :
-,: ;
-object< B
->B C
-MockConfigurationsD V
-)V W
-;W Xœ&
-]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-. 
-Models 
-;  
-public 
-record 
-MockCallToken 
-{ 
-private 
-Type 
-? 
-	TypeToken 
-{ 
-get !
-;! "
-}# $
-private 
-string 
-? 
-StringToken 
-{  !
-get" %
-;% &
-}' (
-private
+public 
+
+static 
+bool 
+	IsChildOf  
+(  !
+Resource! )
+child* /
+,/ 0
+Resource1 9
+potentialParent: I
+)I J
+{		 
+PropertyInfo
 
- 
-MockCallToken
+ 
+?
 
- 
+ 
+childResourcesField
+
+ )
+=
+
+* +
+typeof
+
+, 2
 (
 
- 
-Type
+2 3
+Resource
 
- 
-?
-
- 
-	typeToken
-
-  )
-,
-
-) *
-string
-
-+ 1
-?
-
-1 2
-stringToken
-
-3 >
+3 ;
 )
 
-> ?
-{ 
-	TypeToken 
-= 
-	typeToken 
-; 
-StringToken 
-= 
-stringToken !
-;! "
-} 
-public 
+; <
+. 
+GetProperty 
+( 
+$str )
+,) *
+BindingFlags+ 7
+.7 8
+Instance8 @
+|A B
+BindingFlagsC O
+.O P
+	NonPublicP Y
+|Z [
+BindingFlags\ h
+.h i
+Publici o
+)o p
+;p q
+if 
+
+( 
+childResourcesField 
+is  "
+null# '
+)' (
+{ 	
+throw 
+new %
+InvalidOperationException /
+(/ 0
+$str0 Y
+)Y Z
+;Z [
+} 	
+var 
+children 
+= 
+childResourcesField *
+.* +
+GetValue+ 3
+(3 4
+potentialParent4 C
+)C D
+asE G
+IEnumerableH S
+<S T
+ResourceT \
+>\ ]
+;] ^
+return 
+children 
+? 
+. 
+Contains !
+(! "
+child" '
+)' (
+??) +
+false, 1
+;1 2
+} 
+} è
+g/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Shared/TestBase.cs
+	namespace 	
+Example
+ 
+. 
+Tests 
+. 
+WithoutPulumock '
+.' (
+Shared( .
+;. /
+public 
+class 
+TestBase 
+{ 
+	protected		 
+const		 
+string		 
+	StackName		 $
+=		% &
+$str		' ,
+;		, -
+	protected 
+TestBase 
+( 
+) 
+=> 
+Environment 
+. "
+SetEnvironmentVariable *
+(* +
+$str+ :
+,: ;
+JsonSerializer< J
+.J K
+	SerializeK T
+(T U
+newU X
+
+DictionaryY c
+<c d
+stringd j
+,j k
+objectl r
+>r s
+{ 	
+{ 
+$str %
+,% &
+$str' M
+}N O
+,O P
+{ 
+$str +
+,+ ,
+$str- S
+}T U
+,U V
+{ 
+$str %
+,% &
+$str' 6
+}7 8
+,8 9
+{ 
+$str -
+,- .
+$str/ 7
+}8 9
+,9 :
+{ 
+$str 1
+,1 2
+$str3 C
+}D E
+,E F
+{ 
+$str 0
+,0 1
+$str2 E
+}F G
+} 	
+)	 
+
+)
+ 
+; 
+} ü
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/StackReferenceTests.cs
+	namespace 	
+Example
+ 
+. 
+Tests 
+. 
+WithoutPulumock '
+;' (
+public 
+class 
+StackReferenceTests  
+:! "
+TestBase# +
+,+ , 
+IStackReferenceTests- A
+{ 
+[ 
+Fact 	
+]	 
 
-static 
-MockCallToken 
-FromStringToken  /
-(/ 0
-string0 6
-stringToken7 B
-)B C
-{ 
+public 
+
+async 
+Task B
+6StackReference_ShouldUseMockedStackReferenceInResource L
+(L M
+)M N
+{ 
+( 	
+ImmutableArray	 
+< 
+Resource  
+>  !
+	Resources" +
+,+ ,
+IDictionary- 8
+<8 9
+string9 ?
+,? @
+objectA G
+?G H
+>H I
+StackOutputsJ V
+)V W
+resultX ^
+=_ `
+awaita f
+
+Deploymentg q
+.q r
+	TestAsyncr {
+({ |
+new 
+Mocks 
+. 
+Mocks 
+( 
+) 
+, 
+new 
+TestOptions 
+{ 
+	IsPreview &
+=' (
+false) .
+}. /
+,/ 0
+async 
+( 
+) 
+=> 
+await 
+	CoreStack '
+.' ( 
+DefineResourcesAsync( <
+(< =
+	StackName= F
+)F G
+)G H
+;H I
+RoleAssignment 
+roleAssignment %
+=& '
+result( .
+.. /
+	Resources/ 8
+. 
+OfType 
+< 
+RoleAssignment "
+>" #
+(# $
+)$ %
+. 
+Single 
+( 
+x 
+=> 
+x 
+. 
+GetResourceName *
+(* +
+)+ ,
+., -
+Equals- 3
+(3 4
+$str4 N
+,N O
+StringComparisonP `
+.` a
+Ordinala h
+)h i
+)i j
+;j k
+string 
+principalId 
+= 
+await "
+OutputUtilities# 2
+.2 3
+GetValueAsync3 @
+(@ A
+roleAssignmentA O
+.O P
+PrincipalIdP [
+)[ \
+;\ ]
+principalId 
+. 
+ShouldBe 
+( 
+$str C
+)C D
+;D E
+} 
+} ù
+h/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/StackOutputTests.cs
+	namespace 	
+Example
+ 
+. 
+Tests 
+. 
+WithoutPulumock '
+;' (
+public 
+class 
+StackOutputTests 
+: 
+TestBase  (
+,( )
+IStackOutputTests* ;
+{ 
+[ 
+Fact 	
+]	 
+
+public 
+
+async 
+Task 0
+$StackOutputs_ShouldOutputMockedValue :
+(: ;
+); <
+{ 
+( 	
+ImmutableArray	 
+< 
+Resource  
+>  !
+	Resources" +
+,+ ,
+IDictionary- 8
+<8 9
+string9 ?
+,? @
+objectA G
+?G H
+>H I
+StackOutputsJ V
+)V W
+resultX ^
+=_ `
+awaita f
+
+Deploymentg q
+.q r
+	TestAsyncr {
+({ |
+new 
+Mocks 
+. 
+Mocks 
+( 
+) 
+, 
+new 
+TestOptions 
+{ 
+	IsPreview &
+=' (
+false) .
+}. /
+,/ 0
+async 
+( 
+) 
+=> 
+await 
+	CoreStack '
+.' ( 
+DefineResourcesAsync( <
+(< =
+	StackName= F
+)F G
+)G H
+;H I
+Vault 
+keyVault 
+= 
+result 
+.  
+	Resources  )
+. 
+OfType 
+< 
+Vault 
+> 
+( 
+) 
+. 
+Single 
+( 
+x 
+=> 
+x 
+. 
+GetResourceName *
+(* +
+)+ ,
+., -
+Equals- 3
+(3 4
+$str4 K
+,K L
+StringComparisonM ]
+.] ^
+Ordinal^ e
+)e f
+)f g
+;g h#
+VaultPropertiesResponse 
+keyVaultProperties  2
+=3 4
+await5 :
+OutputUtilities; J
+.J K
+GetValueAsyncK X
+(X Y
+keyVaultY a
+.a b
+
+Propertiesb l
+)l m
+;m n
+string "
+keyVaultUriStackOutput %
+=& '
+result( .
+.. /
+StackOutputs/ ;
+[; <
+$str< I
+]I J
+isK M
+OutputN T
+<T U
+stringU [
+>[ \
+vaultUriOutput] k
+? 
+await 
+OutputUtilities #
+.# $
+GetValueAsync$ 1
+(1 2
+vaultUriOutput2 @
+)@ A
+:   
+throw   
+new   %
+InvalidOperationException   1
+(  1 2
+$str  2 Y
+)  Y Z
+;  Z ["
+keyVaultUriStackOutput"" 
+."" 
+ShouldBe"" '
+(""' (
+keyVaultProperties""( :
+."": ;
+VaultUri""; C
+)""C D
+;""D E
+}## 
+}$$ ·i
+h/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Shared/MocksBase.cs
+	namespace 	
+Example
+ 
+. 
+Tests 
+. 
+WithoutPulumock '
+.' (
+Shared( .
+;. /
+internal 
+class	 
+	MocksBase 
+: 
+IMocks !
+{ 
+public 
+
+ImmutableList 
+< 
+ResourceSnapshot )
+>) *
+ResourceSnapshots+ <
+=>= ?&
+ProtectedResourceSnapshots@ Z
+.Z [
+ToImmutableList[ j
+(j k
+)k l
+;l m
+public		 
+
+ImmutableList		 
+<		 
+CallSnapshot		 %
+>		% &
+CallSnapshots		' 4
+=>		5 7"
+ProtectedCallSnapshots		8 N
+.		N O
+ToImmutableList		O ^
+(		^ _
+)		_ `
+;		` a
+public 
+
+virtual 
+Task 
+< 
+( 
+string 
+?  
+id! #
+,# $
+object% +
+state, 1
+)1 2
+>2 3
+NewResourceAsync4 D
+(D E
+MockResourceArgsE U
+argsV Z
+)Z [
+{ 
+ImmutableDictionary 
+< 
+string "
+," #
+object$ *
+>* +
+.+ ,
+Builder, 3
+outputs4 ;
+=< =
+ImmutableDictionary> Q
+.Q R
+CreateBuilderR _
+<_ `
+string` f
+,f g
+objecth n
+>n o
+(o p
+)p q
+;q r
+outputs 
+. 
+AddRange 
+( 
+args 
+. 
+Inputs $
+)$ %
+;% &
 if 
 
 ( 
 string 
-. 
-IsNullOrWhiteSpace %
-(% &
-stringToken& 1
-)1 2
-)2 3
-{ 	
-throw 
-new 
-ArgumentException '
-(' (
-$str( K
-,K L
-nameofM S
-(S T
-stringTokenT _
-)_ `
-)` a
-;a b
-} 	
-return 
-new 
-MockCallToken  
-(  !
-null! %
-,% &
-stringToken' 2
-)2 3
-;3 4
-} 
-public 
-
-static 
-MockCallToken 
-FromTypeToken  -
-(- .
-Type. 2
-	typeToken3 <
-)< =
-{ !
-ArgumentNullException 
-. 
-ThrowIfNull )
-() *
-	typeToken* 3
-)3 4
-;4 5
-return 
-new 
-MockCallToken  
-(  !
-	typeToken! *
-,* +
-null, 0
-)0 1
-;1 2
-} 
-public   
-
-bool   
-IsStringToken   
-=>    
-StringToken  ! ,
-is  - /
-not  0 3
-null  4 8
-;  8 9
-public!! 
-
-bool!! 
-IsTypeToken!! 
-=>!! 
-	TypeToken!! (
-is!!) +
-not!!, /
-null!!0 4
-;!!4 5
-public## 
-
-string## 
-StringTokenValue## "
-=>### %
-StringToken$$ 
-??$$ 
-throw$$ 
-new$$  %
-InvalidOperationException$$! :
-($$: ;
-$str$$; a
-)$$a b
-;$$b c
-public&& 
-
-Type&& 
-TypeTokenValue&& 
-=>&& !
-	TypeToken'' 
-??'' 
-throw'' 
-new'' %
-InvalidOperationException'' 8
-(''8 9
-$str''9 ^
-)''^ _
-;''_ `
-public)) 
-
-bool)) 
-ConflictsWith)) 
-()) 
-MockCallToken)) +
-other)), 1
-)))1 2
-{** 
-if++ 
-
-(++ 
-IsStringToken++ 
-&&++ 
-other++ "
-.++" #
-IsStringToken++# 0
-)++0 1
-{,, 	
-return-- 
-string-- 
-.-- 
-Equals--  
-(--  !
-StringTokenValue--! 1
-,--1 2
-other--3 8
-.--8 9
-StringTokenValue--9 I
-,--I J
-StringComparison--K [
-.--[ \
-Ordinal--\ c
-)--c d
-;--d e
-}.. 	
-if00 
-
-(00 
-IsTypeToken00 
-&&00 
-other00  
-.00  !
-IsTypeToken00! ,
-)00, -
-{11 	
-return22 
-TypeTokenValue22 !
-==22" $
-other22% *
-.22* +
-TypeTokenValue22+ 9
-;229 :
-}33 	
-if55 
-
-(55 
-IsTypeToken55 
-&&55 
-other55  
-.55  !
-IsStringToken55! .
-)55. /
-{66 	
-return77 
-TypeTokenValue77 !
-.77! " 
-MatchesCallTypeToken77" 6
-(776 7
-other777 <
-.77< =
-StringTokenValue77= M
-)77M N
-;77N O
-}88 	
-if:: 
-
-(:: 
-IsStringToken:: 
-&&:: 
-other:: "
-.::" #
-IsTypeToken::# .
-)::. /
-{;; 	
-return<< 
-other<< 
-.<< 
-TypeTokenValue<< '
-.<<' ( 
-MatchesCallTypeToken<<( <
-(<<< =
-StringTokenValue<<= M
-)<<M N
-;<<N O
-}== 	
-return?? 
-false?? 
-;?? 
-}@@ 
-}AA é
-X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-. 
-Models 
-;  
-public 
-record 
-MockCall 
-( 
-MockCallToken $
-Token% *
-,* +
-ImmutableDictionary, ?
-<? @
-string@ F
-,F G
-objectH N
->N O
-MockOutputsP [
-)[ \
-;\ ]æ
-\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-. 
-Models 
-;  
-public 
-sealed 
-record 
-CallSnapshot !
-(! "
-string" (
-Token) .
-,. /
-ImmutableDictionary0 C
-<C D
-stringD J
-,J K
-objectL R
->R S
-InputsT Z
-,Z [
-ImmutableDictionary\ o
-<o p
-stringp v
-,v w
-objectx ~
->~ 
-Outputs
-Ä á
-)
-á à
-;
-à â±B
-N/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Mocks.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-; 
-internal 
-sealed	 
-class 
-Mocks 
-( 
-ImmutableDictionary /
-</ 0
-(0 1
-Type1 5
-Type6 :
-,: ;
-string< B
-?B C
-LogicalNameD O
-)O P
-,P Q
-MockResourceR ^
->^ _
-mockResources` m
-,m n
-ImmutableDictionary 
-< 
-MockCallToken %
-,% &
-MockCall' /
->/ 0
-	mockCalls1 :
-): ;
-:< =
-IMocks> D
-{ 
-private 
-readonly 
-List 
-< 
-ResourceSnapshot *
->* +
-_resourceSnapshots, >
-=? @
-[A B
-]B C
-;C D
-private 
-readonly 
-List 
-< 
-CallSnapshot &
->& '
-_callSnapshots( 6
-=7 8
-[9 :
-]: ;
-;; <
-public 
-
-Task 
-< 
-( 
-string 
-? 
-id 
-, 
-object #
-state$ )
-)) *
->* +
-NewResourceAsync, <
-(< =
-MockResourceArgs= M
-argsN R
-)R S
-{ 
-ImmutableDictionary 
-< 
-string "
-," #
-object$ *
->* +
-.+ ,
-Builder, 3
-outputs4 ;
-=< =
-ImmutableDictionary> Q
-.Q R
-CreateBuilderR _
-<_ `
-string` f
-,f g
-objecth n
->n o
-(o p
+. 
+Equals 
+( 
+args 
+. 
+Type #
+,# $
+$str% C
+,C D
+StringComparisonE U
+.U V
+OrdinalV ]
+)] ^
+)^ _
+{ 	
+var 
+mockOutputs 
+= 
+new !
+
+Dictionary" ,
+<, -
+string- 3
+,3 4
+object5 ;
+>; <
+(< =
+)= >
+;> ?
+if 
+( 
+string 
+. 
+Equals 
+( 
+$"  
+$str  6
+{6 7
+DevStackName7 C
+}C D
+"D E
+,E F
+argsG K
+.K L
+NameL P
+,P Q
+StringComparisonR b
+.b c
+Ordinalc j
+)j k
+|| 
+string 
+. 
+Equals  
+(  !
+$"! #
+$str# 9
+{9 :
+ProdStackName: G
+}G H
+"H I
+,I J
+argsK O
+.O P
+NameP T
+,T U
+StringComparisonV f
+.f g
+Ordinalg n
+)n o
+)o p
+{ 
+mockOutputs 
+. 
+Add 
+(  
+$str  H
+,H I
+$strJ p
 )p q
-;q r
+;q r
+} 
+outputs 
+. 
+Add 
+( 
+$str !
+,! "
+mockOutputs# .
+.. /!
+ToImmutableDictionary/ D
+(D E
+)E F
+)F G
+;G H
+outputs 
+. 
+Add 
+( 
+$str +
+,+ ,
+ImmutableArray- ;
+<; <
+string< B
+>B C
+.C D
+EmptyD I
+)I J
+;J K
+} 	
+else 
+{ 	
+if   
+(   
+string   
+.   
+Equals   
+(   
+$str   D
+,  D E
+args  F J
+.  J K
+Type  K O
+,  O P
+StringComparison  Q a
+.  a b
+Ordinal  b i
+)  i j
+)  j k
+{!! 
+outputs"" 
+."" 
+Add"" 
+("" 
+$str"" -
+,""- .
+$str""/ ;
+)""; <
+;""< =
+}## 
+if%% 
+(%% 
+string%% 
+.%% 
+Equals%% 
+(%% 
+$str%% ;
+,%%; <
+args%%= A
+.%%A B
+Type%%B F
+,%%F G
+StringComparison%%H X
+.%%X Y
+Ordinal%%Y `
+)%%` a
+)%%a b
+{&& 
+
+Dictionary'' 
+<'' 
+string'' !
+,''! "
+object''# )
+>'') *
+
+properties''+ 5
+=''6 7
+outputs''8 ?
+.''? @
+TryGetValue''@ K
+(''K L
+$str''L X
+,''X Y
+out''Z ]
+object''^ d
+?''d e
+value''f k
+)''k l
+&&''m o
+value''p u
+is''v x
+
+Dictionary	''y É
+<
+''É Ñ
+string
+''Ñ ä
+,
+''ä ã
+object
+''å í
+>
+''í ì
+existing
+''î ú
+?(( 
+existing(( 
+:)) 
+new)) 
+
+Dictionary)) $
+<))$ %
+string))% +
+,))+ ,
+object))- 3
+>))3 4
+())4 5
+)))5 6
+;))6 7
+
+properties++ 
+[++ 
+$str++ %
+]++% &
+=++' (
+$str++) J
+;++J K
+outputs,, 
+[,, 
+$str,, $
+],,$ %
+=,,& '
+
+properties,,( 2
+;,,2 3
+}-- 
+object//  
+physicalResourceName// '
+=//( )
+outputs//* 1
+.//1 2
+GetValueOrDefault//2 C
+(//C D
+$str//D J
+)//J K
+??//L N
+$"//O Q
+{//Q R"
+GetLogicalResourceName//R h
+(//h i
+args//i m
+.//m n
+Name//n r
+)//r s
+}//s t
+$str//t }
+"//} ~
+;//~ 
+outputs00 
+.00 
+Add00 
+(00 
+$str00 
+,00  
+physicalResourceName00  4
+)004 5
+;005 6
+}11 	
+string33 
+resourceName33 
+=33 "
+GetLogicalResourceName33 4
+(334 5
+args335 9
+.339 :
+Name33: >
+)33> ?
+;33? @
+string44 
+
+resourceId44 
+=44 
+GetResourceId44 )
+(44) *
+args44* .
+.44. /
+Id44/ 1
+,441 2
+$"443 5
+{445 6
+resourceName446 B
+}44B C
+$str44C F
+"44F G
+)44G H
+;44H I&
+ProtectedResourceSnapshots66 "
+.66" #
+Add66# &
+(66& '
+new66' *
+ResourceSnapshot66+ ;
+(66; <
+resourceName66< H
+,66H I
+args66J N
+.66N O
+Inputs66O U
+)66U V
+)66V W
+;66W X
+return88 
+Task88 
+.88 
+
+FromResult88 
+<88 
+(88  
+string88  &
+?88& '
+id88( *
+,88* +
+object88, 2
+state883 8
+)888 9
+>889 :
+(88: ;
+(88; <
+
+resourceId88< F
+,88F G
+outputs88H O
+.88O P
+ToImmutable88P [
+(88[ \
+)88\ ]
+)88] ^
+)88^ _
+;88_ `
+}99 
+public;; 
+
+virtual;; 
+Task;; 
+<;; 
+object;; 
+>;; 
+	CallAsync;;  )
+(;;) *
+MockCallArgs;;* 6
+args;;7 ;
+);;; <
+{<< 
+ImmutableDictionary== 
+<== 
+string== "
+,==" #
+object==$ *
+>==* +
+.==+ ,
+Builder==, 3
+outputs==4 ;
+===< =
+ImmutableDictionary==> Q
+.==Q R
+CreateBuilder==R _
+<==_ `
+string==` f
+,==f g
+object==h n
+>==n o
+(==o p
+)==p q
+;==q r
+outputs?? 
+.?? 
+AddRange?? 
+(?? 
+args?? 
+.?? 
+Args?? "
+)??" #
+;??# $
+ifAA 
+
+(AA 
+stringAA 
+.AA 
+EqualsAA 
+(AA 
+GetCallTokenAA &
+(AA& '
+argsAA' +
+.AA+ ,
+TokenAA, 1
+)AA1 2
+,AA2 3
+$strAA4 b
+,AAb c
+StringComparisonAAd t
+.AAt u
+OrdinalAAu |
+)AA| }
+)AA} ~
+{BB 	
+ifCC 
+(CC 
+argsCC 
+.CC 
+ArgsCC 
+.CC 
+TryGetValueCC %
+(CC% &
+$strCC& 8
+,CC8 9
+outCC: =
+objectCC> D
+?CCD E
+valueCCF K
+)CCK L
+&&DD 
+valueDD 
+isDD 
+stringDD "
+existingDD# +
+&&EE 
+stringEE 
+.EE 
+EqualsEE  
+(EE  !
+existingEE! )
+,EE) *
+$strEE+ Q
+,EEQ R
+StringComparisonEES c
+.EEc d
+OrdinalEEd k
+)EEk l
+)EEl m
+{FF 
+outputsGG 
+.GG 
+AddGG 
+(GG 
+$strGG  
+,GG  !
+$strGG" H
+)GGH I
+;GGI J
+}HH 
+elseII 
+{JJ 
+outputsKK 
+.KK 
+AddKK 
+(KK 
+$strKK  
+,KK  !
+$strKK" H
+)KKH I
+;KKI J
+}LL 
+}MM 	
+ImmutableDictionaryOO 
+<OO 
+stringOO "
+,OO" #
+objectOO$ *
+>OO* +
+finalOutputsOO, 8
+=OO9 :
+outputsOO; B
+.OOB C
+ToImmutableOOC N
+(OON O
+)OOO P
+;OOP Q"
+ProtectedCallSnapshotsQQ 
+.QQ 
+AddQQ "
+(QQ" #
+newQQ# &
+CallSnapshotQQ' 3
+(QQ3 4
+GetCallTokenQQ4 @
+(QQ@ A
+argsQQA E
+.QQE F
+TokenQQF K
+)QQK L
+,QQL M
+argsQQN R
+.QQR S
+ArgsQQS W
+,QQW X
+finalOutputsQQY e
+)QQe f
+)QQf g
+;QQg h
+returnSS 
+TaskSS 
+.SS 
+
+FromResultSS 
+<SS 
+objectSS %
+>SS% &
+(SS& '
+finalOutputsSS' 3
+)SS3 4
+;SS4 5
+}TT 
+publicVV 
+
+constVV 
+stringVV 
+DevStackNameVV $
+=VV% &
+$strVV' ,
+;VV, -
+publicWW 
+
+constWW 
+stringWW 
+ProdStackNameWW %
+=WW& '
+$strWW( .
+;WW. /
+	protectedYY 
+readonlyYY 
+ListYY 
+<YY 
+ResourceSnapshotYY ,
+>YY, -&
+ProtectedResourceSnapshotsYY. H
+=YYI J
+[YYK L
+]YYL M
+;YYM N
+	protectedZZ 
+readonlyZZ 
+ListZZ 
+<ZZ 
+CallSnapshotZZ (
+>ZZ( )"
+ProtectedCallSnapshotsZZ* @
+=ZZA B
+[ZZC D
+]ZZD E
+;ZZE F
+	protected\\ 
+static\\ 
+string\\ "
+GetLogicalResourceName\\ 2
+(\\2 3
+string\\3 9
+?\\9 :
+name\\; ?
+)\\? @
+=>\\A C
+string]] 
+.]] 
+IsNullOrWhiteSpace]] !
+(]]! "
+name]]" &
+)]]& '
+?]]( )
+throw]]* /
+new]]0 3!
+ArgumentNullException]]4 I
+(]]I J
+nameof]]J P
+(]]P Q
+name]]Q U
+)]]U V
+)]]V W
+:]]X Y
+name]]Z ^
+;]]^ _
+	protected__ 
+static__ 
+string__ 
+GetResourceId__ )
+(__) *
+string__* 0
+?__0 1
+id__2 4
+,__4 5
+string__6 <
+
+fallbackId__= G
+)__G H
+=>__I K
+string`` 
+.`` 
+IsNullOrWhiteSpace`` !
+(``! "
+id``" $
+)``$ %
+?``& '
+
+fallbackId``( 2
+:``3 4
+id``5 7
+;``7 8
+	protectedbb 
+staticbb 
+stringbb 
+GetCallTokenbb (
+(bb( )
+stringbb) /
+?bb/ 0
+tokenbb1 6
+)bb6 7
+=>bb8 :
+stringcc 
+.cc 
+IsNullOrWhiteSpacecc !
+(cc! "
+tokencc" '
+)cc' (
+?cc) *
+throwcc+ 0
+newcc1 4!
+ArgumentNullExceptioncc5 J
+(ccJ K
+nameofccK Q
+(ccQ R
+tokenccR W
+)ccW X
+)ccX Y
+:ccZ [
+tokencc\ a
+;cca b
+}dd 
+internalff 
+sealedff	 
+recordff 
+ResourceSnapshotff '
+(ff' (
+stringff( .
+LogicalNameff/ :
+,ff: ;
+ImmutableDictionaryff< O
+<ffO P
+stringffP V
+,ffV W
+objectffX ^
+>ff^ _
+Inputsff` f
+)fff g
+;ffg h
+internalhh 
+sealedhh	 
+recordhh 
+CallSnapshothh #
+(hh# $
+stringhh$ *
+Tokenhh+ 0
+,hh0 1
+ImmutableDictionaryhh2 E
+<hhE F
+stringhhF L
+,hhL M
+objecthhN T
+>hhT U
+InputshhV \
+,hh\ ]
+ImmutableDictionaryhh^ q
+<hhq r
+stringhhr x
+,hhx y
+object	hhz Ä
+>
+hhÄ Å
+Outputs
+hhÇ â
+)
+hhâ ä
+;
+hhä ã⁄e
+e/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ResourceTests.cs
+	namespace 	
+Example
+ 
+. 
+Tests 
+. 
+WithoutPulumock '
+;' (
+public 
+class 
+ResourceTests 
+: 
+TestBase %
+,% &
+IResourceTests' 5
+{ 
+[ 
+Fact 	
+]	 
+
+public 
+
+async 
+Task 
+Resource_InputOnly (
+(( )
+)) *
+{ 
+var 
+mocks 
+= 
+new 
+Mocks 
+. 
+Mocks #
+(# $
+)$ %
+;% &
+_ 	
+=
+ 
+await 
+
+Deployment 
+. 
+	TestAsync &
+(& '
+mocks 
+, 
+new 
+TestOptions 
+{ 
+	IsPreview &
+=' (
+false) .
+}. /
+,/ 0
+async 
+( 
+) 
+=> 
+await 
+	CoreStack '
+.' ( 
+DefineResourcesAsync( <
+(< =
+	StackName= F
+)F G
+)G H
+;H I
+ResourceSnapshot 
+resourceSnapshot )
+=* +
+mocks, 1
+.1 2
+ResourceSnapshots2 C
+.C D
+SingleD J
+(J K
+xK L
+=>M O
+xP Q
+.Q R
+LogicalNameR ]
+.] ^
+Equals^ d
+(d e
+$stre v
+,v w
+StringComparison	x à
+.
+à â
+Ordinal
+â ê
+)
+ê ë
+)
+ë í
+;
+í ì
 if 
 
-( 
-
-MockHelper 
-. 
-IsStackReference '
-(' (
-args( ,
-), -
-)- .
-{ 	
-if 
-( 
-mockResources 
-. 
-TryGetValue )
-() *
-(* +
-typeof+ 1
-(1 2
-StackReference2 @
-)@ A
-,A B
-
-MockHelperC M
-.M N"
-GetLogicalResourceNameN d
-(d e
-argse i
-.i j
-Namej n
-)n o
-)o p
-,p q
-outr u
-MockResource	v Ç
-?
-Ç É
-mockResource
-Ñ ê
+( 
+! 
+resourceSnapshot 
+. 
+Inputs $
+.$ %
+TryGetValue% 0
+(0 1
+$str1 D
+,D E
+outF I
+objectJ P
+?P Q
+valueR W
+)W X
+||Y [
+value\ a
+isb d
+note h
+stringi o
+resourceGroupName	p Å
 )
-ê ë
-)
-ë í
-{ 
-outputs 
-. 
-Add 
-( 
-$str %
-,% &
-mockResource' 3
-.3 4
-MockOutputs4 ?
-)? @
-;@ A
-outputs 
-. 
-Add 
-( 
-$str /
-,/ 0
-ImmutableArray1 ?
-<? @
-string@ F
->F G
-.G H
-EmptyH M
-)M N
-;N O
-}   
-}!! 	
-else"" 
-{## 	
-MockResource$$ 
-?$$ 
-mockResource$$ &
-=$$' (
-
-MockHelper$$) 3
-.$$3 4$
-GetMockResourceOrDefault$$4 L
-($$L M
-mockResources$$M Z
-,$$Z [
-args$$\ `
-.$$` a
-Type$$a e
-,$$e f
-args$$g k
-.$$k l
-Name$$l p
-)$$p q
-;$$q r
-if%% 
-(%% 
-mockResource%% 
-is%% 
-not%%  #
-null%%$ (
-)%%( )
-{&& 
-outputs'' 
-.'' 
-AddRange''  
-(''  !
-mockResource''! -
-.''- .
-MockOutputs''. 9
-)''9 :
-;'': ;
-}(( 
-outputs** 
-.** 
-Add** 
-(** 
-$str** 
-,** 
-
-MockHelper**  *
-.*** +#
-GetPhysicalResourceName**+ B
-(**B C
-args**C G
-,**G H
-outputs**I P
-)**P Q
-)**Q R
-;**R S
-}++ 	
-string-- 
-resourceName-- 
-=-- 
-
-MockHelper-- (
-.--( )"
-GetLogicalResourceName--) ?
-(--? @
-args--@ D
-.--D E
-Name--E I
-)--I J
-;--J K
-string.. 
-
-resourceId.. 
-=.. 
-
-MockHelper.. &
-...& '
-GetResourceId..' 4
-(..4 5
-args..5 9
-...9 :
-Id..: <
-,..< =
-$"..> @
-{..@ A
-resourceName..A M
-}..M N
-$str..N Q
-"..Q R
-)..R S
-;..S T
-ImmutableDictionary00 
-<00 
-string00 "
-,00" #
-object00$ *
->00* +
-mergedOutputs00, 9
-=00: ;
-OutputMerger00< H
-.00H I
-Merge00I N
-(00N O
-args00O S
-.00S T
-Inputs00T Z
-,00Z [
-outputs00\ c
-)00c d
-;00d e
-_resourceSnapshots22 
-.22 
-Add22 
-(22 
-new22 "
-ResourceSnapshot22# 3
-(223 4
-resourceName224 @
-,22@ A
-args22B F
-.22F G
-Inputs22G M
-)22M N
-)22N O
-;22O P
-return33 
-Task33 
-.33 
-
-FromResult33 
-<33 
-(33  
-string33  &
-?33& '
-,33' (
-object33) /
-)33/ 0
->330 1
-(331 2
-(332 3
-
-resourceId333 =
-,33= >
-mergedOutputs33? L
-)33L M
-)33M N
-;33N O
-}44 
-public66 
-
-Task66 
-<66 
-object66 
->66 
-	CallAsync66 !
-(66! "
-MockCallArgs66" .
-args66/ 3
-)663 4
-{77 
-string88 
-	callToken88 
-=88 
-
-MockHelper88 %
-.88% &
-GetCallToken88& 2
-(882 3
-args883 7
-.887 8
-Token888 =
-)88= >
-;88> ?
-ImmutableDictionary:: 
-<:: 
-string:: "
-,::" #
-object::$ *
->::* +
-.::+ ,
-Builder::, 3
-outputs::4 ;
-=::< =
-ImmutableDictionary::> Q
-.::Q R
-CreateBuilder::R _
-<::_ `
-string::` f
-,::f g
-object::h n
->::n o
-(::o p
-)::p q
-;::q r
-MockCall<< 
-?<< 
-mockCall<< 
-=<< 
-
-MockHelper<< '
-.<<' ( 
-GetMockCallOrDefault<<( <
-(<<< =
-	mockCalls<<= F
-,<<F G
-	callToken<<H Q
-)<<Q R
-;<<R S
-if== 
-
-(== 
-mockCall== 
-is== 
-not== 
-null==  
-)==  !
-{>> 	
-outputs?? 
-.?? 
-AddRange?? 
-(?? 
-mockCall?? %
-.??% &
-MockOutputs??& 1
-)??1 2
-;??2 3
-}@@ 	
-ImmutableDictionaryBB 
-<BB 
-stringBB "
-,BB" #
-objectBB$ *
->BB* +
-mergedOutputsBB, 9
-=BB: ;
-OutputMergerBB< H
-.BBH I
-MergeBBI N
-(BBN O
-argsBBO S
-.BBS T
-ArgsBBT X
-,BBX Y
-outputsBBZ a
-)BBa b
-;BBb c
-_callSnapshotsDD 
-.DD 
-AddDD 
-(DD 
-newDD 
-CallSnapshotDD +
-(DD+ ,
-	callTokenDD, 5
-,DD5 6
-argsDD7 ;
-.DD; <
-ArgsDD< @
-,DD@ A
-mergedOutputsDDB O
-)DDO P
-)DDP Q
-;DDQ R
-returnFF 
-TaskFF 
-.FF 
-
-FromResultFF 
-<FF 
-objectFF %
->FF% &
-(FF& '
-mergedOutputsFF' 4
-)FF4 5
-;FF5 6
-}GG 
-publicII 
-
-ImmutableListII 
-<II 
-ResourceSnapshotII )
->II) *
-ResourceSnapshotsII+ <
-=>II= ?
-_resourceSnapshotsII@ R
-.IIR S
-ToImmutableListIIS b
-(IIb c
-)IIc d
-;IId e
-publicJJ 
-
-ImmutableListJJ 
-<JJ 
-CallSnapshotJJ %
->JJ% &
-CallSnapshotsJJ' 4
-=>JJ5 7
-_callSnapshotsJJ8 F
-.JJF G
-ToImmutableListJJG V
-(JJV W
-)JJW X
-;JJX Y
-}KK ı
-m/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Constants/ResourceTypeTokenConstants.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-. 
-	Constants "
-;" #
-internal		 
-static			 
-class		 &
-ResourceTypeTokenConstants		 0
-{
-
- 
-public 
-
-const 
-string 
-StackReference &
-=' (
-$str) G
-;G H
-} ⁄
-k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Enums/PulumiConfigurationNamespace.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-. 
-Enums 
-; 
-public 
-sealed 
-class (
-PulumiConfigurationNamespace 0
-{ 
-public 
+Å Ç
+{ 	
+throw 
+new  
+KeyNotFoundException *
+(* +
+$str+ w
+)w x
+;x y
+} 	
+resourceGroupName 
+. 
+ShouldBe "
+(" #
+$str# 4
+)4 5
+;5 6
+}   
+["" 
+Fact"" 	
+]""	 
 
-static 
-readonly (
-PulumiConfigurationNamespace 7
-Default8 ?
-=@ A
-newB E
-(E F
-$strF O
-)O P
-;P Q
-public 
-
-static 
-readonly (
-PulumiConfigurationNamespace 7
-Aws8 ;
-=< =
-new> A
-(A B
-$strB G
-)G H
-;H I
-public 
-
-static 
-readonly (
-PulumiConfigurationNamespace 7
-AzureClassic8 D
-=E F
-newG J
-(J K
-$strK R
-)R S
-;S T
-public 
-
-static 
-readonly (
-PulumiConfigurationNamespace 7
-AzureNative8 C
-=D E
-newF I
-(I J
-$strJ X
-)X Y
-;Y Z
-public 
-
-static 
-readonly (
-PulumiConfigurationNamespace 7
-GoogleCloudClassic8 J
-=K L
-newM P
-(P Q
-$strQ V
-)V W
-;W X
-public 
-
-static 
-readonly (
-PulumiConfigurationNamespace 7
-GoogleCloudNative8 I
-=J K
-newL O
-(O P
-$strP _
-)_ `
-;` a
-public 
-
-static 
-readonly (
-PulumiConfigurationNamespace 7
-
-Kubernetes8 B
-=C D
-newE H
-(H I
-$strI U
-)U V
-;V W
-public 
-
-string 
-Value 
-{ 
-get 
-; 
-}  
-private (
-PulumiConfigurationNamespace (
-(( )
-string) /
-value0 5
-)5 6
-=> 
-
-Value 
-= 
-value 
-; 
-} Ô
-f/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/NestedOutputsBuilder.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-. 
-Builders !
-;! "
-public 
-class  
-NestedOutputsBuilder !
-<! "
-T" #
-># $
-{ 
-private 
-readonly 
-
-Dictionary 
-<  
-string  &
-,& '
-object( .
->. /
-_values0 7
-=8 9
-new: =
-(= >
-)> ?
-;? @
-public
-
- 
- 
-NestedOutputsBuilder
-
- 
-<
-
-  
-T
-
-  !
->
-
-! "
-WithNestedOutput
-
-# 3
-(
-
-3 4
-
-Expression
-
-4 >
-<
-
-> ?
-Func
-
-? C
-<
-
-C D
-T
-
-D E
-,
-
-E F
-object
-
-G M
->
-
-M N
->
-
-N O
-selector
-
-P X
-,
-
-X Y
-object
-
-Z `
-value
-
-a f
-)
-
-f g
-{ 
-_values 
-[ 
-selector 
-. 
-GetOutputName &
-(& '
-)' (
-]( )
-=* +
-value, 1
-;1 2
-return 
-this 
-; 
-} 
-public 
-
-
-Dictionary 
-< 
-string 
-, 
-object $
->$ %
-Build& +
-(+ ,
-), -
-=>. 0
-_values1 8
-;8 9
-} ®
-k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockStackReferenceBuilder.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-. 
-Builders !
-;! "
-public 
-class %
-MockStackReferenceBuilder &
-(& '
-string' -#
-fullyQualifiedStackName. E
-)E F
-{ 
-private 
-readonly 
-
-Dictionary 
-<  
-string  &
-,& '
-object( .
->. /
-_outputs0 8
-=9 :
-new; >
-(> ?
-)? @
-;@ A
-public 
-%
-MockStackReferenceBuilder $
-
-WithOutput% /
-(/ 0
-string0 6
-key7 :
-,: ;
-object< B
-valueC H
-)H I
-{ 
-_outputs 
-. 
-Add 
-( 
-key 
-, 
-value 
-)  
-;  !
-return 
-this 
-; 
-} 
-public 
-
-MockStackReference 
-Build #
-(# $
-)$ %
-=>& (
-new 
-( #
-fullyQualifiedStackName #
-,# $
-_outputs% -
-.- .!
-ToImmutableDictionary. C
-(C D
-)D E
-)E F
-;F G
-}   ≈
-e/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockResourceBuilder.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-. 
-Builders !
-;! "
-public 
-class 
-MockResourceBuilder  
-{ 
-private 
-readonly 
-
-Dictionary 
-<  
-string  &
-,& '
-object( .
->. /
-_outputs0 8
-=9 :
-new; >
-(> ?
-)? @
-;@ A
-public 
-
-MockResourceBuilder 
-
-WithOutput )
-() *
-string* 0
-key1 4
-,4 5
-object6 <
-value= B
-)B C
-{ 
-_outputs 
-. 
-Add 
-( 
-key 
-, 
-value 
-)  
-;  !
-return 
-this 
-; 
-} 
 public## 
-
-MockResourceBuilder## 
+
+async## 
+Task## 
+Resource_OutputOnly## )
+(##) *
+)##* +
+{$$ 
+(%% 	
+ImmutableArray%%	 
+<%% 
+Resource%%  
+>%%  !
+	Resources%%" +
+,%%+ ,
+IDictionary%%- 8
+<%%8 9
+string%%9 ?
+,%%? @
+object%%A G
+?%%G H
+>%%H I
+StackOutputs%%J V
+)%%V W
+result%%X ^
+=%%_ `
+await%%a f
 
-WithOutput## )
-<##) *
-T##* +
->##+ ,
-(##, -
+Deployment%%g q
+.%%q r
+	TestAsync%%r {
+(%%{ |
+new&& 
+Mocks&& 
+.&& 
+Mocks&& 
+(&& 
+)&& 
+,&& 
+new'' 
+TestOptions'' 
+{'' 
+	IsPreview'' &
+=''' (
+false'') .
+}''. /
+,''/ 0
+async(( 
+((( 
+)(( 
+=>(( 
+await(( 
+	CoreStack(( '
+.((' ( 
+DefineResourcesAsync((( <
+(((< =
+	StackName((= F
+)((F G
+)((G H
+;((H I
+ResourceGroup** 
+resourceGroup** #
+=**$ %
+result**& ,
+.**, -
+	Resources**- 6
+.++ 
+OfType++ 
+<++ 
+ResourceGroup++ !
+>++! "
+(++" #
+)++# $
+.,, 
+Single,, 
+(,, 
+x,, 
+=>,, 
+x,, 
+.,, 
+GetResourceName,, *
+(,,* +
+),,+ ,
+.,,, -
+Equals,,- 3
+(,,3 4
+$str,,4 E
+,,,E F
+StringComparison,,G W
+.,,W X
+Ordinal,,X _
+),,_ `
+),,` a
+;,,a b
+string.. 
+azureApiVersion.. 
+=..  
+await..! &
+OutputUtilities..' 6
+...6 7
+GetValueAsync..7 D
+(..D E
+resourceGroup..E R
+...R S
+AzureApiVersion..S b
+)..b c
+;..c d
+azureApiVersion// 
+.// 
+ShouldBe//  
+(//  !
+$str//! -
+)//- .
+;//. /
+}00 
+[22 
+Fact22 	
+]22	 
+
+public33 
+
+async33 
+Task33  
+Resource_InputOutput33 *
+(33* +
+)33+ ,
+{44 
+var55 
+mocks55 
+=55 
+new55 
+Mocks55 
+.55 
+Mocks55 #
+(55# $
+)55$ %
+;55% &
+(66 	
+ImmutableArray66	 
+<66 
+Resource66  
+>66  !
+	Resources66" +
+,66+ ,
+IDictionary66- 8
+<668 9
+string669 ?
+,66? @
+object66A G
+?66G H
+>66H I
+StackOutputs66J V
+)66V W
+result66X ^
+=66_ `
+await66a f
 
-Expression##- 7
-<##7 8
-Func##8 <
-<##< =
-T##= >
-,##> ?
-object##@ F
->##F G
->##G H
-propertySelector##I Y
-,##Y Z
-object##[ a
-value##b g
-)##g h
-{$$ 
-_outputs%% 
-.%% 
-Add%% 
-(%% 
-propertySelector%% %
-.%%% &
-GetOutputName%%& 3
-(%%3 4
-)%%4 5
-,%%5 6
-value%%7 <
-)%%< =
-;%%= >
-return&& 
-this&& 
-;&& 
-}'' 
-public)) 
-
-MockResourceBuilder)) 
-
-WithOutput)) )
-<))) *
-T))* +
-,))+ ,
-TNested))- 4
->))4 5
-())5 6
-
-Expression** 
-<** 
-Func** 
-<** 
-T** 
-,** 
-object** !
->**! "
->**" #
-propertySelector**$ 4
-,**4 5
-Func++ 
-<++  
-NestedOutputsBuilder++ !
-<++! "
-TNested++" )
->++) *
-,++* + 
-NestedOutputsBuilder++, @
-<++@ A
-TNested++A H
->++H I
->++I J 
-nestedOutputsBuilder++K _
-)++_ `
-{,, 
-
-Dictionary-- 
-<-- 
-string-- 
-,-- 
-object-- !
->--! "
-nestedOutputs--# 0
-=--1 2 
-nestedOutputsBuilder--3 G
-(--G H
-new--H K 
-NestedOutputsBuilder--L `
-<--` a
-TNested--a h
->--h i
-(--i j
-)--j k
-)--k l
-... 
-Build.. 
-(.. 
-).. 
-;.. 
-_outputs00 
-.00 
-Add00 
-(00 
-propertySelector00 %
-.00% &
-GetOutputName00& 3
-(003 4
-)004 5
-,005 6
-nestedOutputs007 D
-)00D E
-;00E F
-return11 
-this11 
-;11 
-}22 
-public77 
-
-MockResource77 
-Build77 
-<77 
-T77 
->77  
-(77  !
-string77! '
-?77' (
-logicalName77) 4
-=775 6
-null777 ;
-)77; <
-=>77= ?
-new88 
-(88 
-typeof88 
-(88 
-T88 
-)88 
-,88 
-_outputs88 
-.88  !
-ToImmutableDictionary88  5
-(885 6
-)886 7
-,887 8
-logicalName889 D
-)88D E
-;88E F
-}99 ÿ
-j/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockConfigurationBuilder.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-. 
-Builders !
-;! "
-public
-
- 
-class
-
- $
-MockConfigurationBuilder
-
- %
-{ 
-private 
-readonly 
-
-Dictionary 
-<  
-string  &
-,& '
-object( .
->. /
-_configurations0 ?
-=@ A
-newB E
-(E F
-)F G
-;G H
-public 
-$
-MockConfigurationBuilder #
-WithConfiguration$ 5
-(5 6
-string6 <
-key= @
-,@ A
-objectB H
-valueI N
-)N O
-{ 
-_configurations 
-. 
-Add 
-( 
-key 
-,  
-value! &
-)& '
-;' (
-return 
-this 
-; 
-} 
-public 
-$
-MockConfigurationBuilder ##
-WithSecretConfiguration$ ;
-(; <
-string< B
-keyC F
-,F G
-stringH N
-secretO U
-)U V
-{   
-WithConfiguration!! 
-(!! 
-key!! 
-,!! 
-secret!! %
-)!!% &
-;!!& '
-return## 
-this## 
-;## 
-}$$ 
-public-- 
-$
-MockConfigurationBuilder-- #
-WithConfiguration--$ 5
-(--5 6(
-PulumiConfigurationNamespace--6 R
-
-@namespace--S ]
-,--] ^
-string--_ e
-keyName--f m
-,--m n
-object--o u
-value--v {
-)--{ |
-{.. 
-string// 
-key// 
-=// 
-	FormatKey// 
-(// 
-
-@namespace// )
-.//) *
-Value//* /
-,/// 0
-keyName//1 8
-)//8 9
-;//9 :
-WithConfiguration11 
-(11 
-key11 
-,11 
-value11 $
-)11$ %
-;11% &
-return33 
-this33 
-;33 
-}44 
-public== 
-$
-MockConfigurationBuilder== ##
-WithSecretConfiguration==$ ;
-(==; <(
-PulumiConfigurationNamespace==< X
-
-@namespace==Y c
-,==c d
-string==e k
-keyName==l s
-,==s t
-string==u {
-value	==| Å
+Deployment66g q
+.66q r
+	TestAsync66r {
+(66{ |
+mocks77 
+,77 
+new88 
+TestOptions88 
+{88 
+	IsPreview88 &
+=88' (
+false88) .
+}88. /
+,88/ 0
+async99 
+(99 
+)99 
+=>99 
+await99 
+	CoreStack99 '
+.99' ( 
+DefineResourcesAsync99( <
+(99< =
+	StackName99= F
+)99F G
+)99G H
+;99H I
+ResourceGroup;; 
+resourceGroup;; #
+=;;$ %
+result;;& ,
+.;;, -
+	Resources;;- 6
+.<< 
+OfType<< 
+<<< 
+ResourceGroup<< !
+><<! "
+(<<" #
+)<<# $
+.== 
+Single== 
+(== 
+x== 
+=>== 
+x== 
+.== 
+GetResourceName== *
+(==* +
+)==+ ,
+.==, -
+Equals==- 3
+(==3 4
+$str==4 E
+,==E F
+StringComparison==G W
+.==W X
+Ordinal==X _
+)==_ `
+)==` a
+;==a b
+ResourceSnapshot?? 
+resourceSnapshot?? )
+=??* +
+mocks??, 1
+.??1 2
+ResourceSnapshots??2 C
+.??C D
+Single??D J
+(??J K
+x??K L
+=>??M O
+x??P Q
+.??Q R
+LogicalName??R ]
+.??] ^
+Equals??^ d
+(??d e
+$str??e v
+,??v w
+StringComparison	??x à
+.
+??à â
+Ordinal
+??â ê
 )
-==Å Ç
-{>> 
-string?? 
-key?? 
-=?? 
-	FormatKey?? 
-(?? 
-
-@namespace?? )
-.??) *
-Value??* /
-,??/ 0
-keyName??1 8
-)??8 9
-;??9 :#
-WithSecretConfigurationAA 
-(AA  
-keyAA  #
-,AA# $
-valueAA% *
-)AA* +
-;AA+ ,
-returnCC 
-thisCC 
-;CC 
-}DD 
-publicII 
-
-MockConfigurationII 
-BuildII "
-(II" #
-)II# $
-=>II% '
-newJJ 
-(JJ 
-_configurationsJJ 
-.JJ !
-ToImmutableDictionaryJJ 1
-(JJ1 2
-)JJ2 3
-)JJ3 4
-;JJ4 5
-privateLL 
-staticLL 
-stringLL 
-	FormatKeyLL #
-(LL# $
-stringLL$ *
-
-@namespaceLL+ 5
-,LL5 6
-stringLL7 =
-?LL= >
-keyNameLL? F
-)LLF G
-=>LLH J
-stringMM 
-.MM 
-IsNullOrWhiteSpaceMM !
-(MM! "
-keyNameMM" )
-)MM) *
-?MM+ ,
-
-@namespaceMM- 7
-:MM8 9
-$"MM: <
-{MM< =
-
-@namespaceMM= G
-}MMG H
-$strMMH I
-{MMI J
-keyNameMMJ Q
-}MMQ R
-"MMR S
-;MMS T
-}NN ê
-a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockCallBuilder.cs
-	namespace 	
-Pulumock
- 
-. 
-Mocks 
-. 
-Builders !
-;! "
-public 
-class 
-MockCallBuilder 
-{ 
-private 
-readonly 
-
-Dictionary 
-<  
-string  &
-,& '
-object( .
->. /
-_outputs0 8
-=9 :
-new; >
-(> ?
-)? @
-;@ A
-public 
-
-MockCallBuilder 
-
-WithOutput %
-(% &
-string& ,
-key- 0
-,0 1
-object2 8
-value9 >
-)> ?
-{ 
-_outputs 
-. 
-Add 
-( 
-key 
-, 
-value 
-)  
-;  !
-return 
-this 
-; 
-} 
-public   
-
-MockCallBuilder   
-
-WithOutput   %
-<  % &
-T  & '
->  ' (
-(  ( )
-
-Expression  ) 3
-<  3 4
-Func  4 8
-<  8 9
-T  9 :
-,  : ;
-object  < B
->  B C
->  C D
-propertySelector  E U
-,  U V
-object  W ]
-value  ^ c
-)  c d
-{!! 
-_outputs"" 
-."" 
-Add"" 
-("" 
-propertySelector"" %
-.""% &
-GetOutputName""& 3
-(""3 4
-)""4 5
-,""5 6
-value""7 <
-)""< =
-;""= >
-return## 
-this## 
-;## 
-}$$ 
-public&& 
-
-MockCallBuilder&& 
-
-WithOutput&& %
-<&&% &
-T&&& '
-,&&' (
-TNested&&) 0
->&&0 1
-(&&1 2
-
-Expression'' 
-<'' 
-Func'' 
-<'' 
-T'' 
-,'' 
-object'' !
->''! "
->''" #
-propertySelector''$ 4
-,''4 5
-Func(( 
-<((  
-NestedOutputsBuilder(( !
-<((! "
-TNested((" )
->(() *
-,((* + 
-NestedOutputsBuilder((, @
-<((@ A
-TNested((A H
->((H I
->((I J 
-nestedOutputsBuilder((K _
-)((_ `
-{)) 
-
-Dictionary** 
-<** 
-string** 
-,** 
-object** !
->**! "
-nestedOutputs**# 0
-=**1 2 
-nestedOutputsBuilder**3 G
-(**G H
-new**H K 
-NestedOutputsBuilder**L `
-<**` a
-TNested**a h
->**h i
-(**i j
-)**j k
-)**k l
-.++ 
-Build++ 
-(++ 
-)++ 
-;++ 
-_outputs-- 
-.-- 
-Add-- 
-(-- 
-propertySelector-- %
-.--% &
-GetOutputName--& 3
-(--3 4
-)--4 5
-,--5 6
-nestedOutputs--7 D
-)--D E
-;--E F
-return.. 
-this.. 
-;.. 
-}// 
-public55 
-
-MockCall55 
-Build55 
-(55 
-Type55 
-type55 #
-)55# $
-=>55% '
-new66 
-(66 
-MockCallToken66 
-.66 
-FromTypeToken66 '
-(66' (
-type66( ,
-)66, -
-,66- .
-_outputs66/ 7
-.667 8!
-ToImmutableDictionary668 M
-(66M N
-)66N O
-)66O P
-;66P Q
-public<< 
-
-MockCall<< 
-Build<< 
-(<< 
-string<<  
-token<<! &
-)<<& '
-=><<( *
-new== 
-(== 
-MockCallToken== 
-.== 
-FromStringToken== )
-(==) *
-token==* /
-)==/ 0
-,==0 1
-_outputs==2 :
-.==: ;!
-ToImmutableDictionary==; P
-(==P Q
-)==Q R
-)==R S
-;==S T
-}>> ª+
-\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/TypeExtensions.cs
-	namespace 	
-Pulumock
- 
-. 
-
-Extensions 
-; 
-public
-
- 
-static
-
- 
-class
-
- 
-TypeExtensions
-
- "
-{ 
-public 
+??ê ë
+)
+??ë í
+;
+??í ì
+if@@ 
+
+(@@ 
+!@@ 
+resourceSnapshot@@ 
+.@@ 
+Inputs@@ $
+.@@$ %
+TryGetValue@@% 0
+(@@0 1
+$str@@1 ;
+,@@; <
+out@@= @
+object@@A G
+?@@G H
+value@@I N
+)@@N O
+||@@P R
+value@@S X
+is@@Y [
+not@@\ _
+string@@` f
+locationFromInput@@g x
+)@@x y
+{AA 	
+throwBB 
+newBB  
+KeyNotFoundExceptionBB *
+(BB* +
+$strBB+ n
+)BBn o
+;BBo p
+}CC 	
+stringEE 
+locationFromOutputEE !
+=EE" #
+awaitEE$ )
+OutputUtilitiesEE* 9
+.EE9 :
+GetValueAsyncEE: G
+(EEG H
+resourceGroupEEH U
+.EEU V
+LocationEEV ^
+)EE^ _
+;EE_ `
+locationFromInputGG 
+.GG 
+ShouldBeGG "
+(GG" #
+$strGG# 2
+)GG2 3
+;GG3 4
+locationFromOutputHH 
+.HH 
+ShouldBeHH #
+(HH# $
+$strHH$ 3
+)HH3 4
+;HH4 5
+}II 
+[KK 
+FactKK 	
+]KK	 
 
-static 
-bool $
-MatchesResourceTypeToken /
-(/ 0
-this0 4
-Type5 9
-type: >
-,> ?
-string@ F
-?F G
-tokenH M
-)M N
-=>O Q
-! 	
-string	 
-. 
-IsNullOrWhiteSpace "
-(" #
-token# (
-)( )
-&&* ,
-type 
-. !
-GetResourceTypeTokens "
-(" #
-)# $
-.$ %
-Contains% -
-(- .
-token. 3
-)3 4
-;4 5
-public 
+publicLL 
+
+asyncLL 
+TaskLL 
+Resource_DependencyLL )
+(LL) *
+)LL* +
+{MM 
+varNN 
+mocksNN 
+=NN 
+newNN 
+MocksNN 
+.NN 
+MocksNN #
+(NN# $
+)NN$ %
+;NN% &
+(OO 	
+ImmutableArrayOO	 
+<OO 
+ResourceOO  
+>OO  !
+	ResourcesOO" +
+,OO+ ,
+IDictionaryOO- 8
+<OO8 9
+stringOO9 ?
+,OO? @
+objectOOA G
+?OOG H
+>OOH I
+StackOutputsOOJ V
+)OOV W
+resultOOX ^
+=OO_ `
+awaitOOa f
+
+DeploymentOOg q
+.OOq r
+	TestAsyncOOr {
+(OO{ |
+mocksPP 
+,PP 
+newQQ 
+TestOptionsQQ 
+{QQ 
+	IsPreviewQQ &
+=QQ' (
+falseQQ) .
+}QQ. /
+,QQ/ 0
+asyncRR 
+(RR 
+)RR 
+=>RR 
+awaitRR 
+	CoreStackRR '
+.RR' ( 
+DefineResourcesAsyncRR( <
+(RR< =
+	StackNameRR= F
+)RRF G
+)RRG H
+;RRH I
+ResourceGroupTT 
+resourceGroupTT #
+=TT$ %
+resultTT& ,
+.TT, -
+	ResourcesTT- 6
+.UU 
+OfTypeUU 
+<UU 
+ResourceGroupUU !
+>UU! "
+(UU" #
+)UU# $
+.VV 
+SingleVV 
+(VV 
+xVV 
+=>VV 
+xVV 
+.VV 
+GetResourceNameVV *
+(VV* +
+)VV+ ,
+.VV, -
+EqualsVV- 3
+(VV3 4
+$strVV4 E
+,VVE F
+StringComparisonVVG W
+.VVW X
+OrdinalVVX _
+)VV_ `
+)VV` a
+;VVa b
+ResourceSnapshotXX 
+resourceSnapshotXX )
+=XX* +
+mocksXX, 1
+.XX1 2
+ResourceSnapshotsXX2 C
+.XXC D
+SingleXXD J
+(XXJ K
+xXXK L
+=>XXM O
+xXXP Q
+.XXQ R
+LogicalNameXXR ]
+.XX] ^
+EqualsXX^ d
+(XXd e
+$strXXe |
+,XX| }
+StringComparison	XX~ é
+.
+XXé è
+Ordinal
+XXè ñ
+)
+XXñ ó
+)
+XXó ò
+;
+XXò ô
+ifYY 
+
+(YY 
+!YY 
+resourceSnapshotYY 
+.YY 
+InputsYY $
+.YY$ %
+TryGetValueYY% 0
+(YY0 1
+$strYY1 D
+,YYD E
+outYYF I
+objectYYJ P
+?YYP Q
+valueYYR W
+)YYW X
+||YYY [
+valueYY\ a
+isYYb d
+notYYe h
+stringYYi o
+resourceGroupName	YYp Å
+)
+YYÅ Ç
+{ZZ 	
+throw[[ 
+new[[  
+KeyNotFoundException[[ *
+([[* +
+$str[[+ w
+)[[w x
+;[[x y
+}\\ 	
+resourceGroupName^^ 
+.^^ 
+ShouldBe^^ "
+(^^" #
+await^^# (
+OutputUtilities^^) 8
+.^^8 9
+GetValueAsync^^9 F
+(^^F G
+resourceGroup^^G T
+.^^T U
+Name^^U Y
+)^^Y Z
+)^^Z [
+;^^[ \
+}__ 
+[aa 
+Factaa 	
+]aa	 
 
-static 
-bool  
-MatchesCallTypeToken +
-(+ ,
-this, 0
-Type1 5
-type6 :
-,: ;
-string< B
-?B C
-tokenD I
-)I J
-=>K M
-! 	
-string	 
-. 
-IsNullOrWhiteSpace "
-(" #
-token# (
-)( )
-&&* ,
-token 
-. 
-Contains 
-( 
-type 
-. 
-Name  
-,  !
-StringComparison" 2
-.2 3
-OrdinalIgnoreCase3 D
-)D E
-;E F
-private&& 
-static&& 
-IEnumerable&& 
-<&& 
-string&& %
->&&% &!
-GetResourceTypeTokens&&' <
-(&&< =
-this&&= A
-Type&&B F
-type&&G K
-)&&K L
-=>&&M O
-type'' 
-.(( 
-GetCustomAttributes((  
-(((  !
-inherit((! (
-:((( )
-false((* /
-)((/ 0
-.)) 
-Select)) 
-()) 
-attr)) 
-=>)) 
-attr))  
-.** 
-GetType** 
-(** 
-)** 
-.++ 
-GetProperty++ 
-(++ '
-PulumiTypeTokenPropertyName++ 8
-)++8 9
-?++9 :
-.,, 
-GetValue,, 
-(,, 
-attr,, 
-),, 
-),,  
-.-- 
-OfType-- 
-<-- 
-string-- 
->-- 
+publicbb 
+
+asyncbb 
+Taskbb 
+Resource_Multiplebb '
+(bb' (
+)bb( )
+{cc 
+(dd 	
+ImmutableArraydd	 
+<dd 
+Resourcedd  
+>dd  !
+	Resourcesdd" +
+,dd+ ,
+IDictionarydd- 8
+<dd8 9
+stringdd9 ?
+,dd? @
+objectddA G
+?ddG H
+>ddH I
+StackOutputsddJ V
+)ddV W
+resultddX ^
+=dd_ `
+awaitdda f
+
+Deploymentddg q
+.ddq r
+	TestAsyncddr {
+(dd{ |
+newee 
+Mocksee 
+.ee 
+Mocksee 
+(ee 
+)ee 
+,ee 
+newff 
+TestOptionsff 
+{ff 
+	IsPreviewff &
+=ff' (
+falseff) .
+}ff. /
+,ff/ 0
+asyncgg 
+(gg 
+)gg 
+=>gg 
+awaitgg 
+	CoreStackgg '
+.gg' ( 
+DefineResourcesAsyncgg( <
+(gg< =
+	StackNamegg= F
+)ggF G
+)ggG H
+;ggH I
+IEnumerableii 
+<ii 
+Resourceii 
+>ii 
+	resourcesii '
+=ii( )
+resultii* 0
+.ii0 1
+	Resourcesii1 :
+.jj 
+OfTypejj 
+<jj 
+Resourcejj 
+>jj 
+(jj 
+)jj 
+;jj  
+	resourcesll 
+.ll 
+ShouldAllBell 
+(ll 
+xll 
+=>ll  "
+!ll# $
+stringll$ *
+.ll* +
+IsNullOrWhiteSpacell+ =
+(ll= >
+xll> ?
+.ll? @
+GetResourceNamell@ O
+(llO P
+)llP Q
+)llQ R
+)llR S
+;llS T
+}mm 
+}nn ë
+c/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Mocks/Mocks.cs
+	namespace 	
+Example
+ 
+. 
+Tests 
+. 
+WithoutPulumock '
+.' (
+Mocks( -
+;- .
+internal 
+sealed	 
+class 
+Mocks 
+: 
+	MocksBase '
+;' (f
+d/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/GlobalUsings.cs˚)
+j/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ConfigurationTests.cs
+	namespace 	
+Example
+ 
+. 
+Tests 
+. 
+WithoutPulumock '
+;' (
+public 
+sealed 
+class 
+ConfigurationTests &
+:' (
+TestBase) 1
+,1 2
+IConfigurationTests3 F
+{ 
+[ 
+Fact 	
+]	 
+
+public 
+
+async 
+Task 0
+$Config_MockedConfigurationInResource :
+(: ;
+); <
+{ 
+var 
+mocks 
+= 
+new 
+Mocks 
+. 
+Mocks #
+(# $
+)$ %
+;% &
+_ 	
+=
+ 
+await 
+
+Deployment 
+. 
+	TestAsync &
+(& '
+mocks 
+, 
+new 
+TestOptions 
+{ 
+	IsPreview &
+=' (
+false) .
+}. /
+,/ 0
+async 
+( 
+) 
+=> 
+await 
+	CoreStack '
+.' ( 
+DefineResourcesAsync( <
+(< =
+	StackName= F
+)F G
+)G H
+;H I
+ResourceSnapshot 
+resourceSnapshot )
+=* +
+mocks, 1
+.1 2
+ResourceSnapshots2 C
+.C D
+SingleD J
+(J K
+xK L
+=>M O
+xP Q
+.Q R
+LogicalNameR ]
+.] ^
+Equals^ d
+(d e
+$stre |
+,| }
+StringComparison	~ é
+.
+é è
+Ordinal
+è ñ
+)
+ñ ó
+)
+ó ò
+;
+ò ô
+if 
+
+( 
+! 
+resourceSnapshot 
+. 
+Inputs $
+.$ %
+TryGetValue% 0
+(0 1
+$str1 =
+,= >
+out? B
+objectC I
+?I J
+propertiesObjK X
+)X Y
+||Z \
+propertiesObj 
+is 
+not  
+IDictionary! ,
+<, -
+string- 3
+,3 4
+object5 ;
+>; <
+
+properties= G
+)G H
+{ 	
+throw 
+new  
+KeyNotFoundException *
+(* +
+$str+ p
+)p q
+;q r
+} 	
+if   
+
+(   
+!   
+
+properties   
+.   
+TryGetValue   #
+(  # $
+$str  $ .
+,  . /
+out  0 3
+object  4 :
+?  : ;
+tenantIdObj  < G
+)  G H
+||  I K
+tenantIdObj!! 
+is!! 
+not!! 
+string!! %
+tenantId!!& .
+)!!. /
+{"" 	
+throw## 
+new##  
+KeyNotFoundException## *
+(##* +
+$str##+ n
+)##n o
+;##o p
+}$$ 	
+tenantId&& 
+.&& 
+ShouldBe&& 
+(&& 
+$str&& @
+)&&@ A
+;&&A B
+}'' 
+[)) 
+Fact)) 	
+]))	 
+
+public** 
+
+async** 
+Task** )
+Config_MockedSecretInResource** 3
+(**3 4
+)**4 5
+{++ 
+(,, 	
+ImmutableArray,,	 
+<,, 
+Resource,,  
+>,,  !
+	Resources,," +
+,,,+ ,
+IDictionary,,- 8
+<,,8 9
+string,,9 ?
+,,,? @
+object,,A G
+?,,G H
+>,,H I
+StackOutputs,,J V
+),,V W
+result,,X ^
+=,,_ `
+await,,a f
+
+Deployment,,g q
+.,,q r
+	TestAsync,,r {
+(,,{ |
+new-- 
+Mocks-- 
+.-- 
+Mocks-- 
 (-- 
 )-- 
-... 
-Where.. 
-(.. 
-token.. 
-=>.. 
-!.. 
-string.. #
-...# $
-IsNullOrWhiteSpace..$ 6
-(..6 7
-token..7 <
-)..< =
-)..= >
-;..> ?
-public>> 
+,-- 
+new.. 
+TestOptions.. 
+{.. 
+	IsPreview.. &
+=..' (
+false..) .
+}... /
+,../ 0
+async// 
+(// 
+)// 
+=>// 
+await// 
+	CoreStack// '
+.//' ( 
+DefineResourcesAsync//( <
+(//< =
+	StackName//= F
+)//F G
+)//G H
+;//H I
+Secret11 
+secret11 
+=11 
+result11 
+.11 
+	Resources11 (
+.22 
+OfType22 
+<22 
+Secret22 
+>22 
+(22 
+)22 
+.33 
+Single33 
+(33 
+x33 
+=>33 
+x33 
+.33 
+GetResourceName33 *
+(33* +
+)33+ ,
+.33, -
+Equals33- 3
+(333 4
+$str334 g
+,33g h
+StringComparison33i y
+.33y z
+Ordinal	33z Å
+)
+33Å Ç
+)
+33Ç É
+;
+33É Ñ$
+SecretPropertiesResponse55  
+secretProperties55! 1
+=552 3
+await554 9
+OutputUtilities55: I
+.55I J
+GetValueAsync55J W
+(55W X
+secret55X ^
+.55^ _
+
+Properties55_ i
+)55i j
+;55j k
+secretProperties66 
+.66 
+Value66 
+.66 
+ShouldBe66 '
+(66' (
+$str66( ;
+)66; <
+;66< =
+}77 
+}88 Éj
+n/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/ComponentResourceTests.cs
+	namespace 	
+Example
+ 
+. 
+Tests 
+. 
+WithoutPulumock '
+;' (
+public 
+class "
+ComponentResourceTests #
+:$ %
+TestBase& .
+,. /#
+IComponentResourceTests0 G
+{ 
+[ 
+Fact 	
+]	 
 
-static>> 
-string>> 
-GetOutputName>> &
-<>>& '
-T>>' (
->>>( )
-(>>) *
-this>>* .
-
-Expression>>/ 9
-<>>9 :
-Func>>: >
-<>>> ?
-T>>? @
-,>>@ A
-object>>B H
->>>H I
->>>I J
-propertySelector>>K [
-)>>[ \
-{?? 
-
-MemberInfo@@ 
-member@@ 
-=@@ 
-propertySelector@@ ,
-.@@, -
-Body@@- 1
-switch@@2 8
-{AA 	
-MemberExpressionBB 
-mBB 
-=>BB !
-mBB" #
-.BB# $
-MemberBB$ *
-,BB* +
-UnaryExpressionCC 
-{CC 
-OperandCC %
-:CC% &
-MemberExpressionCC' 7
-mCC8 9
-}CC: ;
-=>CC< >
-mCC? @
-.CC@ A
-MemberCCA G
-,CCG H
-_DD 
-=>DD 
-throwDD 
-newDD 
-ArgumentExceptionDD ,
-(DD, -
-$strDD- H
-)DDH I
-}EE 	
-;EE	 
-
-returnGG 
-memberGG 
-.GG 
-GetCustomAttributeGG (
-<GG( )
-OutputAttributeGG) 8
->GG8 9
-(GG9 :
-)GG: ;
-?GG; <
-.GG< =
-NameGG= A
-??GGB D
-memberGGE K
-.GGK L
-NameGGL P
-.GGP Q
-ToCamelCaseGGQ \
-(GG\ ]
-)GG] ^
-;GG^ _
-}HH 
-publicXX 
-
-staticXX 
-stringXX 
-GetInputNameXX %
-<XX% &
-TXX& '
->XX' (
-(XX( )
-thisXX) -
-
-ExpressionXX. 8
-<XX8 9
-FuncXX9 =
-<XX= >
-TXX> ?
-,XX? @
-objectXXA G
-?XXG H
->XXH I
->XXI J
-propertySelectorXXK [
-)XX[ \
-{YY 
-
-MemberInfoZZ 
-memberZZ 
-=ZZ 
-propertySelectorZZ ,
-.ZZ, -
-BodyZZ- 1
-switchZZ2 8
-{[[ 	
-MemberExpression\\ 
-m\\ 
-=>\\ !
-m\\" #
-.\\# $
-Member\\$ *
-,\\* +
-UnaryExpression]] 
-{]] 
-Operand]] %
-:]]% &
-MemberExpression]]' 7
-m]]8 9
-}]]: ;
-=>]]< >
-m]]? @
-.]]@ A
-Member]]A G
-,]]G H
-_^^ 
-=>^^ 
-throw^^ 
-new^^ 
-ArgumentException^^ ,
-(^^, -
-$str^^- H
-)^^H I
-}__ 	
-;__	 
-
-returnbb 
-memberbb 
-.bb 
-Namebb 
-.bb 
-ToCamelCasebb &
-(bb& '
-)bb' (
-;bb( )
-}cc 
-privatehh 
-consthh 
-stringhh '
-PulumiTypeTokenPropertyNamehh 4
-=hh5 6
-$strhh7 =
-;hh= >
-}ii ∏	
-^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/StringExtensions.cs
-	namespace 	
-Pulumock
- 
-. 
-
-Extensions 
-; 
-public 
-static 
-class 
-StringExtensions $
-{ 
 public 
-
-static 
-string 
-ToCamelCase $
-($ %
-this% )
-string* 0
-name1 5
-)5 6
-{ 
-if 
-
-( 
-string 
-. 
-IsNullOrWhiteSpace %
-(% &
-name& *
-)* +
-||, .
-char/ 3
-.3 4
-IsLower4 ;
-(; <
-name< @
-[@ A
-$numA B
-]B C
-)C D
-)D E
-{ 	
-return 
-name 
-; 
-} 	
-return 
-char 
-. 
-ToLowerInvariant $
-($ %
-name% )
-[) *
-$num* +
-]+ ,
-), -
-+. /
-name0 4
-[4 5
-$num5 6
-..6 8
-]8 9
-;9 :
-} 
-} ‰	
-`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/ResourceExtensions.cs
-	namespace 	
-Pulumock
- 
-. 
+
+async 
+Task 
+ComponentResource '
+(' (
+)( )
+{ 
+var 
+mocks 
+= 
+new 
+Mocks 
+. 
+Mocks #
+(# $
+)$ %
+;% &
+( 	
+ImmutableArray	 
+< 
+Resource  
+>  !
+	Resources" +
+,+ ,
+IDictionary- 8
+<8 9
+string9 ?
+,? @
+objectA G
+?G H
+>H I
+OutputsJ Q
+)Q R
+resultS Y
+=Z [
+await\ a
 
-Extensions 
-; 
-public		 
-static		 
-class		 
-ResourceExtensions		 &
-{
-
- 
-public 
+Deploymentb l
+.l m
+	TestAsyncm v
+(v w
+mocks 
+, 
+new 
+TestOptions 
+{ 
+	IsPreview &
+=' (
+false) .
+}. /
+,/ 0
+( 
+) 
+=> 
+{ 
+var 
+componentResource %
+=& '
+new( +0
+$KeyVaultWithSecretsComponentResource, P
+(P Q
+$strQ b
+,b c
+newd g
+(g h
+)h i
+{ 
+	VaultName 
+= 
+$str  7
+,7 8
+ResourceGroupName %
+=& '
+$str( 9
+,9 :
+TenantId 
+= 
+$str E
+,E F
+Secrets 
+= 
+new !
+(! "
+)" #
+{ 
+{   
+$str   5
+,  5 6
+$str  7 J
+}  J K
+}!! 
+}"" 
+)"" 
+;"" 
+return$$ 
+new$$ 
+
+Dictionary$$ %
+<$$% &
+string$$& ,
+,$$, -
+object$$. 4
+?$$4 5
+>$$5 6
+{%% 
+{&& 
+$str&&  
+,&&  !
+componentResource&&" 3
+.&&3 4
+KeyVault&&4 <
+}&&= >
+}'' 
+;'' 
+}(( 
+)(( 
+;(( 0
+$KeyVaultWithSecretsComponentResource** ,
+componentResource**- >
+=**? @
+result**A G
+.**G H
+	Resources**H Q
+.++ 
+OfType++ 
+<++ 0
+$KeyVaultWithSecretsComponentResource++ 8
+>++8 9
+(++9 :
+)++: ;
+.,, 
+Single,, 
+(,, 
+),, 
+;,, 
+Vault.. 
+keyVault.. 
+=.. 
+result.. 
+...  
+	Resources..  )
+.// 
+OfType// 
+<// 
+Vault// 
+>// 
+(// 
+)// 
+.00 
+Single00 
+(00 
+)00 
+;00 
+Secret22 
+secret22 
+=22 
+result22 
+.22 
+	Resources22 (
+.33 
+OfType33 
+<33 
+Secret33 
+>33 
+(33 
+)33 
+.44 
+Single44 
+(44 
+)44 
+;44 $
+SecretPropertiesResponse66  
+secretProperties66! 1
+=662 3
+await664 9
+OutputUtilities66: I
+.66I J
+GetValueAsync66J W
+(66W X
+secret66X ^
+.66^ _
+
+Properties66_ i
+)66i j
+;66j k
+componentResource88 
+.88 
+GetResourceName88 )
+(88) *
+)88* +
+.88+ ,
+ShouldBe88, 4
+(884 5
+$str885 F
+)88F G
+;88G H
+keyVault99 
+.99 
+GetResourceName99  
+(99  !
+)99! "
+.99" #
+ShouldBe99# +
+(99+ ,
+$str99, C
+)99C D
+;99D E
+secret:: 
+.:: 
+GetResourceName:: 
+(:: 
+)::  
+.::  !
+ShouldBe::! )
+(::) *
+$str::* ]
+)::] ^
+;::^ _
+secretProperties;; 
+.;; 
+Value;; 
+.;; 
+ShouldBe;; '
+(;;' (
+$str;;( ;
+);;; <
+;;;< =
+}<< 
+[>> 
+Fact>> 	
+]>>	 
 
-static 
-T $
-GetResourceByLogicalName ,
-<, -
-T- .
->. /
-(/ 0
-this0 4
-ImmutableArray5 C
-<C D
-ResourceD L
->L M
-	resourcesN W
-,W X
-stringY _
-logicalName` k
-)k l
-wherem r
-Ts t
-:u v
-Resourcew 
+public?? 
+
+async?? 
+Task?? ;
+/ComponentResource_MissingNonRequiredResourceArg?? E
+(??E F
+)??F G
+{@@ 
+varAA 
+mocksAA 
+=AA 
+newAA 
+MocksAA 
+.AA 
+MocksAA #
+(AA# $
+)AA$ %
+;AA% &
+(BB 	
+ImmutableArrayBB	 
+<BB 
+ResourceBB  
+>BB  !
+	ResourcesBB" +
+,BB+ ,
+IDictionaryBB- 8
+<BB8 9
+stringBB9 ?
+,BB? @
+objectBBA G
+?BBG H
+>BBH I
+OutputsBBJ Q
+)BBQ R
+resultBBS Y
+=BBZ [
+awaitBB\ a
+
+DeploymentBBb l
+.BBl m
+	TestAsyncBBm v
+(BBv w
+mocksCC 
+,CC 
+newDD 
+TestOptionsDD 
+{DD 
+	IsPreviewDD &
+=DD' (
+falseDD) .
+}DD. /
+,DD/ 0
+(EE 
+)EE 
+=>EE 
+{FF 
+varGG 
+componentResourceGG %
+=GG& '
+newGG( +0
+$KeyVaultWithSecretsComponentResourceGG, P
+(GGP Q
+$strGGQ b
+,GGb c
+newGGd g
+(GGg h
+)GGh i
+{HH 
+	VaultNameII 
+=II 
+$strII  7
+,II7 8
+ResourceGroupNameJJ %
+=JJ& '
+$strJJ( 9
+,JJ9 :
+TenantIdKK 
+=KK 
+$strKK E
+}LL 
+)LL 
+;LL 
+returnNN 
+newNN 
+
+DictionaryNN %
+<NN% &
+stringNN& ,
+,NN, -
+objectNN. 4
+?NN4 5
+>NN5 6
+{OO 
+{PP 
+$strPP  
+,PP  !
+componentResourcePP" 3
+.PP3 4
+KeyVaultPP4 <
+}PP= >
+}QQ 
+;QQ 
+}RR 
+)RR 
+;RR 
+SecretTT 
+?TT 
+secretTT 
+=TT 
+resultTT 
+.TT  
+	ResourcesTT  )
+.UU 
+OfTypeUU 
+<UU 
+SecretUU 
+>UU 
+(UU 
+)UU 
+.VV 
+SingleOrDefaultVV 
+(VV 
+)VV 
+;VV 
+secretXX 
+.XX 
+ShouldBeNullXX 
+(XX 
+)XX 
+;XX 
+}YY 
+[[[ 
+Fact[[ 	
+][[	 
+
+public\\ 
+
+async\\ 
+Task\\ $
+ComponentResource_Parent\\ .
+(\\. /
+)\\/ 0
+{]] 
+var^^ 
+mocks^^ 
+=^^ 
+new^^ 
+Mocks^^ 
+.^^ 
+Mocks^^ #
+(^^# $
+)^^$ %
+;^^% &
+(__ 	
+ImmutableArray__	 
+<__ 
+Resource__  
+>__  !
+	Resources__" +
+,__+ ,
+IDictionary__- 8
+<__8 9
+string__9 ?
+,__? @
+object__A G
+?__G H
+>__H I
+Outputs__J Q
+)__Q R
+result__S Y
+=__Z [
+await__\ a
+
+Deployment__b l
+.__l m
+	TestAsync__m v
+(__v w
+mocks`` 
+,`` 
+newaa 
+TestOptionsaa 
+{aa 
+	IsPreviewaa &
+=aa' (
+falseaa) .
+}aa. /
+,aa/ 0
+(bb 
+)bb 
+=>bb 
+{cc 
+vardd 
+componentResourcedd %
+=dd& '
+newdd( +0
+$KeyVaultWithSecretsComponentResourcedd, P
+(ddP Q
+$strddQ b
+,ddb c
+newddd g
+(ddg h
+)ddh i
+{ee 
+	VaultNameff 
+=ff 
+$strff  7
+,ff7 8
+ResourceGroupNamegg %
+=gg& '
+$strgg( 9
+,gg9 :
+TenantIdhh 
+=hh 
+$strhh E
+,hhE F
+Secretsii 
+=ii 
+newii !
+(ii! "
+)ii" #
+{jj 
+{kk 
+$strkk 5
+,kk5 6
+$strkk7 J
+}kkJ K
+}ll 
+}mm 
+)mm 
+;mm 
+returnoo 
+newoo 
+
+Dictionaryoo %
+<oo% &
+stringoo& ,
+,oo, -
+objectoo. 4
+?oo4 5
+>oo5 6
+{pp 
+{qq 
+$strqq  
+,qq  !
+componentResourceqq" 3
+.qq3 4
+KeyVaultqq4 <
+}qq= >
+}rr 
+;rr 
+}ss 
+)ss 
+;ss 0
+$KeyVaultWithSecretsComponentResourceuu ,
+componentResourceuu- >
+=uu? @
+resultuuA G
+.uuG H
+	ResourcesuuH Q
+.vv 
+OfTypevv 
+<vv 0
+$KeyVaultWithSecretsComponentResourcevv 8
+>vv8 9
+(vv9 :
+)vv: ;
+.ww 
+Singleww 
+(ww 
+)ww 
+;ww 
+Vaultyy 
+keyVaultyy 
+=yy 
+resultyy 
+.yy  
+	Resourcesyy  )
+.zz 
+OfTypezz 
+<zz 
+Vaultzz 
+>zz 
+(zz 
+)zz 
+.{{ 
+Single{{ 
+({{ 
+){{ 
+;{{ 
+Secret}} 
+secret}} 
+=}} 
+result}} 
+.}} 
+	Resources}} (
+.~~ 
+OfType~~ 
+<~~ 
+Secret~~ 
+>~~ 
+(~~ 
+)~~ 
+. 
+Single 
+( 
+) 
+; 
+TestHelpers
+ÅÅ 
+.
+ÅÅ 
+	IsChildOf
+ÅÅ 
+(
+ÅÅ 
+keyVault
+ÅÅ &
+,
+ÅÅ& '
+componentResource
+ÅÅ( 9
+)
+ÅÅ9 :
+.
+ÅÅ: ;
+ShouldBeTrue
+ÅÅ; G
+(
+ÅÅG H
+)
+ÅÅH I
+;
+ÅÅI J
+TestHelpers
+ÇÇ 
+.
+ÇÇ 
+	IsChildOf
+ÇÇ 
+(
+ÇÇ 
+secret
+ÇÇ $
+,
+ÇÇ$ %
+componentResource
+ÇÇ& 7
+)
+ÇÇ7 8
+.
+ÇÇ8 9
+ShouldBeTrue
+ÇÇ9 E
+(
+ÇÇE F
+)
+ÇÇF G
+;
+ÇÇG H
+}
+ÉÉ 
+[
+ÖÖ 
+Fact
+ÖÖ 	
+]
+ÖÖ	 
+
+public
+ÜÜ 
+
+async
+ÜÜ 
+Task
+ÜÜ '
+ComponentResource_Outputs
+ÜÜ /
+(
+ÜÜ/ 0
+)
+ÜÜ0 1
+{
+áá 
+var
+àà 
+mocks
+àà 
+=
+àà 
+new
+àà 
+Mocks
+àà 
+.
+àà 
+Mocks
+àà #
+(
+àà# $
+)
+àà$ %
+;
+àà% &
+(
+ââ 	
+ImmutableArray
+ââ	 
+<
+ââ 
+Resource
+ââ  
+>
+ââ  !
+	Resources
+ââ" +
+,
+ââ+ ,
+IDictionary
+ââ- 8
+<
+ââ8 9
+string
+ââ9 ?
+,
+ââ? @
+object
+ââA G
+?
+ââG H
+>
+ââH I
+Outputs
+ââJ Q
+)
+ââQ R
+result
+ââS Y
+=
+ââZ [
+await
+ââ\ a
+
+Deployment
+ââb l
+.
+ââl m
+	TestAsync
+ââm v
+(
+ââv w
+mocks
+ää 
+,
+ää 
+new
+ãã 
+TestOptions
+ãã 
+{
+ãã 
+	IsPreview
+ãã &
+=
+ãã' (
+false
+ãã) .
+}
+ãã. /
+,
+ãã/ 0
+(
+åå 
+)
+åå 
 =>
-Ä Ç
-	resources 
-. 
-OfType 
-< 
-T 
-> 
-( 
-) 
-. 
-Single 
-( 
-x 
-=> 
-x 
-. 
-GetResourceName *
-(* +
-)+ ,
-., -
-Equals- 3
-(3 4
-logicalName4 ?
-,? @
-StringComparisonA Q
-.Q R
-OrdinalR Y
-)Y Z
-)Z [
-;[ \
-} §
-^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/OutputExtensions.cs
-	namespace 	
-Pulumock
- 
-. 
+åå 
+{
+çç 
+var
+éé 
+componentResource
+éé %
+=
+éé& '
+new
+éé( +2
+$KeyVaultWithSecretsComponentResource
+éé, P
+(
+ééP Q
+$str
+ééQ b
+,
+ééb c
+new
+ééd g
+(
+éég h
+)
+ééh i
+{
+èè 
+	VaultName
+êê 
+=
+êê 
+$str
+êê  7
+,
+êê7 8
+ResourceGroupName
+ëë %
+=
+ëë& '
+$str
+ëë( 9
+,
+ëë9 :
+TenantId
+íí 
+=
+íí 
+$str
+íí E
+}
+ìì 
+)
+ìì 
+;
+ìì 
+return
+ïï 
+new
+ïï 
 
-Extensions 
-; 
-public		 
-static		 
-class		 
-OutputExtensions		 $
-{
-
- 
-public 
+Dictionary
+ïï %
+<
+ïï% &
+string
+ïï& ,
+,
+ïï, -
+object
+ïï. 4
+?
+ïï4 5
+>
+ïï5 6
+{
+ññ 
+{
+óó 
+$str
+óó  
+,
+óó  !
+componentResource
+óó" 3
+.
+óó3 4
+KeyVault
+óó4 <
+}
+óó= >
+}
+òò 
+;
+òò 
+}
+ôô 
+)
+ôô 
+;
+ôô 
+if
+õõ 
+
+(
+õõ 
+!
+õõ 
+result
+õõ 
+.
+õõ 
+Outputs
+õõ 
+.
+õõ 
+TryGetValue
+õõ '
+(
+õõ' (
+$str
+õõ( 2
+,
+õõ2 3
+out
+õõ4 7
+object
+õõ8 >
+?
+õõ> ?
+keyVaultObj
+õõ@ K
+)
+õõK L
+||
+õõM O
+keyVaultObj
+õõP [
+is
+õõ\ ^
+not
+õõ_ b
+Vault
+õõc h
+keyVault
+õõi q
+)
+õõq r
+{
+úú 	
+throw
+ùù 
+new
+ùù "
+KeyNotFoundException
+ùù *
+(
+ùù* +
+$str
+ùù+ n
+)
+ùùn o
+;
+ùùo p
+}
+ûû 	
+keyVault
+†† 
+.
+†† 
+GetResourceName
+††  
+(
+††  !
+)
+††! "
+.
+††" #
+ShouldBe
+††# +
+(
+††+ ,
+$str
+††, C
+)
+††C D
+;
+††D E
+}
+°° 
+}¢¢ ∑@
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/CallTests.cs
+	namespace 	
+Example
+ 
+. 
+Tests 
+. 
+WithoutPulumock '
+;' (
+public 
+class 
+	CallTests 
+: 
+TestBase !
+,! "
+
+ICallTests# -
+{ 
+[ 
+Fact 	
+]	 
 
-static 
-async 
-Task 
-< 
-T 
-> 
-GetValueAsync  -
-<- .
-T. /
->/ 0
-(0 1
-this1 5
-Output6 <
-<< =
-T= >
->> ?
-output@ F
-)F G
-=>H J
-await 
-OutputUtilities 
-. 
-GetValueAsync +
-(+ ,
-output, 2
-)2 3
-;3 4
-} _
-]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/InputExtensions.cs
+public 
+
+async 
+Task 
+
+Call_Input  
+(  !
+)! "
+{ 
+var 
+mocks 
+= 
+new 
+Mocks 
+. 
+Mocks #
+(# $
+)$ %
+;% &
+_ 	
+=
+ 
+await 
+
+Deployment 
+. 
+	TestAsync &
+(& '
+mocks 
+, 
+new 
+TestOptions 
+{ 
+	IsPreview &
+=' (
+false) .
+}. /
+,/ 0
+async 
+( 
+) 
+=> 
+await 
+	CoreStack '
+.' ( 
+DefineResourcesAsync( <
+(< =
+	StackName= F
+)F G
+)G H
+;H I
+var 
+calls 
+= 
+mocks 
+. 
+CallSnapshots '
+. 
+Where 
+( 
+x 
+=> 
+x 
+. 
+Token 
+.  
+Equals  &
+(& '
+$str' U
+,U V
+StringComparisonW g
+.g h
+Ordinalh o
+)o p
+)p q
+. 
+ToList 
+( 
+) 
+; 
+var 
+roleDefinitionIds 
+= 
+calls  %
+. 
+Select 
+( 
+call 
+=> 
+call  
+.  !
+Inputs! '
+.' (
+TryGetValue( 3
+(3 4
+$str4 F
+,F G
+outH K
+objectL R
+?R S
+roleDefinitionIdT d
+)d e
+?f g
+roleDefinitionIdh x
+asy {
+string	| Ç
+:
+É Ñ
+null
+Ö â
+)
+â ä
+. 
+Where 
+( 
+id 
+=> 
+id 
+is 
+not "
+null# '
+)' (
+. 
+ToList 
+( 
+) 
+; 
+calls!! 
+.!! 
+Count!! 
+.!! 
+ShouldBe!! 
+(!! 
+$num!! 
+)!! 
+;!!  
+roleDefinitionIds"" 
+."" 
+ShouldContain"" '
+(""' (
+$str""( N
+)""N O
+;""O P
+roleDefinitionIds## 
+.## 
+ShouldContain## '
+(##' (
+$str##( N
+)##N O
+;##O P
+}$$ 
+[&& 
+Fact&& 	
+]&&	 
+
+public'' 
+
+async'' 
+Task'' 
+Call_Output'' !
+(''! "
+)''" #
+{(( 
+var)) 
+mocks)) 
+=)) 
+new)) 
+Mocks)) 
+.)) 
+Mocks)) #
+())# $
+)))$ %
+;))% &
+_** 	
+=**
+ 
+await** 
+
+Deployment** 
+.** 
+	TestAsync** &
+(**& '
+mocks++ 
+,++ 
+new,, 
+TestOptions,, 
+{,, 
+	IsPreview,, &
+=,,' (
+false,,) .
+},,. /
+,,,/ 0
+async-- 
+(-- 
+)-- 
+=>-- 
+await-- 
+	CoreStack-- '
+.--' ( 
+DefineResourcesAsync--( <
+(--< =
+	StackName--= F
+)--F G
+)--G H
+;--H I
+var// 
+calls// 
+=// 
+mocks// 
+.// 
+CallSnapshots// '
+.00 
+Where00 
+(00 
+x00 
+=>00 
+x11 
+.11 
+Token11 
+.11 
+Equals11 
+(11 
+$str11 M
+,11M N
+StringComparison11O _
+.11_ `
+Ordinal11` g
+)11g h
+&&22 
+x22 
+.22 
+Inputs22 
+.22 
+TryGetValue22 '
+(22' (
+$str22( :
+,22: ;
+out22< ?
+object22@ F
+?22F G
+roleDefinitionId22H X
+)22X Y
+&&33 
+roleDefinitionId33 #
+is33$ &
+string33' -
+id33. 0
+&&44 
+id44 
+.44 
+Equals44 
+(44 
+$str44 C
+,44C D
+StringComparison44E U
+.44U V
+Ordinal44V ]
+)44] ^
+)44^ _
+.55 
+ToList55 
+(55 
+)55 
+;55 
+var77  
+getRoleDefinitionIds77  
+=77! "
+calls77# (
+.88 
+Select88 
+(88 
+call88 
+=>88 
+call88  
+.88  !
+Outputs88! (
+.88( )
+TryGetValue88) 4
+(884 5
+$str885 9
+,889 :
+out88; >
+object88? E
+?88E F
+id88G I
+)88I J
+?99 
+id99 
+as99 
+string99 
+::: 
+throw:: 
+new:: %
+InvalidOperationException:: 5
+(::5 6
+$str::6 R
+)::R S
+)::S T
+.;; 
+ToList;; 
+(;; 
+);; 
+;;;  
+getRoleDefinitionIds== 
+.== 
+ShouldAllBe== (
+(==( )
+id==) +
+=>==, .
+string==/ 5
+.==5 6
+Equals==6 <
+(==< =
+id=== ?
+,==? @
+$str==A g
+,==g h
+StringComparison==i y
+.==y z
+Ordinal	==z Å
+)
+==Å Ç
+)
+==Ç É
+;
+==É Ñ
+}>> 
+[@@ 
+Fact@@ 	
+]@@	 
+
+publicAA 
+
+asyncAA 
+TaskAA #
+Call_ResourceDependencyAA -
+(AA- .
+)AA. /
+{BB 
+varCC 
+mocksCC 
+=CC 
+newCC 
+MocksCC 
+.CC 
+MocksCC #
+(CC# $
+)CC$ %
+;CC% &
+(DD 	
+ImmutableArrayDD	 
+<DD 
+ResourceDD  
+>DD  !
+	ResourcesDD" +
+,DD+ ,
+IDictionaryDD- 8
+<DD8 9
+stringDD9 ?
+,DD? @
+objectDDA G
+?DDG H
+>DDH I
+StackOutputsDDJ V
+)DDV W
+resultDDX ^
+=DD_ `
+awaitDDa f
+
+DeploymentDDg q
+.DDq r
+	TestAsyncDDr {
+(DD{ |
+mocksEE 
+,EE 
+newFF 
+TestOptionsFF 
+{FF 
+	IsPreviewFF &
+=FF' (
+falseFF) .
+}FF. /
+,FF/ 0
+asyncGG 
+(GG 
+)GG 
+=>GG 
+awaitGG 
+	CoreStackGG '
+.GG' ( 
+DefineResourcesAsyncGG( <
+(GG< =
+	StackNameGG= F
+)GGF G
+)GGG H
+;GGH I
+RoleAssignmentII 
+roleAssignmentII %
+=II& '
+resultII( .
+.II. /
+	ResourcesII/ 8
+.JJ 
+OfTypeJJ 
+<JJ 
+RoleAssignmentJJ "
+>JJ" #
+(JJ# $
+)JJ$ %
+.KK 
+SingleKK 
+(KK 
+xKK 
+=>KK 
+xKK 
+.KK 
+GetResourceNameKK *
+(KK* +
+)KK+ ,
+.KK, -
+EqualsKK- 3
+(KK3 4
+$strKK4 N
+,KKN O
+StringComparisonKKP `
+.KK` a
+OrdinalKKa h
+)KKh i
+)KKi j
+;KKj k
+stringMM 
+roleDefinitionIdMM 
+=MM  !
+awaitMM" '
+OutputUtilitiesMM( 7
+.MM7 8
+GetValueAsyncMM8 E
+(MME F
+roleAssignmentMMF T
+.MMT U
+RoleDefinitionIdMMU e
+)MMe f
+;MMf g
+roleDefinitionIdNN 
+.NN 
+ShouldBeNN !
+(NN! "
+$strNN" H
+)NNH I
+;NNI J
+}OO 
+}PP 

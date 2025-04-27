@@ -1,10 +1,5 @@
-ç
-Å/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/obj/Debug/net9.0/Example.Tests.Shared.AssemblyInfo.csutf-8ó
-ã/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.csutf-8è
-É/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/obj/Debug/net9.0/Example.Tests.Shared.GlobalUsings.g.csutf-8w
-n/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IStackReferenceTests.csutf-8t
-k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IStackOutputTests.csutf-8q
-h/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IResourceTests.csutf-8v
-m/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IConfigurationTests.csutf-8z
-q/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IComponentResourceTests.csutf-8m
-d/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/ICallTests.csutf-8
+Ä
+u/Users/robertopiranamedi/RiderProjects/Pulumock/Source/StackReference/obj/Debug/net9.0/StackReference.AssemblyInfo.csutf-8ë
+Ö/Users/robertopiranamedi/RiderProjects/Pulumock/Source/StackReference/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.csutf-8Ç
+w/Users/robertopiranamedi/RiderProjects/Pulumock/Source/StackReference/obj/Debug/net9.0/StackReference.GlobalUsings.g.csutf-8Y
+P/Users/robertopiranamedi/RiderProjects/Pulumock/Source/StackReference/Program.csutf-8
