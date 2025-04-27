@@ -10,19 +10,19 @@ using Pulumock.TestFixtures;
 namespace Example.Tests.WithPulumock.Shared;
 
 #pragma warning disable CA1515
-public class TestBase
+public static class TestBase
 #pragma warning restore CA1515
 {
-    protected TestBase() =>
-        FixtureBuilder = new FixtureBuilder()
-            .WithMockConfiguration(new MockConfigurationBuilder()
-                .WithConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId", "1f526cdb-1975-4248-ab0f-57813df294cb")
-                .WithConfiguration(PulumiConfigurationNamespace.AzureNative, "subscriptionId", "f2f2c6e5-17c2-4dfa-913d-6509deb6becf")
-                .WithConfiguration(PulumiConfigurationNamespace.AzureNative, "location", "swedencentral")
-                .WithConfiguration(PulumiConfigurationNamespace.Default, "stackReferenceOrgName", "hoolit")
-                .WithConfiguration(PulumiConfigurationNamespace.Default, "stackReferenceProjectName", "StackReference")
-                .WithSecretConfiguration(PulumiConfigurationNamespace.Default, "databaseConnectionString", "very-secret-value")
-                .Build())
+    public const string StackName = "dev";
+    
+    public static FixtureBuilder GetBaseFixtureBuilder() =>
+        new FixtureBuilder()
+            .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId", "1f526cdb-1975-4248-ab0f-57813df294cb")
+            .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "subscriptionId", "f2f2c6e5-17c2-4dfa-913d-6509deb6becf")
+            .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "location", "swedencentral")
+            .WithMockStackConfiguration(PulumiConfigurationNamespace.Default, "stackReferenceOrgName", "hoolit")
+            .WithMockStackConfiguration(PulumiConfigurationNamespace.Default, "stackReferenceProjectName", "StackReference")
+            .WithMockStackConfiguration(PulumiConfigurationNamespace.Default, "databaseConnectionString", "very-secret-value")
             .WithMockStackReference(new MockStackReferenceBuilder($"hoolit/StackReference/{StackName}")
                 .WithOutput("microserviceManagedIdentityPrincipalId", "b95a4aa0-167a-4bc2-baf4-d43a776da1bd")
                 .Build())
@@ -39,7 +39,4 @@ public class TestBase
                 .WithOutput<GetRoleDefinitionResult, PermissionResponse>(x => x.Permissions, p => 
                     p.WithNestedOutput(x => x.Condition, "condition"))
                 .Build(typeof(GetRoleDefinition)));
-    protected FixtureBuilder FixtureBuilder { get; }
-
-    protected const string StackName = "dev";
 }

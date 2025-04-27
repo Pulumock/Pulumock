@@ -2,6 +2,7 @@ using System.Collections.Immutable;
 using System.Text.Json;
 using Pulumi;
 using Pulumi.Testing;
+using Pulumock.Mocks.Enums;
 using Pulumock.Mocks.Models;
 using Pulumock.TestFixtures.Constants;
 
@@ -11,19 +12,44 @@ namespace Pulumock.TestFixtures;
 // TODO: support both typed and non-typed builders and with() methods
 public class FixtureBuilder
 {
-    private MockConfiguration? _mockConfiguration;
+    private readonly Dictionary<string, object> _mockStackConfigurations = new();
     private readonly Dictionary<(Type Type, string? LogicalName), MockResource> _mockResources = new();
     private readonly Dictionary<MockCallToken, MockCall> _mockCalls = new();
     
-    public FixtureBuilder WithMockConfiguration(MockConfiguration mockConfiguration)
+    public FixtureBuilder WithMockStackConfiguration(string key, object value)
     {
-        _mockConfiguration = mockConfiguration;
+        _mockStackConfigurations[key] = value;
         return this;
     }
     
-    public FixtureBuilder WithoutMockConfiguration()
+    /// <summary>
+    /// Adds a configuration key and value under a specific namespace.
+    /// Also supports <see href="https://www.pulumi.com/docs/iac/concepts/config/#structured-configuration">structured configuration</see>.
+    /// </summary>
+    /// <param name="namespace">The configuration namespace (e.g., "project", "azure-native").</param>
+    /// <param name="value">The configuration value.</param>
+    /// <param name="keyName">The optional key name within the namespace.</param>
+    public FixtureBuilder WithMockStackConfiguration(PulumiConfigurationNamespace @namespace, string keyName, object value)
     {
-        _mockConfiguration = null;
+        WithMockStackConfiguration(FormatKey(@namespace.Value, keyName), value);
+        return this;
+    }
+    
+    public FixtureBuilder WithoutMockStackConfiguration(string key)
+    {
+        _mockStackConfigurations.Remove(key);
+        return this;
+    }
+    
+    public FixtureBuilder WithoutMockStackConfiguration(PulumiConfigurationNamespace @namespace, string keyName)
+    {
+        WithoutMockStackConfiguration(FormatKey(@namespace.Value, keyName));
+        return this;
+    }
+    
+    public FixtureBuilder ClearMockStackConfigurations()
+    {
+        _mockStackConfigurations.Clear();
         return this;
     }
     
@@ -81,10 +107,10 @@ public class FixtureBuilder
         
     public async Task<Fixture> BuildAsync(Func<Task<IDictionary<string, object?>>> createResourcesFunc, TestOptions? testOptions = null)
     {
-        if (_mockConfiguration is not null)
+        if (_mockStackConfigurations.Count > 0)
         {
             Environment.SetEnvironmentVariable(PulumiConfigurationConstants.EnvironmentVariable, 
-                JsonSerializer.Serialize(_mockConfiguration.MockConfigurations));
+                JsonSerializer.Serialize(_mockStackConfigurations));
         }
         
         var mocks = new Mocks.Mocks(_mockResources.ToImmutableDictionary(), _mockCalls.ToImmutableDictionary());
@@ -94,6 +120,9 @@ public class FixtureBuilder
             testOptions ?? new TestOptions { IsPreview = false },
             async () => await createResourcesFunc());
 
-        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.ResourceSnapshots, mocks.CallSnapshots);
+        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.ResourceSnapshots, mocks.CallSnapshots, _mockStackConfigurations.ToImmutableDictionary());
     }
+    
+    private static string FormatKey(string @namespace, string? keyName) =>
+        string.IsNullOrWhiteSpace(keyName) ? @namespace : $"{@namespace}:{keyName}";
 }

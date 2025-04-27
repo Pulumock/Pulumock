@@ -17,8 +17,8 @@ public class StackReferenceTests : TestBase, IStackReferenceTests
     {
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             new Mocks.Mocks(), 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = StackName},
+            async () => await CoreStack.DefineResourcesAsync());
 
         RoleAssignment roleAssignment = result.Resources
             .OfType<RoleAssignment>()

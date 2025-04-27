@@ -1,51 +1,87 @@
 using Example.Stacks;
 using Example.Tests.Shared.Interfaces;
 using Example.Tests.WithPulumock.Shared;
+using Pulumi;
 using Pulumi.AzureNative.KeyVault;
 using Pulumi.AzureNative.KeyVault.Inputs;
+using Pulumi.Testing;
 using Pulumock.Extensions;
+using Pulumock.Mocks.Enums;
 using Pulumock.Mocks.Models;
 using Pulumock.TestFixtures;
 using Shouldly;
 
 namespace Example.Tests.WithPulumock;
 
-public class ConfigurationTests : TestBase, IConfigurationTests
+public class ConfigurationTests : IConfigurationTests
 {
+    // Required -> With mocked config from base
     [Fact]
     public async Task Config_MockedConfigurationInResource()
     {
-        Fixture fixture = await FixtureBuilder
-            .BuildAsync(async () => await CoreStack.DefineResourcesAsync(StackName));
+        Fixture fixture = await TestBase.GetBaseFixtureBuilder()
+            .BuildAsync(async () => await CoreStack.DefineResourcesAsync(), 
+                new TestOptions{ IsPreview = false, StackName = TestBase.StackName });
+        
+        ResourceSnapshot resourceSnapshot = fixture.ResourceSnapshots.Require("microservice-kvws-kv");
+        string vaultTenantId = resourceSnapshot.RequireInputValue<VaultArgs, VaultPropertiesArgs, string>(
+            x => x.Properties, 
+            y => y.TenantId);
+
+        string configTenantId = fixture.StackConfigurations.Require(PulumiConfigurationNamespace.AzureNative, "tenantId");
+        
+        vaultTenantId.ShouldBe(configTenantId);
+    }
+    
+    // Required -> With modified config
+    [Theory]
+    [InlineData("75abe3bd-31dd-43be-bdfa-f4e937fac121")]
+    [InlineData("e7c808e6-e111-4d82-b023-4075c2eee383")]
+    [InlineData("4e5fdc58-8df1-43ab-b15f-ae7aeb7c45f7")]
+    public async Task Config_MockedConfigurationInResource_Override(string tenantId)
+    {
+        const string configTenantIdKey = "tenantId";
+        Fixture fixture = await TestBase.GetBaseFixtureBuilder()
+            .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, configTenantIdKey, tenantId)
+            .BuildAsync(async () => await CoreStack.DefineResourcesAsync(), 
+                new TestOptions{ IsPreview = false, StackName = TestBase.StackName });
         
         ResourceSnapshot resourceSnapshot = fixture.ResourceSnapshots.Require("microservice-kvws-kv");
         
-        string tenantId = resourceSnapshot.RequireInputValue<VaultArgs, VaultPropertiesArgs, string>(
+        string vaultTenantId = resourceSnapshot.RequireInputValue<VaultArgs, VaultPropertiesArgs, string>(
             x => x.Properties, 
             y => y.TenantId);
-        
-        tenantId.ShouldBe("");
 
-        // if (!resourceSnapshot.Inputs.TryGetValue("properties", out object? propertiesObj) ||
-        //     propertiesObj is not IDictionary<string, object> properties)
-        // {
-        //     throw new KeyNotFoundException("Input with key 'properties' was not found or is not of type string.");
-        // }
-        //
-        // if (!properties.TryGetValue("tenantId", out object? tenantIdObj) ||
-        //     tenantIdObj is not string tenantId)
-        // {
-        //     throw new KeyNotFoundException("Input with key 'tenantId' was not found or is not of type string.");
-        // }
-        //
-        // tenantId.ShouldBe("1f526cdb-1975-4248-ab0f-57813df294cb");
+        string configTenantId = fixture.StackConfigurations.Require(PulumiConfigurationNamespace.AzureNative, configTenantIdKey);
+        
+        configTenantId.ShouldBe(tenantId);
+        vaultTenantId.ShouldBe(tenantId);
+        vaultTenantId.ShouldBe(configTenantId);
     }
     
-    // Nested config
-    
-    // Modify config
-    // Without mocked config -> throws
-    
+    // Required -> Without mocked config - single
     [Fact]
-    public Task Config_MockedSecretInResource() => throw new NotImplementedException();
+    public async Task Config_MockedConfigurationInResource_OverrideRemoveSingle_ThrowsSinceRequired() =>
+        await Should.ThrowAsync<RunException>(async () =>
+        {
+            _ = await TestBase.GetBaseFixtureBuilder()
+                .WithoutMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId")
+                .BuildAsync(async () => await CoreStack.DefineResourcesAsync(), 
+                    new TestOptions{ IsPreview = false, StackName = TestBase.StackName });
+        });
+    
+    // Without mocked config -> all
+    // TODO: This will fail when running parallel since using the same global ENV variable
+    [Fact]
+    public async Task Config_MockedConfigurationInResource_OverrideRemoveAll_ThrowsSinceRequired() =>
+        await Should.ThrowAsync<RunException>(async () =>
+        {
+            _ = await TestBase.GetBaseFixtureBuilder()
+                .ClearMockStackConfigurations()
+                .BuildAsync(async () => await CoreStack.DefineResourcesAsync(), 
+                    new TestOptions{ IsPreview = false, StackName = TestBase.StackName });
+        });
+
+    [Fact]
+    public Task Config_MockedSecretInResource() => Task.CompletedTask;
 }

@@ -19,8 +19,8 @@ public class ResourceTests : TestBase, IResourceTests
         var mocks = new Mocks.Mocks();
         _ = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = StackName},
+            async () => await CoreStack.DefineResourcesAsync());
             
         ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-rg", StringComparison.Ordinal));
         if (!resourceSnapshot.Inputs.TryGetValue("resourceGroupName", out object? value) || value is not string resourceGroupName)
@@ -36,8 +36,8 @@ public class ResourceTests : TestBase, IResourceTests
     {
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             new Mocks.Mocks(), 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = StackName},
+            async () => await CoreStack.DefineResourcesAsync());
         
         ResourceGroup resourceGroup = result.Resources
             .OfType<ResourceGroup>()
@@ -53,8 +53,8 @@ public class ResourceTests : TestBase, IResourceTests
         var mocks = new Mocks.Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = StackName},
+            async () => await CoreStack.DefineResourcesAsync());
         
         ResourceGroup resourceGroup = result.Resources
             .OfType<ResourceGroup>()
@@ -78,8 +78,8 @@ public class ResourceTests : TestBase, IResourceTests
         var mocks = new Mocks.Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = StackName},
+            async () => await CoreStack.DefineResourcesAsync());
         
         ResourceGroup resourceGroup = result.Resources
             .OfType<ResourceGroup>()
@@ -99,8 +99,8 @@ public class ResourceTests : TestBase, IResourceTests
     {
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             new Mocks.Mocks(), 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = StackName},
+            async () => await CoreStack.DefineResourcesAsync());
 
         IEnumerable<Resource> resources = result.Resources
             .OfType<Resource>();

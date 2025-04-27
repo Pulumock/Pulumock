@@ -18,8 +18,8 @@ public class CallTests : TestBase, ICallTests
         var mocks = new Mocks.Mocks();
         _ = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = StackName},
+            async () => await CoreStack.DefineResourcesAsync());
         
         var calls = mocks.CallSnapshots
             .Where(x => x.Token.Equals("azure-native:authorization:getRoleDefinition", StringComparison.Ordinal))
@@ -41,8 +41,8 @@ public class CallTests : TestBase, ICallTests
         var mocks = new Mocks.Mocks();
         _ = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = StackName},
+            async () => await CoreStack.DefineResourcesAsync());
         
         var calls = mocks.CallSnapshots
             .Where(x =>
@@ -67,8 +67,8 @@ public class CallTests : TestBase, ICallTests
         var mocks = new Mocks.Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = StackName},
+            async () => await CoreStack.DefineResourcesAsync());
         
         RoleAssignment roleAssignment = result.Resources
             .OfType<RoleAssignment>()

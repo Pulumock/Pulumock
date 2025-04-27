@@ -7,4 +7,5 @@ namespace Pulumock.TestFixtures;
 public record Fixture(ImmutableArray<Resource> StackResources, 
     ImmutableDictionary<string, object?> StackOutputs, 
     ImmutableList<ResourceSnapshot> ResourceSnapshots,
-    ImmutableList<CallSnapshot> CallSnapshots);
+    ImmutableList<CallSnapshot> CallSnapshots,
+    ImmutableDictionary<string, object> StackConfigurations);
