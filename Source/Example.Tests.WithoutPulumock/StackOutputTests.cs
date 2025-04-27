@@ -14,7 +14,7 @@ namespace Example.Tests.WithoutPulumock;
 public class StackOutputTests : TestBase, IStackOutputTests
 {
     [Fact]
-    public async Task StackOutputs_ShouldOutputMockedValue()
+    public async Task ShouldBeTestable_StackOutputValue()
     {
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             new Mocks.Mocks(), 

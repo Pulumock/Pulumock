@@ -2,5 +2,5 @@ namespace Example.Tests.Shared.Interfaces;
 
 public interface IStackOutputTests
 {
-    Task StackOutputs_ShouldOutputMockedValue();
+    Task ShouldBeTestable_StackOutputValue();
 }
