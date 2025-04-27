@@ -2,7 +2,7 @@ using Pulumi;
 
 namespace Example;
 
-internal sealed class PulumiConfig
+internal sealed class StackConfiguration
 {
     private readonly Config _defaultConfig = new();
     private readonly Config _azureNativeConfig = new("azure-native");

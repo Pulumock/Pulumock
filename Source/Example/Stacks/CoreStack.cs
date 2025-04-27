@@ -14,7 +14,7 @@ internal static class CoreStack
 
     public static async Task<Dictionary<string, object?>> DefineResourcesAsync(string stackName)
     {
-        var config = new PulumiConfig();
+        var stackConfiguration = new StackConfiguration();
 
         var stackReference = new StackReference($"{OrgName}/{IdentityProjectName}/{stackName}");
         object? stackReferenceValue = await stackReference.GetValueAsync("microserviceManagedIdentityPrincipalId");
@@ -26,20 +26,20 @@ internal static class CoreStack
         var resourceGroup = new ResourceGroup("microservice-rg", new()
         {
             ResourceGroupName = "microservice-rg",
-            Location = config.Location
+            Location = stackConfiguration.Location
         });
 
         Vault? keyVault;
-        if (config.UseKeyVaultWithSecretsComponentResource)
+        if (stackConfiguration.UseKeyVaultWithSecretsComponentResource)
         {
             keyVault = new KeyVaultWithSecretsComponentResource("microservice-kv", new()
             {
                 VaultName = $"microservice-kv-{stackName}",
                 ResourceGroupName = resourceGroup.Name,
-                TenantId = config.TenantId,
+                TenantId = stackConfiguration.TenantId,
                 Secrets = new()
                 {
-                    {"Database--ConnectionString", config.DatabaseConnectionString}
+                    {"Database--ConnectionString", stackConfiguration.DatabaseConnectionString}
                 }
             }).KeyVault;
         }
@@ -57,7 +57,7 @@ internal static class CoreStack
                         Family = SkuFamily.A,
                         Name = SkuName.Standard
                     },
-                    TenantId = config.TenantId
+                    TenantId = stackConfiguration.TenantId
                 }
             });
         
@@ -66,7 +66,7 @@ internal static class CoreStack
                 SecretName = "Database--ConnectionString",
                 Properties = new SecretPropertiesArgs
                 {
-                    Value = config.DatabaseConnectionString
+                    Value = stackConfiguration.DatabaseConnectionString
                 },
                 ResourceGroupName = resourceGroup.Name,
                 VaultName = keyVault.Name
@@ -78,14 +78,14 @@ internal static class CoreStack
         GetRoleDefinitionResult roleDefinition = await GetRoleDefinition.InvokeAsync(new GetRoleDefinitionArgs
         {
             RoleDefinitionId = "b24988ac-6180-42a0-ab88-20f7382dd24c",
-            Scope = $"/subscriptions/{config.SubscriptionId}"
+            Scope = $"/subscriptions/{stackConfiguration.SubscriptionId}"
         });
         
         // This exists to test multiple calls from the same provider function
         _ = await GetRoleDefinition.InvokeAsync(new GetRoleDefinitionArgs
         {
             RoleDefinitionId = "88fa32db-c830-43a9-88bc-fa482a8401e8",
-            Scope = $"/subscriptions/{config.SubscriptionId}"
+            Scope = $"/subscriptions/{stackConfiguration.SubscriptionId}"
         });
         
         _ = new RoleAssignment("microservice-ra-kvReader", new RoleAssignmentArgs
