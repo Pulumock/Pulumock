@@ -19,7 +19,7 @@ public sealed class ConfigurationTests : TestBase, IConfigurationTests
         var mocks = new Mocks.Mocks();
         _ = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false, StackName = StackName},
+            new TestOptions {IsPreview = false, StackName = DevStackName},
             async () => await CoreStack.DefineResourcesAsync());
         
         ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-kvws-kv", StringComparison.Ordinal));
@@ -43,7 +43,7 @@ public sealed class ConfigurationTests : TestBase, IConfigurationTests
     {
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             new Mocks.Mocks(), 
-            new TestOptions {IsPreview = false, StackName = StackName},
+            new TestOptions {IsPreview = false, StackName = DevStackName},
             async () => await CoreStack.DefineResourcesAsync());
 
         Secret secret = result.Resources

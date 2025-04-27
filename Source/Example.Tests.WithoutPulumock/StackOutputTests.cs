@@ -18,7 +18,7 @@ public class StackOutputTests : TestBase, IStackOutputTests
     {
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             new Mocks.Mocks(), 
-            new TestOptions {IsPreview = false, StackName = StackName},
+            new TestOptions {IsPreview = false, StackName = DevStackName},
             async () => await CoreStack.DefineResourcesAsync());
         
         Vault keyVault = result.Resources

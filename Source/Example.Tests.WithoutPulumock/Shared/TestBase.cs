@@ -6,7 +6,8 @@ namespace Example.Tests.WithoutPulumock.Shared;
 public class TestBase
 #pragma warning restore CA1515
 {
-    protected const string StackName = "dev";
+    protected const string DevStackName = "dev";
+    protected const string ProdStackName = "prod";
 
     protected TestBase() =>
         Environment.SetEnvironmentVariable("PULUMI_CONFIG", JsonSerializer.Serialize(new Dictionary<string, object>

@@ -2,6 +2,7 @@ using System.Collections.Immutable;
 using System.Text.Json;
 using Pulumi;
 using Pulumi.Testing;
+using Pulumock.Mocks.Builders;
 using Pulumock.Mocks.Enums;
 using Pulumock.Mocks.Models;
 using Pulumock.TestFixtures.Constants;
@@ -59,9 +60,10 @@ public class FixtureBuilder
         return this;
     }
     
-    public FixtureBuilder WithoutMockStackReference(MockStackReference mockStackReference)
+    public FixtureBuilder WithoutMockStackReference(string fullyQualifiedStackName)
     {
-        _mockResources.Remove((mockStackReference.Type, mockStackReference.FullyQualifiedStackName));
+        MockStackReference mock = new MockStackReferenceBuilder(fullyQualifiedStackName).Build();
+        _mockResources.Remove((mock.Type, mock.FullyQualifiedStackName));
         return this;
     }
     

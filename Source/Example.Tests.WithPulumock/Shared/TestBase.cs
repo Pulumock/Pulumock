@@ -13,6 +13,7 @@ namespace Example.Tests.WithPulumock.Shared;
 internal static class TestBase
 {
     public const string DevStackName = "dev";
+    public const string ProdStackName = "prod";
     
     public static FixtureBuilder GetBaseFixtureBuilder() =>
         new FixtureBuilder()

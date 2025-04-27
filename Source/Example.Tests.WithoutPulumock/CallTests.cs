@@ -18,7 +18,7 @@ public class CallTests : TestBase, ICallTests
         var mocks = new Mocks.Mocks();
         _ = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false, StackName = StackName},
+            new TestOptions {IsPreview = false, StackName = DevStackName},
             async () => await CoreStack.DefineResourcesAsync());
         
         var calls = mocks.CallSnapshots
@@ -41,7 +41,7 @@ public class CallTests : TestBase, ICallTests
         var mocks = new Mocks.Mocks();
         _ = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false, StackName = StackName},
+            new TestOptions {IsPreview = false, StackName = DevStackName},
             async () => await CoreStack.DefineResourcesAsync());
         
         var calls = mocks.CallSnapshots
@@ -67,7 +67,7 @@ public class CallTests : TestBase, ICallTests
         var mocks = new Mocks.Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false, StackName = StackName},
+            new TestOptions {IsPreview = false, StackName = DevStackName},
             async () => await CoreStack.DefineResourcesAsync());
         
         RoleAssignment roleAssignment = result.Resources
