@@ -85,7 +85,7 @@ public static class TypeExtensions
     /// <exception cref="ArgumentException">
     /// Thrown if the expression is not a valid member selector (e.g., a method call or constant).
     /// </exception>
-    public static string GetInputName<T>(this Expression<Func<T, object?>> propertySelector)
+    public static string GetInputName<T>(this Expression<Func<T, object>> propertySelector)
     {
         MemberInfo member = propertySelector.Body switch
         {
@@ -96,6 +96,20 @@ public static class TypeExtensions
         
         // InputAttribute is internal
         return member.Name.ToCamelCase();
+    }
+    
+    public static Type? GetResourceArgsType(this Type resourceType)
+    {
+        if (!typeof(CustomResource).IsAssignableFrom(resourceType))
+        {
+            throw new ArgumentException($"Type {resourceType.Name} does not inherit from CustomResource.");
+        }
+
+        return resourceType
+            .GetConstructors()
+            .SelectMany(c => c.GetParameters())
+            .FirstOrDefault(p => typeof(ResourceArgs).IsAssignableFrom(p.ParameterType))
+            ?.ParameterType;
     }
     
     /// <summary>

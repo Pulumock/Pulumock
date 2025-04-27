@@ -1,9 +1,12 @@
 using Example.Stacks;
 using Example.Tests.Shared.Interfaces;
 using Example.Tests.WithPulumock.Shared;
+using Pulumi.AzureNative.KeyVault;
+using Pulumi.AzureNative.KeyVault.Inputs;
 using Pulumock.Extensions;
 using Pulumock.Mocks.Models;
 using Pulumock.TestFixtures;
+using Shouldly;
 
 namespace Example.Tests.WithPulumock;
 
@@ -15,9 +18,14 @@ public class ConfigurationTests : TestBase, IConfigurationTests
         Fixture fixture = await FixtureBuilder
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync(StackName));
         
-        ResourceSnapshot resourceSnapshot = fixture.ResourceSnapshots.Require("microservice-kvws-vault");
-        resourceSnapshot.Inputs.TryGetValue("properties", out object? propertiesObj);
+        ResourceSnapshot resourceSnapshot = fixture.ResourceSnapshots.Require("microservice-kvws-kv");
         
+        string tenantId = resourceSnapshot.RequireInputValue<VaultArgs, VaultPropertiesArgs, string>(
+            x => x.Properties, 
+            y => y.TenantId);
+        
+        tenantId.ShouldBe("");
+
         // if (!resourceSnapshot.Inputs.TryGetValue("properties", out object? propertiesObj) ||
         //     propertiesObj is not IDictionary<string, object> properties)
         // {
@@ -32,6 +40,8 @@ public class ConfigurationTests : TestBase, IConfigurationTests
         //
         // tenantId.ShouldBe("1f526cdb-1975-4248-ab0f-57813df294cb");
     }
+    
+    // Nested config
     
     // Modify config
     // Without mocked config -> throws

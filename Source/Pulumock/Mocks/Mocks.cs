@@ -6,8 +6,6 @@ using Pulumock.Utilities;
 
 namespace Pulumock.Mocks;
 
-// TODO: full/partial upsert (can be conflicts with inputs and mocked outputs)
-
 /// <summary>
 /// Provides an implementation of <see cref="Pulumi.Testing.IMocks"/> for unit testing Pulumi stacks.
 /// This class is responsible for mocking both resource creation and provider function (invoke) calls
@@ -22,10 +20,12 @@ internal sealed class Mocks(ImmutableDictionary<(Type Type, string? LogicalName)
     public Task<(string? id, object state)> NewResourceAsync(MockResourceArgs args)
     {
         ImmutableDictionary<string, object>.Builder outputs = ImmutableDictionary.CreateBuilder<string, object>();
+        string logicalResourceName = MockHelper.GetLogicalResourceName(args.Name);
+        string resourceId = MockHelper.GetResourceId(args.Id, $"{logicalResourceName}_id");
         
         if (MockHelper.IsStackReference(args))
         {
-            if (mockResources.TryGetValue((typeof(StackReference), MockHelper.GetLogicalResourceName(args.Name)), out MockResource? mockResource))
+            if (mockResources.TryGetValue((typeof(StackReference), logicalResourceName), out MockResource? mockResource))
             {
                 outputs.Add("outputs", mockResource.MockOutputs);
                 outputs.Add("secretOutputNames", ImmutableArray<string>.Empty);
@@ -42,12 +42,10 @@ internal sealed class Mocks(ImmutableDictionary<(Type Type, string? LogicalName)
             outputs.Add("name", MockHelper.GetPhysicalResourceName(args, outputs));
         }
         
-        string resourceName = MockHelper.GetLogicalResourceName(args.Name);
-        string resourceId = MockHelper.GetResourceId(args.Id, $"{resourceName}_id");
+        _resourceSnapshots.Add(new ResourceSnapshot(args.Type, logicalResourceName, args.Inputs));
         
         ImmutableDictionary<string, object> mergedOutputs = OutputMerger.Merge(args.Inputs, outputs);
         
-        _resourceSnapshots.Add(new ResourceSnapshot(resourceName, args.Inputs));
         return Task.FromResult<(string?, object)>((resourceId, mergedOutputs));
     }
     
