@@ -23,7 +23,7 @@ public class StackOutputTests : TestBase, IStackOutputTests
         
         Vault keyVault = result.Resources
             .OfType<Vault>()
-            .Single(x => x.GetResourceName().Equals("microservice-kv-vault", StringComparison.Ordinal));
+            .Single(x => x.GetResourceName().Equals("microservice-kvws-kv", StringComparison.Ordinal));
         
         VaultPropertiesResponse keyVaultProperties = await OutputUtilities.GetValueAsync(keyVault.Properties);
         

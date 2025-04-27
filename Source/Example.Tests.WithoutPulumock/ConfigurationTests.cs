@@ -22,7 +22,7 @@ public sealed class ConfigurationTests : TestBase, IConfigurationTests
             new TestOptions {IsPreview = false},
             async () => await CoreStack.DefineResourcesAsync(StackName));
         
-        ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-kv-vault", StringComparison.Ordinal));
+        ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-kvws-kv", StringComparison.Ordinal));
         if (!resourceSnapshot.Inputs.TryGetValue("properties", out object? propertiesObj) ||
             propertiesObj is not IDictionary<string, object> properties)
         {
@@ -48,7 +48,7 @@ public sealed class ConfigurationTests : TestBase, IConfigurationTests
 
         Secret secret = result.Resources
             .OfType<Secret>()
-            .Single(x => x.GetResourceName().Equals("microservice-kv-secret-Database--ConnectionString", StringComparison.Ordinal));
+            .Single(x => x.GetResourceName().Equals("microservice-kvws-secret-Database--ConnectionString", StringComparison.Ordinal));
         
         SecretPropertiesResponse secretProperties = await OutputUtilities.GetValueAsync(secret.Properties);
         secretProperties.Value.ShouldBe("very-secret-value");

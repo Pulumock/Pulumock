@@ -1,6 +1,8 @@
 using Example.Stacks;
 using Example.Tests.Shared.Interfaces;
 using Example.Tests.WithPulumock.Shared;
+using Pulumock.Extensions;
+using Pulumock.Mocks.Models;
 using Pulumock.TestFixtures;
 
 namespace Example.Tests.WithPulumock;
@@ -13,9 +15,9 @@ public class ConfigurationTests : TestBase, IConfigurationTests
         Fixture fixture = await FixtureBuilder
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync(StackName));
         
-        // ResourceSnapshot resourceSnapshot = fixture.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-kv-vault", StringComparison.Ordinal));
+        ResourceSnapshot resourceSnapshot = fixture.ResourceSnapshots.Require("microservice-kvws-vault");
+        resourceSnapshot.Inputs.TryGetValue("properties", out object? propertiesObj);
         
-        // ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-kv-vault", StringComparison.Ordinal));
         // if (!resourceSnapshot.Inputs.TryGetValue("properties", out object? propertiesObj) ||
         //     propertiesObj is not IDictionary<string, object> properties)
         // {
@@ -30,6 +32,9 @@ public class ConfigurationTests : TestBase, IConfigurationTests
         //
         // tenantId.ShouldBe("1f526cdb-1975-4248-ab0f-57813df294cb");
     }
+    
+    // Modify config
+    // Without mocked config -> throws
     
     [Fact]
     public Task Config_MockedSecretInResource() => throw new NotImplementedException();

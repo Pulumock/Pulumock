@@ -85,7 +85,7 @@ public class ResourceTests : TestBase, IResourceTests
             .OfType<ResourceGroup>()
             .Single(x => x.GetResourceName().Equals("microservice-rg", StringComparison.Ordinal));
         
-        ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-kv-vault", StringComparison.Ordinal));
+        ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-kvws-kv", StringComparison.Ordinal));
         if (!resourceSnapshot.Inputs.TryGetValue("resourceGroupName", out object? value) || value is not string resourceGroupName)
         {
             throw new KeyNotFoundException("Input with key 'resourceGroupName' was not found or is not of type string.");
