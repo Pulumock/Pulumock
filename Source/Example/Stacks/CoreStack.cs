@@ -2,7 +2,6 @@ using Example.ComponentResources;
 using Pulumi;
 using Pulumi.AzureNative.Authorization;
 using Pulumi.AzureNative.KeyVault;
-using Pulumi.AzureNative.KeyVault.Inputs;
 using Pulumi.AzureNative.Resources;
 
 namespace Example.Stacks;
@@ -23,58 +22,23 @@ internal static class CoreStack
             throw new InvalidCastException("Invalid stack ref: expected a string.");
         }
 
-        var resourceGroup = new ResourceGroup("microservice-rg", new()
+        var resourceGroup = new ResourceGroup("microservice-rg", new ResourceGroupArgs
         {
             ResourceGroupName = "microservice-rg",
             Location = stackConfiguration.Location
         });
 
-        Vault? keyVault;
-        if (stackConfiguration.UseKeyVaultWithSecretsComponentResource)
+        Vault keyVault = new KeyVaultWithSecretsComponentResource("microservice-kvws", new KeyVaultWithSecretsComponentResourceArgs
         {
-            keyVault = new KeyVaultWithSecretsComponentResource("microservice-kv", new()
+            VaultName = $"microservice-kv-{stackName}",
+            ResourceGroupName = resourceGroup.Name,
+            TenantId = stackConfiguration.TenantId,
+            Secrets = new InputMap<string>
             {
-                VaultName = $"microservice-kv-{stackName}",
-                ResourceGroupName = resourceGroup.Name,
-                TenantId = stackConfiguration.TenantId,
-                Secrets = new()
-                {
-                    {"Database--ConnectionString", stackConfiguration.DatabaseConnectionString}
-                }
-            }).KeyVault;
-        }
-        else
-        {
-            keyVault = new Vault("microservice-kv-vault", new()
-            {
-                VaultName = $"microservice-kv-{stackName}",
-                ResourceGroupName = resourceGroup.Name,
-                Properties = new VaultPropertiesArgs
-                {
-                    EnableRbacAuthorization = true,
-                    Sku = new SkuArgs
-                    {
-                        Family = SkuFamily.A,
-                        Name = SkuName.Standard
-                    },
-                    TenantId = stackConfiguration.TenantId
-                }
-            });
-        
-            _ = new Secret("microservice-kv-secret-Database--ConnectionString", new SecretArgs
-            {
-                SecretName = "Database--ConnectionString",
-                Properties = new SecretPropertiesArgs
-                {
-                    Value = stackConfiguration.DatabaseConnectionString
-                },
-                ResourceGroupName = resourceGroup.Name,
-                VaultName = keyVault.Name
-            });   
-        }
-        
-        ArgumentNullException.ThrowIfNull(keyVault);
-        
+                {"Database--ConnectionString", stackConfiguration.DatabaseConnectionString}
+            }
+        }).KeyVault;
+    
         GetRoleDefinitionResult roleDefinition = await GetRoleDefinition.InvokeAsync(new GetRoleDefinitionArgs
         {
             RoleDefinitionId = "b24988ac-6180-42a0-ab88-20f7382dd24c",
@@ -84,7 +48,7 @@ internal static class CoreStack
         // This exists to test multiple calls from the same provider function
         _ = await GetRoleDefinition.InvokeAsync(new GetRoleDefinitionArgs
         {
-            RoleDefinitionId = "88fa32db-c830-43a9-88bc-fa482a8401e8",
+            RoleDefinitionId = "7f951dda-4ed3-4680-a7ca-43fe172d538d",
             Scope = $"/subscriptions/{stackConfiguration.SubscriptionId}"
         });
         

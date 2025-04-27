@@ -19,7 +19,6 @@ public class TestBase
                 .WithConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId", "1f526cdb-1975-4248-ab0f-57813df294cb")
                 .WithConfiguration(PulumiConfigurationNamespace.AzureNative, "subscriptionId", "f2f2c6e5-17c2-4dfa-913d-6509deb6becf")
                 .WithConfiguration(PulumiConfigurationNamespace.AzureNative, "location", "swedencentral")
-                .WithConfiguration(PulumiConfigurationNamespace.Default, "useKeyVaultWithSecretsComponentResource", "true")
                 .WithSecretConfiguration(PulumiConfigurationNamespace.Default, "databaseConnectionString", "very-secret-value")
                 .Build())
             .WithMockStackReference(new MockStackReferenceBuilder($"hoolit/StackReference/{StackName}")

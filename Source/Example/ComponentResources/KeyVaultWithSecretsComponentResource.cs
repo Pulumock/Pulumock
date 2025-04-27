@@ -9,7 +9,7 @@ internal sealed class KeyVaultWithSecretsComponentResource : ComponentResource
     public KeyVaultWithSecretsComponentResource(string name, KeyVaultWithSecretsComponentResourceArgs args, ComponentResourceOptions? options = null)
         : base("org:components:KeyVaultWithSecretsComponentResource", name, options)
     {
-        var keyVault = new Vault($"{name}-vault", new()
+        var keyVault = new Vault($"{name}-kv", new()
         {
             VaultName = args.VaultName,
             ResourceGroupName = args.ResourceGroupName,

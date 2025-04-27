@@ -32,7 +32,7 @@ public class CallTests : TestBase, ICallTests
         
         calls.Count.ShouldBe(2);
         roleDefinitionIds.ShouldContain("b24988ac-6180-42a0-ab88-20f7382dd24c");
-        roleDefinitionIds.ShouldContain("88fa32db-c830-43a9-88bc-fa482a8401e8");
+        roleDefinitionIds.ShouldContain("7f951dda-4ed3-4680-a7ca-43fe172d538d");
     }
     
     [Fact]
