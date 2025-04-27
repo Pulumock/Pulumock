@@ -4,6 +4,7 @@ using Example.Tests.WithPulumock.Shared;
 using Pulumi;
 using Pulumi.AzureNative.KeyVault;
 using Pulumi.AzureNative.KeyVault.Inputs;
+using Pulumi.AzureNative.KeyVault.Outputs;
 using Pulumi.Testing;
 using Pulumock.Extensions;
 using Pulumock.Mocks.Enums;
@@ -72,6 +73,7 @@ public class ConfigurationTests : IConfigurationTests
     
     // Without mocked config -> all
     // TODO: This will fail when running parallel since using the same global ENV variable
+    // - Maybe have to run this sequentially? 
     [Fact]
     public async Task Config_MockedConfigurationInResource_OverrideRemoveAll_ThrowsSinceRequired() =>
         await Should.ThrowAsync<RunException>(async () =>
@@ -83,5 +85,16 @@ public class ConfigurationTests : IConfigurationTests
         });
 
     [Fact]
-    public Task Config_MockedSecretInResource() => Task.CompletedTask;
+    public async Task Config_MockedSecretInResource()
+    {
+        Fixture fixture = await TestBase.GetBaseFixtureBuilder()
+            .BuildAsync(async () => await CoreStack.DefineResourcesAsync(), 
+                new TestOptions{ IsPreview = false, StackName = TestBase.StackName });
+        
+        Secret secret = fixture.StackResources.GetResourceByLogicalName<Secret>("microservice-kvws-secret-Database--ConnectionString");
+        string configSecretValue = fixture.StackConfigurations.Require(PulumiConfigurationNamespace.Default, "databaseConnectionString");
+
+        SecretPropertiesResponse secretProperties = await secret.Properties.GetValueAsync();
+        secretProperties.Value.ShouldBe(configSecretValue);
+    }
 }
