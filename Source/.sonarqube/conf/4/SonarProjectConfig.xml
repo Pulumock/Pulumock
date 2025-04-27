@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SonarProjectConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/analyzer/2021/1">
+  <AnalysisConfigPath>/Users/robertopiranamedi/RiderProjects/Pulumock/Source/.sonarqube/conf/SonarQubeAnalysisConfig.xml</AnalysisConfigPath>
+  <ProjectPath>/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Example.Tests.WithoutPulumock.csproj</ProjectPath>
+  <FilesToAnalyzePath>/Users/robertopiranamedi/RiderProjects/Pulumock/Source/.sonarqube/conf/4/FilesToAnalyze.txt</FilesToAnalyzePath>
+  <OutPath>/Users/robertopiranamedi/RiderProjects/Pulumock/Source/.sonarqube/out/4</OutPath>
+  <ProjectType>Product</ProjectType>
+  <TargetFramework>net9.0</TargetFramework>
+</SonarProjectConfig>

@@ -1,0 +1,1 @@
+cRM/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/Example.csproj¢net9.0òCSharp13

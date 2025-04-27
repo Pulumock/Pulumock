@@ -1,0 +1,4726 @@
+ß"
+WPulumock.Mocks.Enums.PulumiConfigurationNamespace.PulumiConfigurationNamespace()!staticu
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Enums/PulumiConfigurationNamespace.cs (0"0*ò 
+0xv
+B (P7
+%01Pulumock.Mocks.Enums.PulumiConfigurationNamespace"1Pulumock.Mocks.Enums.PulumiConfigurationNamespace˛
+˚
+B (P7
+%11Pulumock.Mocks.Enums.PulumiConfigurationNamespace"VPulumock.Mocks.Enums.PulumiConfigurationNamespace.PulumiConfigurationNamespace(string)*E
+B (P9
+7
+%01Pulumock.Mocks.Enums.PulumiConfigurationNamespace*
+F (O	
+project≈
+¬
+@ (Ps3
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"<
+Default1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"__id*;9
+7
+%01Pulumock.Mocks.Enums.PulumiConfigurationNamespacexv
+> (H7
+%21Pulumock.Mocks.Enums.PulumiConfigurationNamespace"1Pulumock.Mocks.Enums.PulumiConfigurationNamespace˙
+˜
+> (H7
+%31Pulumock.Mocks.Enums.PulumiConfigurationNamespace"VPulumock.Mocks.Enums.PulumiConfigurationNamespace.PulumiConfigurationNamespace(string)*E
+> (H9
+7
+%21Pulumock.Mocks.Enums.PulumiConfigurationNamespace*
+B (G
+aws¡
+æ
+< (Ho3
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"8
+Aws1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"__id*;9
+7
+%21Pulumock.Mocks.Enums.PulumiConfigurationNamespacexv
+G (S7
+%41Pulumock.Mocks.Enums.PulumiConfigurationNamespace"1Pulumock.Mocks.Enums.PulumiConfigurationNamespace¸
+˘
+G (S7
+%51Pulumock.Mocks.Enums.PulumiConfigurationNamespace"VPulumock.Mocks.Enums.PulumiConfigurationNamespace.PulumiConfigurationNamespace(string)*E
+G (S9
+7
+%41Pulumock.Mocks.Enums.PulumiConfigurationNamespace*
+K (R	
+azure 
+«
+E (Sx3
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"A
+AzureClassic1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"__id*;9
+7
+%41Pulumock.Mocks.Enums.PulumiConfigurationNamespacexv
+F (Y7
+%61Pulumock.Mocks.Enums.PulumiConfigurationNamespace"1Pulumock.Mocks.Enums.PulumiConfigurationNamespaceÉ
+Ä
+F (Y7
+%71Pulumock.Mocks.Enums.PulumiConfigurationNamespace"VPulumock.Mocks.Enums.PulumiConfigurationNamespace.PulumiConfigurationNamespace(string)*E
+F (Y9
+7
+%61Pulumock.Mocks.Enums.PulumiConfigurationNamespace*
+J (X
+azure-native…
+∆
+D (Yw3
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"@
+AzureNative1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"__id*;9
+7
+%61Pulumock.Mocks.Enums.PulumiConfigurationNamespacexv
+M (W7
+%81Pulumock.Mocks.Enums.PulumiConfigurationNamespace"1Pulumock.Mocks.Enums.PulumiConfigurationNamespace˙
+˜
+M (W7
+%91Pulumock.Mocks.Enums.PulumiConfigurationNamespace"VPulumock.Mocks.Enums.PulumiConfigurationNamespace.PulumiConfigurationNamespace(string)*E
+M (W9
+7
+%81Pulumock.Mocks.Enums.PulumiConfigurationNamespace*
+Q (V
+gcp–
+Õ
+K (W~3
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"G
+GoogleCloudClassic1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"__id*;9
+7
+%81Pulumock.Mocks.Enums.PulumiConfigurationNamespaceyw
+L (`8
+%101Pulumock.Mocks.Enums.PulumiConfigurationNamespace"1Pulumock.Mocks.Enums.PulumiConfigurationNamespaceÜ
+É
+L (`8
+%111Pulumock.Mocks.Enums.PulumiConfigurationNamespace"VPulumock.Mocks.Enums.PulumiConfigurationNamespace.PulumiConfigurationNamespace(string)*F
+L (`:
+8
+%101Pulumock.Mocks.Enums.PulumiConfigurationNamespace*
+P (_
+google-native–
+Õ
+J (`}3
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"F
+GoogleCloudNative1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"__id*<:
+8
+%101Pulumock.Mocks.Enums.PulumiConfigurationNamespaceyw
+E (V8
+%121Pulumock.Mocks.Enums.PulumiConfigurationNamespace"1Pulumock.Mocks.Enums.PulumiConfigurationNamespaceÉ
+Ä
+E (V8
+%131Pulumock.Mocks.Enums.PulumiConfigurationNamespace"VPulumock.Mocks.Enums.PulumiConfigurationNamespace.PulumiConfigurationNamespace(string)*F
+E (V:
+8
+%121Pulumock.Mocks.Enums.PulumiConfigurationNamespace*
+I (U
+
+kubernetes…
+∆
+C (Vv3
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"?
+
+Kubernetes1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"__id*<:
+8
+%121Pulumock.Mocks.Enums.PulumiConfigurationNamespace"
+implicit returnB5"3
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespaceXˆ
+APulumock.Mocks.Builders.MockResourceBuilder.MockResourceBuilder()o
+e/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockResourceBuilder.cs ( "0*â
+0|z
+; (@9
+%03System.Collections.Generic.Dictionary<TKey, TValue>"3System.Collections.Generic.Dictionary<TKey, TValue>”
+–
+; (@9
+%13System.Collections.Generic.Dictionary<TKey, TValue>"@System.Collections.Generic.Dictionary<TKey, TValue>.Dictionary()*G
+; (@;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue>ƒ
+¡
+9 (@p-
++Pulumock.Mocks.Builders.MockResourceBuilder"?
+_outputs3System.Collections.Generic.Dictionary<TKey, TValue>"__id*=;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue>R
+P
+
+%2void"object.Object()*1/-
++Pulumock.Mocks.Builders.MockResourceBuilder"
+implicit returnB/-
++Pulumock.Mocks.Builders.MockResourceBuilderX—
+SPulumock.Mocks.Models.CallSnapshot.CallSnapshot(Pulumock.Mocks.Models.CallSnapshot)f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.cs (!"0*e
+0I
+G
+
+%0void"object.Object()*(&$
+"Pulumock.Mocks.Models.CallSnapshot"
+implicit returnB&$
+"Pulumock.Mocks.Models.CallSnapshotX˜
+,Pulumock.Mocks.Models.CallSnapshot.Token.getf
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.cs) (."0*≥
+0. (.ß
+§
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.cs) (.
+%retstring"__id*£
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.cs) (.9*7$
+"Pulumock.Mocks.Models.CallSnapshot"
+Tokenstring"z
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.cs) (.
+
+%retstringB&$
+"Pulumock.Mocks.Models.CallSnapshot®
+-Pulumock.Mocks.Models.CallSnapshot.Token.initf
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.cs) (."0*Œ
+0. (.ø
+º
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.cs) (.7$
+"Pulumock.Mocks.Models.CallSnapshot"
+Tokenstring"__id*
+
+valuestring"}
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.cs) (.
+implicit return:
+valuestringB&$
+"Pulumock.Mocks.Models.CallSnapshotX¶
+-Pulumock.Mocks.Models.CallSnapshot.Inputs.getf
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csT (Z"0*·
+0Z (Zö
+ó
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csT (ZH
+%ret@System.Collections.Immutable.ImmutableDictionary<string, object>"__id*‹
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csT (Zr*p$
+"Pulumock.Mocks.Models.CallSnapshot"H
+Inputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"¥
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csT (ZJ
+H
+%ret@System.Collections.Immutable.ImmutableDictionary<string, object>B&$
+"Pulumock.Mocks.Models.CallSnapshot“
+.Pulumock.Mocks.Models.CallSnapshot.Inputs.initf
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csT (Z"0*ø
+0Z (Z∞
+≠
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csT (Zp$
+"Pulumock.Mocks.Models.CallSnapshot"H
+Inputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"__id*KI
+G
+value>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"}
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csT (Z
+implicit return:IG
+value>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>B&$
+"Pulumock.Mocks.Models.CallSnapshotX≤
+.Pulumock.Mocks.Models.CallSnapshot.Outputs.geth
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csÄ (á"0*Í
+0
+á (áü
+ú
+h
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csÄ (áH
+%ret@System.Collections.Immutable.ImmutableDictionary<string, object>"__id*ﬂ
+h
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csÄ (ás*q$
+"Pulumock.Mocks.Models.CallSnapshot"I
+Outputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"∂
+h
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csÄ (áJ
+H
+%ret@System.Collections.Immutable.ImmutableDictionary<string, object>B&$
+"Pulumock.Mocks.Models.CallSnapshot‹
+/Pulumock.Mocks.Models.CallSnapshot.Outputs.inith
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csÄ (á"0*∆
+0
+á (á≥
+∞
+h
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csÄ (áq$
+"Pulumock.Mocks.Models.CallSnapshot"I
+Outputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"__id*KI
+G
+value>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"
+h
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.csÄ (á
+implicit return:IG
+value>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>B&$
+"Pulumock.Mocks.Models.CallSnapshotX£	
+ªPulumock.Mocks.Models.CallSnapshot.CallSnapshot(string, System.Collections.Immutable.ImmutableDictionary<string, object>, System.Collections.Immutable.ImmutableDictionary<string, object>)f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/CallSnapshot.cs (!"0*°
+0à
+Ö
+ (â
+%0string"-Pulumock.Mocks.Models.CallSnapshot.Token.init*(&$
+"Pulumock.Mocks.Models.CallSnapshot*
+
+Tokenstring˙
+˜
+ (âD
+%1>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>".Pulumock.Mocks.Models.CallSnapshot.Inputs.init*(&$
+"Pulumock.Mocks.Models.CallSnapshot*LJ
+H
+Inputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>¸
+˘
+ (âD
+%2>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"/Pulumock.Mocks.Models.CallSnapshot.Outputs.init*(&$
+"Pulumock.Mocks.Models.CallSnapshot*MK
+I
+Outputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"
+implicit return:
+Tokenstring:JH
+Inputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>:KI
+Outputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>B&$
+"Pulumock.Mocks.Models.CallSnapshotX≥
+DPulumock.TestFixtures.Fixture.Fixture(Pulumock.TestFixtures.Fixture)a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs ("0*`
+0D
+B
+
+%0void"object.Object()*#!
+Pulumock.TestFixtures.Fixture"
+implicit returnB!
+Pulumock.TestFixtures.FixtureX˚
+0Pulumock.TestFixtures.Fixture.StackResources.geta
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs/ (="0*Ω
+0= (=ˇ
+¸
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs/ (=D
+%ret<System.Collections.Immutable.ImmutableArray<Pulumi.Resource>"__id* 
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs/ (=e*c
+Pulumock.TestFixtures.Fixture"@
+StackResources.System.Collections.Immutable.ImmutableArray<T>"´
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs/ (=F
+D
+%ret<System.Collections.Immutable.ImmutableArray<Pulumi.Resource>B!
+Pulumock.TestFixtures.Fixtureî
+1Pulumock.TestFixtures.Fixture.StackResources.inita
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs/ (="0*ò
+0= (=é
+ã
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs/ (=c
+Pulumock.TestFixtures.Fixture"@
+StackResources.System.Collections.Immutable.ImmutableArray<T>"__id*;9
+7
+value.System.Collections.Immutable.ImmutableArray<T>"x
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs/ (=
+implicit return:97
+value.System.Collections.Immutable.ImmutableArray<T>B!
+Pulumock.TestFixtures.FixtureXë
+.Pulumock.TestFixtures.Fixture.StackOutputs.geta
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs) (5"0*’
+05 (5í
+è
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs) (5I
+%retASystem.Collections.Immutable.ImmutableDictionary<string, object?>"__id*ÿ
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs) (5s*q
+Pulumock.TestFixtures.Fixture"N
+StackOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"∞
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs) (5K
+I
+%retASystem.Collections.Immutable.ImmutableDictionary<string, object?>B!
+Pulumock.TestFixtures.Fixture¿
+/Pulumock.TestFixtures.Fixture.StackOutputs.inita
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs) (5"0*∂
+05 (5¨
+©
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs) (5q
+Pulumock.TestFixtures.Fixture"N
+StackOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"__id*KI
+G
+value>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"x
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs) (5
+implicit return:IG
+value>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>B!
+Pulumock.TestFixtures.FixtureX¨
+3Pulumock.TestFixtures.Fixture.ResourceSnapshots.geta
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs	$ 	(5"0*Î
+0	5 	(5ó
+î
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs	$ 	(5Z
+%retRSystem.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.ResourceSnapshot>"__id*Ã
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs	$ 	(5g*e
+Pulumock.TestFixtures.Fixture"B
+ResourceSnapshots-System.Collections.Immutable.ImmutableList<T>"¡
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs	$ 	(5\
+Z
+%retRSystem.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.ResourceSnapshot>B!
+Pulumock.TestFixtures.Fixtureó
+4Pulumock.TestFixtures.Fixture.ResourceSnapshots.inita
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs	$ 	(5"0*ô
+0	5 	(5è
+å
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs	$ 	(5e
+Pulumock.TestFixtures.Fixture"B
+ResourceSnapshots-System.Collections.Immutable.ImmutableList<T>"__id*:8
+6
+value-System.Collections.Immutable.ImmutableList<T>"x
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs	$ 	(5
+implicit return:86
+value-System.Collections.Immutable.ImmutableList<T>B!
+Pulumock.TestFixtures.FixtureXú
+/Pulumock.TestFixtures.Fixture.CallSnapshots.geta
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs
+  
+(-"0*ﬂ
+0
+- 
+(-è
+å
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs
+  
+(-V
+%retNSystem.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.CallSnapshot>"__id*»
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs
+  
+(-c*a
+Pulumock.TestFixtures.Fixture">
+CallSnapshots-System.Collections.Immutable.ImmutableList<T>"Ω
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs
+  
+(-X
+V
+%retNSystem.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.CallSnapshot>B!
+Pulumock.TestFixtures.Fixtureè
+0Pulumock.TestFixtures.Fixture.CallSnapshots.inita
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs
+  
+(-"0*ï
+0
+- 
+(-ã
+à
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs
+  
+(-a
+Pulumock.TestFixtures.Fixture">
+CallSnapshots-System.Collections.Immutable.ImmutableList<T>"__id*:8
+6
+value-System.Collections.Immutable.ImmutableList<T>"x
+a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs
+  
+(-
+implicit return:86
+value-System.Collections.Immutable.ImmutableList<T>B!
+Pulumock.TestFixtures.FixtureX∑
+ Pulumock.TestFixtures.Fixture.Fixture(System.Collections.Immutable.ImmutableArray<Pulumi.Resource>, System.Collections.Immutable.ImmutableDictionary<string, object?>, System.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.ResourceSnapshot>, System.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.CallSnapshot>)a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/Fixture.cs ("0*æ
+0ﬂ
+‹
+ 
+(/4
+%0.System.Collections.Immutable.ImmutableArray<T>"1Pulumock.TestFixtures.Fixture.StackResources.init*#!
+Pulumock.TestFixtures.Fixture*DB
+@
+StackResources.System.Collections.Immutable.ImmutableArray<T>˚
+¯
+ 
+(/D
+%1>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"/Pulumock.TestFixtures.Fixture.StackOutputs.init*#!
+Pulumock.TestFixtures.Fixture*RP
+N
+StackOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>„
+‡
+ 
+(/3
+%2-System.Collections.Immutable.ImmutableList<T>"4Pulumock.TestFixtures.Fixture.ResourceSnapshots.init*#!
+Pulumock.TestFixtures.Fixture*FD
+B
+ResourceSnapshots-System.Collections.Immutable.ImmutableList<T>€
+ÿ
+ 
+(/3
+%3-System.Collections.Immutable.ImmutableList<T>"0Pulumock.TestFixtures.Fixture.CallSnapshots.init*#!
+Pulumock.TestFixtures.Fixture*B@
+>
+CallSnapshots-System.Collections.Immutable.ImmutableList<T>"
+implicit return:B@
+StackResources.System.Collections.Immutable.ImmutableArray<T>:PN
+StackOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>:DB
+ResourceSnapshots-System.Collections.Immutable.ImmutableList<T>:@>
+CallSnapshots-System.Collections.Immutable.ImmutableList<T>B!
+Pulumock.TestFixtures.FixtureXõ
+KPulumock.Mocks.Builders.MockConfigurationBuilder.MockConfigurationBuilder()t
+j/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockConfigurationBuilder.cs
+ 
+(%"0*ö
+0|z
+B (G9
+%03System.Collections.Generic.Dictionary<TKey, TValue>"3System.Collections.Generic.Dictionary<TKey, TValue>”
+–
+B (G9
+%13System.Collections.Generic.Dictionary<TKey, TValue>"@System.Collections.Generic.Dictionary<TKey, TValue>.Dictionary()*G
+B (G;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue>–
+Õ
+@ (G|2
+0Pulumock.Mocks.Builders.MockConfigurationBuilder"F
+_configurations3System.Collections.Generic.Dictionary<TKey, TValue>"__id*=;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue>W
+U
+
+%2void"object.Object()*642
+0Pulumock.Mocks.Builders.MockConfigurationBuilder"
+implicit returnB42
+0Pulumock.Mocks.Builders.MockConfigurationBuilderXÔ
+bPulumock.Mocks.Models.MockConfiguration.MockConfiguration(Pulumock.Mocks.Models.MockConfiguration)k
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockConfiguration.cs ("0*j
+0N
+L
+
+%0void"object.Object()*-+)
+'Pulumock.Mocks.Models.MockConfiguration"
+implicit returnB+)
+'Pulumock.Mocks.Models.MockConfigurationX„
+>Pulumock.Mocks.Models.MockConfiguration.MockConfigurations.getk
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockConfiguration.csD (V"0*É
+0V (V∑
+¥
+k
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockConfiguration.csD (VH
+%ret@System.Collections.Immutable.ImmutableDictionary<string, object>"__id*Ù
+k
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockConfiguration.csD (VÑ*Å)
+'Pulumock.Mocks.Models.MockConfiguration"T
+MockConfigurations>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"π
+k
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockConfiguration.csD (VJ
+H
+%ret@System.Collections.Immutable.ImmutableDictionary<string, object>B+)
+'Pulumock.Mocks.Models.MockConfigurationä
+?Pulumock.Mocks.Models.MockConfiguration.MockConfigurations.initk
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockConfiguration.csD (V"0*‹
+0V (V«
+ƒ
+k
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockConfiguration.csD (VÅ)
+'Pulumock.Mocks.Models.MockConfiguration"T
+MockConfigurations>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"__id*KI
+G
+value>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"Ç
+k
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockConfiguration.csD (V
+implicit return:IG
+value>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>B+)
+'Pulumock.Mocks.Models.MockConfigurationXØ
+{Pulumock.Mocks.Models.MockConfiguration.MockConfiguration(System.Collections.Immutable.ImmutableDictionary<string, object>)k
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockConfiguration.cs ("0*∏
+0õ
+ò
+ (XD
+%0>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"?Pulumock.Mocks.Models.MockConfiguration.MockConfigurations.init*-+)
+'Pulumock.Mocks.Models.MockConfiguration*XV
+T
+MockConfigurations>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"
+implicit return:VT
+MockConfigurations>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>B+)
+'Pulumock.Mocks.Models.MockConfigurationXá
+FPulumock.Mocks.Builders.NestedOutputsBuilder<T>.NestedOutputsBuilder()p
+f/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/NestedOutputsBuilder.cs (!"0*ê
+0|z
+: (?9
+%03System.Collections.Generic.Dictionary<TKey, TValue>"3System.Collections.Generic.Dictionary<TKey, TValue>”
+–
+: (?9
+%13System.Collections.Generic.Dictionary<TKey, TValue>"@System.Collections.Generic.Dictionary<TKey, TValue>.Dictionary()*G
+: (?;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue>«
+ƒ
+8 (?s1
+/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>">
+_values3System.Collections.Generic.Dictionary<TKey, TValue>"__id*=;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue>V
+T
+
+%2void"object.Object()*531
+/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>"
+implicit returnB31
+/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>XÁ
+5Pulumock.Mocks.Models.MockCallToken.IsStringToken.getg
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs   ("0*
+0   (*
+1*◊
+1 !  (8Ö
+Ç
+ !  (,
+%0string"3Pulumock.Mocks.Models.MockCallToken.StringToken.get*3
+ !  (,'%
+#Pulumock.Mocks.Models.MockCallToken;
+9
+ !  (8
+%retbool"__id*
+ !  (8
+	{unknown}*
+2*)
+2 9  (9"
+ 8  (9
+
+%retboolB'%
+#Pulumock.Mocks.Models.MockCallTokenXË
+3Pulumock.Mocks.Models.MockCallToken.IsTypeToken.getg
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs! !("0*
+0! !(*
+1*⁄
+1! !(4à
+Ö
+! !((
+%0System.Type"1Pulumock.Mocks.Models.MockCallToken.TypeToken.get*3
+! !(('%
+#Pulumock.Mocks.Models.MockCallToken;
+9
+! !(4
+%retbool"__id*
+! !(4
+	{unknown}*
+2*)
+2!5 !(5"
+!4 !(5
+
+%retboolB'%
+#Pulumock.Mocks.Models.MockCallTokenXµ
+8Pulumock.Mocks.Models.MockCallToken.StringTokenValue.getg
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs# #(""0*
+0# #(*
+1*ÿ
+1$ $(Ö
+Ç
+$ $(
+%0string"3Pulumock.Mocks.Models.MockCallToken.StringToken.get*3
+$ $('%
+#Pulumock.Mocks.Models.MockCallToken9
+7
+$ $(
+	%capture0string"__id*
+
+%0string*
+3
+2*Ï
+2$ $(bVT
+$ $(b&
+%1 System.InvalidOperationException" System.InvalidOperationExceptionÊ
+„
+$ $(b&
+%2 System.InvalidOperationException"CSystem.InvalidOperationException.InvalidOperationException(string?)*4
+$ $(b(
+&
+%1 System.InvalidOperationException*4
+$; $(a(&
+$This key does not represent a token."
+$b $(c
+
+%retstring*Y
+3$ $(E
+C
+$ $(
+%retstring"__id*!
+$ $(
+
+	%capture0string*
+4*+
+4$c $(c"
+$b $(c
+
+%retstringB'%
+#Pulumock.Mocks.Models.MockCallToken”
+6Pulumock.Mocks.Models.MockCallToken.TypeTokenValue.getg
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs& &("0*
+0& &(*
+1*Â
+1' '(à
+Ö
+' '(
+%0System.Type"1Pulumock.Mocks.Models.MockCallToken.TypeToken.get*3
+' '('%
+#Pulumock.Mocks.Models.MockCallTokenC
+A
+' '(
+	%capture0System.Type"__id*
+
+%0System.Type*
+3
+2*
+2' '(_VT
+' '(_&
+%1 System.InvalidOperationException" System.InvalidOperationExceptionÂ
+‚
+' '(_&
+%2 System.InvalidOperationException"CSystem.InvalidOperationException.InvalidOperationException(string?)*4
+' '(_(
+&
+%1 System.InvalidOperationException*3
+'9 '(^'%
+#This key does not represent a type."!
+'_ '(`
+
+%retSystem.Type*c
+3' '(O
+M
+' '(
+%retSystem.Type"__id*&
+' '(
+
+	%capture0System.Type*
+4*0
+4'` '(`"!
+'_ '(`
+
+%retSystem.TypeB'%
+#Pulumock.Mocks.Models.MockCallToken◊
+VPulumock.Mocks.Models.MockCallToken.MockCallToken(Pulumock.Mocks.Models.MockCallToken)g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs ("0*f
+0J
+H
+
+%0void"object.Object()*)'%
+#Pulumock.Mocks.Models.MockCallToken"
+implicit returnB'%
+#Pulumock.Mocks.Models.MockCallTokenXÄ
+SPulumock.Mocks.Builders.MockStackReferenceBuilder.MockStackReferenceBuilder(string)u
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockStackReferenceBuilder.cs (&"0*–
+0í
+è
+  (X3
+1Pulumock.Mocks.Builders.MockStackReferenceBuilder"!
+fullyQualifiedStackNamestring"__id*%#
+!
+fullyQualifiedStackNamestring|z
+; (@9
+%03System.Collections.Generic.Dictionary<TKey, TValue>"3System.Collections.Generic.Dictionary<TKey, TValue>”
+–
+; (@9
+%13System.Collections.Generic.Dictionary<TKey, TValue>"@System.Collections.Generic.Dictionary<TKey, TValue>.Dictionary()*G
+; (@;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue> 
+«
+9 (@v3
+1Pulumock.Mocks.Builders.MockStackReferenceBuilder"?
+_outputs3System.Collections.Generic.Dictionary<TKey, TValue>"__id*=;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue>"
+implicit return:#!
+fullyQualifiedStackNamestringB53
+1Pulumock.Mocks.Builders.MockStackReferenceBuilderXç
+&Pulumock.Mocks.Mocks.CallSnapshots.getX
+N/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Mocks.csJ' J(4"0*
+0J J(*
+1*‚
+1J8 J(Xú
+ô
+J8 J(X3
+%0-System.Collections.Immutable.ImmutableList<T>"tSystem.Collections.Immutable.ImmutableList.ToImmutableList<TSource>(System.Collections.Generic.IEnumerable<TSource>)* *\
+J8 J(FP*N
+Pulumock.Mocks.Mocks"4
+_callSnapshots"System.Collections.Generic.List<T>Æ
+´
+J8 J(XV
+%retNSystem.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.CallSnapshot>"__id*A
+J8 J(X5
+3
+%0-System.Collections.Immutable.ImmutableList<T>*
+2*s
+2JY J(Y"d
+JX J(YX
+V
+%retNSystem.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.CallSnapshot>B
+Pulumock.Mocks.Mocks—
+SPulumock.Mocks.Models.MockResource.MockResource(Pulumock.Mocks.Models.MockResource)f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs ("0*e
+0I
+G
+
+%0void"object.Object()*(&$
+"Pulumock.Mocks.Models.MockResource"
+implicit returnB&$
+"Pulumock.Mocks.Models.MockResourceXÑ
++Pulumock.Mocks.Models.MockResource.Type.getf
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs  ($"0*¡
+0$ ($∞
+≠
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs  ($
+%retSystem.Type"__id*ß
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs  ($=*;$
+"Pulumock.Mocks.Models.MockResource"
+TypeSystem.Type"
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs  ($
+
+%retSystem.TypeB&$
+"Pulumock.Mocks.Models.MockResourceµ
+,Pulumock.Mocks.Models.MockResource.Type.initf
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs  ($"0*◊
+0$ ($»
+≈
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs  ($;$
+"Pulumock.Mocks.Models.MockResource"
+TypeSystem.Type"__id*
+
+valueSystem.Type"}
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs  ($
+implicit return:
+valueSystem.TypeB&$
+"Pulumock.Mocks.Models.MockResourceX∞
+2Pulumock.Mocks.Models.MockResource.MockOutputs.getf
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.csJ (U"0*Ê
+0U (Uü
+ú
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.csJ (UH
+%ret@System.Collections.Immutable.ImmutableDictionary<string, object>"__id*·
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.csJ (Uw*u$
+"Pulumock.Mocks.Models.MockResource"M
+MockOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"¥
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.csJ (UJ
+H
+%ret@System.Collections.Immutable.ImmutableDictionary<string, object>B&$
+"Pulumock.Mocks.Models.MockResource‹
+3Pulumock.Mocks.Models.MockResource.MockOutputs.initf
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.csJ (U"0*ƒ
+0U (Uµ
+≤
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.csJ (Uu$
+"Pulumock.Mocks.Models.MockResource"M
+MockOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"__id*KI
+G
+value>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"}
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.csJ (U
+implicit return:IG
+value>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>B&$
+"Pulumock.Mocks.Models.MockResourceXÖ
+2Pulumock.Mocks.Models.MockResource.LogicalName.getf
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs_ (j"0*ª
+0q (qÆ
+´
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs_ (j
+%retstring?"__id*©
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs_ (j?*=$
+"Pulumock.Mocks.Models.MockResource"
+LogicalNamestring"{
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs_ (j
+
+%retstring?B&$
+"Pulumock.Mocks.Models.MockResource¥
+3Pulumock.Mocks.Models.MockResource.LogicalName.initf
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs_ (j"0*‘
+0q (q≈
+¬
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs_ (j=$
+"Pulumock.Mocks.Models.MockResource"
+LogicalNamestring"__id*
+
+valuestring"}
+f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs_ (j
+implicit return:
+valuestringB&$
+"Pulumock.Mocks.Models.MockResourceXÎ
+áPulumock.Mocks.Models.MockResource.MockResource(System.Type, System.Collections.Immutable.ImmutableDictionary<string, object>, string?)f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockResource.cs ("0*»
+0è
+å
+ (s
+%0System.Type",Pulumock.Mocks.Models.MockResource.Type.init*(&$
+"Pulumock.Mocks.Models.MockResource*
+
+TypeSystem.TypeÉ
+Ä
+ (sD
+%1>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"3Pulumock.Mocks.Models.MockResource.MockOutputs.init*(&$
+"Pulumock.Mocks.Models.MockResource*QO
+M
+MockOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>ì
+ê
+ (s
+%2string"3Pulumock.Mocks.Models.MockResource.LogicalName.init*(&$
+"Pulumock.Mocks.Models.MockResource*
+
+LogicalNamestring"
+implicit return:
+TypeSystem.Type:OM
+MockOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>:
+LogicalNamestringB&$
+"Pulumock.Mocks.Models.MockResourceXù
+*Pulumock.Mocks.Mocks.ResourceSnapshots.getX
+N/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Mocks.csI+ I(<"0*
+0I I(*
+1*Í
+1I@ I(d†
+ù
+I@ I(d3
+%0-System.Collections.Immutable.ImmutableList<T>"tSystem.Collections.Immutable.ImmutableList.ToImmutableList<TSource>(System.Collections.Generic.IEnumerable<TSource>)* *`
+I@ I(RT*R
+Pulumock.Mocks.Mocks"8
+_resourceSnapshots"System.Collections.Generic.List<T>≤
+Ø
+I@ I(dZ
+%retRSystem.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.ResourceSnapshot>"__id*A
+I@ I(d5
+3
+%0-System.Collections.Immutable.ImmutableList<T>*
+2*w
+2Ie I(e"h
+Id I(e\
+Z
+%retRSystem.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.ResourceSnapshot>B
+Pulumock.Mocks.Mocksπ
+GPulumock.Mocks.Models.MockCall.MockCall(Pulumock.Mocks.Models.MockCall)b
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.cs ("0*a
+0E
+C
+
+%0void"object.Object()*$" 
+Pulumock.Mocks.Models.MockCall"
+implicit returnB" 
+Pulumock.Mocks.Models.MockCallX≥
+(Pulumock.Mocks.Models.MockCall.Token.getb
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.cs% (*"0*˚
+0* (*’
+“
+b
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.cs% (*+
+%ret#Pulumock.Mocks.Models.MockCallToken"__id*∏
+b
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.cs% (*R*P 
+Pulumock.Mocks.Models.MockCall",
+Token#Pulumock.Mocks.Models.MockCallToken"ì
+b
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.cs% (*-
++
+%ret#Pulumock.Mocks.Models.MockCallTokenB" 
+Pulumock.Mocks.Models.MockCallÁ
+)Pulumock.Mocks.Models.MockCall.Token.initb
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.cs% (*"0*¸
+0* (*Ò
+Ó
+b
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.cs% (*P 
+Pulumock.Mocks.Models.MockCall",
+Token#Pulumock.Mocks.Models.MockCallToken"__id*0.
+,
+value#Pulumock.Mocks.Models.MockCallToken"y
+b
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.cs% (*
+implicit return:.,
+value#Pulumock.Mocks.Models.MockCallTokenB" 
+Pulumock.Mocks.Models.MockCallXî
+.Pulumock.Mocks.Models.MockCall.MockOutputs.getb
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.csP (["0*÷
+0[ ([ì
+ê
+b
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.csP ([H
+%ret@System.Collections.Immutable.ImmutableDictionary<string, object>"__id*Ÿ
+b
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.csP ([s*q 
+Pulumock.Mocks.Models.MockCall"M
+MockOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"∞
+b
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.csP ([J
+H
+%ret@System.Collections.Immutable.ImmutableDictionary<string, object>B" 
+Pulumock.Mocks.Models.MockCallƒ
+/Pulumock.Mocks.Models.MockCall.MockOutputs.initb
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.csP (["0*∏
+0[ ([≠
+™
+b
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.csP ([q 
+Pulumock.Mocks.Models.MockCall"M
+MockOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"__id*KI
+G
+value>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"y
+b
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.csP ([
+implicit return:IG
+value>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>B" 
+Pulumock.Mocks.Models.MockCallXˆ
+éPulumock.Mocks.Models.MockCall.MockCall(Pulumock.Mocks.Models.MockCallToken, System.Collections.Immutable.ImmutableDictionary<string, object>)b
+X/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCall.cs ("0*‘
+0π
+∂
+ (])
+%0#Pulumock.Mocks.Models.MockCallToken")Pulumock.Mocks.Models.MockCall.Token.init*$" 
+Pulumock.Mocks.Models.MockCall*0.
+,
+Token#Pulumock.Mocks.Models.MockCallToken˚
+¯
+ (]D
+%1>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"/Pulumock.Mocks.Models.MockCall.MockOutputs.init*$" 
+Pulumock.Mocks.Models.MockCall*QO
+M
+MockOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"
+implicit return:.,
+Token#Pulumock.Mocks.Models.MockCallToken:OM
+MockOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>B" 
+Pulumock.Mocks.Models.MockCallXÍ
+
+5Pulumock.TestFixtures.FixtureBuilder.FixtureBuilder()h
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.cs ("0*ó	
+0|z
+a (f9
+%03System.Collections.Generic.Dictionary<TKey, TValue>"3System.Collections.Generic.Dictionary<TKey, TValue>”
+–
+a (f9
+%13System.Collections.Generic.Dictionary<TKey, TValue>"@System.Collections.Generic.Dictionary<TKey, TValue>.Dictionary()*G
+a (f;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue>√
+¿
+_ (fo&
+$Pulumock.TestFixtures.FixtureBuilder"E
+_mockResources3System.Collections.Generic.Dictionary<TKey, TValue>"__id*=;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue>|z
+F (K9
+%23System.Collections.Generic.Dictionary<TKey, TValue>"3System.Collections.Generic.Dictionary<TKey, TValue>”
+–
+F (K9
+%33System.Collections.Generic.Dictionary<TKey, TValue>"@System.Collections.Generic.Dictionary<TKey, TValue>.Dictionary()*G
+F (K;
+9
+%23System.Collections.Generic.Dictionary<TKey, TValue>ø
+º
+D (Kk&
+$Pulumock.TestFixtures.FixtureBuilder"A
+
+_mockCalls3System.Collections.Generic.Dictionary<TKey, TValue>"__id*=;
+9
+%23System.Collections.Generic.Dictionary<TKey, TValue>K
+I
+
+%4void"object.Object()**(&
+$Pulumock.TestFixtures.FixtureBuilder"
+implicit returnB(&
+$Pulumock.TestFixtures.FixtureBuilderXÛ
+cPulumock.TestFixtures.FixtureBuilder.WithMockConfiguration(Pulumock.Mocks.Models.MockConfiguration)h
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.cs (/"0*
+0 (*
+1*À
+1 (æ
+ª
+ (.g&
+$Pulumock.TestFixtures.FixtureBuilder"=
+_mockConfiguration'Pulumock.Mocks.Models.MockConfiguration"__id*@>
+<
+mockConfiguration'Pulumock.Mocks.Models.MockConfigurationv
+t
+ (,
+%ret$Pulumock.TestFixtures.FixtureBuilder"__id*4
+ ((&
+$Pulumock.TestFixtures.FixtureBuilder*
+2*I
+2 (":
+ (.
+,
+%ret$Pulumock.TestFixtures.FixtureBuilder:H
+0 (S<
+mockConfiguration'Pulumock.Mocks.Models.MockConfigurationB(&
+$Pulumock.TestFixtures.FixtureBuilder§
+ePulumock.Mocks.Models.MockStackReference.MockStackReference(Pulumock.Mocks.Models.MockStackReference)l
+b/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockStackReference.cs ( "0*
+0"
+implicit returnB,*
+(Pulumock.Mocks.Models.MockStackReferenceX∆
+DPulumock.Mocks.Models.MockStackReference.FullyQualifiedStackName.getl
+b/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockStackReference.cs( (?"0*ﬁ
+0? (?À
+»
+l
+b/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockStackReference.cs( (?
+%retstring"__id*¡
+l
+b/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockStackReference.cs( (?Q*O*
+(Pulumock.Mocks.Models.MockStackReference"!
+FullyQualifiedStackNamestring"Ä
+l
+b/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockStackReference.cs( (?
+
+%retstringB,*
+(Pulumock.Mocks.Models.MockStackReferenceÒ
+EPulumock.Mocks.Models.MockStackReference.FullyQualifiedStackName.initl
+b/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockStackReference.cs( (?"0*Û
+0? (?›
+⁄
+l
+b/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockStackReference.cs( (?O*
+(Pulumock.Mocks.Models.MockStackReference"!
+FullyQualifiedStackNamestring"__id*
+
+valuestring"É
+l
+b/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockStackReference.cs( (?
+implicit return:
+valuestringB,*
+(Pulumock.Mocks.Models.MockStackReferenceXë
+ÖPulumock.Mocks.Models.MockStackReference.MockStackReference(string, System.Collections.Immutable.ImmutableDictionary<string, object>)l
+b/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockStackReference.cs ( "0*»
+0 ∑
+¥
+ (8
+%0string"EPulumock.Mocks.Models.MockStackReference.FullyQualifiedStackName.init*.,*
+(Pulumock.Mocks.Models.MockStackReference*%#
+!
+FullyQualifiedStackNamestring*
+1*Ù
+1 (7ﬂ
+‹
+ (7
+
+%1void"áPulumock.Mocks.Models.MockResource.MockResource(System.Type, System.Collections.Immutable.ImmutableDictionary<string, object>, string?)*2
+ (7&$
+"Pulumock.Mocks.Models.MockResource*
+ ()
+	{unknown}*[
++ (6O
+M
+MockOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*
+ (7 *
+2*.
+28 (8"
+7 (8
+implicit return:#!
+FullyQualifiedStackNamestring:OM
+MockOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>B,*
+(Pulumock.Mocks.Models.MockStackReferenceX»
+?Pulumock.TestFixtures.FixtureBuilder.WithoutMockConfiguration()h
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.cs (2"0*
+0 (*
+1*é
+1 (Å
+
+ (!g&
+$Pulumock.TestFixtures.FixtureBuilder"=
+_mockConfiguration'Pulumock.Mocks.Models.MockConfiguration"__id* v
+t
+ (,
+%ret$Pulumock.TestFixtures.FixtureBuilder"__id*4
+ ((&
+$Pulumock.TestFixtures.FixtureBuilder*
+2*I
+2 (":
+ (.
+,
+%ret$Pulumock.TestFixtures.FixtureBuilderB(&
+$Pulumock.TestFixtures.FixtureBuilderﬁ
+9Pulumock.Mocks.Builders.MockCallBuilder.MockCallBuilder()k
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockCallBuilder.cs ("0*Å
+0|z
+; (@9
+%03System.Collections.Generic.Dictionary<TKey, TValue>"3System.Collections.Generic.Dictionary<TKey, TValue>”
+–
+; (@9
+%13System.Collections.Generic.Dictionary<TKey, TValue>"@System.Collections.Generic.Dictionary<TKey, TValue>.Dictionary()*G
+; (@;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue>¿
+Ω
+9 (@l)
+'Pulumock.Mocks.Builders.MockCallBuilder"?
+_outputs3System.Collections.Generic.Dictionary<TKey, TValue>"__id*=;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue>N
+L
+
+%2void"object.Object()*-+)
+'Pulumock.Mocks.Builders.MockCallBuilder"
+implicit returnB+)
+'Pulumock.Mocks.Builders.MockCallBuilderX—"
+•Pulumock.Utilities.OutputMerger.Merge(System.Collections.Generic.IReadOnlyDictionary<string, object>, System.Collections.Generic.IReadOnlyDictionary<string, object>)c
+Y/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Utilities/OutputMerger.cs6 (;"0*
+0 (*
+1*∫
+1# (?ë
+é
+, (?9
+%03System.Collections.Generic.Dictionary<TKey, TValue>"iPulumock.Utilities.OutputMerger.ToMutable(System.Collections.Generic.IReadOnlyDictionary<string, object>)* *V
+6 (>J
+H
+baseDict<System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>ë
+é
+# (?=
+result3System.Collections.Generic.Dictionary<TKey, TValue>"__id*=;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue>*
+2*¸
+27 (CÊ„
+7 (C/
+%1)System.Collections.Generic.IEnumerator<T>"9System.Collections.Generic.IEnumerable<T>.GetEnumerator()*Z
+7 (CN
+L
+overrideDict<System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>2GetEnumerator()
+}
+7 (C6
+	%capture0)System.Collections.Generic.IEnumerator<T>"__id*31
+/
+%1)System.Collections.Generic.IEnumerator<T>*
+3*Ø
+37 (Cñì
+7 (C
+
+%2bool")System.Collections.IEnumerator.MoveNext()*D
+7 (C8
+6
+	%capture0)System.Collections.Generic.IEnumerator<T>2
+MoveNext()*
+4
+10*È
+4 (3‘—
+ (3;
+%35System.Collections.Generic.KeyValuePair<TKey, TValue>"5System.Collections.Generic.IEnumerator<T>.Current.get*D
+7 (C8
+6
+	%capture0)System.Collections.Generic.IEnumerator<T>2Current.get*
+5*á
+5 (>Ô
+Ï
+ (>
+
+%4bool"GSystem.Collections.Generic.ICollection<T>.TryGetValue(TKey, out TValue)*K
+ (?
+=
+result3System.Collections.Generic.Dictionary<TKey, TValue>*
+# (&
+
+keystring*!
+( (=
+
+	baseValueobject*
+6
+9*†
+6 (Uà
+Ö
+ (U
+
+%5bool"sPulumock.Utilities.OutputMerger.TryAsDictionary(object?, out System.Collections.Generic.Dictionary<string, object>)* *!
+  ()
+
+	baseValueobject*O
++ (TC
+A
+
+baseNested3System.Collections.Generic.Dictionary<TKey, TValue>*
+7
+9*®
+7 (]ê
+ç
+ (]
+
+%6bool"sPulumock.Utilities.OutputMerger.TryAsDictionary(object?, out System.Collections.Generic.Dictionary<string, object>)* *%
+  (-
+
+overrideValueobject*S
+/ (\G
+E
+overrideNested3System.Collections.Generic.Dictionary<TKey, TValue>*
+8
+9*»
+8 (@ß
+§
+ (?D
+%7>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"•Pulumock.Utilities.OutputMerger.Merge(System.Collections.Generic.IReadOnlyDictionary<string, object>, System.Collections.Generic.IReadOnlyDictionary<string, object>)* *O
+$ (.C
+A
+
+baseNested3System.Collections.Generic.Dictionary<TKey, TValue>*S
+0 (>G
+E
+overrideNested3System.Collections.Generic.Dictionary<TKey, TValue>â
+Ü
+ (?
+%8object"8System.Collections.Generic.ICollection<T>.this[TKey].set*K
+ (?
+=
+result3System.Collections.Generic.Dictionary<TKey, TValue>*
+ (
+
+keystring*HF
+D
+%7>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*
+3*Ò
+9 (,‹
+Ÿ
+ (+
+%9object"8System.Collections.Generic.ICollection<T>.this[TKey].set*K
+ (?
+=
+result3System.Collections.Generic.Dictionary<TKey, TValue>*
+ (
+
+keystring*
+
+overrideValueobject*
+3*
+107 (C*
+11
+12*†
+117 (CâÜ
+7 (C
+%10void"System.IDisposable.Dispose()*D
+7 (C8
+6
+	%capture0)System.Collections.Generic.IEnumerator<T>2	Dispose()*
+12*
+12 (*
+13*©
+13 (-›
+⁄
+ (-E
+%11>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"≥System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary<TKey, TValue>(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>)* *K
+ (?
+=
+result3System.Collections.Generic.Dictionary<TKey, TValue>≤
+Ø
+ (-H
+%ret@System.Collections.Immutable.ImmutableDictionary<string, object>"__id*S
+ (-G
+E
+%11>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*
+14*f
+14 ("V
+ (J
+H
+%ret@System.Collections.Immutable.ImmutableDictionary<string, object>:T
+ (4H
+baseDict<System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>:X
+	 	(8L
+overrideDict<System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>B#"!
+Pulumock.Utilities.OutputMergerÈ
+_Pulumock.Mocks.Models.ResourceSnapshot.ResourceSnapshot(Pulumock.Mocks.Models.ResourceSnapshot)j
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs (%"0*i
+0M
+K
+
+%0void"object.Object()*,*(
+&Pulumock.Mocks.Models.ResourceSnapshot"
+implicit returnB*(
+&Pulumock.Mocks.Models.ResourceSnapshotXü
+6Pulumock.Mocks.Models.ResourceSnapshot.LogicalName.getj
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs- (8"0*…
+08 (8π
+∂
+j
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs- (8
+%retstring"__id*±
+j
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs- (8C*A(
+&Pulumock.Mocks.Models.ResourceSnapshot"
+LogicalNamestring"~
+j
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs- (8
+
+%retstringB*(
+&Pulumock.Mocks.Models.ResourceSnapshotÕ
+7Pulumock.Mocks.Models.ResourceSnapshot.LogicalName.initj
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs- (8"0*·
+08 (8Õ
+ 
+j
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs- (8A(
+&Pulumock.Mocks.Models.ResourceSnapshot"
+LogicalNamestring"__id*
+
+valuestring"Å
+j
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs- (8
+implicit return:
+valuestringB*(
+&Pulumock.Mocks.Models.ResourceSnapshotX¬
+1Pulumock.Mocks.Models.ResourceSnapshot.Inputs.getj
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs^ (d"0*Ò
+0d (d¶
+£
+j
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs^ (dH
+%ret@System.Collections.Immutable.ImmutableDictionary<string, object>"__id*‰
+j
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs^ (dv*t(
+&Pulumock.Mocks.Models.ResourceSnapshot"H
+Inputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"∏
+j
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs^ (dJ
+H
+%ret@System.Collections.Immutable.ImmutableDictionary<string, object>B*(
+&Pulumock.Mocks.Models.ResourceSnapshotÎ
+2Pulumock.Mocks.Models.ResourceSnapshot.Inputs.initj
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs^ (d"0*Ã
+0d (d∏
+µ
+j
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs^ (dt(
+&Pulumock.Mocks.Models.ResourceSnapshot"H
+Inputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"__id*KI
+G
+value>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"Å
+j
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs^ (d
+implicit return:IG
+value>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>B*(
+&Pulumock.Mocks.Models.ResourceSnapshotX≈
+ÅPulumock.Mocks.Models.ResourceSnapshot.ResourceSnapshot(string, System.Collections.Immutable.ImmutableDictionary<string, object>)j
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/ResourceSnapshot.cs (%"0*º
+0õ
+ò
+ (f
+%0string"7Pulumock.Mocks.Models.ResourceSnapshot.LogicalName.init*,*(
+&Pulumock.Mocks.Models.ResourceSnapshot*
+
+LogicalNamestringÅ
+˛
+ (fD
+%1>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"2Pulumock.Mocks.Models.ResourceSnapshot.Inputs.init*,*(
+&Pulumock.Mocks.Models.ResourceSnapshot*LJ
+H
+Inputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"
+implicit return:
+LogicalNamestring:JH
+Inputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>B*(
+&Pulumock.Mocks.Models.ResourceSnapshotXÿ	
+ePulumock.TestFixtures.FixtureBuilder.WithMockStackReference(Pulumock.Mocks.Models.MockStackReference)h
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.cs (0"0*
+0 (*
+1*¨
+1  !(õ
+ò
+   (/
+%0System.Type"+Pulumock.Mocks.Models.MockResource.Type.get*L
+   (*@
+>
+mockStackReference(Pulumock.Mocks.Models.MockStackReferenceØ
+¨
+ 1  ([
+%1string"DPulumock.Mocks.Models.MockStackReference.FullyQualifiedStackName.get*L
+ 1  (C@
+>
+mockStackReference(Pulumock.Mocks.Models.MockStackReferenceœ
+Ã
+   (r(
+%2"Pulumock.Mocks.Models.MockResource"8System.Collections.Generic.ICollection<T>.this[TKey].set*}
+   (q*o&
+$Pulumock.TestFixtures.FixtureBuilder"E
+_mockResources3System.Collections.Generic.Dictionary<TKey, TValue>*
+   (\
+	{unknown}*B@
+>
+mockStackReference(Pulumock.Mocks.Models.MockStackReferencev
+t
+! !(,
+%ret$Pulumock.TestFixtures.FixtureBuilder"__id*4
+! !((&
+$Pulumock.TestFixtures.FixtureBuilder*
+2*I
+2" "(":
+" "(.
+,
+%ret$Pulumock.TestFixtures.FixtureBuilder:J
+1 (V>
+mockStackReference(Pulumock.Mocks.Models.MockStackReferenceB(&
+$Pulumock.TestFixtures.FixtureBuilderØ
+HPulumock.Mocks.Models.MockCallToken.MockCallToken(System.Type?, string?)g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs
+ 
+("0*
+0
+ 
+(*
+1*æ
+1
+ ("^
+\
+
+ (
+
+%0void"object.Object()*3
+
+ ('%
+#Pulumock.Mocks.Models.MockCallToken¶
+£
+ (
+%1System.Type"1Pulumock.Mocks.Models.MockCallToken.TypeToken.set*3
+ ('%
+#Pulumock.Mocks.Models.MockCallToken*
+
+	typeTokenSystem.Type†
+ù
+ (!
+%2string"3Pulumock.Mocks.Models.MockCallToken.StringToken.set*3
+ ('%
+#Pulumock.Mocks.Models.MockCallToken*
+
+stringTokenstring*
+2*.
+2 ("
+ (
+implicit return:$
+
+ 
+()
+	typeTokenSystem.Type:!
+
++ 
+(>
+stringTokenstringB'%
+#Pulumock.Mocks.Models.MockCallTokenX≤
+
+;Pulumock.Mocks.Models.MockCallToken.FromStringToken(string)g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs  (/"0*
+0 (*
+1*~
+1 (2g
+e
+ (2
+
+%0bool""string.IsNullOrWhiteSpace(string?)* *#
+& (1
+
+stringTokenstring*
+2
+3*¸
+2 (aFD
+ (a
+%1System.ArgumentException"System.ArgumentExceptionÈ
+Ê
+ (a
+%2System.ArgumentException"<System.ArgumentException.ArgumentException(string?, string?)*,
+ (a 
+
+%1System.ArgumentException*1
+( (K%#
+!Token must be a non-empty string.*
+M (`
+stringToken"9
+ (-
++
+%ret#Pulumock.Mocks.Models.MockCallToken*›
+3 (3\Z
+ (3)
+%3#Pulumock.Mocks.Models.MockCallToken"#Pulumock.Mocks.Models.MockCallToken
+Ì
+ (3)
+%4#Pulumock.Mocks.Models.MockCallToken"HPulumock.Mocks.Models.MockCallToken.MockCallToken(System.Type?, string?)*7
+ (3+
+)
+%3#Pulumock.Mocks.Models.MockCallToken*
+! (% *#
+' (2
+
+stringTokenstringx
+v
+ (3+
+%ret#Pulumock.Mocks.Models.MockCallToken"__id*7
+ (3+
+)
+%3#Pulumock.Mocks.Models.MockCallToken*
+4*H
+4 ("9
+ (-
++
+%ret#Pulumock.Mocks.Models.MockCallToken:!
+0 (B
+stringTokenstringB'"%
+#Pulumock.Mocks.Models.MockCallTokenù
+GPulumock.Extensions.OutputExtensions.GetValueAsync<T>(Pulumi.Output<T>)h
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/OutputExtensions.cs  (-"0*
+0 (*
+1*π
+1 (3Æ
+´
+ (3*
+%0$System.Threading.Tasks.Task<TResult>"CPulumi.Utilities.OutputUtilities.GetValueAsync<T>(Pulumi.Output<T>)* *(
+, (2
+
+outputPulumi.Output<T>t
+r
+ (3&
+%retSystem.Threading.Tasks.Task<T>"__id*8
+ (3,
+*
+%0$System.Threading.Tasks.Task<TResult>*
+2*C
+24 (4"4
+3 (4(
+&
+%retSystem.Threading.Tasks.Task<T>:&
+1 (F
+outputPulumi.Output<T>B("&
+$Pulumock.Extensions.OutputExtensions˜
+hPulumock.TestFixtures.FixtureBuilder.WithoutMockStackReference(Pulumock.Mocks.Models.MockStackReference)h
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.cs$ $(3"0*
+0$ $(*
+1*»
+1& '(õ
+ò
+& &(6
+%0System.Type"+Pulumock.Mocks.Models.MockResource.Type.get*L
+& &(1@
+>
+mockStackReference(Pulumock.Mocks.Models.MockStackReferenceØ
+¨
+&8 &(b
+%1string"DPulumock.Mocks.Models.MockStackReference.FullyQualifiedStackName.get*L
+&8 &(J@
+>
+mockStackReference(Pulumock.Mocks.Models.MockStackReferenceÎ
+Ë
+& &(d
+
+%2bool"6System.Collections.Generic.ICollection<T>.Remove(TKey)*}
+& &(q*o&
+$Pulumock.TestFixtures.FixtureBuilder"E
+_mockResources3System.Collections.Generic.Dictionary<TKey, TValue>*
+& &(c
+	{unknown}v
+t
+' '(,
+%ret$Pulumock.TestFixtures.FixtureBuilder"__id*4
+' '((&
+$Pulumock.TestFixtures.FixtureBuilder*
+2*I
+2( ((":
+( ((.
+,
+%ret$Pulumock.TestFixtures.FixtureBuilder:J
+$4 $(Y>
+mockStackReference(Pulumock.Mocks.Models.MockStackReferenceB(&
+$Pulumock.TestFixtures.FixtureBuilderò
+1Pulumock.Mocks.Models.MockCallToken.TypeToken.getg
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs (!"0*Õ
+0" ("π
+∂
+g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs (!
+%retSystem.Type?"__id*Æ
+g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs (!C*A%
+#Pulumock.Mocks.Models.MockCallToken"
+	TypeTokenSystem.Type"Å
+g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs (!
+
+%retSystem.Type?B'%
+#Pulumock.Mocks.Models.MockCallToken¬
+1Pulumock.Mocks.Models.MockCallToken.TypeToken.setg
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs (!"0*ﬂ
+0" ("œ
+Ã
+g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs (!A%
+#Pulumock.Mocks.Models.MockCallToken"
+	TypeTokenSystem.Type"__id*
+
+valueSystem.Type"~
+g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs (!
+implicit return:
+valueSystem.TypeB'%
+#Pulumock.Mocks.Models.MockCallToken›
+>Pulumock.Mocks.Models.MockCallToken.FromTypeToken(System.Type)g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs  (-"0*
+0 (*
+1*Å
+1 (1û
+õ
+ (4
+
+%0void":System.ArgumentNullException.ThrowIfNull(object?, string?)* *&
+* (3
+
+	typeTokenSystem.Type*
+ (4
+	typeToken\Z
+ (1)
+%1#Pulumock.Mocks.Models.MockCallToken"#Pulumock.Mocks.Models.MockCallTokenÛ
+
+ (1)
+%2#Pulumock.Mocks.Models.MockCallToken"HPulumock.Mocks.Models.MockCallToken.MockCallToken(System.Type?, string?)*7
+ (1+
+)
+%1#Pulumock.Mocks.Models.MockCallToken*&
+! (*
+
+	typeTokenSystem.Type*
+, (0 x
+v
+ (1+
+%ret#Pulumock.Mocks.Models.MockCallToken"__id*7
+ (1+
+)
+%1#Pulumock.Mocks.Models.MockCallToken*
+2*H
+2 ("9
+ (-
++
+%ret#Pulumock.Mocks.Models.MockCallToken:$
+. (<
+	typeTokenSystem.TypeB'"%
+#Pulumock.Mocks.Models.MockCallTokenµ
+\Pulumock.TestFixtures.FixtureBuilder.WithoutMockResource(Pulumock.Mocks.Models.MockResource)h
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.cs0 0(-"0*
+00 0(*
+1*û
+12 3(è
+å
+2 2(0
+%0System.Type"+Pulumock.Mocks.Models.MockResource.Type.get*@
+2 2(+4
+2
+mockResource"Pulumock.Mocks.Models.MockResourceë
+é
+22 2(J
+%1string"2Pulumock.Mocks.Models.MockResource.LogicalName.get*@
+22 2(>4
+2
+mockResource"Pulumock.Mocks.Models.MockResourceÎ
+Ë
+2 2(L
+
+%2bool"6System.Collections.Generic.ICollection<T>.Remove(TKey)*}
+2 2(q*o&
+$Pulumock.TestFixtures.FixtureBuilder"E
+_mockResources3System.Collections.Generic.Dictionary<TKey, TValue>*
+2 2(K
+	{unknown}v
+t
+3 3(,
+%ret$Pulumock.TestFixtures.FixtureBuilder"__id*4
+3 3((&
+$Pulumock.TestFixtures.FixtureBuilder*
+2*I
+24 4(":
+4 4(.
+,
+%ret$Pulumock.TestFixtures.FixtureBuilder:>
+0. 0(G2
+mockResource"Pulumock.Mocks.Models.MockResourceB(&
+$Pulumock.TestFixtures.FixtureBuilderÙ
+iPulumock.Utilities.OutputMerger.ToMutable(System.Collections.Generic.IReadOnlyDictionary<string, object>)c
+Y/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Utilities/OutputMerger.cs. (7"0*
+0 (*
+1*∑
+1 $(	Ñ
+Å
+ $(	9
+%03System.Collections.Generic.Dictionary<TKey, TValue>"©System.Linq.Enumerable.ToDictionary<TSource, TKey, TElement>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, TKey>, System.Func<TSource, TElement>)* *R
+ (F
+D
+dict<System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>*
+   (
+	{unknown}*
+! #(
+	{unknown}õ
+ò
+ $(	=
+%ret5System.Collections.Generic.Dictionary<string, object>"__id*G
+ $(	;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue>*
+2*Z
+2$
+ $(
+"K
+$	 $(
+?
+=
+%ret5System.Collections.Generic.Dictionary<string, object>:P
+8 (`D
+dict<System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>B#"!
+Pulumock.Utilities.OutputMergerå
+3Pulumock.Mocks.Models.MockCallToken.StringToken.getg
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs" (%"0*ø
+0& (&±
+Æ
+g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs" (%
+%retstring?"__id*´
+g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs" (%@*>%
+#Pulumock.Mocks.Models.MockCallToken"
+StringTokenstring"|
+g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs" (%
+
+%retstring?B'%
+#Pulumock.Mocks.Models.MockCallToken∑
+3Pulumock.Mocks.Models.MockCallToken.StringToken.setg
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs" (%"0*◊
+0& (&«
+ƒ
+g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs" (%>%
+#Pulumock.Mocks.Models.MockCallToken"
+StringTokenstring"__id*
+
+valuestring"~
+g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs" (%
+implicit return:
+valuestringB'%
+#Pulumock.Mocks.Models.MockCallTokenä	
+YPulumock.TestFixtures.FixtureBuilder.WithMockResource(Pulumock.Mocks.Models.MockResource)h
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.cs* *(*"0*
+0* *(*
+1*ˆ
+1, -(è
+å
+, ,()
+%0System.Type"+Pulumock.Mocks.Models.MockResource.Type.get*@
+, ,($4
+2
+mockResource"Pulumock.Mocks.Models.MockResourceë
+é
+,+ ,(C
+%1string"2Pulumock.Mocks.Models.MockResource.LogicalName.get*@
+,+ ,(74
+2
+mockResource"Pulumock.Mocks.Models.MockResource√
+¿
+, ,(T(
+%2"Pulumock.Mocks.Models.MockResource"8System.Collections.Generic.ICollection<T>.this[TKey].set*}
+, ,(q*o&
+$Pulumock.TestFixtures.FixtureBuilder"E
+_mockResources3System.Collections.Generic.Dictionary<TKey, TValue>*
+, ,(D
+	{unknown}*64
+2
+mockResource"Pulumock.Mocks.Models.MockResourcev
+t
+- -(,
+%ret$Pulumock.TestFixtures.FixtureBuilder"__id*4
+- -((&
+$Pulumock.TestFixtures.FixtureBuilder*
+2*I
+2. .(":
+. .(.
+,
+%ret$Pulumock.TestFixtures.FixtureBuilder:>
+*+ *(D2
+mockResource"Pulumock.Mocks.Models.MockResourceB(&
+$Pulumock.TestFixtures.FixtureBuilder÷
+OPulumock.Utilities.MockHelper.IsStackReference(Pulumi.Testing.MockResourceArgs)a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Utilities/MockHelper.cs ('"0*
+0 (*
+1*É
+1 (e{
+y
+ (
+%0string"(Pulumi.Testing.MockResourceArgs.Type.get*5
+ ()
+'
+argsPulumi.Testing.MockResourceArgsµ
+≤
+ (e
+
+%1bool"8string.Equals(string?, string?, System.StringComparison)* *
+ (
+
+%0string*,
+! (J 
+pulumi:pulumi:StackReference*
+L (d2:
+8
+ (e
+%retbool"__id*
+ (e
+
+
+%1bool*
+2*)
+2f (f"
+e (f
+
+%retbool:3
+( (='
+argsPulumi.Testing.MockResourceArgsB!"
+Pulumock.Utilities.MockHelperX´
+=Pulumock.Utilities.MockHelper.GetLogicalResourceName(string?)a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Utilities/MockHelper.cs (/"0*
+0 (*
+1*w
+1 ('`
+^
+ ('
+
+%0bool""string.IsNullOrWhiteSpace(string?)* *
+" (&
+
+namestring*
+2
+3*¥
+20 (WNL
+0 (W"
+%1System.ArgumentNullException"System.ArgumentNullException∂
+≥
+0 (W"
+%2System.ArgumentNullException";System.ArgumentNullException.ArgumentNullException(string?)*0
+0 (W$
+"
+%1System.ArgumentNullException*
+J (V
+name"
+^ (_
+
+%retstring*T
+3Z (^@
+>
+Z (^
+%retstring"__id*
+Z (^
+
+namestring*
+4*+
+4_ (_"
+^ (_
+
+%retstring:
+0 (<
+namestringB!"
+Pulumock.Utilities.MockHelperÅ
+QPulumock.TestFixtures.FixtureBuilder.WithMockCall(Pulumock.Mocks.Models.MockCall)h
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.cs6 6(&"0*
+06 6(*
+1*£
+18 8(-ú
+ô
+8 8(-)
+%0#Pulumock.Mocks.Models.MockCallToken"(Pulumock.Mocks.Models.MockCall.Token.get*8
+8 8(',
+*
+mockCallPulumock.Mocks.Models.MockCallp
+n
+8 8(--
+newKey#Pulumock.Mocks.Models.MockCallToken"__id*-+
+)
+%0#Pulumock.Mocks.Models.MockCallToken*
+2*î
+2:. ;(MÖ
+Ç
+:. :(=G
+%1ASystem.Collections.Generic.Dictionary<TKey, TValue>.KeyCollection"2System.Collections.Generic.ICollection<T>.Keys.get*y
+:. :(8m*k&
+$Pulumock.TestFixtures.FixtureBuilder"A
+
+_mockCalls3System.Collections.Generic.Dictionary<TKey, TValue>™
+ß
+:. ;(M/
+%2)System.Collections.Generic.IEnumerable<T>"rSystem.Linq.Enumerable.Where<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, bool>)* *U
+:. :(=I
+G
+%1ASystem.Collections.Generic.Dictionary<TKey, TValue>.KeyCollection*
+; ;(L
+	{unknown}…∆
+:. ;(M/
+%3)System.Collections.Generic.IEnumerator<T>"9System.Collections.Generic.IEnumerable<T>.GetEnumerator()*=
+:. ;(M1
+/
+%2)System.Collections.Generic.IEnumerable<T>2GetEnumerator()
+}
+:. ;(M6
+	%capture0)System.Collections.Generic.IEnumerator<T>"__id*31
+/
+%3)System.Collections.Generic.IEnumerator<T>*
+3*Æ
+3:. ;(Mñì
+:. ;(M
+
+%4bool")System.Collections.IEnumerator.MoveNext()*D
+:. ;(M8
+6
+	%capture0)System.Collections.Generic.IEnumerator<T>2
+MoveNext()*
+4
+5*ﬂ
+4: =(+¬ø
+: :()
+%5#Pulumock.Mocks.Models.MockCallToken"5System.Collections.Generic.IEnumerator<T>.Current.get*D
+:. ;(M8
+6
+	%capture0)System.Collections.Generic.IEnumerator<T>2Current.getu
+s
+: :(2
+existingKey#Pulumock.Mocks.Models.MockCallToken"__id*-+
+)
+%5#Pulumock.Mocks.Models.MockCallTokené
+ã
+= =(*
+
+%6bool"6System.Collections.Generic.ICollection<T>.Remove(TKey)*y
+= =(m*k&
+$Pulumock.TestFixtures.FixtureBuilder"A
+
+_mockCalls3System.Collections.Generic.Dictionary<TKey, TValue>*@
+= =()4
+2
+existingKey#Pulumock.Mocks.Models.MockCallToken*
+5*
+5:. ;(M*
+6
+7*ù
+6:. ;(MàÖ
+:. ;(M
+
+%7void"System.IDisposable.Dispose()*D
+:. ;(M8
+6
+	%capture0)System.Collections.Generic.IEnumerator<T>2	Dispose()*
+7*
+76 6(*
+8*‚
+8A B(’
+“
+A A(%$
+%8Pulumock.Mocks.Models.MockCall"8System.Collections.Generic.ICollection<T>.this[TKey].set*y
+A A(m*k&
+$Pulumock.TestFixtures.FixtureBuilder"A
+
+_mockCalls3System.Collections.Generic.Dictionary<TKey, TValue>*;
+A A(/
+-
+newKey#Pulumock.Mocks.Models.MockCallToken*.,
+*
+mockCallPulumock.Mocks.Models.MockCallv
+t
+B B(,
+%ret$Pulumock.TestFixtures.FixtureBuilder"__id*4
+B B((&
+$Pulumock.TestFixtures.FixtureBuilder*
+9*I
+9C C(":
+C C(.
+,
+%ret$Pulumock.TestFixtures.FixtureBuilder:6
+6' 6(8*
+mockCallPulumock.Mocks.Models.MockCallB(&
+$Pulumock.TestFixtures.FixtureBuilderÑ
+†Pulumock.Utilities.MockHelper.GetPhysicalResourceName(Pulumi.Testing.MockResourceArgs, System.Collections.Immutable.ImmutableDictionary<string, object>.Builder)a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Utilities/MockHelper.cs (0"0*
+0 (*
+1*®
+1 ()’
+“
+ ()
+%0object"ASystem.Collections.Generic.ICollection<T>.GetValueOrDefault(TKey)*_
+ (S
+Q
+outputsFSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.Builder*
+" ((
+name9
+7
+ ()
+	%capture0object"__id*
+
+%0object*
+2
+3*T
+2 ()@
+>
+ ()
+	%capture1object"__id*
+
+	%capture0object*
+4*§
+3- (\{
+y
+G (P
+%1string"(Pulumi.Testing.MockResourceArgs.Name.get*5
+G (K)
+'
+argsPulumi.Testing.MockResourceArgs{
+y
+0 (Q
+%2string"=Pulumock.Utilities.MockHelper.GetLogicalResourceName(string?)* *
+G (P
+
+%1string[
+Y
+- (\
+%3string"__concat*
+/ (R
+
+%2string*
+R ([
+	_physical9
+7
+- (\
+	%capture1object"__id*
+
+%3string*
+4*Y
+4 (\E
+C
+ (\
+%retobject"__id*!
+ (\
+
+	%capture1object*
+5*+
+5] (]"
+\ (]
+
+%retobject:3
+1 (F'
+argsPulumi.Testing.MockResourceArgs:]
+H ({Q
+outputsFSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.BuilderB!"
+Pulumock.Utilities.MockHelperº
+<Pulumock.Utilities.MockHelper.GetResourceId(string?, string)a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Utilities/MockHelper.cs (&"0*
+0 (*
+1*u
+1 (%^
+\
+ (%
+
+%0bool""string.IsNullOrWhiteSpace(string?)* *
+" ($
+
+idstring*
+2
+3*U
+2( (2A
+?
+( (2
+	%capture0string"__id*
+
+
+fallbackIdstring*
+4*M
+35 (79
+7
+5 (7
+	%capture0string"__id*
+
+idstring*
+4*Y
+4 (7E
+C
+ (7
+%retstring"__id*!
+ (7
+
+	%capture0string*
+5*+
+58 (8"
+7 (8
+
+%retstring:
+' (1
+idstring: 
+3 (D
+
+fallbackIdstringB!"
+Pulumock.Utilities.MockHelper•
+3Pulumock.Utilities.MockHelper.GetCallToken(string?)a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Utilities/MockHelper.cs (%"0*
+0 (*
+1*x
+1 ((a
+_
+ ((
+
+%0bool""string.IsNullOrWhiteSpace(string?)* *
+" ('
+
+tokenstring*
+2
+3*µ
+21 (YNL
+1 (Y"
+%1System.ArgumentNullException"System.ArgumentNullException∑
+¥
+1 (Y"
+%2System.ArgumentNullException";System.ArgumentNullException.ArgumentNullException(string?)*0
+1 (Y$
+"
+%1System.ArgumentNullException*
+K (X	
+token"
+a (b
+
+%retstring*U
+3\ (aA
+?
+\ (a
+%retstring"__id*
+\ (a
+
+tokenstring*
+4*+
+4b (b"
+a (b
+
+%retstring:
+& (3
+tokenstringB!"
+Pulumock.Utilities.MockHelper˛
+TPulumock.TestFixtures.FixtureBuilder.WithoutMockCall(Pulumock.Mocks.Models.MockCall)h
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.csE E()"0*
+0E E(*
+1*ƒ
+1G J(#Ö
+Ç
+G% G(4G
+%0ASystem.Collections.Generic.Dictionary<TKey, TValue>.KeyCollection"2System.Collections.Generic.ICollection<T>.Keys.get*y
+G% G(/m*k&
+$Pulumock.TestFixtures.FixtureBuilder"A
+
+_mockCalls3System.Collections.Generic.Dictionary<TKey, TValue>≠
+™
+G% H(A)
+%1#Pulumock.Mocks.Models.MockCallToken"{System.Linq.Enumerable.FirstOrDefault<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, bool>)* *U
+G% G(4I
+G
+%0ASystem.Collections.Generic.Dictionary<TKey, TValue>.KeyCollection*
+H H(@
+	{unknown}u
+s
+G H(A2
+existingKey#Pulumock.Mocks.Models.MockCallToken"__id*-+
+)
+%1#Pulumock.Mocks.Models.MockCallToken*
+2
+3*£
+2L L(+é
+ã
+L L(*
+
+%2bool"6System.Collections.Generic.ICollection<T>.Remove(TKey)*y
+L L(m*k&
+$Pulumock.TestFixtures.FixtureBuilder"A
+
+_mockCalls3System.Collections.Generic.Dictionary<TKey, TValue>*@
+L L()4
+2
+existingKey#Pulumock.Mocks.Models.MockCallToken*
+3*ä
+3O O(v
+t
+O O(,
+%ret$Pulumock.TestFixtures.FixtureBuilder"__id*4
+O O((&
+$Pulumock.TestFixtures.FixtureBuilder*
+4*I
+4P P(":
+P P(.
+,
+%ret$Pulumock.TestFixtures.FixtureBuilder:6
+E* E(;*
+mockCallPulumock.Mocks.Models.MockCallB(&
+$Pulumock.TestFixtures.FixtureBuilder¶
+«Pulumock.Utilities.MockHelper.GetMockResourceOrDefault(System.Collections.Immutable.ImmutableDictionary<(System.Type Type, string? LogicalName), Pulumock.Mocks.Models.MockResource>, string?, string?)a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Utilities/MockHelper.cs  (8"0*
+0 (*
+1*é
+1 #(ƒ
+¡
+ "(Z;
+%05System.Collections.Generic.KeyValuePair<TKey, TValue>"|System.Linq.Enumerable.SingleOrDefault<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, bool>)* *Y
+ ('M
+K
+	resources>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*
+  "(Y
+	{unknown}√
+¿
+ #((
+%1"Pulumock.Mocks.Models.MockResource"?System.Collections.Generic.KeyValuePair<TKey, TValue>.Value.get*I
+ "(Z=
+;
+%05System.Collections.Generic.KeyValuePair<TKey, TValue>m
+k
+ #(+
+match"Pulumock.Mocks.Models.MockResource"__id*,*
+(
+%1"Pulumock.Mocks.Models.MockResource*
+2*ã
+2% %(t
+r
+% %(/
+	%capture0"Pulumock.Mocks.Models.MockResource"__id*/-
++
+match"Pulumock.Mocks.Models.MockResource*
+3
+4*å
+3% %(x
+v
+% %(/
+	%capture1"Pulumock.Mocks.Models.MockResource"__id*31
+/
+	%capture0"Pulumock.Mocks.Models.MockResource*
+5*í
+4% )(ƒ
+¡
+% ((,;
+%25System.Collections.Generic.KeyValuePair<TKey, TValue>"|System.Linq.Enumerable.SingleOrDefault<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, bool>)* *Y
+% %(!M
+K
+	resources>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*
+& ((+
+	{unknown}√
+¿
+% )((
+%3"Pulumock.Mocks.Models.MockResource"?System.Collections.Generic.KeyValuePair<TKey, TValue>.Value.get*I
+% ((,=
+;
+%25System.Collections.Generic.KeyValuePair<TKey, TValue>q
+o
+% )(/
+	%capture1"Pulumock.Mocks.Models.MockResource"__id*,*
+(
+%3"Pulumock.Mocks.Models.MockResource*
+5*í
+5% )(~
+|
+% )(+
+%ret#Pulumock.Mocks.Models.MockResource?"__id*=
+% )(1
+/
+	%capture1"Pulumock.Mocks.Models.MockResource*
+6*H
+6* *("9
+* *(-
++
+%ret#Pulumock.Mocks.Models.MockResource?:W
+ (UK
+	resources>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>:
+ (
+	typeTokenstring:!
+ (
+logicalNamestringB!"
+Pulumock.Utilities.MockHelper´
+±Pulumock.Utilities.MockHelper.GetMockCallOrDefault(System.Collections.Immutable.ImmutableDictionary<Pulumock.Mocks.Models.MockCallToken, Pulumock.Mocks.Models.MockCall>, string)a
+W/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Utilities/MockHelper.cs, ,(0"0*
+0, ,(*
+1*˝
+1. 2(ø
+º
+. 1(];
+%05System.Collections.Generic.KeyValuePair<TKey, TValue>"{System.Linq.Enumerable.FirstOrDefault<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, bool>)* *U
+. .(I
+G
+calls>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*
+/ 1(\
+	{unknown}ø
+º
+. 2($
+%1Pulumock.Mocks.Models.MockCall"?System.Collections.Generic.KeyValuePair<TKey, TValue>.Value.get*I
+. 1(]=
+;
+%05System.Collections.Generic.KeyValuePair<TKey, TValue>e
+c
+. 2('
+matchPulumock.Mocks.Models.MockCall"__id*(&
+$
+%1Pulumock.Mocks.Models.MockCall*
+2*É
+24 4(l
+j
+4 4(+
+	%capture0Pulumock.Mocks.Models.MockCall"__id*+)
+'
+matchPulumock.Mocks.Models.MockCall*
+3
+4*Ñ
+34 4(p
+n
+4 4(+
+	%capture1Pulumock.Mocks.Models.MockCall"__id*/-
++
+	%capture0Pulumock.Mocks.Models.MockCall*
+5*Å
+44 8(ø
+º
+4 7(G;
+%25System.Collections.Generic.KeyValuePair<TKey, TValue>"{System.Linq.Enumerable.FirstOrDefault<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, bool>)* *U
+4 4(I
+G
+calls>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*
+5 7(F
+	{unknown}ø
+º
+4 8($
+%3Pulumock.Mocks.Models.MockCall"?System.Collections.Generic.KeyValuePair<TKey, TValue>.Value.get*I
+4 7(G=
+;
+%25System.Collections.Generic.KeyValuePair<TKey, TValue>i
+g
+4 8(+
+	%capture1Pulumock.Mocks.Models.MockCall"__id*(&
+$
+%3Pulumock.Mocks.Models.MockCall*
+5*ä
+54 8(v
+t
+4 8('
+%retPulumock.Mocks.Models.MockCall?"__id*9
+4 8(-
++
+	%capture1Pulumock.Mocks.Models.MockCall*
+6*D
+69 9("5
+9 9()
+'
+%retPulumock.Mocks.Models.MockCall?:S
+,1 ,(cG
+calls>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>:
+,e ,(u
+	callTokenstringB!"
+Pulumock.Utilities.MockHelperè	
+ÑPulumock.Mocks.Builders.NestedOutputsBuilder<T>.WithNestedOutput(System.Linq.Expressions.Expression<System.Func<T, object>>, object)p
+f/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/NestedOutputsBuilder.cs
+# 
+(3"0*
+0
+ 
+(*
+1*ç
+1 (€
+ÿ
+ ((
+%0string"oPulumock.Extensions.TypeExtensions.GetOutputName<T>(System.Linq.Expressions.Expression<System.Func<T, object>>)* *G
+ (;
+9
+selector-System.Linq.Expressions.Expression<TDelegate>ä
+á
+ (1
+%1object"8System.Collections.Generic.ICollection<T>.this[TKey].set*Å
+ (u*s1
+/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>">
+_values3System.Collections.Generic.Dictionary<TKey, TValue>*
+ ((
+
+%0string*
+
+valueobjectç
+ä
+ (7
+%ret/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>"__id*?
+ (31
+/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>*
+2*T
+2 ("E
+ (9
+7
+%ret/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>:E
+
+4 
+(X9
+selector-System.Linq.Expressions.Expression<TDelegate>:
+
+Z 
+(f
+valueobjectB31
+/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>¡
+7Pulumock.Mocks.Builders.NestedOutputsBuilder<T>.Build()p
+f/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/NestedOutputsBuilder.cs& (+"0*
+0 (*
+1*Î
+11 (8÷
+”
+1 (8=
+%ret5System.Collections.Generic.Dictionary<string, object>"__id*Å
+1 (8u*s1
+/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>">
+_values3System.Collections.Generic.Dictionary<TKey, TValue>*
+2*Z
+29 (9"K
+8 (9?
+=
+%ret5System.Collections.Generic.Dictionary<string, object>B31
+/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>ˇ,
+ØPulumock.TestFixtures.FixtureBuilder.BuildAsync(System.Func<System.Threading.Tasks.Task<System.Collections.Generic.IDictionary<string, object?>>>, Pulumi.Testing.TestOptions?)h
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/TestFixtures/FixtureBuilder.csR R()"0*
+0R R(*
+1*
+1T T(**
+2
+3*§
+2V W(Qä
+á
+W) W(ND
+%0>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>">Pulumock.Mocks.Models.MockConfiguration.MockConfigurations.get*u
+W) W(;i*g&
+$Pulumock.TestFixtures.FixtureBuilder"=
+_mockConfiguration'Pulumock.Mocks.Models.MockConfigurationÈ
+Ê
+W W(O
+%1string"bSystem.Text.Json.JsonSerializer.Serialize<TValue>(TValue, System.Text.Json.JsonSerializerOptions?)* *R
+W) W(NF
+D
+%0>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*
+W W(O ñ
+ì
+V W(P
+
+%2void":System.Environment.SetEnvironmentVariable(string, string?)* *
+V/ V(_
+PULUMI_CONFIG*
+W W(O
+
+%1string*
+3*‘
+3Z Z(oé
+ã
+Z$ Z(JD
+%3>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"≥System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary<TKey, TValue>(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>)* *}
+Z$ Z(2q*o&
+$Pulumock.TestFixtures.FixtureBuilder"E
+_mockResources3System.Collections.Generic.Dictionary<TKey, TValue>ä
+á
+ZL Z(nD
+%4>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"≥System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary<TKey, TValue>(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>)* *y
+ZL Z(Vm*k&
+$Pulumock.TestFixtures.FixtureBuilder"A
+
+_mockCalls3System.Collections.Generic.Dictionary<TKey, TValue>><
+Z Z(o
+%5Pulumock.Mocks.Mocks"Pulumock.Mocks.Mocksé
+ã
+Z Z(o
+%6Pulumock.Mocks.Mocks"êPulumock.Mocks.Mocks.Mocks(System.Collections.Immutable.ImmutableDictionary<(System.Type Type, string? LogicalName), Pulumock.Mocks.Models.MockResource>, System.Collections.Immutable.ImmutableDictionary<Pulumock.Mocks.Models.MockCallToken, Pulumock.Mocks.Models.MockCall>)*(
+Z Z(o
+
+%5Pulumock.Mocks.Mocks*R
+Z$ Z(JF
+D
+%3>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*R
+ZL Z(nF
+D
+%4>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>Q
+O
+Z Z(o
+mocksPulumock.Mocks.Mocks"__id*
+
+%5Pulumock.Mocks.Mocks*
+4*m
+4] ](Y
+W
+] ]("
+	%capture0Pulumi.Testing.IMocks"__id*!
+
+mocksPulumock.Mocks.Mocks*
+5*Å
+5^ ^(j
+h
+^ ^('
+	%capture1Pulumi.Testing.TestOptions"__id*-+
+)
+testOptionsPulumi.Testing.TestOptions*
+6
+7*|
+6^ ^(h
+f
+^ ^('
+	%capture2Pulumi.Testing.TestOptions"__id*+)
+'
+	%capture1Pulumi.Testing.TestOptions*
+8*∫
+7^ ^(>JH
+^ ^(@ 
+%7Pulumi.Testing.TestOptions"Pulumi.Testing.TestOptionsâ
+Ü
+^ ^(@ 
+%8Pulumi.Testing.TestOptions"(Pulumi.Testing.TestOptions.TestOptions()*.
+^ ^(@"
+ 
+%7Pulumi.Testing.TestOptionsa
+_
+^ ^(@'
+	%capture3Pulumi.Testing.TestOptions"__id*$"
+ 
+%7Pulumi.Testing.TestOptionsÄ
+~
+^- ^(>
+%9bool?"(Pulumi.Testing.TestOptions.IsPreview.set*5
+^ ^(@)
+'
+	%capture3Pulumi.Testing.TestOptions* h
+f
+^ ^(@'
+	%capture2Pulumi.Testing.TestOptions"__id*+)
+'
+	%capture3Pulumi.Testing.TestOptions*
+8*ç
+8\ _(5¯
+ı
+\e _(4+
+%10$System.Threading.Tasks.Task<TResult>"±Pulumi.Deployment.TestAsync(Pulumi.Testing.IMocks, Pulumi.Testing.TestOptions, System.Func<System.Threading.Tasks.Task<System.Collections.Generic.IDictionary<string, object?>>>)* *0
+] ]($
+"
+	%capture0Pulumi.Testing.IMocks*5
+^ ^(@)
+'
+	%capture2Pulumi.Testing.TestOptions*
+_ _(3
+	{unknown}*
+9*˘
+9a a(~‰
+·
+a+ a(OE
+%11>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"≥System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary<TKey, TValue>(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>)* *R
+a+ a(7F
+D
+stackOutputs4System.Collections.Generic.IDictionary<TKey, TValue>ú
+ô
+aQ a(h4
+%12-System.Collections.Immutable.ImmutableList<T>"*Pulumock.Mocks.Mocks.ResourceSnapshots.get*+
+aQ a(V
+
+mocksPulumock.Mocks.Mocksò
+ï
+aj a(}4
+%13-System.Collections.Immutable.ImmutableList<T>"&Pulumock.Mocks.Mocks.CallSnapshots.get*+
+aj a(o
+
+mocksPulumock.Mocks.MocksQO
+a a(~$
+%14Pulumock.TestFixtures.Fixture"Pulumock.TestFixtures.Fixture·
+ﬁ
+a a(~$
+%15Pulumock.TestFixtures.Fixture" Pulumock.TestFixtures.Fixture.Fixture(System.Collections.Immutable.ImmutableArray<Pulumi.Resource>, System.Collections.Immutable.ImmutableDictionary<string, object?>, System.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.ResourceSnapshot>, System.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.CallSnapshot>)*2
+a a(~&
+$
+%14Pulumock.TestFixtures.Fixture*N
+a a()B
+@
+stackResources.System.Collections.Immutable.ImmutableArray<T>*S
+a+ a(OG
+E
+%11>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*B
+aQ a(h6
+4
+%12-System.Collections.Immutable.ImmutableList<T>*B
+aj a(}6
+4
+%13-System.Collections.Immutable.ImmutableList<T>ã
+à
+a a(~B
+%ret:System.Threading.Tasks.Task<Pulumock.TestFixtures.Fixture>"__id*2
+a a(~&
+$
+%14Pulumock.TestFixtures.Fixture*
+10*`
+10b b("P
+b b(D
+B
+%ret:System.Threading.Tasks.Task<Pulumock.TestFixtures.Fixture>:7
+R* R(f+
+createResourcesFuncSystem.Func<TResult>:6
+	Rh R(á)
+testOptionsPulumi.Testing.TestOptionsB(&
+$Pulumock.TestFixtures.FixtureBuilderË
+LPulumock.Mocks.Builders.MockStackReferenceBuilder.WithOutput(string, object)u
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockStackReferenceBuilder.cs% (/"0*
+0 (*
+1*¬
+1 (ô
+ñ
+ ( 
+
+%0void";System.Collections.Generic.ICollection<T>.Add(TKey, TValue)*Ñ
+ (x*v3
+1Pulumock.Mocks.Builders.MockStackReferenceBuilder"?
+_outputs3System.Collections.Generic.Dictionary<TKey, TValue>*
+ (
+
+keystring*
+ (
+
+valueobjectë
+é
+ (9
+%ret1Pulumock.Mocks.Builders.MockStackReferenceBuilder"__id*A
+ (53
+1Pulumock.Mocks.Builders.MockStackReferenceBuilder*
+2*V
+2 ("G
+ (;
+9
+%ret1Pulumock.Mocks.Builders.MockStackReferenceBuilder:
+0 (:
+keystring:
+< (H
+valueobjectB53
+1Pulumock.Mocks.Builders.MockStackReferenceBuilderÿ
+QPulumock.Extensions.TypeExtensions.MatchesResourceTypeToken(System.Type, string?)f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/TypeExtensions.cs (/"0*
+0 (*
+1*x
+1	 ()a
+_
+	 ()
+
+%0bool""string.IsNullOrWhiteSpace(string?)* *
+# ((
+
+tokenstring*
+2
+3*ﬁ
+2 (4Æ
+´
+ ($/
+%1)System.Collections.Generic.IEnumerable<T>"EPulumock.Extensions.TypeExtensions.GetResourceTypeTokens(System.Type)* *!
+ (
+
+typeSystem.Type·
+ﬁ
+ (4
+
+%2bool"bSystem.Linq.Enumerable.Contains<TSource>(System.Collections.Generic.IEnumerable<TSource>, TSource)* *=
+ ($1
+/
+%1)System.Collections.Generic.IEnumerable<T>*
+. (3
+
+tokenstring5
+3
+ (4
+	%capture0bool"__id*
+
+
+%2bool*
+4*?
+3 ()+
+)
+ ()
+	%capture0bool"__id* *
+4*U
+4 (4A
+?
+ (4
+%retbool"__id*
+ (4
+
+	%capture0bool*
+5*)
+55 (5"
+4 (5
+
+%retbool:
+0 (>
+typeSystem.Type:
+@ (M
+tokenstringB&"$
+"Pulumock.Extensions.TypeExtensionsX˙
+
+9Pulumock.Mocks.Builders.MockStackReferenceBuilder.Build()u
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockStackReferenceBuilder.cs (#"0*
+0 (*
+1*®
+1 (Fñ
+ì
+% (ED
+%0>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"≥System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary<TKey, TValue>(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>)* *Ñ
+% (-x*v3
+1Pulumock.Mocks.Builders.MockStackReferenceBuilder"?
+_outputs3System.Collections.Generic.Dictionary<TKey, TValue>fd
+ (F.
+%1(Pulumock.Mocks.Models.MockStackReference"(Pulumock.Mocks.Models.MockStackReferenceå
+â
+ (F.
+%2(Pulumock.Mocks.Models.MockStackReference"ÖPulumock.Mocks.Models.MockStackReference.MockStackReference(string, System.Collections.Immutable.ImmutableDictionary<string, object>)*<
+ (F0
+.
+%1(Pulumock.Mocks.Models.MockStackReference*3
+ (#'*% "!
+fullyQualifiedStackNamestring*R
+% (EF
+D
+%0>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>É
+Ä
+ (F0
+%ret(Pulumock.Mocks.Models.MockStackReference"__id*<
+ (F0
+.
+%1(Pulumock.Mocks.Models.MockStackReference*
+2*M
+2G (G">
+F (G2
+0
+%ret(Pulumock.Mocks.Models.MockStackReferenceB53
+1Pulumock.Mocks.Builders.MockStackReferenceBuilderΩ
+FPulumock.Mocks.Builders.MockResourceBuilder.WithOutput(string, object)o
+e/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockResourceBuilder.cs ()"0*
+0 (*
+1*Ø
+1 (í
+è
+ ( 
+
+%0void";System.Collections.Generic.ICollection<T>.Add(TKey, TValue)*~
+ (r*p-
++Pulumock.Mocks.Builders.MockResourceBuilder"?
+_outputs3System.Collections.Generic.Dictionary<TKey, TValue>*
+ (
+
+keystring*
+ (
+
+valueobjectÖ
+Ç
+ (3
+%ret+Pulumock.Mocks.Builders.MockResourceBuilder"__id*;
+ (/-
++Pulumock.Mocks.Builders.MockResourceBuilder*
+2*P
+2 ("A
+ (5
+3
+%ret+Pulumock.Mocks.Builders.MockResourceBuilder:
+* (4
+keystring:
+6 (B
+valueobjectB/-
++Pulumock.Mocks.Builders.MockResourceBuilder 
+MPulumock.Extensions.TypeExtensions.MatchesCallTypeToken(System.Type, string?)f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/TypeExtensions.cs (+"0*
+0 (*
+1*x
+1	 ()a
+_
+	 ()
+
+%0bool""string.IsNullOrWhiteSpace(string?)* *
+# ((
+
+tokenstring*
+2
+3*‘
+2 (Enl
+ ( 
+%1string"%System.Reflection.MemberInfo.Name.get*!
+ (
+
+typeSystem.Type2Name.getò
+ï
+ (E
+
+%2bool"0string.Contains(string, System.StringComparison)*
+ (
+
+tokenstring*
+ ( 
+
+%1string*
+" (D25
+3
+ (E
+	%capture0bool"__id*
+
+
+%2bool*
+4*?
+3 ()+
+)
+ ()
+	%capture0bool"__id* *
+4*U
+4 (EA
+?
+ (E
+%retbool"__id*
+ (E
+
+	%capture0bool*
+5*)
+5F (F"
+E (F
+
+%retbool:
+, (:
+typeSystem.Type:
+< (I
+tokenstringB&"$
+"Pulumock.Extensions.TypeExtensionsX˝
+sPulumock.Utilities.OutputMerger.TryAsDictionary(object?, out System.Collections.Generic.Dictionary<string, object>)c
+Y/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Utilities/OutputMerger.cs& &('"0*
+0& &(*
+1*N
+1( ((:
+8
+( ((
+	%capture0object"__id*
+
+objobject*
+2*õ
+2* *(>É
+Ä
+* *(>K
+	immutable>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"__id*!
+( ((
+
+	%capture0object*
+3
+4*‰
+3+ ,(ã
+à
++ +(O9
+%03System.Collections.Generic.Dictionary<TKey, TValue>"©System.Linq.Enumerable.ToDictionary<TSource, TKey, TElement>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, TKey>, System.Func<TSource, TElement>)* *Y
++ +( M
+K
+	immutable>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*
++. +(<
+	{unknown}*
++> +(N
+	{unknown}è
+å
++ +(O;
+dict3System.Collections.Generic.Dictionary<TKey, TValue>"__id*=;
+9
+%03System.Collections.Generic.Dictionary<TKey, TValue>0
+.
+, ,(
+%retbool"__id*
+, ,( *
+7*Ü
+4. .(-o
+m
+. .(-8
+d3System.Collections.Generic.Dictionary<TKey, TValue>"__id*!
+( ((
+
+	%capture0object*
+5
+6*’
+5/ 0(é
+ã
+/ /(;
+dict3System.Collections.Generic.Dictionary<TKey, TValue>"__id*<:
+8
+d3System.Collections.Generic.Dictionary<TKey, TValue>0
+.
+0 0(
+%retbool"__id*
+0 0( *
+7*õ
+63 4(U
+S
+3 3(;
+dict3System.Collections.Generic.Dictionary<TKey, TValue>"__id* 0
+.
+4 4(
+%retbool"__id*
+4 4( *
+7*)
+76 6("
+6 6(
+
+%retbool:
+&( &(3
+objobject:I
+&5 &(X;
+dict3System.Collections.Generic.Dictionary<TKey, TValue>B#"!
+Pulumock.Utilities.OutputMergerXç	
+}Pulumock.Mocks.Builders.MockResourceBuilder.WithOutput<T>(System.Linq.Expressions.Expression<System.Func<T, object>>, object)o
+e/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockResourceBuilder.cs# #()"0*
+0# #(*
+1*î
+1% &(„
+‡
+% %(5
+%0string"oPulumock.Extensions.TypeExtensions.GetOutputName<T>(System.Linq.Expressions.Expression<System.Func<T, object>>)* *O
+% %(%C
+A
+propertySelector-System.Linq.Expressions.Expression<TDelegate>ë
+é
+% %(=
+
+%1void";System.Collections.Generic.ICollection<T>.Add(TKey, TValue)*~
+% %(r*p-
++Pulumock.Mocks.Builders.MockResourceBuilder"?
+_outputs3System.Collections.Generic.Dictionary<TKey, TValue>*
+% %(5
+
+%0string*
+%7 %(<
+
+valueobjectÖ
+Ç
+& &(3
+%ret+Pulumock.Mocks.Builders.MockResourceBuilder"__id*;
+& &(/-
++Pulumock.Mocks.Builders.MockResourceBuilder*
+2*P
+2' '("A
+' '(5
+3
+%ret+Pulumock.Mocks.Builders.MockResourceBuilder:M
+#- #(YA
+propertySelector-System.Linq.Expressions.Expression<TDelegate>:
+#[ #(g
+valueobjectB/-
++Pulumock.Mocks.Builders.MockResourceBuilderﬁ
+VPulumock.Mocks.Models.MockCallToken.ConflictsWith(Pulumock.Mocks.Models.MockCallToken)g
+]/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Models/MockCallToken.cs) )("0*
+0) )(*
+1*ù
+1+ +(Ö
+Ç
++ +(
+
+%0bool"5Pulumock.Mocks.Models.MockCallToken.IsStringToken.get*3
++ +('%
+#Pulumock.Mocks.Models.MockCallToken*
+2
+4*§
+2+ +(0å
+â
++ +(0
+
+%1bool"5Pulumock.Mocks.Models.MockCallToken.IsStringToken.get*:
++ +(".
+,
+other#Pulumock.Mocks.Models.MockCallToken*
+3
+4*ñ
+3- -(dä
+á
+-! -(1
+%2string"8Pulumock.Mocks.Models.MockCallToken.StringTokenValue.get*3
+-! -(1'%
+#Pulumock.Mocks.Models.MockCallTokenë
+é
+-3 -(I
+%3string"8Pulumock.Mocks.Models.MockCallToken.StringTokenValue.get*:
+-3 -(8.
+,
+other#Pulumock.Mocks.Models.MockCallToken£
+†
+- -(d
+
+%4bool"8string.Equals(string?, string?, System.StringComparison)* *
+-! -(1
+
+%2string*
+-3 -(I
+
+%3string*
+-K -(c2:
+8
+- -(d
+%retbool"__id*
+- -(d
+
+
+%4bool*
+14*õ
+40 0(É
+Ä
+0 0(
+
+%5bool"3Pulumock.Mocks.Models.MockCallToken.IsTypeToken.get*3
+0 0('%
+#Pulumock.Mocks.Models.MockCallToken*
+5
+7*¢
+50 0(,ä
+á
+0 0(,
+
+%6bool"3Pulumock.Mocks.Models.MockCallToken.IsTypeToken.get*:
+0 0( .
+,
+other#Pulumock.Mocks.Models.MockCallToken*
+6
+7*ú
+62 2(9ç
+ä
+2 2(!
+%7System.Type"6Pulumock.Mocks.Models.MockCallToken.TypeTokenValue.get*3
+2 2(!'%
+#Pulumock.Mocks.Models.MockCallTokenî
+ë
+2% 2(9
+%8System.Type"6Pulumock.Mocks.Models.MockCallToken.TypeTokenValue.get*:
+2% 2(*.
+,
+other#Pulumock.Mocks.Models.MockCallToken£
+†
+2 2(9
+
+%9bool"3System.Type.operator ==(System.Type?, System.Type?)*"
+System.Type*
+2 2(!
+
+%7System.Type*
+2% 2(9
+
+%8System.Type:
+8
+2 2(9
+%retbool"__id*
+2 2(9
+
+
+%9bool*
+14*ù
+75 5(Ñ
+Å
+5 5(
+%10bool"3Pulumock.Mocks.Models.MockCallToken.IsTypeToken.get*3
+5 5('%
+#Pulumock.Mocks.Models.MockCallToken*
+8
+10*¶
+85 5(.ç
+ä
+5 5(.
+%11bool"5Pulumock.Mocks.Models.MockCallToken.IsStringToken.get*:
+5 5( .
+,
+other#Pulumock.Mocks.Models.MockCallToken*
+9
+10*ß
+97 7(Né
+ã
+7 7(!
+%12System.Type"6Pulumock.Mocks.Models.MockCallToken.TypeTokenValue.get*3
+7 7(!'%
+#Pulumock.Mocks.Models.MockCallTokení
+è
+77 7(M
+%13string"8Pulumock.Mocks.Models.MockCallToken.StringTokenValue.get*:
+77 7(<.
+,
+other#Pulumock.Mocks.Models.MockCallTokenÆ
+´
+7 7(N
+%14bool"MPulumock.Extensions.TypeExtensions.MatchesCallTypeToken(System.Type, string?)* * 
+7 7(!
+
+%12System.Type*
+77 7(M
+
+%13string;
+9
+7 7(N
+%retbool"__id*
+7 7(N
+
+%14bool*
+14*°
+10: :(Ü
+É
+: :(
+%15bool"5Pulumock.Mocks.Models.MockCallToken.IsStringToken.get*3
+: :('%
+#Pulumock.Mocks.Models.MockCallToken*
+11
+13*¶
+11: :(.ã
+à
+: :(.
+%16bool"3Pulumock.Mocks.Models.MockCallToken.IsTypeToken.get*:
+: :(".
+,
+other#Pulumock.Mocks.Models.MockCallToken*
+12
+13*®
+12< <(Nï
+í
+< <('
+%17System.Type"6Pulumock.Mocks.Models.MockCallToken.TypeTokenValue.get*:
+< <(.
+,
+other#Pulumock.Mocks.Models.MockCallTokenã
+à
+<= <(M
+%18string"8Pulumock.Mocks.Models.MockCallToken.StringTokenValue.get*3
+<= <(M'%
+#Pulumock.Mocks.Models.MockCallTokenÆ
+´
+< <(N
+%19bool"MPulumock.Extensions.TypeExtensions.MatchesCallTypeToken(System.Type, string?)* * 
+< <('
+
+%17System.Type*
+<= <(M
+
+%18string;
+9
+< <(N
+%retbool"__id*
+< <(N
+
+%19bool*
+14*F
+13? ?(0
+.
+? ?(
+%retbool"__id*
+? ?( *
+14**
+14@ @("
+@ @(
+
+%retbool:8
+) )(1,
+other#Pulumock.Mocks.Models.MockCallTokenB'%
+#Pulumock.Mocks.Models.MockCallTokenXÜ
+˘Pulumock.Mocks.Builders.MockResourceBuilder.WithOutput<T, TNested>(System.Linq.Expressions.Expression<System.Func<T, object>>, System.Func<Pulumock.Mocks.Builders.NestedOutputsBuilder<TNested>, Pulumock.Mocks.Builders.NestedOutputsBuilder<TNested>>)o
+e/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockResourceBuilder.cs) )()"0*
+0) )(*
+1*
+1-# 1(tr
+-H -(k5
+%0/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>"/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>—
+Œ
+-H -(k5
+%1/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>"FPulumock.Mocks.Builders.NestedOutputsBuilder<T>.NestedOutputsBuilder()*C
+-H -(k7
+5
+%0/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>ˆÛ
+-3 -(l5
+%2/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>"!System.Func<T, TResult>.Invoke(T)*=
+-3 -(G1
+/
+nestedOutputsBuilderSystem.Func<T, TResult>*C
+-H -(k7
+5
+%0/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>2	Invoke(T)∆
+√
+-3 .(9
+%33System.Collections.Generic.Dictionary<TKey, TValue>"7Pulumock.Mocks.Builders.NestedOutputsBuilder<T>.Build()*C
+-3 -(l7
+5
+%2/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>ò
+ï
+-# .(D
+nestedOutputs3System.Collections.Generic.Dictionary<TKey, TValue>"__id*=;
+9
+%33System.Collections.Generic.Dictionary<TKey, TValue>„
+‡
+0 0(5
+%4string"oPulumock.Extensions.TypeExtensions.GetOutputName<T>(System.Linq.Expressions.Expression<System.Func<T, object>>)* *O
+0 0(%C
+A
+propertySelector-System.Linq.Expressions.Expression<TDelegate>∆
+√
+0 0(E
+
+%5void";System.Collections.Generic.ICollection<T>.Add(TKey, TValue)*~
+0 0(r*p-
++Pulumock.Mocks.Builders.MockResourceBuilder"?
+_outputs3System.Collections.Generic.Dictionary<TKey, TValue>*
+0 0(5
+
+%4string*R
+07 0(DF
+D
+nestedOutputs3System.Collections.Generic.Dictionary<TKey, TValue>Ö
+Ç
+1 1(3
+%ret+Pulumock.Mocks.Builders.MockResourceBuilder"__id*;
+1 1(/-
++Pulumock.Mocks.Builders.MockResourceBuilder*
+2*P
+22 2("A
+2 2(5
+3
+%ret+Pulumock.Mocks.Builders.MockResourceBuilder:M
+* *(4A
+propertySelector-System.Linq.Expressions.Expression<TDelegate>:;
++ +(_/
+nestedOutputsBuilderSystem.Func<T, TResult>B/-
++Pulumock.Mocks.Builders.MockResourceBuilderÔ
+
+=Pulumock.Mocks.Builders.MockResourceBuilder.Build<T>(string?)o
+e/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockResourceBuilder.cs7 7("0*
+07 7(*
+1*à
+18 8(Eè
+å
+8 8(7D
+%0>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"≥System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary<TKey, TValue>(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>)* *~
+8 8(r*p-
++Pulumock.Mocks.Builders.MockResourceBuilder"?
+_outputs3System.Collections.Generic.Dictionary<TKey, TValue>ZX
+8 8(E(
+%1"Pulumock.Mocks.Models.MockResource""Pulumock.Mocks.Models.MockResourceç
+ä
+8 8(E(
+%2"Pulumock.Mocks.Models.MockResource"áPulumock.Mocks.Models.MockResource.MockResource(System.Type, System.Collections.Immutable.ImmutableDictionary<string, object>, string?)*6
+8 8(E*
+(
+%1"Pulumock.Mocks.Models.MockResource*
+8 8(
+	{unknown}*R
+8 8(7F
+D
+%0>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*#
+89 8(D
+
+logicalNamestringv
+t
+8 8(E*
+%ret"Pulumock.Mocks.Models.MockResource"__id*6
+8 8(E*
+(
+%1"Pulumock.Mocks.Models.MockResource*
+2*G
+28F 8(F"8
+8E 8(F,
+*
+%ret"Pulumock.Mocks.Models.MockResource:!
+7! 7(;
+logicalNamestringB/-
++Pulumock.Mocks.Builders.MockResourceBuilderê
+EPulumock.Extensions.TypeExtensions.GetResourceTypeTokens(System.Type)f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/TypeExtensions.cs&' &(<"0*
+0& &(*
+1*©
+1' .(>£†
+' ((0
+%0object[]"6System.Reflection.MemberInfo.GetCustomAttributes(bool)*!
+' '(
+
+typeSystem.Type*
+(! ((/ 2GetCustomAttributes(bool)˛
+˚
+' ,( /
+%1)System.Collections.Generic.IEnumerable<T>"System.Linq.Enumerable.Select<TSource, TResult>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, TResult>)* *
+' ((0
+
+%0object[]*
+) ,(
+	{unknown}À
+»
+' -(/
+%2)System.Collections.Generic.IEnumerable<T>"FSystem.Linq.Enumerable.OfType<TResult>(System.Collections.IEnumerable)* *=
+' ,( 1
+/
+%1)System.Collections.Generic.IEnumerable<T>í
+è
+' .(>/
+%3)System.Collections.Generic.IEnumerable<T>"rSystem.Linq.Enumerable.Where<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, bool>)* *=
+' -(1
+/
+%2)System.Collections.Generic.IEnumerable<T>*
+. .(=
+	{unknown}ä
+á
+' .(>6
+%ret.System.Collections.Generic.IEnumerable<string>"__id*=
+' .(>1
+/
+%3)System.Collections.Generic.IEnumerable<T>*
+2*S
+2.? .(?"D
+.> .(?8
+6
+%ret.System.Collections.Generic.IEnumerable<string>:
+&= &(K
+typeSystem.TypeB&"$
+"Pulumock.Extensions.TypeExtensionsÔ
+RPulumock.Mocks.Builders.MockConfigurationBuilder.WithConfiguration(string, object)t
+j/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockConfigurationBuilder.cs$ (5"0*
+0 (*
+1*∆
+1 (ü
+ú
+ ('
+
+%0void";System.Collections.Generic.ICollection<T>.Add(TKey, TValue)*ä
+ (~*|2
+0Pulumock.Mocks.Builders.MockConfigurationBuilder"F
+_configurations3System.Collections.Generic.Dictionary<TKey, TValue>*
+ (
+
+keystring*
+! (&
+
+valueobjectè
+å
+ (8
+%ret0Pulumock.Mocks.Builders.MockConfigurationBuilder"__id*@
+ (42
+0Pulumock.Mocks.Builders.MockConfigurationBuilder*
+2*U
+2 ("F
+ (:
+8
+%ret0Pulumock.Mocks.Builders.MockConfigurationBuilder:
+6 (@
+keystring:
+B (N
+valueobjectB42
+0Pulumock.Mocks.Builders.MockConfigurationBuilderÔ
+XPulumock.Mocks.Builders.MockConfigurationBuilder.WithSecretConfiguration(string, string)t
+j/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockConfigurationBuilder.cs$ (;"0*
+0 (*
+1*ø
+1! #(ò
+ï
+! !(&6
+%00Pulumock.Mocks.Builders.MockConfigurationBuilder"RPulumock.Mocks.Builders.MockConfigurationBuilder.WithConfiguration(string, object)*@
+! !(42
+0Pulumock.Mocks.Builders.MockConfigurationBuilder*
+! !(
+
+keystring*
+! !(%
+
+secretstringè
+å
+# #(8
+%ret0Pulumock.Mocks.Builders.MockConfigurationBuilder"__id*@
+# #(42
+0Pulumock.Mocks.Builders.MockConfigurationBuilder*
+2*U
+2$ $("F
+$ $(:
+8
+%ret0Pulumock.Mocks.Builders.MockConfigurationBuilder:
+< (F
+keystring:
+H (U
+secretstringB42
+0Pulumock.Mocks.Builders.MockConfigurationBuilder˜
+
+ÖPulumock.Mocks.Builders.MockConfigurationBuilder.WithConfiguration(Pulumock.Mocks.Enums.PulumiConfigurationNamespace, string, object)t
+j/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockConfigurationBuilder.cs-$ -(5"0*
+0- -(*
+1* 
+1/ 3(¶
+£
+/ /(/
+%0string";Pulumock.Mocks.Enums.PulumiConfigurationNamespace.Value.get*L
+/ /()@
+>
+	namespace1Pulumock.Mocks.Enums.PulumiConfigurationNamespace´
+®
+/ /(9
+%1string"KPulumock.Mocks.Builders.MockConfigurationBuilder.FormatKey(string, string?)* *
+/ /(/
+
+%0string*
+/1 /(8
+
+keyNamestring3
+1
+/ /(9
+keystring"__id*
+
+%1stringó
+î
+1 1(%6
+%20Pulumock.Mocks.Builders.MockConfigurationBuilder"RPulumock.Mocks.Builders.MockConfigurationBuilder.WithConfiguration(string, object)*@
+1 1(42
+0Pulumock.Mocks.Builders.MockConfigurationBuilder*
+1 1(
+
+keystring*
+1 1($
+
+valueobjectè
+å
+3 3(8
+%ret0Pulumock.Mocks.Builders.MockConfigurationBuilder"__id*@
+3 3(42
+0Pulumock.Mocks.Builders.MockConfigurationBuilder*
+2*U
+24 4("F
+4 4(:
+8
+%ret0Pulumock.Mocks.Builders.MockConfigurationBuilder:J
+-6 -(]>
+	namespace1Pulumock.Mocks.Enums.PulumiConfigurationNamespace:
+-_ -(m
+keyNamestring:
+-o -({
+valueobjectB42
+0Pulumock.Mocks.Builders.MockConfigurationBuilderµ
+
+8Pulumock.Mocks.Builders.MockConfigurationBuilder.Build()t
+j/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockConfigurationBuilder.csI I(""0*
+0I I(*
+1*Á
+1J J(4ú
+ô
+J J(3D
+%0>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"≥System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary<TKey, TValue>(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>)* *ä
+J J(~*|2
+0Pulumock.Mocks.Builders.MockConfigurationBuilder"F
+_configurations3System.Collections.Generic.Dictionary<TKey, TValue>db
+J J(4-
+%1'Pulumock.Mocks.Models.MockConfiguration"'Pulumock.Mocks.Models.MockConfiguration 
+«
+J J(4-
+%2'Pulumock.Mocks.Models.MockConfiguration"{Pulumock.Mocks.Models.MockConfiguration.MockConfiguration(System.Collections.Immutable.ImmutableDictionary<string, object>)*;
+J J(4/
+-
+%1'Pulumock.Mocks.Models.MockConfiguration*R
+J J(3F
+D
+%0>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>Ä
+~
+J J(4/
+%ret'Pulumock.Mocks.Models.MockConfiguration"__id*;
+J J(4/
+-
+%1'Pulumock.Mocks.Models.MockConfiguration*
+2*L
+2J5 J(5"=
+J4 J(51
+/
+%ret'Pulumock.Mocks.Models.MockConfigurationB42
+0Pulumock.Mocks.Builders.MockConfigurationBuilderÑ
+ãPulumock.Mocks.Builders.MockConfigurationBuilder.WithSecretConfiguration(Pulumock.Mocks.Enums.PulumiConfigurationNamespace, string, string)t
+j/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockConfigurationBuilder.cs=$ =(;"0*
+0= =(*
+1*–
+1? C(¶
+£
+? ?(/
+%0string";Pulumock.Mocks.Enums.PulumiConfigurationNamespace.Value.get*L
+? ?()@
+>
+	namespace1Pulumock.Mocks.Enums.PulumiConfigurationNamespace´
+®
+? ?(9
+%1string"KPulumock.Mocks.Builders.MockConfigurationBuilder.FormatKey(string, string?)* *
+? ?(/
+
+%0string*
+?1 ?(8
+
+keyNamestring3
+1
+? ?(9
+keystring"__id*
+
+%1stringù
+ö
+A A(+6
+%20Pulumock.Mocks.Builders.MockConfigurationBuilder"XPulumock.Mocks.Builders.MockConfigurationBuilder.WithSecretConfiguration(string, string)*@
+A A(42
+0Pulumock.Mocks.Builders.MockConfigurationBuilder*
+A  A(#
+
+keystring*
+A% A(*
+
+valuestringè
+å
+C C(8
+%ret0Pulumock.Mocks.Builders.MockConfigurationBuilder"__id*@
+C C(42
+0Pulumock.Mocks.Builders.MockConfigurationBuilder*
+2*U
+2D D("F
+D D(:
+8
+%ret0Pulumock.Mocks.Builders.MockConfigurationBuilder:J
+=< =(c>
+	namespace1Pulumock.Mocks.Enums.PulumiConfigurationNamespace:
+=e =(s
+keyNamestring:
+	=u =(Å
+valuestringB42
+0Pulumock.Mocks.Builders.MockConfigurationBuilder˜
+KPulumock.Mocks.Builders.MockConfigurationBuilder.FormatKey(string, string?)t
+j/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockConfigurationBuilder.csL L(#"0*
+0L L(*
+1*z
+1M M(*c
+a
+M M(*
+
+%0bool""string.IsNullOrWhiteSpace(string?)* *
+M" M()
+
+keyNamestring*
+2
+3*T
+2M- M(7@
+>
+M- M(7
+	%capture0string"__id*
+
+	namespacestring*
+4* 
+3M: M(S{
+y
+M: M(S
+%1string"__concat*!
+M< M(H
+
+	namespacestring*
+MH M(I
+:*
+MI M(R
+
+keyNamestring9
+7
+M: M(S
+	%capture0string"__id*
+
+%1string*
+4*Y
+4M M(SE
+C
+M M(S
+%retstring"__id*!
+M M(S
+
+	%capture0string*
+5*+
+5MT M(T"
+MS M(T
+
+%retstring:
+L$ L(5
+	namespacestring:
+L7 L(F
+keyNamestringB4"2
+0Pulumock.Mocks.Builders.MockConfigurationBuilderü
+BPulumock.Mocks.Builders.MockCallBuilder.WithOutput(string, object)k
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockCallBuilder.cs (%"0*
+0 (*
+1*°
+1 (é
+ã
+ ( 
+
+%0void";System.Collections.Generic.ICollection<T>.Add(TKey, TValue)*z
+ (n*l)
+'Pulumock.Mocks.Builders.MockCallBuilder"?
+_outputs3System.Collections.Generic.Dictionary<TKey, TValue>*
+ (
+
+keystring*
+ (
+
+valueobject|
+z
+ (/
+%ret'Pulumock.Mocks.Builders.MockCallBuilder"__id*7
+ (+)
+'Pulumock.Mocks.Builders.MockCallBuilder*
+2*L
+2 ("=
+ (1
+/
+%ret'Pulumock.Mocks.Builders.MockCallBuilder:
+& (0
+keystring:
+2 (>
+valueobjectB+)
+'Pulumock.Mocks.Builders.MockCallBuilderÔ
+yPulumock.Mocks.Builders.MockCallBuilder.WithOutput<T>(System.Linq.Expressions.Expression<System.Func<T, object>>, object)k
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockCallBuilder.cs   (%"0*
+0   (*
+1*Ü
+1" #(„
+‡
+" "(5
+%0string"oPulumock.Extensions.TypeExtensions.GetOutputName<T>(System.Linq.Expressions.Expression<System.Func<T, object>>)* *O
+" "(%C
+A
+propertySelector-System.Linq.Expressions.Expression<TDelegate>ç
+ä
+" "(=
+
+%1void";System.Collections.Generic.ICollection<T>.Add(TKey, TValue)*z
+" "(n*l)
+'Pulumock.Mocks.Builders.MockCallBuilder"?
+_outputs3System.Collections.Generic.Dictionary<TKey, TValue>*
+" "(5
+
+%0string*
+"7 "(<
+
+valueobject|
+z
+# #(/
+%ret'Pulumock.Mocks.Builders.MockCallBuilder"__id*7
+# #(+)
+'Pulumock.Mocks.Builders.MockCallBuilder*
+2*L
+2$ $("=
+$ $(1
+/
+%ret'Pulumock.Mocks.Builders.MockCallBuilder:M
+ )  (UA
+propertySelector-System.Linq.Expressions.Expression<TDelegate>:
+ W  (c
+valueobjectB+)
+'Pulumock.Mocks.Builders.MockCallBuilderÓ7
+FPulumock.Mocks.Mocks.NewResourceAsync(Pulumi.Testing.MockResourceArgs)X
+N/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Mocks.cs, (<"0*
+0 (*
+1*Æ
+14 (-±
+Æ
+> (qL
+%0FSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.Builder"NSystem.Collections.Immutable.ImmutableDictionary.CreateBuilder<TKey, TValue>()* ∏
+µ
+4 (qQ
+outputsFSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.Builder"__id*PN
+L
+%0FSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.Builderß
+§
+ (-
+
+%1bool"OPulumock.Utilities.MockHelper.IsStackReference(Pulumi.Testing.MockResourceArgs)* *5
+( (,)
+'
+argsPulumi.Testing.MockResourceArgs*
+2
+4*∑
+2	 (ë{
+y
+e (n
+%2string"(Pulumi.Testing.MockResourceArgs.Name.get*5
+e (i)
+'
+argsPulumi.Testing.MockResourceArgs{
+y
+C (o
+%3string"=Pulumock.Utilities.MockHelper.GetLogicalResourceName(string?)* *
+e (n
+
+%2string§
+°
+	 (ë
+
+%4bool"GSystem.Collections.Generic.ICollection<T>.TryGetValue(TKey, out TValue)*a
+ (U*S "O
+mockResources>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*
+* (p
+	{unknown}*A
+	r (ê4
+2
+mockResource"Pulumock.Mocks.Models.MockResource*
+3
+7*›
+3 (O…
+∆
+' (?D
+%5>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"2Pulumock.Mocks.Models.MockResource.MockOutputs.get*@
+' (34
+2
+mockResource"Pulumock.Mocks.Models.MockResource§
+°
+ (@
+
+%6void";System.Collections.Generic.ICollection<T>.Add(TKey, TValue)*_
+ (S
+Q
+outputsFSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.Builder*
+ (%	
+outputs*R
+' (?F
+D
+%5>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>’
+“
+ (N
+
+%7void";System.Collections.Generic.ICollection<T>.Add(TKey, TValue)*_
+ (S
+Q
+outputsFSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.Builder*!
+ (/
+secretOutputNames*y
+1 (Mm*k0
+.System.Collections.Immutable.ImmutableArray<T>"7
+Empty.System.Collections.Immutable.ImmutableArray<T>*
+7*¨
+4$ %(({
+y
+$\ $(e
+%8string"(Pulumi.Testing.MockResourceArgs.Type.get*5
+$\ $(`)
+'
+argsPulumi.Testing.MockResourceArgs{
+y
+$g $(p
+%9string"(Pulumi.Testing.MockResourceArgs.Name.get*5
+$g $(k)
+'
+argsPulumi.Testing.MockResourceArgs£
+†
+$) $(q)
+%10"Pulumock.Mocks.Models.MockResource"«Pulumock.Utilities.MockHelper.GetMockResourceOrDefault(System.Collections.Immutable.ImmutableDictionary<(System.Type Type, string? LogicalName), Pulumock.Mocks.Models.MockResource>, string?, string?)* *a
+$M $(ZU*S "O
+mockResources>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*
+$\ $(e
+
+%8string*
+$g $(p
+
+%9stringu
+s
+$ $(q2
+mockResource"Pulumock.Mocks.Models.MockResource"__id*-+
+)
+%10"Pulumock.Mocks.Models.MockResource*
+5
+6*∆
+5' '(; 
+«
+'! '(9E
+%11>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"2Pulumock.Mocks.Models.MockResource.MockOutputs.get*@
+'! '(-4
+2
+mockResource"Pulumock.Mocks.Models.MockResource‰
+·
+' '(:
+%12void"ëSystem.Collections.Generic.ICollection<T>.AddRange(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>)*_
+' '(S
+Q
+outputsFSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.Builder*S
+'! '(9G
+E
+%11>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*
+6*‡
+6* *(S›
+⁄
+*  *(Q
+%13object"†Pulumock.Utilities.MockHelper.GetPhysicalResourceName(Pulumi.Testing.MockResourceArgs, System.Collections.Immutable.ImmutableDictionary<string, object>.Builder)* *5
+*C *(G)
+'
+argsPulumi.Testing.MockResourceArgs*_
+*I *(PS
+Q
+outputsFSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.BuilderÎ
+Ë
+* *(R
+%14void";System.Collections.Generic.ICollection<T>.Add(TKey, TValue)*_
+* *(S
+Q
+outputsFSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.Builder*
+* *(
+name*
+*  *(Q
+
+%13object*
+7*ﬂ
+7- 3(N|
+z
+-@ -(I
+%15string"(Pulumi.Testing.MockResourceArgs.Name.get*5
+-@ -(D)
+'
+argsPulumi.Testing.MockResourceArgs}
+{
+- -(J
+%16string"=Pulumock.Utilities.MockHelper.GetLogicalResourceName(string?)* *
+-@ -(I
+
+%15string=
+;
+- -(J
+resourceNamestring"__id*
+
+%16stringz
+x
+.5 .(<
+%17string"&Pulumi.Testing.MockResourceArgs.Id.get*5
+.5 .(9)
+'
+argsPulumi.Testing.MockResourceArgs`
+^
+.> .(R
+%18string"__concat*$
+.@ .(N
+
+resourceNamestring*
+.N .(Q
+_idö
+ó
+. .(S
+%19string"<Pulumock.Utilities.MockHelper.GetResourceId(string?, string)* *
+.5 .(<
+
+%17string*
+.> .(R
+
+%18string;
+9
+. .(S
+
+resourceIdstring"__id*
+
+%19string∑
+¥
+0O 0(ZE
+%20>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"*Pulumi.Testing.MockResourceArgs.Inputs.get*5
+0O 0(S)
+'
+argsPulumi.Testing.MockResourceArgs∏
+µ
+0< 0(dE
+%21>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"•Pulumock.Utilities.OutputMerger.Merge(System.Collections.Generic.IReadOnlyDictionary<string, object>, System.Collections.Generic.IReadOnlyDictionary<string, object>)* *S
+0O 0(ZG
+E
+%20>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*_
+0\ 0(cS
+Q
+outputsFSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.BuilderØ
+¨
+0, 0(dO
+mergedOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"__id*IG
+E
+%21>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>∑
+¥
+2B 2(ME
+%22>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"*Pulumi.Testing.MockResourceArgs.Inputs.get*5
+2B 2(F)
+'
+argsPulumi.Testing.MockResourceArgsca
+2 2(N-
+%23&Pulumock.Mocks.Models.ResourceSnapshot"&Pulumock.Mocks.Models.ResourceSnapshot¯
+ı
+2 2(N-
+%24&Pulumock.Mocks.Models.ResourceSnapshot"ÅPulumock.Mocks.Models.ResourceSnapshot.ResourceSnapshot(string, System.Collections.Immutable.ImmutableDictionary<string, object>)*;
+2 2(N/
+-
+%23&Pulumock.Mocks.Models.ResourceSnapshot*$
+24 2(@
+
+resourceNamestring*S
+2B 2(MG
+E
+%22>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>Î
+Ë
+2 2(O
+%25void"0System.Collections.Generic.ICollection<T>.Add(T)*`
+2 2(T*R
+Pulumock.Mocks.Mocks"8
+_resourceSnapshots"System.Collections.Generic.List<T>*;
+2 2(N/
+-
+%23&Pulumock.Mocks.Models.ResourceSnapshotï
+í
+3 3(N+
+%26$System.Threading.Tasks.Task<TResult>"8System.Threading.Tasks.Task.FromResult<TResult>(TResult)* *
+32 3(M
+	{unknown}è
+å
+3 3(N?
+%ret7System.Threading.Tasks.Task<(string? id, object state)>"__id*9
+3 3(N-
++
+%26$System.Threading.Tasks.Task<TResult>*
+8*\
+84 4("M
+4 4(A
+?
+%ret7System.Threading.Tasks.Task<(string? id, object state)>:3
+= (R'
+argsPulumi.Testing.MockResourceArgsB
+Pulumock.Mocks.MocksË
+ıPulumock.Mocks.Builders.MockCallBuilder.WithOutput<T, TNested>(System.Linq.Expressions.Expression<System.Func<T, object>>, System.Func<Pulumock.Mocks.Builders.NestedOutputsBuilder<TNested>, Pulumock.Mocks.Builders.NestedOutputsBuilder<TNested>>)k
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockCallBuilder.cs& &(%"0*
+0& &(*
+1*‚
+1*# .(tr
+*H *(k5
+%0/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>"/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>—
+Œ
+*H *(k5
+%1/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>"FPulumock.Mocks.Builders.NestedOutputsBuilder<T>.NestedOutputsBuilder()*C
+*H *(k7
+5
+%0/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>ˆÛ
+*3 *(l5
+%2/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>"!System.Func<T, TResult>.Invoke(T)*=
+*3 *(G1
+/
+nestedOutputsBuilderSystem.Func<T, TResult>*C
+*H *(k7
+5
+%0/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>2	Invoke(T)∆
+√
+*3 +(9
+%33System.Collections.Generic.Dictionary<TKey, TValue>"7Pulumock.Mocks.Builders.NestedOutputsBuilder<T>.Build()*C
+*3 *(l7
+5
+%2/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>ò
+ï
+*# +(D
+nestedOutputs3System.Collections.Generic.Dictionary<TKey, TValue>"__id*=;
+9
+%33System.Collections.Generic.Dictionary<TKey, TValue>„
+‡
+- -(5
+%4string"oPulumock.Extensions.TypeExtensions.GetOutputName<T>(System.Linq.Expressions.Expression<System.Func<T, object>>)* *O
+- -(%C
+A
+propertySelector-System.Linq.Expressions.Expression<TDelegate>¬
+ø
+- -(E
+
+%5void";System.Collections.Generic.ICollection<T>.Add(TKey, TValue)*z
+- -(n*l)
+'Pulumock.Mocks.Builders.MockCallBuilder"?
+_outputs3System.Collections.Generic.Dictionary<TKey, TValue>*
+- -(5
+
+%4string*R
+-7 -(DF
+D
+nestedOutputs3System.Collections.Generic.Dictionary<TKey, TValue>|
+z
+. .(/
+%ret'Pulumock.Mocks.Builders.MockCallBuilder"__id*7
+. .(+)
+'Pulumock.Mocks.Builders.MockCallBuilder*
+2*L
+2/ /("=
+/ /(1
+/
+%ret'Pulumock.Mocks.Builders.MockCallBuilder:M
+' '(4A
+propertySelector-System.Linq.Expressions.Expression<TDelegate>:;
+( ((_/
+nestedOutputsBuilderSystem.Func<T, TResult>B+)
+'Pulumock.Mocks.Builders.MockCallBuilderÊ
+:Pulumock.Mocks.Builders.MockCallBuilder.Build(System.Type)k
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockCallBuilder.cs5 5("0*
+05 5(*
+1*ê	
+16 6(P°
+û
+6 6(-)
+%0#Pulumock.Mocks.Models.MockCallToken">Pulumock.Mocks.Models.MockCallToken.FromTypeToken(System.Type)* *!
+6( 6(,
+
+typeSystem.Typeã
+à
+6/ 6(OD
+%1>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"≥System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary<TKey, TValue>(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>)* *z
+6/ 6(7n*l)
+'Pulumock.Mocks.Builders.MockCallBuilder"?
+_outputs3System.Collections.Generic.Dictionary<TKey, TValue>RP
+6 6(P$
+%2Pulumock.Mocks.Models.MockCall"Pulumock.Mocks.Models.MockCallÖ
+Ç
+6 6(P$
+%3Pulumock.Mocks.Models.MockCall"éPulumock.Mocks.Models.MockCall.MockCall(Pulumock.Mocks.Models.MockCallToken, System.Collections.Immutable.ImmutableDictionary<string, object>)*2
+6 6(P&
+$
+%2Pulumock.Mocks.Models.MockCall*7
+6 6(-+
+)
+%0#Pulumock.Mocks.Models.MockCallToken*R
+6/ 6(OF
+D
+%1>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>n
+l
+6 6(P&
+%retPulumock.Mocks.Models.MockCall"__id*2
+6 6(P&
+$
+%2Pulumock.Mocks.Models.MockCall*
+2*C
+26Q 6(Q"4
+6P 6(Q(
+&
+%retPulumock.Mocks.Models.MockCall:
+5 5(#
+typeSystem.TypeB+)
+'Pulumock.Mocks.Builders.MockCallBuilder÷
+5Pulumock.Mocks.Builders.MockCallBuilder.Build(string)k
+a/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Builders/MockCallBuilder.cs< <("0*
+0< <(*
+1*â	
+1= =(Sö
+ó
+= =(0)
+%0#Pulumock.Mocks.Models.MockCallToken";Pulumock.Mocks.Models.MockCallToken.FromStringToken(string)* *
+=* =(/
+
+tokenstringã
+à
+=2 =(RD
+%1>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"≥System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary<TKey, TValue>(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>)* *z
+=2 =(:n*l)
+'Pulumock.Mocks.Builders.MockCallBuilder"?
+_outputs3System.Collections.Generic.Dictionary<TKey, TValue>RP
+= =(S$
+%2Pulumock.Mocks.Models.MockCall"Pulumock.Mocks.Models.MockCallÖ
+Ç
+= =(S$
+%3Pulumock.Mocks.Models.MockCall"éPulumock.Mocks.Models.MockCall.MockCall(Pulumock.Mocks.Models.MockCallToken, System.Collections.Immutable.ImmutableDictionary<string, object>)*2
+= =(S&
+$
+%2Pulumock.Mocks.Models.MockCall*7
+= =(0+
+)
+%0#Pulumock.Mocks.Models.MockCallToken*R
+=2 =(RF
+D
+%1>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>n
+l
+= =(S&
+%retPulumock.Mocks.Models.MockCall"__id*2
+= =(S&
+$
+%2Pulumock.Mocks.Models.MockCall*
+2*C
+2=T =(T"4
+=S =(T(
+&
+%retPulumock.Mocks.Models.MockCall:
+< <(&
+tokenstringB+)
+'Pulumock.Mocks.Builders.MockCallBuilder·
+;Pulumock.Mocks.Enums.PulumiConfigurationNamespace.Value.getu
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Enums/PulumiConfigurationNamespace.cs ("0*
+0 (‘
+—
+u
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Enums/PulumiConfigurationNamespace.cs (
+%retstring"__id*¡
+u
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Enums/PulumiConfigurationNamespace.cs (H*F3
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"
+Valuestring"â
+u
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Enums/PulumiConfigurationNamespace.cs (
+
+%retstringB53
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespaceÄ
+;Pulumock.Mocks.Enums.PulumiConfigurationNamespace.Value.setu
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Enums/PulumiConfigurationNamespace.cs ("0*¸
+0 (›
+⁄
+u
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Enums/PulumiConfigurationNamespace.cs (F3
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespace"
+Valuestring"__id*
+
+valuestring"å
+u
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Enums/PulumiConfigurationNamespace.cs (
+implicit return:
+valuestringB53
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespace¢
+VPulumock.Mocks.Enums.PulumiConfigurationNamespace.PulumiConfigurationNamespace(string)u
+k/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Enums/PulumiConfigurationNamespace.cs (("0*
+0 (*
+1*≥
+1 (l
+j
+ (
+
+%0void"object.Object()*A
+ (53
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespace∞
+≠
+ (
+%1string";Pulumock.Mocks.Enums.PulumiConfigurationNamespace.Value.set*A
+ (53
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespace*
+
+valuestring*
+2*.
+2 ("
+ (
+implicit return:
+) (5
+valuestringB53
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespaceXÅ!
+;Pulumock.Mocks.Mocks.CallAsync(Pulumi.Testing.MockCallArgs)X
+N/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Mocks/Mocks.cs6 6(!"0*
+06 6(*
+1*Ñ	
+18 =( t
+r
+83 8(=
+%0string"%Pulumi.Testing.MockCallArgs.Token.get*1
+83 8(7%
+#
+argsPulumi.Testing.MockCallArgsq
+o
+8 8(>
+%1string"3Pulumock.Utilities.MockHelper.GetCallToken(string?)* *
+83 8(=
+
+%0string9
+7
+8 8(>
+	callTokenstring"__id*
+
+%1string±
+Æ
+:> :(qL
+%2FSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.Builder"NSystem.Collections.Immutable.ImmutableDictionary.CreateBuilder<TKey, TValue>()* ∏
+µ
+:4 :(qQ
+outputsFSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.Builder"__id*PN
+L
+%2FSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.BuilderÔ
+Ï
+< <(R$
+%3Pulumock.Mocks.Models.MockCall"±Pulumock.Utilities.MockHelper.GetMockCallOrDefault(System.Collections.Immutable.ImmutableDictionary<Pulumock.Mocks.Models.MockCallToken, Pulumock.Mocks.Models.MockCall>, string)* *]
+<= <(FQ*O "K
+	mockCalls>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*!
+<H <(Q
+
+	callTokenstringh
+f
+< <(R*
+mockCallPulumock.Mocks.Models.MockCall"__id*(&
+$
+%3Pulumock.Mocks.Models.MockCall*
+2
+3*∑
+2? ?(3Ω
+∫
+? ?(1D
+%4>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>".Pulumock.Mocks.Models.MockCall.MockOutputs.get*8
+? ?(%,
+*
+mockCallPulumock.Mocks.Models.MockCall‚
+ﬂ
+? ?(2
+
+%5void"ëSystem.Collections.Generic.ICollection<T>.AddRange(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>)*_
+? ?(S
+Q
+outputsFSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.Builder*R
+? ?(1F
+D
+%4>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*
+3*˙
+3B, F(5¨
+©
+BO B(XD
+%6>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"$Pulumi.Testing.MockCallArgs.Args.get*1
+BO B(S%
+#
+argsPulumi.Testing.MockCallArgs∂
+≥
+B< B(bD
+%7>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"•Pulumock.Utilities.OutputMerger.Merge(System.Collections.Generic.IReadOnlyDictionary<string, object>, System.Collections.Generic.IReadOnlyDictionary<string, object>)* *R
+BO B(XF
+D
+%6>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*_
+BZ B(aS
+Q
+outputsFSystem.Collections.Immutable.ImmutableDictionary<TKey, TValue>.BuilderÆ
+´
+B, B(bO
+mergedOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"__id*HF
+D
+%7>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>¨
+©
+D7 D(@D
+%8>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>"$Pulumi.Testing.MockCallArgs.Args.get*1
+D7 D(;%
+#
+argsPulumi.Testing.MockCallArgsZX
+D D(P(
+%9"Pulumock.Mocks.Models.CallSnapshot""Pulumock.Mocks.Models.CallSnapshotÑ
+Å
+D D(P)
+%10"Pulumock.Mocks.Models.CallSnapshot"ªPulumock.Mocks.Models.CallSnapshot.CallSnapshot(string, System.Collections.Immutable.ImmutableDictionary<string, object>, System.Collections.Immutable.ImmutableDictionary<string, object>)*6
+D D(P*
+(
+%9"Pulumock.Mocks.Models.CallSnapshot*!
+D, D(5
+
+	callTokenstring*R
+D7 D(@F
+D
+%8>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>*]
+DB D(OQ
+O
+mergedOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>‚
+ﬂ
+D D(Q
+%11void"0System.Collections.Generic.ICollection<T>.Add(T)*\
+D D(P*N
+Pulumock.Mocks.Mocks"4
+_callSnapshots"System.Collections.Generic.List<T>*6
+D D(P*
+(
+%9"Pulumock.Mocks.Models.CallSnapshotŸ
+÷
+F F(5+
+%12$System.Threading.Tasks.Task<TResult>"8System.Threading.Tasks.Task.FromResult<TResult>(TResult)* *]
+F' F(4Q
+O
+mergedOutputs>System.Collections.Immutable.ImmutableDictionary<TKey, TValue>z
+x
+F F(5+
+%ret#System.Threading.Tasks.Task<object>"__id*9
+F F(5-
++
+%12$System.Threading.Tasks.Task<TResult>*
+4*H
+4G G("9
+G G(-
++
+%ret#System.Threading.Tasks.Task<object>:/
+6" 6(3#
+argsPulumi.Testing.MockCallArgsB
+Pulumock.Mocks.Mocks’
+àPulumock.Extensions.ResourceExtensions.GetResourceByLogicalName<T>(System.Collections.Immutable.ImmutableArray<Pulumi.Resource>, string)j
+`/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/ResourceExtensions.cs (,"0*
+0 (*
+1*Ñ
+1 ([À
+»
+ (/
+%0)System.Collections.Generic.IEnumerable<T>"@System.Collections.Immutable.ImmutableArray<T>.OfType<TResult>()*I
+ (=
+;
+	resources.System.Collections.Immutable.ImmutableArray<T>Î
+Ë
+ ([
+%1T"sSystem.Linq.Enumerable.Single<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, bool>)* *=
+ (1
+/
+%0)System.Collections.Generic.IEnumerable<T>*
+ (Z
+	{unknown}4
+2
+ ([	
+%retT"__id*
+ ([	
+
+%1T*
+2*&
+2\ (\"
+[ (\
+	
+%retT:G
+0 (W;
+	resources.System.Collections.Immutable.ImmutableArray<T>:!
+Y (k
+logicalNamestringB*"(
+&Pulumock.Extensions.ResourceExtensions¶
+8Pulumock.Extensions.StringExtensions.ToCamelCase(string)h
+^/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/StringExtensions.cs ($"0*
+0 (*
+1*w
+1 (+`
+^
+ (+
+
+%0bool""string.IsNullOrWhiteSpace(string?)* *
+& (*
+
+namestring*
+2
+3*¡
+2/ (D\
+Z
+< (C
+
+%1char"string.this[int].get*
+< (@
+
+namestring*
+A (B2 L
+J
+/ (D
+
+%2bool"char.IsLower(char)* *
+< (C
+
+
+%1char*
+3
+4*T
+3 (@
+>
+ (
+%retstring"__id*
+ (
+
+namestring*
+5*‚
+4 (9\
+Z
+% (,
+
+%3char"string.this[int].get*
+% ()
+
+namestring*
+* (+2 U
+S
+ (-
+
+%4char"char.ToLowerInvariant(char)* *
+% (,
+
+
+%3charY
+W
+ (9
+%5string"__concat*
+ (-
+
+
+%4char*
+0 (9
+	{unknown}>
+<
+ (9
+%retstring"__id*
+ (9
+
+%5string*
+5*+
+5 ("
+ (
+
+%retstring:
+% (5
+namestringB("&
+$Pulumock.Extensions.StringExtensionsØ
+oPulumock.Extensions.TypeExtensions.GetInputName<T>(System.Linq.Expressions.Expression<System.Func<T, object?>>)f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/TypeExtensions.csX X(%"0*
+0X X(*
+1*√
+1Z Z(1ª
+∏
+Z Z(1(
+%0"System.Linq.Expressions.Expression"1System.Linq.Expressions.LambdaExpression.Body.get*O
+Z Z(,C
+A
+propertySelector-System.Linq.Expressions.Expression<TDelegate>q
+o
+Z Z(1/
+	%capture0"System.Linq.Expressions.Expression"__id*,*
+(
+%0"System.Linq.Expressions.Expression*
+2*ò
+2\ \(*Ä
+~
+\ \(-
+m(System.Linq.Expressions.MemberExpression"__id*=
+Z Z(11
+/
+	%capture0"System.Linq.Expressions.Expression*
+3
+4*†
+3\" \(*£
+†
+\" \(*"
+%1System.Reflection.MemberInfo"3System.Linq.Expressions.MemberExpression.Member.get*;
+\" \(#/
+-
+m(System.Linq.Expressions.MemberExpressione
+c
+\" \(*)
+	%capture1System.Reflection.MemberInfo"__id*&$
+"
+%1System.Reflection.MemberInfo*
+10*æ
+4] ](G´
+®
+Z Z(1(
+%2"System.Linq.Expressions.Expression"3System.Linq.Expressions.UnaryExpression.Operand.get*=
+Z Z(11
+/
+	%capture0"System.Linq.Expressions.Expressiony
+w
+]' ](9-
+m(System.Linq.Expressions.MemberExpression"__id*6
+] ](9*
+(
+%2"System.Linq.Expressions.Expression*
+5
+6*†
+5]? ](G£
+†
+]? ](G"
+%3System.Reflection.MemberInfo"3System.Linq.Expressions.MemberExpression.Member.get*;
+]? ](@/
+-
+m(System.Linq.Expressions.MemberExpressione
+c
+]? ](G)
+	%capture1System.Reflection.MemberInfo"__id*&$
+"
+%3System.Reflection.MemberInfo*
+10*
+6^ ^(I*
+7*±
+7^ ^(IFD
+^ ^(I
+%4System.ArgumentException"System.ArgumentExceptionª
+∏
+^ ^(I
+%5System.ArgumentException"3System.ArgumentException.ArgumentException(string?)*,
+^ ^(I 
+
+%4System.ArgumentException*)
+^- ^(H
+Invalid property selector"
+c c(
+
+%retstring*c
+8^ ^(IN
+L
+^ ^(I)
+	%capture1System.Reflection.MemberInfo"__id*
+	{unknown}*
+10*Æ
+9Z _(	âÜ
+Z _(	?
+%69System.Runtime.CompilerServices.SwitchExpressionException"9System.Runtime.CompilerServices.SwitchExpressionExceptionÙ
+Ò
+Z _(	?
+%79System.Runtime.CompilerServices.SwitchExpressionException"USystem.Runtime.CompilerServices.SwitchExpressionException.SwitchExpressionException()*M
+Z _(	A
+?
+%69System.Runtime.CompilerServices.SwitchExpressionException"
+c c(
+
+%retstring*
+10Z _(	i
+g
+Z _(	&
+memberSystem.Reflection.MemberInfo"__id*-+
+)
+	%capture1System.Reflection.MemberInfo*
+11*–
+11b b((Å
+b b(
+%8string"%System.Reflection.MemberInfo.Name.get*4
+b b((
+&
+memberSystem.Reflection.MemberInfo2Name.getv
+t
+b b((
+%9string"8Pulumock.Extensions.StringExtensions.ToCamelCase(string)* *
+b b(
+
+%8string>
+<
+b b((
+%retstring"__id*
+b b((
+
+%9string*
+12*,
+12c c("
+c c(
+
+%retstring:M
+X) X([A
+propertySelector-System.Linq.Expressions.Expression<TDelegate>B&"$
+"Pulumock.Extensions.TypeExtensions∆
+oPulumock.Extensions.TypeExtensions.GetOutputName<T>(System.Linq.Expressions.Expression<System.Func<T, object>>)f
+\/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Extensions/TypeExtensions.cs> >(&"0*
+0> >(*
+1*√
+1@ @(1ª
+∏
+@ @(1(
+%0"System.Linq.Expressions.Expression"1System.Linq.Expressions.LambdaExpression.Body.get*O
+@ @(,C
+A
+propertySelector-System.Linq.Expressions.Expression<TDelegate>q
+o
+@ @(1/
+	%capture0"System.Linq.Expressions.Expression"__id*,*
+(
+%0"System.Linq.Expressions.Expression*
+2*ò
+2B B(*Ä
+~
+B B(-
+m(System.Linq.Expressions.MemberExpression"__id*=
+@ @(11
+/
+	%capture0"System.Linq.Expressions.Expression*
+3
+4*†
+3B" B(*£
+†
+B" B(*"
+%1System.Reflection.MemberInfo"3System.Linq.Expressions.MemberExpression.Member.get*;
+B" B(#/
+-
+m(System.Linq.Expressions.MemberExpressione
+c
+B" B(*)
+	%capture1System.Reflection.MemberInfo"__id*&$
+"
+%1System.Reflection.MemberInfo*
+10*æ
+4C C(G´
+®
+@ @(1(
+%2"System.Linq.Expressions.Expression"3System.Linq.Expressions.UnaryExpression.Operand.get*=
+@ @(11
+/
+	%capture0"System.Linq.Expressions.Expressiony
+w
+C' C(9-
+m(System.Linq.Expressions.MemberExpression"__id*6
+C C(9*
+(
+%2"System.Linq.Expressions.Expression*
+5
+6*†
+5C? C(G£
+†
+C? C(G"
+%3System.Reflection.MemberInfo"3System.Linq.Expressions.MemberExpression.Member.get*;
+C? C(@/
+-
+m(System.Linq.Expressions.MemberExpressione
+c
+C? C(G)
+	%capture1System.Reflection.MemberInfo"__id*&$
+"
+%3System.Reflection.MemberInfo*
+10*
+6D D(I*
+7*±
+7D D(IFD
+D D(I
+%4System.ArgumentException"System.ArgumentExceptionª
+∏
+D D(I
+%5System.ArgumentException"3System.ArgumentException.ArgumentException(string?)*,
+D D(I 
+
+%4System.ArgumentException*)
+D- D(H
+Invalid property selector"
+H H(
+
+%retstring*c
+8D D(IN
+L
+D D(I)
+	%capture1System.Reflection.MemberInfo"__id*
+	{unknown}*
+10*Æ
+9@ E(	âÜ
+@ E(	?
+%69System.Runtime.CompilerServices.SwitchExpressionException"9System.Runtime.CompilerServices.SwitchExpressionExceptionÙ
+Ò
+@ E(	?
+%79System.Runtime.CompilerServices.SwitchExpressionException"USystem.Runtime.CompilerServices.SwitchExpressionException.SwitchExpressionException()*M
+@ E(	A
+?
+%69System.Runtime.CompilerServices.SwitchExpressionException"
+H H(
+
+%retstring*
+10@ E(	i
+g
+@ E(	&
+memberSystem.Reflection.MemberInfo"__id*-+
+)
+	%capture1System.Reflection.MemberInfo*
+11*æ
+11G G(;»
+≈
+G G(;
+%8Pulumi.OutputAttribute"_System.Reflection.CustomAttributeExtensions.GetCustomAttribute<T>(System.Reflection.MemberInfo)* *4
+G G((
+&
+memberSystem.Reflection.MemberInfoY
+W
+G G(;#
+	%capture2Pulumi.OutputAttribute"__id* 
+
+%8Pulumi.OutputAttribute*
+12
+13*ø
+12G< G(An
+l
+G< G(A
+%9string"Pulumi.OutputAttribute.Name.get*1
+G G(;%
+#
+	%capture2Pulumi.OutputAttribute9
+7
+G< G(A
+	%capture3string"__id*
+
+%9string*
+14*C
+13G G(;-
++
+G G(;
+	%capture3string"__id* *
+14*
+14G G(A*
+15
+16*V
+15G G(A@
+>
+G G(A
+	%capture4string"__id*
+
+	%capture3string*
+17*–
+16GE G(^ÉÄ
+GE G(P
+%10string"%System.Reflection.MemberInfo.Name.get*4
+GE G(K(
+&
+memberSystem.Reflection.MemberInfo2Name.getx
+v
+GE G(^
+%11string"8Pulumock.Extensions.StringExtensions.ToCamelCase(string)* *
+GE G(P
+
+%10string:
+8
+GE G(^
+	%capture4string"__id*
+
+%11string*
+17*[
+17G G(^E
+C
+G G(^
+%retstring"__id*!
+G G(^
+
+	%capture4string*
+18*,
+18H H("
+H H(
+
+%retstring:M
+>* >([A
+propertySelector-System.Linq.Expressions.Expression<TDelegate>B&"$
+"Pulumock.Extensions.TypeExtensions

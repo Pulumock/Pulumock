@@ -1,0 +1,1 @@
+qR[/Users/robertopiranamedi/RiderProjects/Pulumock/Source/StackReference/StackReference.csproj¢net9.0òCSharp13

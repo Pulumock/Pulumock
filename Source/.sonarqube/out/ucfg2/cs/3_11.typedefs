@@ -1,0 +1,213 @@
+œ
+1Pulumock.Mocks.Enums.PulumiConfigurationNamespaceobject~
+$PulumiConfigurationNamespace(string)VPulumock.Mocks.Enums.PulumiConfigurationNamespace.PulumiConfigurationNamespace(string)H
+	Value.get;Pulumock.Mocks.Enums.PulumiConfigurationNamespace.Value.getH
+	Value.set;Pulumock.Mocks.Enums.PulumiConfigurationNamespace.Value.setÔ
++Pulumock.Mocks.Builders.MockResourceBuilderobjectd
+WithOutput(string, object)FPulumock.Mocks.Builders.MockResourceBuilder.WithOutput(string, object)“
+QWithOutput<T>(System.Linq.Expressions.Expression<System.Func<T, object>>, object)}Pulumock.Mocks.Builders.MockResourceBuilder.WithOutput<T>(System.Linq.Expressions.Expression<System.Func<T, object>>, object)Ã
+ÕWithOutput<T, TNested>(System.Linq.Expressions.Expression<System.Func<T, object>>, System.Func<Pulumock.Mocks.Builders.NestedOutputsBuilder<TNested>, Pulumock.Mocks.Builders.NestedOutputsBuilder<TNested>>)˘Pulumock.Mocks.Builders.MockResourceBuilder.WithOutput<T, TNested>(System.Linq.Expressions.Expression<System.Func<T, object>>, System.Func<Pulumock.Mocks.Builders.NestedOutputsBuilder<TNested>, Pulumock.Mocks.Builders.NestedOutputsBuilder<TNested>>)R
+Build<T>(string?)=Pulumock.Mocks.Builders.MockResourceBuilder.Build<T>(string?)Z
+MockResourceBuilder()APulumock.Mocks.Builders.MockResourceBuilder.MockResourceBuilder()™
+"Pulumock.Mocks.Models.CallSnapshotobjectSystem.IEquatable<T>Ÿ
+òCallSnapshot(string, System.Collections.Immutable.ImmutableDictionary<string, object>, System.Collections.Immutable.ImmutableDictionary<string, object>)ªPulumock.Mocks.Models.CallSnapshot.CallSnapshot(string, System.Collections.Immutable.ImmutableDictionary<string, object>, System.Collections.Immutable.ImmutableDictionary<string, object>);
+
+ToString()-Pulumock.Mocks.Models.CallSnapshot.ToString()u
+'PrintMembers(System.Text.StringBuilder)JPulumock.Mocks.Models.CallSnapshot.PrintMembers(System.Text.StringBuilder)A
+GetHashCode()0Pulumock.Mocks.Models.CallSnapshot.GetHashCode()E
+Equals(object?)2Pulumock.Mocks.Models.CallSnapshot.Equals(object?)}
++Equals(Pulumock.Mocks.Models.CallSnapshot?)NPulumock.Mocks.Models.CallSnapshot.Equals(Pulumock.Mocks.Models.CallSnapshot?);
+
+<Clone>$()-Pulumock.Mocks.Models.CallSnapshot.<Clone>$()á
+0CallSnapshot(Pulumock.Mocks.Models.CallSnapshot)SPulumock.Mocks.Models.CallSnapshot.CallSnapshot(Pulumock.Mocks.Models.CallSnapshot)Ô
+£Deconstruct(out string, out System.Collections.Immutable.ImmutableDictionary<string, object>, out System.Collections.Immutable.ImmutableDictionary<string, object>)∆Pulumock.Mocks.Models.CallSnapshot.Deconstruct(out string, out System.Collections.Immutable.ImmutableDictionary<string, object>, out System.Collections.Immutable.ImmutableDictionary<string, object>)O
+EqualityContract.get7Pulumock.Mocks.Models.CallSnapshot.EqualityContract.getO
+EqualityContract.set7Pulumock.Mocks.Models.CallSnapshot.EqualityContract.set9
+	Token.get,Pulumock.Mocks.Models.CallSnapshot.Token.get;
+
+Token.init-Pulumock.Mocks.Models.CallSnapshot.Token.init;
+
+Inputs.get-Pulumock.Mocks.Models.CallSnapshot.Inputs.get=
+Inputs.init.Pulumock.Mocks.Models.CallSnapshot.Inputs.init=
+Outputs.get.Pulumock.Mocks.Models.CallSnapshot.Outputs.get?
+Outputs.init/Pulumock.Mocks.Models.CallSnapshot.Outputs.initÖ
+Pulumock.TestFixtures.FixtureobjectSystem.IEquatable<T>¸
+¨Fixture(System.Collections.Immutable.ImmutableArray<Pulumi.Resource>, System.Collections.Immutable.ImmutableDictionary<string, object?>, System.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.ResourceSnapshot>, System.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.CallSnapshot>) Pulumock.TestFixtures.Fixture.Fixture(System.Collections.Immutable.ImmutableArray<Pulumi.Resource>, System.Collections.Immutable.ImmutableDictionary<string, object?>, System.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.ResourceSnapshot>, System.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.CallSnapshot>)6
+
+ToString()(Pulumock.TestFixtures.Fixture.ToString()p
+'PrintMembers(System.Text.StringBuilder)EPulumock.TestFixtures.Fixture.PrintMembers(System.Text.StringBuilder)<
+GetHashCode()+Pulumock.TestFixtures.Fixture.GetHashCode()@
+Equals(object?)-Pulumock.TestFixtures.Fixture.Equals(object?)n
+&Equals(Pulumock.TestFixtures.Fixture?)DPulumock.TestFixtures.Fixture.Equals(Pulumock.TestFixtures.Fixture?)6
+
+<Clone>$()(Pulumock.TestFixtures.Fixture.<Clone>$()n
+&Fixture(Pulumock.TestFixtures.Fixture)DPulumock.TestFixtures.Fixture.Fixture(Pulumock.TestFixtures.Fixture)§
+¿Deconstruct(out System.Collections.Immutable.ImmutableArray<Pulumi.Resource>, out System.Collections.Immutable.ImmutableDictionary<string, object?>, out System.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.ResourceSnapshot>, out System.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.CallSnapshot>)ﬁPulumock.TestFixtures.Fixture.Deconstruct(out System.Collections.Immutable.ImmutableArray<Pulumi.Resource>, out System.Collections.Immutable.ImmutableDictionary<string, object?>, out System.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.ResourceSnapshot>, out System.Collections.Immutable.ImmutableList<Pulumock.Mocks.Models.CallSnapshot>)J
+EqualityContract.get2Pulumock.TestFixtures.Fixture.EqualityContract.getJ
+EqualityContract.set2Pulumock.TestFixtures.Fixture.EqualityContract.setF
+StackResources.get0Pulumock.TestFixtures.Fixture.StackResources.getH
+StackResources.init1Pulumock.TestFixtures.Fixture.StackResources.initB
+StackOutputs.get.Pulumock.TestFixtures.Fixture.StackOutputs.getD
+StackOutputs.init/Pulumock.TestFixtures.Fixture.StackOutputs.initL
+ResourceSnapshots.get3Pulumock.TestFixtures.Fixture.ResourceSnapshots.getN
+ResourceSnapshots.init4Pulumock.TestFixtures.Fixture.ResourceSnapshots.initD
+CallSnapshots.get/Pulumock.TestFixtures.Fixture.CallSnapshots.getF
+CallSnapshots.init0Pulumock.TestFixtures.Fixture.CallSnapshots.init∑
+0Pulumock.Mocks.Builders.MockConfigurationBuilderobjectw
+!WithConfiguration(string, object)RPulumock.Mocks.Builders.MockConfigurationBuilder.WithConfiguration(string, object)É
+'WithSecretConfiguration(string, string)XPulumock.Mocks.Builders.MockConfigurationBuilder.WithSecretConfiguration(string, string)ﬁ
+TWithConfiguration(Pulumock.Mocks.Enums.PulumiConfigurationNamespace, string, object)ÖPulumock.Mocks.Builders.MockConfigurationBuilder.WithConfiguration(Pulumock.Mocks.Enums.PulumiConfigurationNamespace, string, object)Í
+ZWithSecretConfiguration(Pulumock.Mocks.Enums.PulumiConfigurationNamespace, string, string)ãPulumock.Mocks.Builders.MockConfigurationBuilder.WithSecretConfiguration(Pulumock.Mocks.Enums.PulumiConfigurationNamespace, string, string)C
+Build()8Pulumock.Mocks.Builders.MockConfigurationBuilder.Build()i
+MockConfigurationBuilder()KPulumock.Mocks.Builders.MockConfigurationBuilder.MockConfigurationBuilder()Á
+1Pulumock.Mocks.Builders.MockStackReferenceBuilderobjectx
+!MockStackReferenceBuilder(string)SPulumock.Mocks.Builders.MockStackReferenceBuilder.MockStackReferenceBuilder(string)j
+WithOutput(string, object)LPulumock.Mocks.Builders.MockStackReferenceBuilder.WithOutput(string, object)D
+Build()9Pulumock.Mocks.Builders.MockStackReferenceBuilder.Build()ï
+'Pulumock.Mocks.Models.MockConfigurationobjectSystem.IEquatable<T>“
+SMockConfiguration(System.Collections.Immutable.ImmutableDictionary<string, object>){Pulumock.Mocks.Models.MockConfiguration.MockConfiguration(System.Collections.Immutable.ImmutableDictionary<string, object>)@
+
+ToString()2Pulumock.Mocks.Models.MockConfiguration.ToString()z
+'PrintMembers(System.Text.StringBuilder)OPulumock.Mocks.Models.MockConfiguration.PrintMembers(System.Text.StringBuilder)F
+GetHashCode()5Pulumock.Mocks.Models.MockConfiguration.GetHashCode()J
+Equals(object?)7Pulumock.Mocks.Models.MockConfiguration.Equals(object?)å
+0Equals(Pulumock.Mocks.Models.MockConfiguration?)XPulumock.Mocks.Models.MockConfiguration.Equals(Pulumock.Mocks.Models.MockConfiguration?)@
+
+<Clone>$()2Pulumock.Mocks.Models.MockConfiguration.<Clone>$()†
+:MockConfiguration(Pulumock.Mocks.Models.MockConfiguration)bPulumock.Mocks.Models.MockConfiguration.MockConfiguration(Pulumock.Mocks.Models.MockConfiguration)Œ
+QDeconstruct(out System.Collections.Immutable.ImmutableDictionary<string, object>)yPulumock.Mocks.Models.MockConfiguration.Deconstruct(out System.Collections.Immutable.ImmutableDictionary<string, object>)T
+EqualityContract.get<Pulumock.Mocks.Models.MockConfiguration.EqualityContract.getT
+EqualityContract.set<Pulumock.Mocks.Models.MockConfiguration.EqualityContract.setX
+MockConfigurations.get>Pulumock.Mocks.Models.MockConfiguration.MockConfigurations.getZ
+MockConfigurations.init?Pulumock.Mocks.Models.MockConfiguration.MockConfigurations.initø
+/Pulumock.Mocks.Builders.NestedOutputsBuilder<T>object›
+TWithNestedOutput(System.Linq.Expressions.Expression<System.Func<T, object>>, object)ÑPulumock.Mocks.Builders.NestedOutputsBuilder<T>.WithNestedOutput(System.Linq.Expressions.Expression<System.Func<T, object>>, object)B
+Build()7Pulumock.Mocks.Builders.NestedOutputsBuilder<T>.Build()`
+NestedOutputsBuilder()FPulumock.Mocks.Builders.NestedOutputsBuilder<T>.NestedOutputsBuilder()˙
+#Pulumock.Mocks.Models.MockCallTokenobjectSystem.IEquatable<T>p
+$MockCallToken(System.Type?, string?)HPulumock.Mocks.Models.MockCallToken.MockCallToken(System.Type?, string?)å
+2ConflictsWith(Pulumock.Mocks.Models.MockCallToken)VPulumock.Mocks.Models.MockCallToken.ConflictsWith(Pulumock.Mocks.Models.MockCallToken)<
+
+ToString().Pulumock.Mocks.Models.MockCallToken.ToString()v
+'PrintMembers(System.Text.StringBuilder)KPulumock.Mocks.Models.MockCallToken.PrintMembers(System.Text.StringBuilder)B
+GetHashCode()1Pulumock.Mocks.Models.MockCallToken.GetHashCode()F
+Equals(object?)3Pulumock.Mocks.Models.MockCallToken.Equals(object?)Ä
+,Equals(Pulumock.Mocks.Models.MockCallToken?)PPulumock.Mocks.Models.MockCallToken.Equals(Pulumock.Mocks.Models.MockCallToken?)<
+
+<Clone>$().Pulumock.Mocks.Models.MockCallToken.<Clone>$()å
+2MockCallToken(Pulumock.Mocks.Models.MockCallToken)VPulumock.Mocks.Models.MockCallToken.MockCallToken(Pulumock.Mocks.Models.MockCallToken)P
+EqualityContract.get8Pulumock.Mocks.Models.MockCallToken.EqualityContract.getP
+EqualityContract.set8Pulumock.Mocks.Models.MockCallToken.EqualityContract.setB
+TypeToken.get1Pulumock.Mocks.Models.MockCallToken.TypeToken.getB
+TypeToken.set1Pulumock.Mocks.Models.MockCallToken.TypeToken.setF
+StringToken.get3Pulumock.Mocks.Models.MockCallToken.StringToken.getF
+StringToken.set3Pulumock.Mocks.Models.MockCallToken.StringToken.setJ
+IsStringToken.get5Pulumock.Mocks.Models.MockCallToken.IsStringToken.getJ
+IsStringToken.set5Pulumock.Mocks.Models.MockCallToken.IsStringToken.setF
+IsTypeToken.get3Pulumock.Mocks.Models.MockCallToken.IsTypeToken.getF
+IsTypeToken.set3Pulumock.Mocks.Models.MockCallToken.IsTypeToken.setP
+StringTokenValue.get8Pulumock.Mocks.Models.MockCallToken.StringTokenValue.getP
+StringTokenValue.set8Pulumock.Mocks.Models.MockCallToken.StringTokenValue.setL
+TypeTokenValue.get6Pulumock.Mocks.Models.MockCallToken.TypeTokenValue.getL
+TypeTokenValue.set6Pulumock.Mocks.Models.MockCallToken.TypeTokenValue.setø
+Pulumock.Mocks.Models.MockCallobjectSystem.IEquatable<T>Ç
+oMockCall(Pulumock.Mocks.Models.MockCallToken, System.Collections.Immutable.ImmutableDictionary<string, object>)éPulumock.Mocks.Models.MockCall.MockCall(Pulumock.Mocks.Models.MockCallToken, System.Collections.Immutable.ImmutableDictionary<string, object>)7
+
+ToString())Pulumock.Mocks.Models.MockCall.ToString()q
+'PrintMembers(System.Text.StringBuilder)FPulumock.Mocks.Models.MockCall.PrintMembers(System.Text.StringBuilder)=
+GetHashCode(),Pulumock.Mocks.Models.MockCall.GetHashCode()A
+Equals(object?).Pulumock.Mocks.Models.MockCall.Equals(object?)q
+'Equals(Pulumock.Mocks.Models.MockCall?)FPulumock.Mocks.Models.MockCall.Equals(Pulumock.Mocks.Models.MockCall?)7
+
+<Clone>$())Pulumock.Mocks.Models.MockCall.<Clone>$()s
+(MockCall(Pulumock.Mocks.Models.MockCall)GPulumock.Mocks.Models.MockCall.MockCall(Pulumock.Mocks.Models.MockCall)ò
+zDeconstruct(out Pulumock.Mocks.Models.MockCallToken, out System.Collections.Immutable.ImmutableDictionary<string, object>)ôPulumock.Mocks.Models.MockCall.Deconstruct(out Pulumock.Mocks.Models.MockCallToken, out System.Collections.Immutable.ImmutableDictionary<string, object>)K
+EqualityContract.get3Pulumock.Mocks.Models.MockCall.EqualityContract.getK
+EqualityContract.set3Pulumock.Mocks.Models.MockCall.EqualityContract.set5
+	Token.get(Pulumock.Mocks.Models.MockCall.Token.get7
+
+Token.init)Pulumock.Mocks.Models.MockCall.Token.initA
+MockOutputs.get.Pulumock.Mocks.Models.MockCall.MockOutputs.getC
+MockOutputs.init/Pulumock.Mocks.Models.MockCall.MockOutputs.init¯
+"Pulumock.Mocks.Models.MockResourceobjectSystem.IEquatable<T>
+dMockResource(System.Type, System.Collections.Immutable.ImmutableDictionary<string, object>, string?)áPulumock.Mocks.Models.MockResource.MockResource(System.Type, System.Collections.Immutable.ImmutableDictionary<string, object>, string?);
+
+ToString()-Pulumock.Mocks.Models.MockResource.ToString()u
+'PrintMembers(System.Text.StringBuilder)JPulumock.Mocks.Models.MockResource.PrintMembers(System.Text.StringBuilder)A
+GetHashCode()0Pulumock.Mocks.Models.MockResource.GetHashCode()E
+Equals(object?)2Pulumock.Mocks.Models.MockResource.Equals(object?)}
++Equals(Pulumock.Mocks.Models.MockResource?)NPulumock.Mocks.Models.MockResource.Equals(Pulumock.Mocks.Models.MockResource?);
+
+<Clone>$()-Pulumock.Mocks.Models.MockResource.<Clone>$()á
+0MockResource(Pulumock.Mocks.Models.MockResource)SPulumock.Mocks.Models.MockResource.MockResource(Pulumock.Mocks.Models.MockResource)Ü
+oDeconstruct(out System.Type, out System.Collections.Immutable.ImmutableDictionary<string, object>, out string?)íPulumock.Mocks.Models.MockResource.Deconstruct(out System.Type, out System.Collections.Immutable.ImmutableDictionary<string, object>, out string?)O
+EqualityContract.get7Pulumock.Mocks.Models.MockResource.EqualityContract.getO
+EqualityContract.set7Pulumock.Mocks.Models.MockResource.EqualityContract.set7
+Type.get+Pulumock.Mocks.Models.MockResource.Type.get9
+	Type.init,Pulumock.Mocks.Models.MockResource.Type.initE
+MockOutputs.get2Pulumock.Mocks.Models.MockResource.MockOutputs.getG
+MockOutputs.init3Pulumock.Mocks.Models.MockResource.MockOutputs.initE
+LogicalName.get2Pulumock.Mocks.Models.MockResource.LogicalName.getG
+LogicalName.init3Pulumock.Mocks.Models.MockResource.LogicalName.init±
+Pulumock.Mocks.MocksobjectPulumi.Testing.IMocksë
+˚Mocks(System.Collections.Immutable.ImmutableDictionary<(System.Type Type, string? LogicalName), Pulumock.Mocks.Models.MockResource>, System.Collections.Immutable.ImmutableDictionary<Pulumock.Mocks.Models.MockCallToken, Pulumock.Mocks.Models.MockCall>)êPulumock.Mocks.Mocks.Mocks(System.Collections.Immutable.ImmutableDictionary<(System.Type Type, string? LogicalName), Pulumock.Mocks.Models.MockResource>, System.Collections.Immutable.ImmutableDictionary<Pulumock.Mocks.Models.MockCallToken, Pulumock.Mocks.Models.MockCall>){
+1NewResourceAsync(Pulumi.Testing.MockResourceArgs)FPulumock.Mocks.Mocks.NewResourceAsync(Pulumi.Testing.MockResourceArgs)e
+&CallAsync(Pulumi.Testing.MockCallArgs);Pulumock.Mocks.Mocks.CallAsync(Pulumi.Testing.MockCallArgs)C
+ResourceSnapshots.get*Pulumock.Mocks.Mocks.ResourceSnapshots.getC
+ResourceSnapshots.set*Pulumock.Mocks.Mocks.ResourceSnapshots.set;
+CallSnapshots.get&Pulumock.Mocks.Mocks.CallSnapshots.get;
+CallSnapshots.set&Pulumock.Mocks.Mocks.CallSnapshots.set‹
+$Pulumock.TestFixtures.FixtureBuilderobject•
+>WithMockConfiguration(Pulumock.Mocks.Models.MockConfiguration)cPulumock.TestFixtures.FixtureBuilder.WithMockConfiguration(Pulumock.Mocks.Models.MockConfiguration)]
+WithoutMockConfiguration()?Pulumock.TestFixtures.FixtureBuilder.WithoutMockConfiguration()©
+@WithMockStackReference(Pulumock.Mocks.Models.MockStackReference)ePulumock.TestFixtures.FixtureBuilder.WithMockStackReference(Pulumock.Mocks.Models.MockStackReference)Ø
+CWithoutMockStackReference(Pulumock.Mocks.Models.MockStackReference)hPulumock.TestFixtures.FixtureBuilder.WithoutMockStackReference(Pulumock.Mocks.Models.MockStackReference)ë
+4WithMockResource(Pulumock.Mocks.Models.MockResource)YPulumock.TestFixtures.FixtureBuilder.WithMockResource(Pulumock.Mocks.Models.MockResource)ó
+7WithoutMockResource(Pulumock.Mocks.Models.MockResource)\Pulumock.TestFixtures.FixtureBuilder.WithoutMockResource(Pulumock.Mocks.Models.MockResource)Å
+,WithMockCall(Pulumock.Mocks.Models.MockCall)QPulumock.TestFixtures.FixtureBuilder.WithMockCall(Pulumock.Mocks.Models.MockCall)á
+/WithoutMockCall(Pulumock.Mocks.Models.MockCall)TPulumock.TestFixtures.FixtureBuilder.WithoutMockCall(Pulumock.Mocks.Models.MockCall)ø
+äBuildAsync(System.Func<System.Threading.Tasks.Task<System.Collections.Generic.IDictionary<string, object?>>>, Pulumi.Testing.TestOptions?)ØPulumock.TestFixtures.FixtureBuilder.BuildAsync(System.Func<System.Threading.Tasks.Task<System.Collections.Generic.IDictionary<string, object?>>>, Pulumi.Testing.TestOptions?)I
+FixtureBuilder()5Pulumock.TestFixtures.FixtureBuilder.FixtureBuilder()ì
+(Pulumock.Mocks.Models.MockStackReference"Pulumock.Mocks.Models.MockResourceobjectSystem.IEquatable<T>Ê
+\MockStackReference(string, System.Collections.Immutable.ImmutableDictionary<string, object>)ÖPulumock.Mocks.Models.MockStackReference.MockStackReference(string, System.Collections.Immutable.ImmutableDictionary<string, object>)A
+
+ToString()3Pulumock.Mocks.Models.MockStackReference.ToString(){
+'PrintMembers(System.Text.StringBuilder)PPulumock.Mocks.Models.MockStackReference.PrintMembers(System.Text.StringBuilder)G
+GetHashCode()6Pulumock.Mocks.Models.MockStackReference.GetHashCode()K
+Equals(object?)8Pulumock.Mocks.Models.MockStackReference.Equals(object?)É
++Equals(Pulumock.Mocks.Models.MockResource?)TPulumock.Mocks.Models.MockStackReference.Equals(Pulumock.Mocks.Models.MockResource?)è
+1Equals(Pulumock.Mocks.Models.MockStackReference?)ZPulumock.Mocks.Models.MockStackReference.Equals(Pulumock.Mocks.Models.MockStackReference?)A
+
+<Clone>$()3Pulumock.Mocks.Models.MockStackReference.<Clone>$()•
+<MockStackReference(Pulumock.Mocks.Models.MockStackReference)ePulumock.Mocks.Models.MockStackReference.MockStackReference(Pulumock.Mocks.Models.MockStackReference)Ë
+]Deconstruct(out string, out System.Collections.Immutable.ImmutableDictionary<string, object>)ÜPulumock.Mocks.Models.MockStackReference.Deconstruct(out string, out System.Collections.Immutable.ImmutableDictionary<string, object>)U
+EqualityContract.get=Pulumock.Mocks.Models.MockStackReference.EqualityContract.getU
+EqualityContract.set=Pulumock.Mocks.Models.MockStackReference.EqualityContract.setc
+FullyQualifiedStackName.getDPulumock.Mocks.Models.MockStackReference.FullyQualifiedStackName.gete
+FullyQualifiedStackName.initEPulumock.Mocks.Models.MockStackReference.FullyQualifiedStackName.initô
+'Pulumock.Mocks.Builders.MockCallBuilderobject`
+WithOutput(string, object)BPulumock.Mocks.Builders.MockCallBuilder.WithOutput(string, object)Œ
+QWithOutput<T>(System.Linq.Expressions.Expression<System.Func<T, object>>, object)yPulumock.Mocks.Builders.MockCallBuilder.WithOutput<T>(System.Linq.Expressions.Expression<System.Func<T, object>>, object)»
+ÕWithOutput<T, TNested>(System.Linq.Expressions.Expression<System.Func<T, object>>, System.Func<Pulumock.Mocks.Builders.NestedOutputsBuilder<TNested>, Pulumock.Mocks.Builders.NestedOutputsBuilder<TNested>>)ıPulumock.Mocks.Builders.MockCallBuilder.WithOutput<T, TNested>(System.Linq.Expressions.Expression<System.Func<T, object>>, System.Func<Pulumock.Mocks.Builders.NestedOutputsBuilder<TNested>, Pulumock.Mocks.Builders.NestedOutputsBuilder<TNested>>)P
+Build(System.Type):Pulumock.Mocks.Builders.MockCallBuilder.Build(System.Type)F
+Build(string)5Pulumock.Mocks.Builders.MockCallBuilder.Build(string)N
+MockCallBuilder()9Pulumock.Mocks.Builders.MockCallBuilder.MockCallBuilder()ë
+&Pulumock.Mocks.Models.ResourceSnapshotobjectSystem.IEquatable<T>‡
+ZResourceSnapshot(string, System.Collections.Immutable.ImmutableDictionary<string, object>)ÅPulumock.Mocks.Models.ResourceSnapshot.ResourceSnapshot(string, System.Collections.Immutable.ImmutableDictionary<string, object>)?
+
+ToString()1Pulumock.Mocks.Models.ResourceSnapshot.ToString()y
+'PrintMembers(System.Text.StringBuilder)NPulumock.Mocks.Models.ResourceSnapshot.PrintMembers(System.Text.StringBuilder)E
+GetHashCode()4Pulumock.Mocks.Models.ResourceSnapshot.GetHashCode()I
+Equals(object?)6Pulumock.Mocks.Models.ResourceSnapshot.Equals(object?)â
+/Equals(Pulumock.Mocks.Models.ResourceSnapshot?)VPulumock.Mocks.Models.ResourceSnapshot.Equals(Pulumock.Mocks.Models.ResourceSnapshot?)?
+
+<Clone>$()1Pulumock.Mocks.Models.ResourceSnapshot.<Clone>$()õ
+8ResourceSnapshot(Pulumock.Mocks.Models.ResourceSnapshot)_Pulumock.Mocks.Models.ResourceSnapshot.ResourceSnapshot(Pulumock.Mocks.Models.ResourceSnapshot)Ê
+]Deconstruct(out string, out System.Collections.Immutable.ImmutableDictionary<string, object>)ÑPulumock.Mocks.Models.ResourceSnapshot.Deconstruct(out string, out System.Collections.Immutable.ImmutableDictionary<string, object>)S
+EqualityContract.get;Pulumock.Mocks.Models.ResourceSnapshot.EqualityContract.getS
+EqualityContract.set;Pulumock.Mocks.Models.ResourceSnapshot.EqualityContract.setI
+LogicalName.get6Pulumock.Mocks.Models.ResourceSnapshot.LogicalName.getK
+LogicalName.init7Pulumock.Mocks.Models.ResourceSnapshot.LogicalName.init?
+
+Inputs.get1Pulumock.Mocks.Models.ResourceSnapshot.Inputs.getA
+Inputs.init2Pulumock.Mocks.Models.ResourceSnapshot.Inputs.init
