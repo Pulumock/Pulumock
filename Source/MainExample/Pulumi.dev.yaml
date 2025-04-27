@@ -1,7 +1,0 @@
-config:
-  azure-native:tenantId: "ec03e6c4-4885-4ca2-a6a4-e9dfca42d88a"
-  azure-native:subscriptionId: "699ab7ed-b25a-43c9-8bb9-f026a4c7bc47"
-  azure-native:location: "swedencentral"
-  MainExample:useKeyVaultWithSecretsComponentResource: true
-  MainExample:databaseConnectionString:
-    secure: AAABAFeU92UDV5oaJNRvv+fqmh2vksKcN2ke+hi77fdp2pethLNVfa569BlHDrz+y04l

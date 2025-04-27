@@ -34,11 +34,29 @@ public class MockCallBuilder
         _outputs.Add(propertySelector.GetOutputName(), value);
         return this;
     }
+    
+    public MockCallBuilder WithOutput<T, TNested>(
+        Expression<Func<T, object>> propertySelector,
+        Func<NestedOutputsBuilder<TNested>, NestedOutputsBuilder<TNested>> nestedOutputsBuilder)
+    {
+        Dictionary<string, object> nestedOutputs = nestedOutputsBuilder(new NestedOutputsBuilder<TNested>())
+            .Build();
+        
+        _outputs.Add(propertySelector.GetOutputName(), nestedOutputs);
+        return this;
+    }
 
     /// <summary>
     /// Builds the <see cref="MockCall"/> instance with the specified function type and mocked outputs.
     /// <param name="type">The provider function <see cref="Type"/>.</param>
     /// </summary>
     public MockCall Build(Type type) =>
-        new(type, _outputs.ToImmutableDictionary());
+        new(MockCallToken.FromTypeToken(type), _outputs.ToImmutableDictionary());
+    
+    /// <summary>
+    /// Builds the <see cref="MockCall"/> instance with the specified function token and mocked outputs.
+    /// <param name="token">The provider function token identifier.</param>
+    /// </summary>
+    public MockCall Build(string token) =>
+        new(MockCallToken.FromStringToken(token), _outputs.ToImmutableDictionary());
 }

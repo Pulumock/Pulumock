@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>Example</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Pulumi" />
+        <PackageReference Include="Pulumi.AzureNative" />  
+    </ItemGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="Example.Tests.WithoutPulumock" />
+        <InternalsVisibleTo Include="Example.Tests.WithPulumock" />
+    </ItemGroup>
+</Project>

@@ -12,4 +12,4 @@ namespace Pulumock.Mocks.Models;
 /// A dictionary of mocked output values that the resource is expected to expose during testing.
 /// Keys should match the output property names defined on the real Pulumi resource type.
 /// </param>
-public record MockResource(Type Type, ImmutableDictionary<string, object> MockOutputs);
+public record MockResource(Type Type, ImmutableDictionary<string, object> MockOutputs, string? LogicalName = null);

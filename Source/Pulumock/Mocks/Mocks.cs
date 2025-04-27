@@ -1,95 +1,75 @@
 using System.Collections.Immutable;
+using Pulumi;
 using Pulumi.Testing;
-using Pulumock.Extensions;
-using Pulumock.Mocks.Constants;
 using Pulumock.Mocks.Models;
+using Pulumock.Utilities;
 
 namespace Pulumock.Mocks;
+
+// TODO: full/partial upsert (can be conflicts with inputs and mocked outputs)
 
 /// <summary>
 /// Provides an implementation of <see cref="Pulumi.Testing.IMocks"/> for unit testing Pulumi stacks.
 /// This class is responsible for mocking both resource creation and provider function (invoke) calls
 /// so that Pulumi programs can be tested without deploying actual cloud infrastructure.
 /// </summary>
-internal sealed class Mocks(IReadOnlyCollection<MockResource> mockResources, IReadOnlyCollection<MockCall> mockCalls) : IMocks
+internal sealed class Mocks(ImmutableDictionary<(Type Type, string? LogicalName), MockResource> mockResources, 
+    ImmutableDictionary<MockCallToken, MockCall> mockCalls) : IMocks
 {
-    private readonly List<Input> _inputs = [];
-    public ImmutableList<Input> Inputs => _inputs.ToImmutableList();
+    private readonly List<ResourceSnapshot> _resourceSnapshots = [];
+    private readonly List<CallSnapshot> _callSnapshots = [];
     
     public Task<(string? id, object state)> NewResourceAsync(MockResourceArgs args)
     {
         ImmutableDictionary<string, object>.Builder outputs = ImmutableDictionary.CreateBuilder<string, object>();
-        outputs.AddRange(args.Inputs);
         
-        if (string.Equals(args.Type, ResourceTypeTokenConstants.StackReference, StringComparison.Ordinal))
+        if (MockHelper.IsStackReference(args))
         {
-            // TODO: what if more than one ref is defined (merge somehow so we can append new config without having to pass the entire object again?)
-            ImmutableDictionary<string, object> mockOutputs = mockResources
-                .OfType<MockStackReference>()
-                .Single(stackReferences => string.Equals(stackReferences.FullyQualifiedStackName, args.Name, StringComparison.Ordinal))
-                .MockOutputs;
-            
-            outputs.Add("outputs", mockOutputs);
-            outputs.Add("secretOutputNames", ImmutableArray<string>.Empty);
+            if (mockResources.TryGetValue((typeof(StackReference), MockHelper.GetLogicalResourceName(args.Name)), out MockResource? mockResource))
+            {
+                outputs.Add("outputs", mockResource.MockOutputs);
+                outputs.Add("secretOutputNames", ImmutableArray<string>.Empty);
+            }
         }
         else
         {
-            // TODO: enable mocking specifically by logical name
-            IEnumerable<ImmutableDictionary<string, object>> resourceMockOutputs = mockResources
-                .Where(mockResource => mockResource.Type.MatchesResourceTypeToken(args.Type))
-                .Select(mockResource => mockResource.MockOutputs)
-                .ToList();
-            
-            // TODO: don't add all, select latest added (or merge somehow so we can append new config without having to pass the entire object again?)
-            if (resourceMockOutputs.Any())
+            MockResource? mockResource = MockHelper.GetMockResourceOrDefault(mockResources, args.Type, args.Name);
+            if (mockResource is not null)
             {
-                outputs.AddRange(resourceMockOutputs.First());
+                outputs.AddRange(mockResource.MockOutputs);
             }
             
-            object physicalResourceName = outputs.GetValueOrDefault("name") ?? $"{GetLogicalResourceName(args.Name)}_physical";
-            outputs.Add("name", physicalResourceName);
+            outputs.Add("name", MockHelper.GetPhysicalResourceName(args, outputs));
         }
         
-        ImmutableDictionary<string, object> finalOutputs = outputs.ToImmutable();
+        string resourceName = MockHelper.GetLogicalResourceName(args.Name);
+        string resourceId = MockHelper.GetResourceId(args.Id, $"{resourceName}_id");
         
-        string resourceName = GetLogicalResourceName(args.Name);
-        string resourceId = GetResourceId(args.Id, $"{resourceName}_id");
+        ImmutableDictionary<string, object> mergedOutputs = OutputMerger.Merge(args.Inputs, outputs);
         
-        _inputs.Add(new Input(resourceName, finalOutputs));
-        return Task.FromResult<(string?, object)>((resourceId, finalOutputs));
+        _resourceSnapshots.Add(new ResourceSnapshot(resourceName, args.Inputs));
+        return Task.FromResult<(string?, object)>((resourceId, mergedOutputs));
     }
-
+    
     public Task<object> CallAsync(MockCallArgs args)
     {
+        string callToken = MockHelper.GetCallToken(args.Token);
+        
         ImmutableDictionary<string, object>.Builder outputs = ImmutableDictionary.CreateBuilder<string, object>();
         
-        outputs.AddRange(args.Args);
-        
-        IEnumerable<ImmutableDictionary<string, object>> callMockOutputs = mockCalls
-            .Where(mockCall => mockCall.Type.MatchesCallTypeToken(GetCallToken(args.Token)))
-            .Select(mockCall => mockCall.MockOutputs)
-            .ToList();
-        
-        // TODO: don't add all, select latest added (or merge somehow so we can append new config without having to pass the entire object again?)
-        if (callMockOutputs.Any())
+        MockCall? mockCall = MockHelper.GetMockCallOrDefault(mockCalls, callToken);
+        if (mockCall is not null)
         {
-            outputs.AddRange(callMockOutputs.First());
+            outputs.AddRange(mockCall.MockOutputs);
         }
+
+        ImmutableDictionary<string, object> mergedOutputs = OutputMerger.Merge(args.Args, outputs);
         
-        ImmutableDictionary<string, object> finalOutputs = outputs.ToImmutable();
+        _callSnapshots.Add(new CallSnapshot(callToken, args.Args, mergedOutputs));
         
-        // TODO: what if two calls are made with the same token?
-        _inputs.Add(new Input(GetCallToken(args.Token), finalOutputs));
-        
-        return Task.FromResult<object>(finalOutputs);
+        return Task.FromResult<object>(mergedOutputs);
     }
     
-    private static string GetLogicalResourceName(string? name) =>
-        string.IsNullOrWhiteSpace(name) ? throw new ArgumentNullException(nameof(name)) : name;
-    
-    private static string GetResourceId(string? id, string fallbackId) =>
-        string.IsNullOrWhiteSpace(id) ? fallbackId : id;
-    
-    private static string GetCallToken(string? token) =>
-        string.IsNullOrWhiteSpace(token) ? throw new ArgumentNullException(nameof(token)) : token;
+    public ImmutableList<ResourceSnapshot> ResourceSnapshots => _resourceSnapshots.ToImmutableList();
+    public ImmutableList<CallSnapshot> CallSnapshots => _callSnapshots.ToImmutableList();
 }

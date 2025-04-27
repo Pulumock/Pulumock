@@ -1,0 +1,6 @@
+namespace Example.Tests.Shared.Interfaces;
+
+public interface IStackReferenceTests
+{
+    Task StackReference_ShouldUseMockedStackReferenceInResource();
+}

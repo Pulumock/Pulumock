@@ -9,7 +9,6 @@ namespace Pulumock.Mocks.Builders;
 /// <summary>
 /// A fluent builder for creating a <see cref="MockResource"/>.
 /// </summary>
-/// <typeparam name="T">The Pulumi resource type this mock represents.</typeparam>
 public class MockResourceBuilder
 {
     private readonly Dictionary<string, object> _outputs = new();
@@ -38,10 +37,21 @@ public class MockResourceBuilder
         _outputs.Add(propertySelector.GetOutputName(), value);
         return this;
     }
-
+    
+    public MockResourceBuilder WithOutput<T, TNested>(
+        Expression<Func<T, object>> propertySelector,
+        Func<NestedOutputsBuilder<TNested>, NestedOutputsBuilder<TNested>> nestedOutputsBuilder)
+    {
+        Dictionary<string, object> nestedOutputs = nestedOutputsBuilder(new NestedOutputsBuilder<TNested>())
+            .Build();
+        
+        _outputs.Add(propertySelector.GetOutputName(), nestedOutputs);
+        return this;
+    }
+    
     /// <summary>
     /// Builds the <see cref="MockResource"/> mock.
     /// </summary>
-    public MockResource Build<T>() => 
-        new(typeof(T), _outputs.ToImmutableDictionary());
+    public MockResource Build<T>(string? logicalName = null) => 
+        new(typeof(T), _outputs.ToImmutableDictionary(), logicalName);
 }

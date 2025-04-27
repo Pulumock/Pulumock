@@ -1,0 +1,8 @@
+config:
+  azure-native:tenantId: "ec03e6c4-4885-4ca2-a6a4-e9dfca42d88a"
+  azure-native:subscriptionId: "699ab7ed-b25a-43c9-8bb9-f026a4c7bc47"
+  azure-native:location: "swedencentral"
+  Example:stackReferenceOrgName: "hoolit"
+  Example:stackReferenceProjectName: "StackReference"
+  Example:databaseConnectionString:
+    secure: AAABAMvDKkh6qJpNbcrrB2tDVGLwrFjvWc3H1j+o0GeMfHu/79wyQL7Jj7IVPr6v1p0=
