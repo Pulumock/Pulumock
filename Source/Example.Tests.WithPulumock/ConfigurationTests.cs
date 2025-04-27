@@ -5,7 +5,6 @@ using Pulumi;
 using Pulumi.AzureNative.KeyVault;
 using Pulumi.AzureNative.KeyVault.Inputs;
 using Pulumi.AzureNative.KeyVault.Outputs;
-using Pulumi.Testing;
 using Pulumock.Extensions;
 using Pulumock.Mocks.Enums;
 using Pulumock.Mocks.Models;
@@ -16,22 +15,22 @@ namespace Example.Tests.WithPulumock;
 
 public class ConfigurationTests : IConfigurationTests
 {
+    private const string TenantId = "1f526cdb-1975-4248-ab0f-57813df294cb";
+    
     // Required -> With mocked config from base
     [Fact]
     public async Task Config_MockedConfigurationInResource()
     {
         Fixture fixture = await TestBase.GetBaseFixtureBuilder()
-            .BuildAsync(async () => await CoreStack.DefineResourcesAsync(), 
-                new TestOptions{ IsPreview = false, StackName = TestBase.StackName });
+            .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId", TenantId)
+            .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
         ResourceSnapshot resourceSnapshot = fixture.ResourceSnapshots.Require("microservice-kvws-kv");
         string vaultTenantId = resourceSnapshot.RequireInputValue<VaultArgs, VaultPropertiesArgs, string>(
             x => x.Properties, 
             y => y.TenantId);
-
-        string configTenantId = fixture.StackConfigurations.Require(PulumiConfigurationNamespace.AzureNative, "tenantId");
         
-        vaultTenantId.ShouldBe(configTenantId);
+        vaultTenantId.ShouldBe(TenantId);
     }
     
     // Required -> With modified config
@@ -41,23 +40,16 @@ public class ConfigurationTests : IConfigurationTests
     [InlineData("4e5fdc58-8df1-43ab-b15f-ae7aeb7c45f7")]
     public async Task Config_MockedConfigurationInResource_Override(string tenantId)
     {
-        const string configTenantIdKey = "tenantId";
         Fixture fixture = await TestBase.GetBaseFixtureBuilder()
-            .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, configTenantIdKey, tenantId)
-            .BuildAsync(async () => await CoreStack.DefineResourcesAsync(), 
-                new TestOptions{ IsPreview = false, StackName = TestBase.StackName });
+            .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId", tenantId)
+            .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
         ResourceSnapshot resourceSnapshot = fixture.ResourceSnapshots.Require("microservice-kvws-kv");
-        
         string vaultTenantId = resourceSnapshot.RequireInputValue<VaultArgs, VaultPropertiesArgs, string>(
             x => x.Properties, 
             y => y.TenantId);
-
-        string configTenantId = fixture.StackConfigurations.Require(PulumiConfigurationNamespace.AzureNative, configTenantIdKey);
         
-        configTenantId.ShouldBe(tenantId);
         vaultTenantId.ShouldBe(tenantId);
-        vaultTenantId.ShouldBe(configTenantId);
     }
     
     // Required -> Without mocked config - single
@@ -67,8 +59,7 @@ public class ConfigurationTests : IConfigurationTests
         {
             _ = await TestBase.GetBaseFixtureBuilder()
                 .WithoutMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId")
-                .BuildAsync(async () => await CoreStack.DefineResourcesAsync(), 
-                    new TestOptions{ IsPreview = false, StackName = TestBase.StackName });
+                .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         });
     
     // Without mocked config -> all
@@ -80,21 +71,21 @@ public class ConfigurationTests : IConfigurationTests
         {
             _ = await TestBase.GetBaseFixtureBuilder()
                 .ClearMockStackConfigurations()
-                .BuildAsync(async () => await CoreStack.DefineResourcesAsync(), 
-                    new TestOptions{ IsPreview = false, StackName = TestBase.StackName });
+                .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         });
 
     [Fact]
     public async Task Config_MockedSecretInResource()
     {
-        Fixture fixture = await TestBase.GetBaseFixtureBuilder()
-            .BuildAsync(async () => await CoreStack.DefineResourcesAsync(), 
-                new TestOptions{ IsPreview = false, StackName = TestBase.StackName });
+        const string databaseConnectionStringSecret = "very-secret-value";
         
-        Secret secret = fixture.StackResources.GetResourceByLogicalName<Secret>("microservice-kvws-secret-Database--ConnectionString");
-        string configSecretValue = fixture.StackConfigurations.Require(PulumiConfigurationNamespace.Default, "databaseConnectionString");
+        Fixture fixture = await TestBase.GetBaseFixtureBuilder()
+            .WithMockStackConfiguration(PulumiConfigurationNamespace.Default, "databaseConnectionString", databaseConnectionStringSecret)
+            .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
+        
+        Secret secret = fixture.StackResources.Require<Secret>("microservice-kvws-secret-Database--ConnectionString");
 
         SecretPropertiesResponse secretProperties = await secret.Properties.GetValueAsync();
-        secretProperties.Value.ShouldBe(configSecretValue);
+        secretProperties.Value.ShouldBe(databaseConnectionStringSecret);
     }
 }

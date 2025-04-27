@@ -18,8 +18,18 @@ public static class ResourceExtensions
     /// <exception cref="InvalidOperationException">
     /// Thrown if no matching resource is found, or if multiple matches exist.
     /// </exception>
-    public static T GetResourceByLogicalName<T>(this ImmutableArray<Resource> resources, string logicalName) where T : Resource =>
+    public static T Require<T>(this ImmutableArray<Resource> resources, string logicalName) where T : Resource =>
         resources
             .OfType<T>()
             .Single(x => x.GetResourceName().Equals(logicalName, StringComparison.Ordinal));
+    
+    public static T? Get<T>(this ImmutableArray<Resource> resources, string logicalName) where T : Resource =>
+        resources
+            .OfType<T>()
+            .SingleOrDefault(x => x.GetResourceName().Equals(logicalName, StringComparison.Ordinal));
+    
+    public static ImmutableArray<T> GetMany<T>(this ImmutableArray<Resource> resources) where T : Resource =>
+        resources
+            .OfType<T>()
+            .ToImmutableArray();
 }

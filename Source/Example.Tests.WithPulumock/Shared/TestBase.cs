@@ -9,11 +9,10 @@ using Pulumock.TestFixtures;
 
 namespace Example.Tests.WithPulumock.Shared;
 
-#pragma warning disable CA1515
-public static class TestBase
-#pragma warning restore CA1515
+
+internal static class TestBase
 {
-    public const string StackName = "dev";
+    public const string DevStackName = "dev";
     
     public static FixtureBuilder GetBaseFixtureBuilder() =>
         new FixtureBuilder()
@@ -23,7 +22,7 @@ public static class TestBase
             .WithMockStackConfiguration(PulumiConfigurationNamespace.Default, "stackReferenceOrgName", "hoolit")
             .WithMockStackConfiguration(PulumiConfigurationNamespace.Default, "stackReferenceProjectName", "StackReference")
             .WithMockStackConfiguration(PulumiConfigurationNamespace.Default, "databaseConnectionString", "very-secret-value")
-            .WithMockStackReference(new MockStackReferenceBuilder($"hoolit/StackReference/{StackName}")
+            .WithMockStackReference(new MockStackReferenceBuilder($"hoolit/StackReference/{DevStackName}")
                 .WithOutput("microserviceManagedIdentityPrincipalId", "b95a4aa0-167a-4bc2-baf4-d43a776da1bd")
                 .Build())
             .WithMockResource(new MockResourceBuilder()

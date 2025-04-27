@@ -117,10 +117,10 @@ public class FixtureBuilder
         
         (ImmutableArray<Resource> stackResources, IDictionary<string, object?> stackOutputs) = await Deployment.TestAsync(
             mocks,
-            testOptions ?? new TestOptions { IsPreview = false },
+            testOptions ?? new TestOptions { IsPreview = false, StackName = "dev" },
             async () => await createResourcesFunc());
 
-        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.ResourceSnapshots, mocks.CallSnapshots, _mockStackConfigurations.ToImmutableDictionary());
+        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.ResourceSnapshots, mocks.CallSnapshots);
     }
     
     private static string FormatKey(string @namespace, string? keyName) =>
