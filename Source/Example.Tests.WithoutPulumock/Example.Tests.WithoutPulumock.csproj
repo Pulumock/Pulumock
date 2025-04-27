@@ -3,6 +3,7 @@
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
         <RootNamespace>Example.Tests.WithoutPulumock</RootNamespace>
+        <SonarQubeTestProject>false</SonarQubeTestProject>
     </PropertyGroup>
 
     <ItemGroup>

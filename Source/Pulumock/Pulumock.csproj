@@ -23,6 +23,7 @@
         <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
         <AnalysisLevel>latest</AnalysisLevel>
         <AnalysisMode>All</AnalysisMode>
+        <SonarQubeTestProject>false</SonarQubeTestProject>
     </PropertyGroup>
 
     <ItemGroup>

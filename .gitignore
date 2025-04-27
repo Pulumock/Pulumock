@@ -293,3 +293,6 @@ __pycache__/
 # DS Store
 .DS_Store
 **/.DS_Store
+
+# Ignore all SonarQube analysis artifacts
+Source/.sonarqube/
