@@ -15,7 +15,7 @@ public static class StackOutputExtensions
         return await typedOutput.GetValueAsync();
     }
     
-    public static async Task<T?> GetValueAsync<T>(this IDictionary<string, object> stackOutputs, string key)
+    public static async Task<T?> GetValueAsync<T>(this IDictionary<string, object?> stackOutputs, string key)
     {
         if (!stackOutputs.TryGetValue(key, out object? output) 
             || output is not Output<T> typedOutput)

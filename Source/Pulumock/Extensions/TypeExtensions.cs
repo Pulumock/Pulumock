@@ -85,7 +85,7 @@ public static class TypeExtensions
     /// <exception cref="ArgumentException">
     /// Thrown if the expression is not a valid member selector (e.g., a method call or constant).
     /// </exception>
-    public static string GetInputName<T>(this Expression<Func<T, object>> propertySelector)
+    public static string GetInputName<T>(this Expression<Func<T, object?>> propertySelector)
     {
         MemberInfo member = propertySelector.Body switch
         {

@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using System.Text.Json;
 using Example.Stacks;
 using Example.Tests.Shared.Interfaces;
 using Example.Tests.WithoutPulumock.Shared;
@@ -97,14 +98,29 @@ public class ResourceTests : TestBase, IResourceTests
     [Fact]
     public async Task Resource_Multiple()
     {
+        const string location = "norway";
+        string? existingConfigJson = Environment.GetEnvironmentVariable("PULUMI_CONFIG");
+        Dictionary<string, object> config = existingConfigJson != null
+            ? JsonSerializer.Deserialize<Dictionary<string, object>>(existingConfigJson)!
+            : new Dictionary<string, object>();
+        
+        config["azure-native:location"] = location;
+        Environment.SetEnvironmentVariable("PULUMI_CONFIG", JsonSerializer.Serialize(config));
+        
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             new Mocks.Mocks(), 
             new TestOptions {IsPreview = false, StackName = DevStackName},
             async () => await CoreStack.DefineResourcesAsync());
 
-        IEnumerable<Resource> resources = result.Resources
-            .OfType<Resource>();
+        var resourceGroups = result.Resources
+            .OfType<ResourceGroup>()
+            .ToImmutableArray();
         
-        resources.ShouldAllBe(x => !string.IsNullOrWhiteSpace(x.GetResourceName()));
+        string?[] locations = await Task.WhenAll(
+            resourceGroups.Select(x => OutputUtilities.GetValueAsync(x.Location))
+        );
+        
+        resourceGroups.ShouldAllBe(x => !string.Equals(x.GetResourceName(), "forbidden-resource-name", StringComparison.Ordinal));
+        locations.ShouldAllBe(x => !string.IsNullOrWhiteSpace(x) && x.Equals(location, StringComparison.Ordinal));
     }
 }

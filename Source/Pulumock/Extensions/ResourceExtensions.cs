@@ -33,4 +33,19 @@ public static class ResourceExtensions
         resources
             .OfType<T>()
             .ToImmutableArray();
+    
+    public static async Task<T[]> GetManyValuesAsync<TResource, T>(this ImmutableArray<TResource> resources,
+        Expression<Func<TResource, Output<T>>> outputSelector)
+        where TResource : Resource
+    {
+        Func<TResource, Output<T>> compiledSelector = outputSelector.Compile();
+
+        IEnumerable<Task<T>> tasks = resources.Select(resource =>
+        {
+            Output<T> output = compiledSelector(resource);
+            return output.GetValueAsync();
+        });
+
+        return await Task.WhenAll(tasks);
+    }
 }

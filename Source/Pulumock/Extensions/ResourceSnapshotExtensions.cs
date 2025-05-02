@@ -21,7 +21,7 @@ public static class ResourceSnapshotExtensions
             .ToImmutableList();
     
     public static TValue RequireInputValue<TProperty, TValue>(this ResourceSnapshot resourceSnapshot,
-        Expression<Func<TProperty, object>> propertySelector)
+        Expression<Func<TProperty, object?>> propertySelector)
     {
         string inputName = propertySelector.GetInputName();
         
@@ -39,8 +39,8 @@ public static class ResourceSnapshotExtensions
     }
     
     public static TValue RequireInputValue<TParent, TChild, TValue>(this ResourceSnapshot resourceSnapshot,
-        Expression<Func<TParent, object>> parentPropertySelector,
-        Expression<Func<TChild, object>> nestedPropertySelector)
+        Expression<Func<TParent, object?>> parentPropertySelector,
+        Expression<Func<TChild, object?>> nestedPropertySelector)
     {
         string parentInputName = parentPropertySelector.GetInputName();
         if (!resourceSnapshot.Inputs.TryGetValue(parentInputName, out object? parentValue))
@@ -68,7 +68,7 @@ public static class ResourceSnapshotExtensions
     }
     
     public static TValue? GetInputValue<TProperty, TValue>(this ResourceSnapshot resourceSnapshot,
-        Expression<Func<TProperty, object>> propertySelector)
+        Expression<Func<TProperty, object?>> propertySelector)
     {
         string inputName = propertySelector.GetInputName();
         
@@ -86,8 +86,8 @@ public static class ResourceSnapshotExtensions
     }
     
     public static TValue? GetInputValue<TParent, TChild, TValue>(this ResourceSnapshot resourceSnapshot,
-        Expression<Func<TParent, object>> parentPropertySelector,
-        Expression<Func<TChild, object>> nestedPropertySelector)
+        Expression<Func<TParent, object?>> parentPropertySelector,
+        Expression<Func<TChild, object?>> nestedPropertySelector)
     {
         string parentInputName = parentPropertySelector.GetInputName();
         if (!resourceSnapshot.Inputs.TryGetValue(parentInputName, out object? parentValue) 

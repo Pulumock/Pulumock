@@ -28,7 +28,6 @@ internal static class TestBase
                 .Build())
             .WithMockResource(new MockResourceBuilder()
                 .WithOutput<ResourceGroup>(x => x.AzureApiVersion, "2021-04-01")
-                .WithOutput<ResourceGroup>(x => x.Location, "norway")
                 .Build<ResourceGroup>())
             .WithMockResource(new MockResourceBuilder()
                 .WithOutput<Vault, VaultPropertiesResponse>(x => x.Properties, p => p
