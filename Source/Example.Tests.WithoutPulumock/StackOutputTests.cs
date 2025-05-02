@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using Example.Stacks;
 using Example.Tests.Shared.Interfaces;
+using Example.Tests.WithoutPulumock.Mocks;
 using Example.Tests.WithoutPulumock.Shared;
 using Pulumi;
 using Pulumi.AzureNative.KeyVault;
@@ -13,11 +14,13 @@ namespace Example.Tests.WithoutPulumock;
 
 public class StackOutputTests : TestBase, IStackOutputTests
 {
-    [Fact]
-    public async Task ShouldBeTestable_StackOutputValue()
+    [Theory]
+    [InlineData("https://mocked.vault.azure.net/")]
+    [InlineData("https://other.vault.azure.net/")]
+    public async Task ShouldBeTestable_StackOutputValue(string mockedVaultUri)
     {
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
-            new Mocks.Mocks(), 
+            new MocksStackOutputTests(mockedVaultUri), 
             new TestOptions {IsPreview = false, StackName = DevStackName},
             async () => await CoreStack.DefineResourcesAsync());
         
@@ -32,5 +35,6 @@ public class StackOutputTests : TestBase, IStackOutputTests
             : throw new InvalidOperationException("keyVaultUri was not an Output<string>");
 
         keyVaultUriStackOutput.ShouldBe(keyVaultProperties.VaultUri);
+        keyVaultUriStackOutput.ShouldBe(mockedVaultUri);
     }
 }
