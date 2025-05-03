@@ -5,6 +5,33 @@ using Pulumi.Testing;
 
 namespace Example.Tests.Shared.Interfaces;
 
+/// <summary>
+/// <para>
+/// Defines a contract for testing Pulumi resource behavior, including input validation, output mocking, 
+/// and correct dependency wiring.
+/// </para>
+///
+/// <para>
+/// In Pulumi’s default testing framework, mocking resources requires implementing <see cref="IMocks"/> 
+/// and overriding <c>NewResourceAsync</c>. To mock a resource, you must match its type using its fully 
+/// qualified schema token (e.g., <c>azure-native:keyvault:Vault</c>), which often requires inspecting 
+/// source code or documentation. You then construct output dictionaries manually and carefully merge them 
+/// with inputs to reflect Pulumi's behavior where some inputs are mirrored in outputs. If you want to target 
+/// specific resources by logical name, you also need additional conditionals to match <c>args.Name</c>.
+/// </para>
+///
+/// <para>
+/// <c>Pulumock</c> simplifies this process with fluent APIs such as <c>WithMockResource</c> and 
+/// <c>WithoutMockResource</c>, allowing developers to add or remove mocks for specific resource types or 
+/// even specific named instances. Instead of dealing with stringly-typed dictionaries, you can use 
+/// <c>MockResourceBuilder</c> and chain <c>WithOutput</c> calls using strongly-typed expressions.
+/// </para>
+///
+/// <para>
+/// Additionally, Pulumock enhances test observability by exposing <c>EnrichedResource</c> objects, 
+/// which include not just resolved outputs, but also the raw inputs passed to the resources.
+/// </para>
+/// </summary>
 public interface IResourceTests
 {
     /// <summary>

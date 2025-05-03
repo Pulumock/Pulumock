@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using Example.Stacks;
 using Example.Tests.Shared.Interfaces;
+using Example.Tests.WithoutPulumock.Mocks;
 using Example.Tests.WithoutPulumock.Shared;
 using Pulumi;
 using Pulumi.AzureNative.KeyVault;
@@ -13,17 +14,19 @@ namespace Example.Tests.WithoutPulumock;
 
 public class StackOutputTests : TestBase, IStackOutputTests
 {
-    [Fact]
-    public async Task StackOutputs_ShouldOutputMockedValue()
+    [Theory]
+    [InlineData("https://mocked.vault.azure.net/")]
+    [InlineData("https://other.vault.azure.net/")]
+    public async Task ShouldBeTestable_StackOutputValue(string mockedVaultUri)
     {
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
-            new Mocks.Mocks(), 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new MocksStackOutputTests(mockedVaultUri), 
+            new TestOptions {IsPreview = false, StackName = DevStackName},
+            async () => await CoreStack.DefineResourcesAsync());
         
         Vault keyVault = result.Resources
             .OfType<Vault>()
-            .Single(x => x.GetResourceName().Equals("microservice-kv-vault", StringComparison.Ordinal));
+            .Single(x => x.GetResourceName().Equals("microservice-kvws-kv", StringComparison.Ordinal));
         
         VaultPropertiesResponse keyVaultProperties = await OutputUtilities.GetValueAsync(keyVault.Properties);
         
@@ -32,5 +35,6 @@ public class StackOutputTests : TestBase, IStackOutputTests
             : throw new InvalidOperationException("keyVaultUri was not an Output<string>");
 
         keyVaultUriStackOutput.ShouldBe(keyVaultProperties.VaultUri);
+        keyVaultUriStackOutput.ShouldBe(mockedVaultUri);
     }
 }

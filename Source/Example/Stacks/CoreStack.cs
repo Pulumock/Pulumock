@@ -3,16 +3,19 @@ using Pulumi;
 using Pulumi.AzureNative.Authorization;
 using Pulumi.AzureNative.KeyVault;
 using Pulumi.AzureNative.Resources;
+using Deployment = Pulumi.Deployment;
 
 namespace Example.Stacks;
 
 internal static class CoreStack
 {
-    public static async Task<Dictionary<string, object?>> DefineResourcesAsync(string stackName)
+    private static readonly string StackName = Deployment.Instance.StackName;
+    
+    public static async Task<Dictionary<string, object?>> DefineResourcesAsync()
     {
         var stackConfiguration = new StackConfiguration();
 
-        var stackReference = new StackReference($"{stackConfiguration.StackReferenceOrgName}/{stackConfiguration.StackReferenceProjectName}/{stackName}");
+        var stackReference = new StackReference($"{stackConfiguration.StackReferenceOrgName}/{stackConfiguration.StackReferenceProjectName}/{StackName}");
         object? stackReferenceValue = await stackReference.GetValueAsync("microserviceManagedIdentityPrincipalId");
         if (stackReferenceValue is not string managedIdentity)
         {
@@ -27,7 +30,7 @@ internal static class CoreStack
 
         Vault keyVault = new KeyVaultWithSecretsComponentResource("microservice-kvws", new KeyVaultWithSecretsComponentResourceArgs
         {
-            VaultName = $"microservice-kv-{stackName}",
+            VaultName = $"microservice-kv-{StackName}",
             ResourceGroupName = resourceGroup.Name,
             TenantId = stackConfiguration.TenantId,
             Secrets = new InputMap<string>

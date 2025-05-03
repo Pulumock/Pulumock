@@ -59,7 +59,7 @@ public static class TypeExtensions
     /// <exception cref="ArgumentException">
     /// Thrown when the expression is not a valid property or field selector.
     /// </exception>
-    public static string GetOutputName<T>(this Expression<Func<T, object>> propertySelector)
+    public static string GetOutputName<T>(this Expression<Func<T, object?>> propertySelector)
     {
         MemberInfo member = propertySelector.Body switch
         {
@@ -96,6 +96,30 @@ public static class TypeExtensions
         
         // InputAttribute is internal
         return member.Name.ToCamelCase();
+    }
+    
+    /// <summary>
+    /// Retrieves the <see cref="ResourceArgs"/> type used by the constructor of a given <see cref="CustomResource"/>-derived type.
+    /// </summary>
+    /// <param name="resourceType">The resource type to inspect.</param>
+    /// <returns>
+    /// The type of the constructor parameter that derives from <see cref="ResourceArgs"/>, or <c>null</c> if none is found.
+    /// </returns>
+    /// <exception cref="ArgumentException">
+    /// Thrown if <paramref name="resourceType"/> does not inherit from <see cref="CustomResource"/>.
+    /// </exception>
+    public static Type? GetResourceArgsType(this Type resourceType)
+    {
+        if (!typeof(CustomResource).IsAssignableFrom(resourceType))
+        {
+            throw new ArgumentException($"Type {resourceType.Name} does not inherit from CustomResource.");
+        }
+
+        return resourceType
+            .GetConstructors()
+            .SelectMany(c => c.GetParameters())
+            .FirstOrDefault(p => typeof(ResourceArgs).IsAssignableFrom(p.ParameterType))
+            ?.ParameterType;
     }
     
     /// <summary>

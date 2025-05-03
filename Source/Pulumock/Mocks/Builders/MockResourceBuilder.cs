@@ -8,8 +8,9 @@ namespace Pulumock.Mocks.Builders;
 
 /// <summary>
 /// A fluent builder for creating a <see cref="MockResource"/>.
+/// <typeparam name="T">The resource type being mocked.</typeparam>
 /// </summary>
-public class MockResourceBuilder
+public class MockResourceBuilder<T>(string? logicalName = null)
 {
     private readonly Dictionary<string, object> _outputs = new();
 
@@ -18,9 +19,20 @@ public class MockResourceBuilder
     /// </summary>
     /// <param name="key">The output property name.</param>
     /// <param name="value">The mocked value.</param>
-    public MockResourceBuilder WithOutput(string key, object value)
+    public MockResourceBuilder<T> WithOutput(string key, object value)
     {
         _outputs.Add(key, value);
+        return this;
+    }
+    
+    /// <summary>
+    /// Adds a mocked output using a strongly-typed property selector for the resource type <typeparamref name="T"/>.
+    /// </summary>
+    /// <param name="propertySelector">An expression selecting the output property to mock.</param>
+    /// <param name="value">The mocked value to assign to the output.</param>
+    public MockResourceBuilder<T> WithOutput(Expression<Func<T, object?>> propertySelector, object value)
+    {
+        _outputs.Add(propertySelector.GetOutputName(), value);
         return this;
     }
     
@@ -32,26 +44,35 @@ public class MockResourceBuilder
     /// This should point to a property decorated with Pulumi's <see cref="OutputAttribute"/>.
     /// </param>
     /// <param name="value">The mocked value.</param>
-    public MockResourceBuilder WithOutput<T>(Expression<Func<T, object>> propertySelector, object value)
+    public MockResourceBuilder<T> WithOutput<TProperty>(Expression<Func<TProperty, object?>> propertySelector, object value)
     {
         _outputs.Add(propertySelector.GetOutputName(), value);
         return this;
     }
     
-    public MockResourceBuilder WithOutput<T, TNested>(
-        Expression<Func<T, object>> propertySelector,
-        Func<NestedOutputsBuilder<TNested>, NestedOutputsBuilder<TNested>> nestedOutputsBuilder)
+    /// <summary>
+    /// Adds a mocked nested output value using parent and child property expressions.
+    /// </summary>
+    /// <typeparam name="TNested">The type of the nested object within the resource.</typeparam>
+    /// <typeparam name="TNestedValue">The type of the nested value being mocked.</typeparam>
+    /// <param name="propertySelector">Expression selecting the parent property.</param>
+    /// <param name="nestedPropertySelector">Expression selecting the nested property.</param>
+    /// <param name="value">The mocked value to assign to the nested output.</param>
+    public MockResourceBuilder<T> WithOutput<TNested, TNestedValue>(
+        Expression<Func<T, object?>> propertySelector,
+        Expression<Func<TNested, object?>> nestedPropertySelector,
+        TNestedValue value)
     {
-        Dictionary<string, object> nestedOutputs = nestedOutputsBuilder(new NestedOutputsBuilder<TNested>())
-            .Build();
-        
-        _outputs.Add(propertySelector.GetOutputName(), nestedOutputs);
+        NestedOutputsBuilder<TNested> builder = new NestedOutputsBuilder<TNested>()
+            .WithNestedOutput(nestedPropertySelector, value);
+
+        _outputs.Add(propertySelector.GetOutputName(), builder.Build());
         return this;
     }
     
     /// <summary>
     /// Builds the <see cref="MockResource"/> mock.
     /// </summary>
-    public MockResource Build<T>(string? logicalName = null) => 
+    public MockResource Build() => 
         new(typeof(T), _outputs.ToImmutableDictionary(), logicalName);
 }

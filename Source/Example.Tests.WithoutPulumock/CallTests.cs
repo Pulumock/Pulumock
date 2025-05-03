@@ -18,10 +18,10 @@ public class CallTests : TestBase, ICallTests
         var mocks = new Mocks.Mocks();
         _ = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = DevStackName},
+            async () => await CoreStack.DefineResourcesAsync());
         
-        var calls = mocks.CallSnapshots
+        var calls = mocks.EnrichedCalls
             .Where(x => x.Token.Equals("azure-native:authorization:getRoleDefinition", StringComparison.Ordinal))
             .ToList();
         
@@ -41,10 +41,10 @@ public class CallTests : TestBase, ICallTests
         var mocks = new Mocks.Mocks();
         _ = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = DevStackName},
+            async () => await CoreStack.DefineResourcesAsync());
         
-        var calls = mocks.CallSnapshots
+        var calls = mocks.EnrichedCalls
             .Where(x =>
                 x.Token.Equals("azure-native:authorization:getRoleDefinition", StringComparison.Ordinal) 
                 && x.Inputs.TryGetValue("roleDefinitionId", out object? roleDefinitionId) 
@@ -67,8 +67,8 @@ public class CallTests : TestBase, ICallTests
         var mocks = new Mocks.Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = DevStackName},
+            async () => await CoreStack.DefineResourcesAsync());
         
         RoleAssignment roleAssignment = result.Resources
             .OfType<RoleAssignment>()

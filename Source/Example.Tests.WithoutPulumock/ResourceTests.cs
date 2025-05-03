@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using System.Text.Json;
 using Example.Stacks;
 using Example.Tests.Shared.Interfaces;
 using Example.Tests.WithoutPulumock.Shared;
@@ -19,11 +20,11 @@ public class ResourceTests : TestBase, IResourceTests
         var mocks = new Mocks.Mocks();
         _ = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = DevStackName},
+            async () => await CoreStack.DefineResourcesAsync());
             
-        ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-rg", StringComparison.Ordinal));
-        if (!resourceSnapshot.Inputs.TryGetValue("resourceGroupName", out object? value) || value is not string resourceGroupName)
+        EnrichedResource enrichedResource = mocks.EnrichedResources.Single(x => x.LogicalName.Equals("microservice-rg", StringComparison.Ordinal));
+        if (!enrichedResource.Inputs.TryGetValue("resourceGroupName", out object? value) || value is not string resourceGroupName)
         {
             throw new KeyNotFoundException("Input with key 'resourceGroupName' was not found or is not of type string.");
         }
@@ -36,8 +37,8 @@ public class ResourceTests : TestBase, IResourceTests
     {
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             new Mocks.Mocks(), 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = DevStackName},
+            async () => await CoreStack.DefineResourcesAsync());
         
         ResourceGroup resourceGroup = result.Resources
             .OfType<ResourceGroup>()
@@ -53,15 +54,15 @@ public class ResourceTests : TestBase, IResourceTests
         var mocks = new Mocks.Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = DevStackName},
+            async () => await CoreStack.DefineResourcesAsync());
         
         ResourceGroup resourceGroup = result.Resources
             .OfType<ResourceGroup>()
             .Single(x => x.GetResourceName().Equals("microservice-rg", StringComparison.Ordinal));
         
-        ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-rg", StringComparison.Ordinal));
-        if (!resourceSnapshot.Inputs.TryGetValue("location", out object? value) || value is not string locationFromInput)
+        EnrichedResource enrichedResource = mocks.EnrichedResources.Single(x => x.LogicalName.Equals("microservice-rg", StringComparison.Ordinal));
+        if (!enrichedResource.Inputs.TryGetValue("location", out object? value) || value is not string locationFromInput)
         {
             throw new KeyNotFoundException("Input with key 'location' was not found or is not of type string.");
         }
@@ -78,15 +79,15 @@ public class ResourceTests : TestBase, IResourceTests
         var mocks = new Mocks.Mocks();
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             mocks, 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = DevStackName},
+            async () => await CoreStack.DefineResourcesAsync());
         
         ResourceGroup resourceGroup = result.Resources
             .OfType<ResourceGroup>()
             .Single(x => x.GetResourceName().Equals("microservice-rg", StringComparison.Ordinal));
         
-        ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-kv-vault", StringComparison.Ordinal));
-        if (!resourceSnapshot.Inputs.TryGetValue("resourceGroupName", out object? value) || value is not string resourceGroupName)
+        EnrichedResource enrichedResource = mocks.EnrichedResources.Single(x => x.LogicalName.Equals("microservice-kvws-kv", StringComparison.Ordinal));
+        if (!enrichedResource.Inputs.TryGetValue("resourceGroupName", out object? value) || value is not string resourceGroupName)
         {
             throw new KeyNotFoundException("Input with key 'resourceGroupName' was not found or is not of type string.");
         }
@@ -97,14 +98,29 @@ public class ResourceTests : TestBase, IResourceTests
     [Fact]
     public async Task Resource_Multiple()
     {
+        const string location = "norway";
+        string? existingConfigJson = Environment.GetEnvironmentVariable("PULUMI_CONFIG");
+        Dictionary<string, object> config = existingConfigJson != null
+            ? JsonSerializer.Deserialize<Dictionary<string, object>>(existingConfigJson)!
+            : new Dictionary<string, object>();
+        
+        config["azure-native:location"] = location;
+        Environment.SetEnvironmentVariable("PULUMI_CONFIG", JsonSerializer.Serialize(config));
+        
         (ImmutableArray<Resource> Resources, IDictionary<string, object?> StackOutputs) result = await Deployment.TestAsync(
             new Mocks.Mocks(), 
-            new TestOptions {IsPreview = false},
-            async () => await CoreStack.DefineResourcesAsync(StackName));
+            new TestOptions {IsPreview = false, StackName = DevStackName},
+            async () => await CoreStack.DefineResourcesAsync());
 
-        IEnumerable<Resource> resources = result.Resources
-            .OfType<Resource>();
+        var resourceGroups = result.Resources
+            .OfType<ResourceGroup>()
+            .ToImmutableArray();
         
-        resources.ShouldAllBe(x => !string.IsNullOrWhiteSpace(x.GetResourceName()));
+        string?[] locations = await Task.WhenAll(
+            resourceGroups.Select(x => OutputUtilities.GetValueAsync(x.Location))
+        );
+        
+        resourceGroups.ShouldAllBe(x => !string.Equals(x.GetResourceName(), "forbidden-resource-name", StringComparison.Ordinal));
+        locations.ShouldAllBe(x => !string.IsNullOrWhiteSpace(x) && x.Equals(location, StringComparison.Ordinal));
     }
 }

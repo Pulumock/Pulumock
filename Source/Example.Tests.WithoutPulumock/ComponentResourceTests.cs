@@ -22,9 +22,9 @@ public class ComponentResourceTests : TestBase, IComponentResourceTests
             new TestOptions {IsPreview = false},
             () =>
             {
-                var componentResource = new KeyVaultWithSecretsComponentResource("microservice-kv", new()
+                var componentResource = new KeyVaultWithSecretsComponentResource("microservice-kvws", new()
                 {
-                    VaultName = "microservice-kv-vault",
+                    VaultName = "microservice-kv",
                     ResourceGroupName = "microservice-rg",
                     TenantId = "1f526cdb-1975-4248-ab0f-57813df294cb",
                     Secrets = new()
@@ -53,9 +53,9 @@ public class ComponentResourceTests : TestBase, IComponentResourceTests
         
         SecretPropertiesResponse secretProperties = await OutputUtilities.GetValueAsync(secret.Properties);
 
-        componentResource.GetResourceName().ShouldBe("microservice-kv");
-        keyVault.GetResourceName().ShouldBe("microservice-kv-vault");
-        secret.GetResourceName().ShouldBe("microservice-kv-secret-Database--ConnectionString");
+        componentResource.GetResourceName().ShouldBe("microservice-kvws");
+        keyVault.GetResourceName().ShouldBe("microservice-kvws-kv");
+        secret.GetResourceName().ShouldBe("microservice-kvws-secret-Database--ConnectionString");
         secretProperties.Value.ShouldBe("very-secret-value");
     }
     
@@ -139,9 +139,9 @@ public class ComponentResourceTests : TestBase, IComponentResourceTests
             new TestOptions {IsPreview = false},
             () =>
             {
-                var componentResource = new KeyVaultWithSecretsComponentResource("microservice-kv", new()
+                var componentResource = new KeyVaultWithSecretsComponentResource("microservice-kvws", new()
                 {
-                    VaultName = "microservice-kv-vault",
+                    VaultName = "microservice-kv",
                     ResourceGroupName = "microservice-rg",
                     TenantId = "1f526cdb-1975-4248-ab0f-57813df294cb"
                 });
@@ -157,6 +157,6 @@ public class ComponentResourceTests : TestBase, IComponentResourceTests
             throw new KeyNotFoundException("Output with key 'keyVault' was not found or is not of type Vault.");
         }
         
-        keyVault.GetResourceName().ShouldBe("microservice-kv-vault");
+        keyVault.GetResourceName().ShouldBe("microservice-kvws-kv");
     }
 }
