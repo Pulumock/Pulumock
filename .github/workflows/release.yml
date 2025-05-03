@@ -1,10 +1,9 @@
-name: Build and Publish NuGet Package
+name: Release
 
 on:
   push:
     branches:
       - main 
-  pull_request:
 
 env:
   DOTNET_VERSION: '9.0'
