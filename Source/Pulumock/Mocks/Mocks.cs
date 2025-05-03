@@ -14,7 +14,7 @@ namespace Pulumock.Mocks;
 internal sealed class Mocks(ImmutableDictionary<(Type Type, string? LogicalName), MockResource> mockResources, 
     ImmutableDictionary<MockCallToken, MockCall> mockCalls) : IMocks
 {
-    private readonly List<ResourceSnapshot> _resourceSnapshots = [];
+    private readonly List<EnrichedResource> _enrichedResources = [];
     private readonly List<CallSnapshot> _callSnapshots = [];
     
     public Task<(string? id, object state)> NewResourceAsync(MockResourceArgs args)
@@ -42,7 +42,7 @@ internal sealed class Mocks(ImmutableDictionary<(Type Type, string? LogicalName)
             outputs.Add("name", MockHelper.GetPhysicalResourceName(args, outputs));
         }
         
-        _resourceSnapshots.Add(new ResourceSnapshot(args.Type, logicalResourceName, args.Inputs));
+        _enrichedResources.Add(new EnrichedResource(args.Type, logicalResourceName, args.Inputs));
         
         ImmutableDictionary<string, object> mergedOutputs = OutputMerger.Merge(args.Inputs, outputs);
         
@@ -68,6 +68,6 @@ internal sealed class Mocks(ImmutableDictionary<(Type Type, string? LogicalName)
         return Task.FromResult<object>(mergedOutputs);
     }
     
-    public ImmutableList<ResourceSnapshot> ResourceSnapshots => _resourceSnapshots.ToImmutableList();
+    public ImmutableList<EnrichedResource> EnrichedResources => _enrichedResources.ToImmutableList();
     public ImmutableList<CallSnapshot> CallSnapshots => _callSnapshots.ToImmutableList();
 }

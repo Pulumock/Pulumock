@@ -29,7 +29,7 @@ internal sealed class MocksStackReferenceTests(bool mock, object? value = null) 
         string resourceName = GetLogicalResourceName(args.Name);
         string resourceId = GetResourceId(args.Id, $"{resourceName}_id");
 
-        ProtectedResourceSnapshots.Add(new ResourceSnapshot(resourceName, args.Inputs));
+        ProtectedEnrichedResources.Add(new EnrichedResource(resourceName, args.Inputs));
         
         return Task.FromResult<(string? id, object state)>((resourceId, outputs.ToImmutable()));
     }

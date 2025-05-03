@@ -21,8 +21,8 @@ public class ResourceTests : IResourceTests
         Fixture fixture = await TestBase.GetBaseFixtureBuilder()
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        ResourceSnapshot resourceGroup = fixture.ResourceSnapshots.Require("microservice-rg");
-        string resourceGroupName = resourceGroup.RequireInputValue<ResourceGroupArgs, string>(x => x.ResourceGroupName);
+        EnrichedResource enrichedResourceGroup = fixture.EnrichedStackResources.Require("microservice-rg");
+        string resourceGroupName = enrichedResourceGroup.RequireInputValue<ResourceGroupArgs, string>(x => x.ResourceGroupName);
         
         resourceGroupName.ShouldBe("microservice-rg");
     }
@@ -52,10 +52,10 @@ public class ResourceTests : IResourceTests
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
         ResourceGroup resourceGroup = fixture.StackResources.Require<ResourceGroup>("microservice-rg");
-        ResourceSnapshot resourceGroupSnapshot = fixture.ResourceSnapshots.Require("microservice-rg");
+        EnrichedResource enrichedResourceGroup = fixture.EnrichedStackResources.Require("microservice-rg");
 
         string locationFromOutput = await resourceGroup.Location.GetValueAsync();
-        string locationFromInput = resourceGroupSnapshot.RequireInputValue<ResourceGroupArgs, string>(x => x.Location);
+        string locationFromInput = enrichedResourceGroup.RequireInputValue<ResourceGroupArgs, string>(x => x.Location);
         
         locationFromOutput.ShouldBe(location);
         locationFromInput.ShouldBe(location);
@@ -70,7 +70,7 @@ public class ResourceTests : IResourceTests
         ResourceGroup resourceGroup = fixture.StackResources.Require<ResourceGroup>("microservice-rg");
         string resourceGroupName = await resourceGroup.Name.GetValueAsync();
         
-        ResourceSnapshot keyVault = fixture.ResourceSnapshots.Require("microservice-kvws-kv");
+        EnrichedResource keyVault = fixture.EnrichedStackResources.Require("microservice-kvws-kv");
         string keyVaultResourceGroupName = keyVault.RequireInputValue<VaultArgs, string>(x => x.ResourceGroupName);
 
         keyVaultResourceGroupName.ShouldBe(resourceGroupName);

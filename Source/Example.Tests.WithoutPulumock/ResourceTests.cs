@@ -23,8 +23,8 @@ public class ResourceTests : TestBase, IResourceTests
             new TestOptions {IsPreview = false, StackName = DevStackName},
             async () => await CoreStack.DefineResourcesAsync());
             
-        ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-rg", StringComparison.Ordinal));
-        if (!resourceSnapshot.Inputs.TryGetValue("resourceGroupName", out object? value) || value is not string resourceGroupName)
+        EnrichedResource enrichedResource = mocks.EnrichedResources.Single(x => x.LogicalName.Equals("microservice-rg", StringComparison.Ordinal));
+        if (!enrichedResource.Inputs.TryGetValue("resourceGroupName", out object? value) || value is not string resourceGroupName)
         {
             throw new KeyNotFoundException("Input with key 'resourceGroupName' was not found or is not of type string.");
         }
@@ -61,8 +61,8 @@ public class ResourceTests : TestBase, IResourceTests
             .OfType<ResourceGroup>()
             .Single(x => x.GetResourceName().Equals("microservice-rg", StringComparison.Ordinal));
         
-        ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-rg", StringComparison.Ordinal));
-        if (!resourceSnapshot.Inputs.TryGetValue("location", out object? value) || value is not string locationFromInput)
+        EnrichedResource enrichedResource = mocks.EnrichedResources.Single(x => x.LogicalName.Equals("microservice-rg", StringComparison.Ordinal));
+        if (!enrichedResource.Inputs.TryGetValue("location", out object? value) || value is not string locationFromInput)
         {
             throw new KeyNotFoundException("Input with key 'location' was not found or is not of type string.");
         }
@@ -86,8 +86,8 @@ public class ResourceTests : TestBase, IResourceTests
             .OfType<ResourceGroup>()
             .Single(x => x.GetResourceName().Equals("microservice-rg", StringComparison.Ordinal));
         
-        ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-kvws-kv", StringComparison.Ordinal));
-        if (!resourceSnapshot.Inputs.TryGetValue("resourceGroupName", out object? value) || value is not string resourceGroupName)
+        EnrichedResource enrichedResource = mocks.EnrichedResources.Single(x => x.LogicalName.Equals("microservice-kvws-kv", StringComparison.Ordinal));
+        if (!enrichedResource.Inputs.TryGetValue("resourceGroupName", out object? value) || value is not string resourceGroupName)
         {
             throw new KeyNotFoundException("Input with key 'resourceGroupName' was not found or is not of type string.");
         }

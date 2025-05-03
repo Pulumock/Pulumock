@@ -5,7 +5,7 @@ namespace Example.Tests.WithoutPulumock.Shared;
 
 internal class MocksBase : IMocks
 {
-    public ImmutableList<ResourceSnapshot> ResourceSnapshots => ProtectedResourceSnapshots.ToImmutableList();
+    public ImmutableList<EnrichedResource> EnrichedResources => ProtectedEnrichedResources.ToImmutableList();
     public ImmutableList<CallSnapshot> CallSnapshots => ProtectedCallSnapshots.ToImmutableList();
     
     
@@ -51,7 +51,7 @@ internal class MocksBase : IMocks
         string resourceName = GetLogicalResourceName(args.Name);
         string resourceId = GetResourceId(args.Id, $"{resourceName}_id");
 
-        ProtectedResourceSnapshots.Add(new ResourceSnapshot(resourceName, args.Inputs));
+        ProtectedEnrichedResources.Add(new EnrichedResource(resourceName, args.Inputs));
         
         return Task.FromResult<(string? id, object state)>((resourceId, outputs.ToImmutable()));
     }
@@ -86,7 +86,7 @@ internal class MocksBase : IMocks
     public const string DevStackName = "dev";
     public const string ProdStackName = "prod";
     
-    protected readonly List<ResourceSnapshot> ProtectedResourceSnapshots = [];
+    protected readonly List<EnrichedResource> ProtectedEnrichedResources = [];
     protected readonly List<CallSnapshot> ProtectedCallSnapshots = [];
     
     protected static string GetLogicalResourceName(string? name) =>
@@ -99,6 +99,6 @@ internal class MocksBase : IMocks
         string.IsNullOrWhiteSpace(token) ? throw new ArgumentNullException(nameof(token)) : token;
 }
 
-internal sealed record ResourceSnapshot(string LogicalName, ImmutableDictionary<string, object> Inputs);
+internal sealed record EnrichedResource(string LogicalName, ImmutableDictionary<string, object> Inputs);
 
 internal sealed record CallSnapshot(string Token, ImmutableDictionary<string, object> Inputs, ImmutableDictionary<string, object> Outputs);

@@ -12,7 +12,6 @@ using Shouldly;
 
 namespace Example.Tests.WithoutPulumock;
 
-// TODO: This is flaky when running parallel since tests are using the same global ENV variable?
 public sealed class ConfigurationTests : TestBase, IConfigurationTests
 {
     [Fact]
@@ -34,8 +33,8 @@ public sealed class ConfigurationTests : TestBase, IConfigurationTests
             new TestOptions {IsPreview = false, StackName = DevStackName},
             async () => await CoreStack.DefineResourcesAsync());
         
-        ResourceSnapshot resourceSnapshot = mocks.ResourceSnapshots.Single(x => x.LogicalName.Equals("microservice-kvws-kv", StringComparison.Ordinal));
-        if (!resourceSnapshot.Inputs.TryGetValue("properties", out object? propertiesObj) ||
+        EnrichedResource enrichedResource = mocks.EnrichedResources.Single(x => x.LogicalName.Equals("microservice-kvws-kv", StringComparison.Ordinal));
+        if (!enrichedResource.Inputs.TryGetValue("properties", out object? propertiesObj) ||
             propertiesObj is not IDictionary<string, object> properties)
         {
             throw new KeyNotFoundException("Input with key 'properties' was not found or is not of type string.");
@@ -87,10 +86,10 @@ public sealed class ConfigurationTests : TestBase, IConfigurationTests
             new TestOptions {IsPreview = false, StackName = DevStackName},
             async () => await CoreStack.DefineResourcesAsync());
         
-        ResourceSnapshot vaultResourceSnapshot = mocks.ResourceSnapshots.Single(x => 
+        EnrichedResource vaultEnrichedResource = mocks.EnrichedResources.Single(x => 
             x.LogicalName.Equals("microservice-kvws-kv", StringComparison.Ordinal));
         
-        if (!vaultResourceSnapshot.Inputs.TryGetValue("properties", out object? propertiesObj) ||
+        if (!vaultEnrichedResource.Inputs.TryGetValue("properties", out object? propertiesObj) ||
             propertiesObj is not IDictionary<string, object> vaultProperties)
         {
             throw new KeyNotFoundException("Input with key 'properties' was not found or is not of type string.");

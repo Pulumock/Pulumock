@@ -5,29 +5,29 @@ using Pulumock.Mocks.Models;
 namespace Pulumock.Extensions;
 
 /// <summary>
-/// Provides extension methods for working with <see cref="ResourceSnapshot"/>.
+/// Provides extension methods for working with <see cref="EnrichedResource"/>.
 /// </summary>
-public static class ResourceSnapshotExtensions
+public static class EnrichedResourceExtensions
 {
-    public static ResourceSnapshot Require(this ImmutableList<ResourceSnapshot> resourceSnapshots, string logicalName) =>
-        resourceSnapshots.Single(x => x.LogicalName.Equals(logicalName, StringComparison.Ordinal));
+    public static EnrichedResource Require(this ImmutableList<EnrichedResource> enrichedResources, string logicalName) =>
+        enrichedResources.Single(x => x.LogicalName.Equals(logicalName, StringComparison.Ordinal));
     
-    public static ResourceSnapshot? Get(this ImmutableList<ResourceSnapshot> resourceSnapshots, string logicalName) =>
-        resourceSnapshots.SingleOrDefault(x => x.LogicalName.Equals(logicalName, StringComparison.Ordinal));
+    public static EnrichedResource? Get(this ImmutableList<EnrichedResource> enrichedResources, string logicalName) =>
+        enrichedResources.SingleOrDefault(x => x.LogicalName.Equals(logicalName, StringComparison.Ordinal));
     
-    public static ImmutableList<ResourceSnapshot> GetMany<TResourceType>(this ImmutableList<ResourceSnapshot> resourceSnapshots) =>
-        resourceSnapshots
+    public static ImmutableList<EnrichedResource> GetMany<TResourceType>(this ImmutableList<EnrichedResource> enrichedResources) =>
+        enrichedResources
             .Where(x => typeof(TResourceType).MatchesResourceTypeToken(x.TypeToken))
             .ToImmutableList();
     
-    public static TValue RequireInputValue<TProperty, TValue>(this ResourceSnapshot resourceSnapshot,
+    public static TValue RequireInputValue<TProperty, TValue>(this EnrichedResource enrichedResource,
         Expression<Func<TProperty, object?>> propertySelector)
     {
         string inputName = propertySelector.GetInputName();
         
-        if (!resourceSnapshot.Inputs.TryGetValue(inputName, out object? value))
+        if (!enrichedResource.Inputs.TryGetValue(inputName, out object? value))
         {
-            throw new KeyNotFoundException($"Input '{inputName}' not found in ResourceSnapshot '{resourceSnapshot.LogicalName}'.");
+            throw new KeyNotFoundException($"Input '{inputName}' not found in EnrichedResource '{enrichedResource.LogicalName}'.");
         }
 
         if (value is not TValue typedValue)
@@ -38,14 +38,14 @@ public static class ResourceSnapshotExtensions
         return typedValue;
     }
     
-    public static TValue RequireInputValue<TParent, TChild, TValue>(this ResourceSnapshot resourceSnapshot,
+    public static TValue RequireInputValue<TParent, TChild, TValue>(this EnrichedResource enrichedResource,
         Expression<Func<TParent, object?>> parentPropertySelector,
         Expression<Func<TChild, object?>> nestedPropertySelector)
     {
         string parentInputName = parentPropertySelector.GetInputName();
-        if (!resourceSnapshot.Inputs.TryGetValue(parentInputName, out object? parentValue))
+        if (!enrichedResource.Inputs.TryGetValue(parentInputName, out object? parentValue))
         {
-            throw new KeyNotFoundException($"Input '{parentInputName}' not found in ResourceSnapshot '{resourceSnapshot.LogicalName}'.");
+            throw new KeyNotFoundException($"Input '{parentInputName}' not found in EnrichedResource '{enrichedResource.LogicalName}'.");
         }
         
         if (parentValue is not IDictionary<string, object> parentDictionary)
@@ -67,12 +67,12 @@ public static class ResourceSnapshotExtensions
         return typedValue;
     }
     
-    public static TValue? GetInputValue<TProperty, TValue>(this ResourceSnapshot resourceSnapshot,
+    public static TValue? GetInputValue<TProperty, TValue>(this EnrichedResource enrichedResource,
         Expression<Func<TProperty, object?>> propertySelector)
     {
         string inputName = propertySelector.GetInputName();
         
-        if (!resourceSnapshot.Inputs.TryGetValue(inputName, out object? value))
+        if (!enrichedResource.Inputs.TryGetValue(inputName, out object? value))
         {
             return default;
         }
@@ -85,12 +85,12 @@ public static class ResourceSnapshotExtensions
         return typedValue;
     }
     
-    public static TValue? GetInputValue<TParent, TChild, TValue>(this ResourceSnapshot resourceSnapshot,
+    public static TValue? GetInputValue<TParent, TChild, TValue>(this EnrichedResource enrichedResource,
         Expression<Func<TParent, object?>> parentPropertySelector,
         Expression<Func<TChild, object?>> nestedPropertySelector)
     {
         string parentInputName = parentPropertySelector.GetInputName();
-        if (!resourceSnapshot.Inputs.TryGetValue(parentInputName, out object? parentValue) 
+        if (!enrichedResource.Inputs.TryGetValue(parentInputName, out object? parentValue) 
             || parentValue is not IDictionary<string, object> parentDictionary)
         {
             return default;

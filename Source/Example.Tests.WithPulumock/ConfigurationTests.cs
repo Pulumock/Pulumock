@@ -13,8 +13,6 @@ using Shouldly;
 
 namespace Example.Tests.WithPulumock;
 
-// TODO: This is flaky when running parallel since tests are using the same global ENV variable?
-// - For example: Add an await Task.Delay(3000); on line 61 and it will fail since StackReferenceTests runs in parallel and overrides env variable.
 public class ConfigurationTests : IConfigurationTests
 {
     private const string TenantId = "1f526cdb-1975-4248-ab0f-57813df294cb";
@@ -26,8 +24,8 @@ public class ConfigurationTests : IConfigurationTests
             .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId", TenantId)
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        ResourceSnapshot resourceSnapshot = fixture.ResourceSnapshots.Require("microservice-kvws-kv");
-        string vaultTenantId = resourceSnapshot.RequireInputValue<VaultArgs, VaultPropertiesArgs, string>(
+        EnrichedResource enrichedResource = fixture.EnrichedStackResources.Require("microservice-kvws-kv");
+        string vaultTenantId = enrichedResource.RequireInputValue<VaultArgs, VaultPropertiesArgs, string>(
             x => x.Properties, 
             y => y.TenantId);
         
@@ -59,8 +57,8 @@ public class ConfigurationTests : IConfigurationTests
             .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId", tenantId)
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        ResourceSnapshot resourceSnapshot = fixture.ResourceSnapshots.Require("microservice-kvws-kv");
-        string vaultTenantId = resourceSnapshot.RequireInputValue<VaultArgs, VaultPropertiesArgs, string>(
+        EnrichedResource enrichedResource = fixture.EnrichedStackResources.Require("microservice-kvws-kv");
+        string vaultTenantId = enrichedResource.RequireInputValue<VaultArgs, VaultPropertiesArgs, string>(
             x => x.Properties, 
             y => y.TenantId);
         
