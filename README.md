@@ -1,21 +1,100 @@
 <p align="center">
-    <a href="https://github.com/Pulumock/Pulumissues" title="Pulumissues - An aggregated dataset of Pulumi unit testing issues">
-        <img src="pulumock-logo-nobg.png" width="150" alt="Project logo" />
+    <a href="https://github.com/Pulumock/Pulumock" title="Pulumock - A tool designed to address testing challenges in Pulumi .NET">
+        <img src="pulumock-logo.png" width="150" alt="Project logo" />
     </a>
 </p>
 
 [![License](https://img.shields.io/github/license/Pulumock/Pulumock)](LICENSE)
+[![Release](https://github.com/Pulumock/Pulumock/actions/workflows/release.yml/badge.svg)](https://github.com/Pulumock/Pulumock/actions/workflows/release.yml)
+[![NuGet](https://img.shields.io/nuget/v/Pulumock?logo=nuget)](https://www.nuget.org/packages/Pulumock)
+[![NuGet Pre-release](https://img.shields.io/nuget/vpre/Pulumock?logo=nuget)](https://www.nuget.org/packages/Pulumock)
+[![NuGet downloads](https://img.shields.io/nuget/dt/Pulumock)](https://www.nuget.org/packages/Pulumock)
 [![GitHub Discussions](https://img.shields.io/github/discussions/Pulumock/Pulumock)](https://github.com/orgs/Pulumock/discussions)
 [![GitHub issues](https://img.shields.io/github/issues/Pulumock/Pulumock)](https://github.com/Pulumock/Pulumock/issues)
 
 # Pulumock
 
-This repository contains the source code and documentation for the Pulumock project, including usage examples.
+Pulumock your stack before it bites back.
+
+Pulumock is a testing tool for Pulumi .NET projects, designed to simplify and enhance unit testing. 
+Built on top of the standard Pulumi .NET testing capabilities, it addresses common challenges reported by developers, 
+based on real-world data from the [Pulumissues dataset](https://github.com/Pulumock/Pulumissues).
+
+By using a fluent, strongly typed syntax, Pulumock abstracts away complexity and reduces boilerplate, letting you focus on test logic instead of setup. Pulumock also provides richer data for assertions, enabling more scenarios to be covered.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [Documentation](#documentation)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Getting Started
 
-TODO:
+### Installation
 
-## Examples
+Install the [Pulumock NuGet package](https://www.nuget.org/packages/Pulumock) in your testing project:
+```shell
+dotnet add package Pulumock
+```
 
-TODO:
+### Usage
+
+Below is a basic step-by-step example. Refer to the [documentation](#documentation) for detailed guidance.
+
+#### 1. Creating a Fixture
+Start by creating a new `Fixture` instance within your test method:
+```csharp
+[Fact]
+public async Task ExampleTest() 
+{
+    Fixture fixture = new FixtureBuilder();
+}
+```
+
+#### 2. Apply Mocks
+Add any necessary mocks to the fixture using the builder pattern:
+```csharp
+[Fact]
+public async Task ExampleTest() 
+{
+    Fixture fixture = new FixtureBuilder()
+        .WithMockResource(new MockResourceBuilder<ResourceGroup>()
+            .WithOutput(x => x.Location, "swedencentral")
+            .Build()); 
+}
+```
+
+#### 3. Assert
+Build the fixture and run assertions to validate the final state of the stack and its components:
+```csharp
+[Fact]
+public async Task ExampleTest() 
+{
+    Fixture fixture = await new FixtureBuilder()
+        .WithMockResource(new MockResourceBuilder<ResourceGroup>()
+            .WithOutput(x => x.Location, "swedencentral")
+            .Build())
+        .BuildAsync(async () => await CoreStack.DefineResourcesAsync()); 
+    
+    var resourceGroup = fixture.StackResources.Require<ResourceGroup>("rg-name");
+    string location = await resourceGroup.Location.GetValueAsync();
+    
+    location.ShouldBe("swedencentral");
+}
+```
+
+## Documentation
+
+- Explore the [Wiki](https://github.com/Pulumock/Pulumock/wiki) for official documentation and straightforward usage guides.
+- Check out the [Example Project](./Source/Example) for a working demonstration of Pulumock in action across multiple scenarios.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+
+## License
+
+Pulumock is licensed under the **MIT license**. Feel free to edit and distribute this project as you like.
+
+See [LICENSE](LICENSE) for more information.
