@@ -16,7 +16,7 @@
         <PackageOutputPath>./nupkg</PackageOutputPath>
         <PackageTags>pulumi, mocking, testing, unit test</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageIcon>pulumock-logo-nobg.png</PackageIcon>
+        <PackageIcon>pulumock-logo.png</PackageIcon>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/Pulumock/Pulumock</RepositoryUrl>
