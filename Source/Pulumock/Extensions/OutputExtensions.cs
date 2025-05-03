@@ -9,7 +9,7 @@ namespace Pulumock.Extensions;
 public static class OutputExtensions
 {
     /// <summary>
-    /// Asynchronously retrieves the resolved value from a Pulumi <see cref="Output{T}"/>.
+    /// Retrieves the resolved value from a Pulumi <see cref="Output{T}"/>.
     /// </summary>
     /// <typeparam name="T">The type of the value contained in the Output.</typeparam>
     /// <param name="output">The Pulumi Output to unwrap.</param>

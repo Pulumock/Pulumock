@@ -35,6 +35,15 @@ public class MockCallBuilder
         return this;
     }
     
+    /// <summary>
+    /// Adds a mocked nested output property using expression selectors for both the parent and nested properties.
+    /// </summary>
+    /// <typeparam name="T">The function result type.</typeparam>
+    /// <typeparam name="TNested">The type of the nested object.</typeparam>
+    /// <typeparam name="TNestedValue">The type of the nested property's value.</typeparam>
+    /// <param name="propertySelector">Expression to select the parent property.</param>
+    /// <param name="nestedPropertySelector">Expression to select the nested property.</param>
+    /// <param name="value">The mocked return value for the nested property.</param>
     public MockCallBuilder WithOutput<T, TNested, TNestedValue>(
         Expression<Func<T, object?>> propertySelector,
         Expression<Func<TNested, object?>> nestedPropertySelector,

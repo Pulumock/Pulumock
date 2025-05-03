@@ -4,13 +4,32 @@ using Pulumock.Mocks.Models;
 
 namespace Pulumock.Extensions;
 
+/// <summary>
+/// Provides extension methods for <see cref="EnrichedCall"/>.
+/// </summary>
 public static class EnrichedCallExtensions
 {
+    /// <summary>
+    /// Filters the list of enriched calls to those matching a given function call type.
+    /// </summary>
+    /// <param name="enrichedCalls">The collection of calls to filter.</param>
+    /// <param name="type">The provider function type to match.</param>
+    /// <returns>A filtered list of matching calls.</returns>
     public static ImmutableList<EnrichedCall> GetMany(this ImmutableList<EnrichedCall> enrichedCalls, Type type) =>
         enrichedCalls
             .Where(x => type.MatchesCallTypeToken(x.Token))
             .ToImmutableList();
     
+    /// <summary>
+    /// Filters calls by function type and a specific input value using a strongly-typed property expression.
+    /// </summary>
+    /// <typeparam name="TProperty">The type containing the input property.</typeparam>
+    /// <typeparam name="TValue">The expected value type.</typeparam>
+    /// <param name="enrichedCalls">The collection of calls to filter.</param>
+    /// <param name="type">The provider function type to match.</param>
+    /// <param name="propertySelector">Expression selecting the input property to match.</param>
+    /// <param name="expectedValue">The expected value of the input.</param>
+    /// <returns>A filtered list of calls matching the type and input value.</returns>
     public static ImmutableList<EnrichedCall> GetManyByValue<TProperty, TValue>(this ImmutableList<EnrichedCall> enrichedCalls, 
         Type type, Expression<Func<TProperty, object?>> propertySelector, TValue expectedValue)
         where TValue : notnull
@@ -28,6 +47,14 @@ public static class EnrichedCallExtensions
             .ToImmutableList();
     }
     
+    /// <summary>
+    /// Retrieves a strongly-typed input value from an enriched call using an expression selector.
+    /// </summary>
+    /// <typeparam name="TProperty">The type containing the input property.</typeparam>
+    /// <typeparam name="TValue">The expected value type.</typeparam>
+    /// <param name="enrichedCall">The call to retrieve the input from.</param>
+    /// <param name="propertySelector">Expression selecting the input property.</param>
+    /// <returns>The input value.</returns>
     public static TValue RequireInputValue<TProperty, TValue>(this EnrichedCall enrichedCall,
         Expression<Func<TProperty, object?>> propertySelector)
     {
@@ -46,6 +73,14 @@ public static class EnrichedCallExtensions
         return typedValue;
     }
     
+    /// <summary>
+    /// Retrieves multiple strongly-typed input values from a list of calls using an expression selector.
+    /// </summary>
+    /// <typeparam name="TProperty">The type containing the input property.</typeparam>
+    /// <typeparam name="TValue">The expected value type.</typeparam>
+    /// <param name="enrichedCalls">The calls to extract input values from.</param>
+    /// <param name="propertySelector">Expression selecting the input property.</param>
+    /// <returns>A list of extracted input values.</returns>
     public static ImmutableList<TValue> RequireManyInputValues<TProperty, TValue>(this ImmutableList<EnrichedCall> enrichedCalls,
         Expression<Func<TProperty, object?>> propertySelector)
     {
@@ -71,6 +106,14 @@ public static class EnrichedCallExtensions
         return values.ToImmutableList();
     }
     
+    /// <summary>
+    /// Retrieves multiple strongly-typed output values from a list of calls using an expression selector.
+    /// </summary>
+    /// <typeparam name="TProperty">The type containing the output property.</typeparam>
+    /// <typeparam name="TValue">The expected value type.</typeparam>
+    /// <param name="enrichedCalls">The calls to extract output values from.</param>
+    /// <param name="propertySelector">Expression selecting the output property.</param>
+    /// <returns>A list of extracted output values.</returns>
     public static ImmutableList<TValue> RequireManyOutputValues<TProperty, TValue>(this ImmutableList<EnrichedCall> enrichedCalls,
         Expression<Func<TProperty, object?>> propertySelector)
     {

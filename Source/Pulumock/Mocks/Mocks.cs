@@ -8,8 +8,7 @@ namespace Pulumock.Mocks;
 
 /// <summary>
 /// Provides an implementation of <see cref="Pulumi.Testing.IMocks"/> for unit testing Pulumi stacks.
-/// This class is responsible for mocking both resource creation and provider function (invoke) calls
-/// so that Pulumi programs can be tested without deploying actual cloud infrastructure.
+/// This class is responsible for mocking both resource creation and provider function (invoke) calls.
 /// </summary>
 internal sealed class Mocks(ImmutableDictionary<(Type Type, string? LogicalName), MockResource> mockResources, 
     ImmutableDictionary<MockCallToken, MockCall> mockCalls) : IMocks
@@ -20,10 +19,10 @@ internal sealed class Mocks(ImmutableDictionary<(Type Type, string? LogicalName)
     public Task<(string? id, object state)> NewResourceAsync(MockResourceArgs args)
     {
         ImmutableDictionary<string, object>.Builder outputs = ImmutableDictionary.CreateBuilder<string, object>();
-        string logicalResourceName = MockHelper.GetLogicalResourceName(args.Name);
-        string resourceId = MockHelper.GetResourceId(args.Id, $"{logicalResourceName}_id");
+        string logicalResourceName = MockResourceHelper.GetLogicalName(args.Name);
+        string resourceId = MockResourceHelper.GetId(args.Id, $"{logicalResourceName}_id");
         
-        if (MockHelper.IsStackReference(args))
+        if (MockResourceHelper.IsStackReference(args))
         {
             if (mockResources.TryGetValue((typeof(StackReference), logicalResourceName), out MockResource? mockResource))
             {
@@ -33,13 +32,13 @@ internal sealed class Mocks(ImmutableDictionary<(Type Type, string? LogicalName)
         }
         else
         {
-            MockResource? mockResource = MockHelper.GetMockResourceOrDefault(mockResources, args.Type, args.Name);
+            MockResource? mockResource = MockResourceHelper.GetOrDefault(mockResources, args.Type, args.Name);
             if (mockResource is not null)
             {
                 outputs.AddRange(mockResource.MockOutputs);
             }
             
-            outputs.Add("name", MockHelper.GetPhysicalResourceName(args, outputs));
+            outputs.Add("name", MockResourceHelper.GetPhysicalName(args, outputs));
         }
         
         _enrichedResources.Add(new EnrichedResource(args.Type, logicalResourceName, args.Inputs));
@@ -51,11 +50,11 @@ internal sealed class Mocks(ImmutableDictionary<(Type Type, string? LogicalName)
     
     public Task<object> CallAsync(MockCallArgs args)
     {
-        string callToken = MockHelper.GetCallToken(args.Token);
+        string callToken = MockCallHelper.GetToken(args.Token);
         
         ImmutableDictionary<string, object>.Builder outputs = ImmutableDictionary.CreateBuilder<string, object>();
         
-        MockCall? mockCall = MockHelper.GetMockCallOrDefault(mockCalls, callToken);
+        MockCall? mockCall = MockCallHelper.GetOrDefault(mockCalls, callToken);
         if (mockCall is not null)
         {
             outputs.AddRange(mockCall.MockOutputs);
@@ -68,6 +67,13 @@ internal sealed class Mocks(ImmutableDictionary<(Type Type, string? LogicalName)
         return Task.FromResult<object>(mergedOutputs);
     }
     
+    /// <summary>
+    /// Gets the list of enriched Pulumi resources captured during the test run, including their logical names and raw inputs.
+    /// </summary>
     public ImmutableList<EnrichedResource> EnrichedResources => _enrichedResources.ToImmutableList();
+    
+    /// <summary>
+    /// Gets the list of enriched Pulumi function calls captured during the test run, including their tokens, inputs, and outputs.
+    /// </summary>
     public ImmutableList<EnrichedCall> EnrichedCalls => _enrichedCalls.ToImmutableList();
 }

@@ -11,40 +11,52 @@ namespace Pulumock.Extensions;
 public static class ResourceExtensions
 {
     /// <summary>
-    /// Retrieves a resource of type <typeparamref name="T"/> from the collection by its logical name.
+    /// Retrieves a resource of type <typeparamref name="T"/> by its logical name.
+    /// Throws if not found or if multiple matches exist.
     /// </summary>
-    /// <typeparam name="T">The expected resource type to return.</typeparam>
-    /// <param name="resources">The collection of Pulumi resources.</param>
-    /// <param name="logicalName">The logical name of the desired resource.</param>
-    /// <returns>The matching resource of type <typeparamref name="T"/>.</returns>
-    /// <exception cref="InvalidOperationException">
-    /// Thrown if no matching resource is found, or if multiple matches exist.
-    /// </exception>
     public static T Require<T>(this ImmutableArray<Resource> resources, string logicalName) where T : Resource =>
         resources
             .OfType<T>()
             .Single(x => x.GetResourceName().Equals(logicalName, StringComparison.Ordinal));
     
+    /// <summary>
+    /// Retrieves a single resource of type <typeparamref name="T"/>. 
+    /// Throws if not found or if multiple matches exist.
+    /// </summary>
     public static T Require<T>(this ImmutableArray<Resource> resources) where T : Resource =>
         resources
             .OfType<T>()
             .Single();
     
+    /// <summary>
+    /// Returns a resource of type <typeparamref name="T"/> by its logical name, or <c>null</c> if not found.
+    /// Throws if multiple matches exist.
+    /// </summary>
     public static T? Get<T>(this ImmutableArray<Resource> resources, string logicalName) where T : Resource =>
         resources
             .OfType<T>()
             .SingleOrDefault(x => x.GetResourceName().Equals(logicalName, StringComparison.Ordinal));
     
+    /// <summary>
+    /// Returns a single resource of type <typeparamref name="T"/>, or <c>null</c> if not found.
+    /// Throws if multiple matches exist.
+    /// </summary>
     public static T? Get<T>(this ImmutableArray<Resource> resources) where T : Resource =>
         resources
             .OfType<T>()
             .SingleOrDefault();
     
+    /// <summary>
+    /// Returns all resources of type <typeparamref name="T"/> from the collection.
+    /// </summary>
     public static ImmutableArray<T> GetMany<T>(this ImmutableArray<Resource> resources) where T : Resource =>
         resources
             .OfType<T>()
             .ToImmutableArray();
     
+    /// <summary>
+    /// Retrieves and resolves an output value from each resource using the provided output selector.
+    /// </summary>
     public static async Task<T[]> GetManyValuesAsync<TResource, T>(this ImmutableArray<TResource> resources,
         Expression<Func<TResource, Output<T>>> outputSelector)
         where TResource : Resource
@@ -60,6 +72,9 @@ public static class ResourceExtensions
         return await Task.WhenAll(tasks);
     }
     
+    /// <summary>
+    /// Determines whether a resource is a direct child of the specified parent.
+    /// </summary>
     public static bool IsChildOf(this Resource child, Resource potentialParent)
     {
         PropertyInfo? childResourcesField = typeof(Resource)
@@ -75,6 +90,9 @@ public static class ResourceExtensions
         return children?.Contains(child) ?? false;
     }
     
+    /// <summary>
+    /// Determines whether all specified resources are direct children of the given parent resource.
+    /// </summary>
     public static bool HasChildren(this Resource parent, IEnumerable<Resource> potentialChildren)
     {
         PropertyInfo? childResourcesProperty = typeof(Resource)

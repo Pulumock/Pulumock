@@ -98,6 +98,16 @@ public static class TypeExtensions
         return member.Name.ToCamelCase();
     }
     
+    /// <summary>
+    /// Retrieves the <see cref="ResourceArgs"/> type used by the constructor of a given <see cref="CustomResource"/>-derived type.
+    /// </summary>
+    /// <param name="resourceType">The resource type to inspect.</param>
+    /// <returns>
+    /// The type of the constructor parameter that derives from <see cref="ResourceArgs"/>, or <c>null</c> if none is found.
+    /// </returns>
+    /// <exception cref="ArgumentException">
+    /// Thrown if <paramref name="resourceType"/> does not inherit from <see cref="CustomResource"/>.
+    /// </exception>
     public static Type? GetResourceArgsType(this Type resourceType)
     {
         if (!typeof(CustomResource).IsAssignableFrom(resourceType))
