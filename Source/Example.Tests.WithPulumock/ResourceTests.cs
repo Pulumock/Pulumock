@@ -30,16 +30,17 @@ public class ResourceTests : IResourceTests
     [Fact]
     public async Task Resource_OutputOnly()
     {
+        const string expectedAzureApiVersion = "2021-04-01";
         Fixture fixture = await TestBase.GetBaseFixtureBuilder()
-            .WithMockResource(new MockResourceBuilder()
-                .WithOutput<ResourceGroup>(x => x.AzureApiVersion, "2021-04-01")
-                .Build<ResourceGroup>())
+            .WithMockResource(new MockResourceBuilder<ResourceGroup>()
+                .WithOutput(x => x.AzureApiVersion, expectedAzureApiVersion)
+                .Build())
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
         ResourceGroup resourceGroup = fixture.StackResources.Require<ResourceGroup>("microservice-rg");
         string azureApiVersion = await resourceGroup.AzureApiVersion.GetValueAsync();
         
-        azureApiVersion.ShouldBe("2021-04-01");
+        azureApiVersion.ShouldBe(expectedAzureApiVersion);
     }
 
     [Fact]

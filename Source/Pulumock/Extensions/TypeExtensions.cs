@@ -59,7 +59,7 @@ public static class TypeExtensions
     /// <exception cref="ArgumentException">
     /// Thrown when the expression is not a valid property or field selector.
     /// </exception>
-    public static string GetOutputName<T>(this Expression<Func<T, object>> propertySelector)
+    public static string GetOutputName<T>(this Expression<Func<T, object?>> propertySelector)
     {
         MemberInfo member = propertySelector.Body switch
         {

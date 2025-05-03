@@ -72,7 +72,7 @@ public static class CallSnapshotExtensions
     }
     
     public static ImmutableList<TValue> RequireManyOutputValues<TProperty, TValue>(this ImmutableList<CallSnapshot> callSnapshots,
-        Expression<Func<TProperty, object>> propertySelector)
+        Expression<Func<TProperty, object?>> propertySelector)
     {
         string outputName = propertySelector.GetOutputName();
 

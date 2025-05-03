@@ -9,8 +9,6 @@ using Pulumock.TestFixtures.Constants;
 
 namespace Pulumock.TestFixtures;
 
-// TODO: full/partial upsert and delete
-// TODO: support both typed and non-typed builders and with() methods
 public class FixtureBuilder
 {
     private readonly Dictionary<string, object> _mockStackConfigurations = new();

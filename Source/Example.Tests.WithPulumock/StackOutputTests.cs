@@ -18,10 +18,12 @@ public class StackOutputTests : IStackOutputTests
     public async Task ShouldBeTestable_StackOutputValue(string mockedVaultUri)
     {
         Fixture fixture = await TestBase.GetBaseFixtureBuilder()
-            .WithMockResource(new MockResourceBuilder()
-                .WithOutput<Vault, VaultPropertiesResponse>(x => x.Properties, p => p
-                    .WithNestedOutput(x => x.VaultUri, mockedVaultUri))
-                .Build<Vault>())
+            .WithMockResource(new MockResourceBuilder<Vault>()
+                .WithOutput<VaultPropertiesResponse, string>(
+                    x => x.Properties, 
+                    x => x.VaultUri,
+                    mockedVaultUri)
+                .Build())
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
 
         Vault keyVault = fixture.StackResources.Require<Vault>("microservice-kvws-kv");

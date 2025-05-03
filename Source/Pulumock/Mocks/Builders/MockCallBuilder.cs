@@ -29,20 +29,21 @@ public class MockCallBuilder
     /// <typeparam name="T">The function result type.</typeparam>
     /// <param name="propertySelector">A lambda expression selecting the output property.</param>
     /// <param name="value">The mocked return value for the property.</param>
-    public MockCallBuilder WithOutput<T>(Expression<Func<T, object>> propertySelector, object value)
+    public MockCallBuilder WithOutput<T>(Expression<Func<T, object?>> propertySelector, object value)
     {
         _outputs.Add(propertySelector.GetOutputName(), value);
         return this;
     }
     
-    public MockCallBuilder WithOutput<T, TNested>(
-        Expression<Func<T, object>> propertySelector,
-        Func<NestedOutputsBuilder<TNested>, NestedOutputsBuilder<TNested>> nestedOutputsBuilder)
+    public MockCallBuilder WithOutput<T, TNested, TNestedValue>(
+        Expression<Func<T, object?>> propertySelector,
+        Expression<Func<TNested, object?>> nestedPropertySelector,
+        TNestedValue value)
     {
-        Dictionary<string, object> nestedOutputs = nestedOutputsBuilder(new NestedOutputsBuilder<TNested>())
-            .Build();
-        
-        _outputs.Add(propertySelector.GetOutputName(), nestedOutputs);
+        NestedOutputsBuilder<TNested> builder = new NestedOutputsBuilder<TNested>()
+            .WithNestedOutput(nestedPropertySelector, value);
+
+        _outputs.Add(propertySelector.GetOutputName(), builder.Build());
         return this;
     }
 
