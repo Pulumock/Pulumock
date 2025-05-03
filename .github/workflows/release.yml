@@ -4,19 +4,48 @@ on:
   push:
     branches:
       - main 
+  pull_request:
+    branches:
+      - main
 
 env:
   DOTNET_VERSION: '9.0'
   PROJECT_PATH: 'Source/Pulumock/Pulumock.csproj'
+  TEST_PROJECT_PATH: 'Source/Pulumock.Tests/Pulumock.Tests.csproj'
+  
   NUGET_OUTPUT_PATH: 'nupkg'
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
   DOTNET_NOLOGO: true
 
 jobs:
-  build:
-    name: Build and Pack
+  test:
+    name: Test
     runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore dependencies
+        run: dotnet restore $TEST_PROJECT_PATH
+
+      - name: Build
+        run: dotnet build $TEST_PROJECT_PATH --no-restore -c Release
+
+      - name: Run tests
+        run: dotnet test $TEST_PROJECT_PATH --no-build -c Release --logger trx
+        
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -45,11 +74,11 @@ jobs:
           retention-days: 1
 
   publish:
-    name: Publish NuGet Package
+    name: Publish
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
-
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
     steps:
       - name: Download package artifacts
         uses: actions/download-artifact@v4
