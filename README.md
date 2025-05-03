@@ -40,45 +40,47 @@ dotnet add package Pulumock
 
 ### Usage
 
-Below is a basic step-by-step example. Refer to the [documentation](#documentation) for detailed guidance.
+Here’s a simple step-by-step example. For more in-depth instructions, see the [documentation](#documentation).
 
-#### 1. Creating a Fixture
-Start by creating a new `Fixture` instance within your test method:
+#### 1. Create a FixtureBuilder
+Begin by instantiating a `FixtureBuilder` in your test method or wherever appropriate in your codebase:
 ```csharp
 [Fact]
 public async Task ExampleTest() 
 {
-    Fixture fixture = new FixtureBuilder();
+    var fixtureBuilder = new FixtureBuilder();
 }
 ```
 
 #### 2. Apply Mocks
-Add any necessary mocks to the fixture using the builder pattern:
+Use the builder pattern to add any required mocks to your fixture:
 ```csharp
 [Fact]
 public async Task ExampleTest() 
 {
-    Fixture fixture = new FixtureBuilder()
+    var fixtureBuilder = new FixtureBuilder()
         .WithMockResource(new MockResourceBuilder<ResourceGroup>()
             .WithOutput(x => x.Location, "swedencentral")
             .Build()); 
 }
 ```
 
-#### 3. Assert
-Build the fixture and run assertions to validate the final state of the stack and its components:
+#### 3. Build the Fixture & Write Assertions
+Build the fixture to run your test setup, then use convenient extension methods to write your assertions:
 ```csharp
 [Fact]
 public async Task ExampleTest() 
 {
-    Fixture fixture = await new FixtureBuilder()
+    var fixtureBuilder = new FixtureBuilder()
         .WithMockResource(new MockResourceBuilder<ResourceGroup>()
             .WithOutput(x => x.Location, "swedencentral")
-            .Build())
-        .BuildAsync(async () => await CoreStack.DefineResourcesAsync()); 
+            .Build()); 
+    
+    Fixture fixture = await fixtureBuilder
+        .BuildAsync(async () => await CoreStack.DefineResourcesAsync()); // Your code that creates resources.
     
     var resourceGroup = fixture.StackResources.Require<ResourceGroup>("rg-name");
-    string location = await resourceGroup.Location.GetValueAsync();
+    var location = await resourceGroup.Location.GetValueAsync();
     
     location.ShouldBe("swedencentral");
 }
