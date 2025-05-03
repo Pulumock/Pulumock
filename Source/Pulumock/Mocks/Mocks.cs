@@ -15,7 +15,7 @@ internal sealed class Mocks(ImmutableDictionary<(Type Type, string? LogicalName)
     ImmutableDictionary<MockCallToken, MockCall> mockCalls) : IMocks
 {
     private readonly List<EnrichedResource> _enrichedResources = [];
-    private readonly List<CallSnapshot> _callSnapshots = [];
+    private readonly List<EnrichedCall> _enrichedCalls = [];
     
     public Task<(string? id, object state)> NewResourceAsync(MockResourceArgs args)
     {
@@ -63,11 +63,11 @@ internal sealed class Mocks(ImmutableDictionary<(Type Type, string? LogicalName)
 
         ImmutableDictionary<string, object> mergedOutputs = OutputMerger.Merge(args.Args, outputs);
         
-        _callSnapshots.Add(new CallSnapshot(callToken, args.Args, mergedOutputs));
+        _enrichedCalls.Add(new EnrichedCall(callToken, args.Args, mergedOutputs));
         
         return Task.FromResult<object>(mergedOutputs);
     }
     
     public ImmutableList<EnrichedResource> EnrichedResources => _enrichedResources.ToImmutableList();
-    public ImmutableList<CallSnapshot> CallSnapshots => _callSnapshots.ToImmutableList();
+    public ImmutableList<EnrichedCall> EnrichedCalls => _enrichedCalls.ToImmutableList();
 }

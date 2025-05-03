@@ -4,20 +4,20 @@ using Pulumock.Mocks.Models;
 
 namespace Pulumock.Extensions;
 
-public static class CallSnapshotExtensions
+public static class EnrichedCallExtensions
 {
-    public static ImmutableList<CallSnapshot> GetMany(this ImmutableList<CallSnapshot> callSnapshots, Type type) =>
-        callSnapshots
+    public static ImmutableList<EnrichedCall> GetMany(this ImmutableList<EnrichedCall> enrichedCalls, Type type) =>
+        enrichedCalls
             .Where(x => type.MatchesCallTypeToken(x.Token))
             .ToImmutableList();
     
-    public static ImmutableList<CallSnapshot> GetManyByValue<TProperty, TValue>(this ImmutableList<CallSnapshot> callSnapshots, 
+    public static ImmutableList<EnrichedCall> GetManyByValue<TProperty, TValue>(this ImmutableList<EnrichedCall> enrichedCalls, 
         Type type, Expression<Func<TProperty, object?>> propertySelector, TValue expectedValue)
         where TValue : notnull
     {
         string inputName = propertySelector.GetInputName();
 
-        return callSnapshots
+        return enrichedCalls
             .Where(x => type.MatchesCallTypeToken(x.Token))
             .Where(x =>
                 x.Inputs.TryGetValue(inputName, out object? value) &&
@@ -28,14 +28,14 @@ public static class CallSnapshotExtensions
             .ToImmutableList();
     }
     
-    public static TValue RequireInputValue<TProperty, TValue>(this CallSnapshot callSnapshot,
+    public static TValue RequireInputValue<TProperty, TValue>(this EnrichedCall enrichedCall,
         Expression<Func<TProperty, object?>> propertySelector)
     {
         string inputName = propertySelector.GetInputName();
         
-        if (!callSnapshot.Inputs.TryGetValue(inputName, out object? value))
+        if (!enrichedCall.Inputs.TryGetValue(inputName, out object? value))
         {
-            throw new KeyNotFoundException($"Input '{inputName}' not found in CallSnapshot '{callSnapshot.Token}'.");
+            throw new KeyNotFoundException($"Input '{inputName}' not found in EnrichedCall '{enrichedCall.Token}'.");
         }
 
         if (value is not TValue typedValue)
@@ -46,17 +46,17 @@ public static class CallSnapshotExtensions
         return typedValue;
     }
     
-    public static ImmutableList<TValue> RequireManyInputValues<TProperty, TValue>(this ImmutableList<CallSnapshot> callSnapshots,
+    public static ImmutableList<TValue> RequireManyInputValues<TProperty, TValue>(this ImmutableList<EnrichedCall> enrichedCalls,
         Expression<Func<TProperty, object?>> propertySelector)
     {
         string inputName = propertySelector.GetInputName();
 
         var values = new List<TValue>();
-        foreach (CallSnapshot callSnapshot in callSnapshots)
+        foreach (EnrichedCall enrichedCall in enrichedCalls)
         {
-            if (!callSnapshot.Inputs.TryGetValue(inputName, out object? value))
+            if (!enrichedCall.Inputs.TryGetValue(inputName, out object? value))
             {
-                throw new KeyNotFoundException($"Input '{inputName}' not found in CallSnapshot '{callSnapshot.Token}'.");
+                throw new KeyNotFoundException($"Input '{inputName}' not found in EnrichedCall '{enrichedCall.Token}'.");
             }
 
             if (value is not TValue typedValue)
@@ -71,17 +71,17 @@ public static class CallSnapshotExtensions
         return values.ToImmutableList();
     }
     
-    public static ImmutableList<TValue> RequireManyOutputValues<TProperty, TValue>(this ImmutableList<CallSnapshot> callSnapshots,
+    public static ImmutableList<TValue> RequireManyOutputValues<TProperty, TValue>(this ImmutableList<EnrichedCall> enrichedCalls,
         Expression<Func<TProperty, object?>> propertySelector)
     {
         string outputName = propertySelector.GetOutputName();
 
         var values = new List<TValue>();
-        foreach (CallSnapshot callSnapshot in callSnapshots)
+        foreach (EnrichedCall enrichedCall in enrichedCalls)
         {
-            if (!callSnapshot.Outputs.TryGetValue(outputName, out object? value))
+            if (!enrichedCall.Outputs.TryGetValue(outputName, out object? value))
             {
-                throw new KeyNotFoundException($"Output '{outputName}' not found in CallSnapshot '{callSnapshot.Token}'.");
+                throw new KeyNotFoundException($"Output '{outputName}' not found in EnrichedCall '{enrichedCall.Token}'.");
             }
 
             if (value is not TValue typedValue)

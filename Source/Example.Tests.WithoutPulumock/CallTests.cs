@@ -21,7 +21,7 @@ public class CallTests : TestBase, ICallTests
             new TestOptions {IsPreview = false, StackName = DevStackName},
             async () => await CoreStack.DefineResourcesAsync());
         
-        var calls = mocks.CallSnapshots
+        var calls = mocks.EnrichedCalls
             .Where(x => x.Token.Equals("azure-native:authorization:getRoleDefinition", StringComparison.Ordinal))
             .ToList();
         
@@ -44,7 +44,7 @@ public class CallTests : TestBase, ICallTests
             new TestOptions {IsPreview = false, StackName = DevStackName},
             async () => await CoreStack.DefineResourcesAsync());
         
-        var calls = mocks.CallSnapshots
+        var calls = mocks.EnrichedCalls
             .Where(x =>
                 x.Token.Equals("azure-native:authorization:getRoleDefinition", StringComparison.Ordinal) 
                 && x.Inputs.TryGetValue("roleDefinitionId", out object? roleDefinitionId) 

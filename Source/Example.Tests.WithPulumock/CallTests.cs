@@ -19,7 +19,7 @@ public class CallTests : ICallTests
         Fixture fixture = await TestBase.GetBaseFixtureBuilder()
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
 
-        ImmutableList<CallSnapshot> getRoleDefinitionCalls = fixture.CallSnapshots.GetMany(typeof(GetRoleDefinition));
+        ImmutableList<EnrichedCall> getRoleDefinitionCalls = fixture.EnrichedStackCalls.GetMany(typeof(GetRoleDefinition));
         ImmutableList<string> roleDefinitionIds = getRoleDefinitionCalls.RequireManyInputValues<GetRoleDefinitionInvokeArgs, string>(x => 
             x.RoleDefinitionId);
         
@@ -38,7 +38,7 @@ public class CallTests : ICallTests
                 .Build(typeof(GetRoleDefinition)))
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        ImmutableList<CallSnapshot> getRoleDefinitionCallsWithId = fixture.CallSnapshots.GetManyByValue<GetRoleDefinitionInvokeArgs, string>(
+        ImmutableList<EnrichedCall> getRoleDefinitionCallsWithId = fixture.EnrichedStackCalls.GetManyByValue<GetRoleDefinitionInvokeArgs, string>(
             typeof(GetRoleDefinition),
             x => x.RoleDefinitionId,
             getRoleDefinitionId);

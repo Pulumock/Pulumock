@@ -117,7 +117,7 @@ public class FixtureBuilder
             testOptions ?? new TestOptions { IsPreview = false, StackName = "dev" },
             async () => await createResourcesFunc());
 
-        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.EnrichedResources, mocks.CallSnapshots);
+        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.EnrichedResources, mocks.EnrichedCalls);
     }
     
     public async Task<Fixture> Build(Func<IDictionary<string, object?>> createResourcesFunc, TestOptions? testOptions = null)
@@ -132,7 +132,7 @@ public class FixtureBuilder
             testOptions ?? new TestOptions { IsPreview = false, StackName = "dev" },
             createResourcesFunc);
 
-        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.EnrichedResources, mocks.CallSnapshots);
+        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.EnrichedResources, mocks.EnrichedCalls);
     }
     
     private static string FormatKey(string @namespace, string? keyName) =>
