@@ -1,0 +1,68 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main 
+  pull_request:
+
+env:
+  DOTNET_VERSION: '9.0'
+  PROJECT_PATH: 'Source/Pulumock/Pulumock.csproj'
+  NUGET_OUTPUT_PATH: 'nupkg'
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+  DOTNET_NOLOGO: true
+
+jobs:
+  build:
+    name: Build and Pack
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  `
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore dependencies
+        run: dotnet restore $PROJECT_PATH
+
+      - name: Build project
+        run: dotnet build $PROJECT_PATH --no-restore -c Release
+
+      - name: Pack NuGet package
+        run: dotnet pack $PROJECT_PATH --no-build -c Release -o ${{ env.NUGET_OUTPUT_PATH }}
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: nupkg
+          path: ${{ env.NUGET_OUTPUT_PATH }}/*.nupkg
+          retention-days: 1
+
+  publish:
+    name: Publish NuGet Package
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+
+    steps:
+      - name: Download package artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: nupkg
+          path: ${{ env.NUGET_OUTPUT_PATH }}
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Push to NuGet
+        run: dotnet nuget push ${{ env.NUGET_OUTPUT_PATH }}/*.nupkg --api-key "${{ secrets.PULUMOCK_NUGET_KEY }}" --source "https://api.nuget.org/v3/index.json"
+        
