@@ -122,6 +122,21 @@ public class FixtureBuilder
         return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.ResourceSnapshots, mocks.CallSnapshots);
     }
     
+    public async Task<Fixture> Build(Func<IDictionary<string, object?>> createResourcesFunc, TestOptions? testOptions = null)
+    {
+        Environment.SetEnvironmentVariable(PulumiConfigurationConstants.EnvironmentVariable,
+            _mockStackConfigurations.Count > 0 ? JsonSerializer.Serialize(_mockStackConfigurations) : null);
+
+        var mocks = new Mocks.Mocks(_mockResources.ToImmutableDictionary(), _mockCalls.ToImmutableDictionary());
+        
+        (ImmutableArray<Resource> stackResources, IDictionary<string, object?> stackOutputs) = await Deployment.TestAsync(
+            mocks,
+            testOptions ?? new TestOptions { IsPreview = false, StackName = "dev" },
+            createResourcesFunc);
+
+        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.ResourceSnapshots, mocks.CallSnapshots);
+    }
+    
     private static string FormatKey(string @namespace, string? keyName) =>
         string.IsNullOrWhiteSpace(keyName) ? @namespace : $"{@namespace}:{keyName}";
 }
