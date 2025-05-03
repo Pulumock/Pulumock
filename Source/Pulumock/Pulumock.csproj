@@ -39,7 +39,7 @@
 
     <ItemGroup>
         <None Include="..\..\README.md" Pack="true" PackagePath="README.md" />
-        <None Include="..\..\pulumock-logo-nobg.png" Pack="true" PackagePath="pulumock-logo-nobg.png" />
+        <None Include="..\..\pulumock-logo.png" Pack="true" PackagePath="pulumock-logo.png" />
     </ItemGroup>
 
     <ItemGroup>
