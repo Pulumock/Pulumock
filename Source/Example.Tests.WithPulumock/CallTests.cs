@@ -27,31 +27,26 @@ public class CallTests : ICallTests
         roleDefinitionIds.ShouldContain("b24988ac-6180-42a0-ab88-20f7382dd24c");
         roleDefinitionIds.ShouldContain("7f951dda-4ed3-4680-a7ca-43fe172d538d");
     }
-
-    // TODO: complete
+    
     [Fact]
     public async Task Call_Output()
     {
+        const string getRoleDefinitionId = "b24988ac-6180-42a0-ab88-20f7382dd24c";
         Fixture fixture = await TestBase.GetBaseFixtureBuilder()
+            .WithMockCall(new MockCallBuilder()
+                .WithOutput<GetRoleDefinitionResult>(x => x.Id, getRoleDefinitionId)
+                .Build(typeof(GetRoleDefinition)))
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        ImmutableList<CallSnapshot> getRoleDefinitionCalls = fixture.CallSnapshots.GetMany(typeof(GetRoleDefinition));
+        ImmutableList<CallSnapshot> getRoleDefinitionCallsWithId = fixture.CallSnapshots.GetManyByValue<GetRoleDefinitionInvokeArgs, string>(
+            typeof(GetRoleDefinition),
+            x => x.RoleDefinitionId,
+            getRoleDefinitionId);
+
+        ImmutableList<string> getRoleDefinitionIds = getRoleDefinitionCallsWithId
+            .RequireManyOutputValues<GetRoleDefinitionResult, string>(x => x.Id);
         
-        // var calls = mocks.CallSnapshots
-        //     .Where(x =>
-        //         x.Token.Equals("azure-native:authorization:getRoleDefinition", StringComparison.Ordinal) 
-        //         && x.Inputs.TryGetValue("roleDefinitionId", out object? roleDefinitionId) 
-        //         && roleDefinitionId is string id 
-        //         && id.Equals("b24988ac-6180-42a0-ab88-20f7382dd24c", StringComparison.Ordinal))
-        //     .ToList();
-        //
-        // var getRoleDefinitionIds = calls
-        //     .Select(call => call.Outputs.TryGetValue("id", out object? id) 
-        //         ? id as string 
-        //         : throw new InvalidOperationException("Output 'id' was not found."))
-        //     .ToList();
-        //
-        // getRoleDefinitionIds.ShouldAllBe(id => string.Equals(id, "b24988ac-6180-42a0-ab88-20f7382dd24c", StringComparison.Ordinal));
+        getRoleDefinitionIds.ShouldAllBe(id => string.Equals(id, getRoleDefinitionId, StringComparison.Ordinal));
     }
 
     [Fact]
