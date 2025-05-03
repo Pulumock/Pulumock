@@ -14,8 +14,12 @@
         <Description>A library that simplifies unit testing and mocking in Pulumi .NET by abstracting away complexity through APIs.</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageOutputPath>./nupkg</PackageOutputPath>
+        <PackageTags>pulumi, mocking, testing, unit test</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>pulumock-logo-nobg.png</PackageIcon>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/Pulumock/Pulumock</RepositoryUrl>
 
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -24,13 +28,18 @@
         <AnalysisLevel>latest</AnalysisLevel>
         <AnalysisMode>All</AnalysisMode>
     </PropertyGroup>
-
+ 
     <ItemGroup>
         <PackageReference Include="GitVersion.MsBuild" Version="6.2.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Pulumi" Version="3.77.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="README.md" />
+        <None Include="..\..\pulumock-logo-nobg.png" Pack="true" PackagePath="pulumock-logo-nobg.png" />
     </ItemGroup>
 
     <ItemGroup>
