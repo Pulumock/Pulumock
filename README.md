@@ -89,7 +89,7 @@ public async Task ExampleTest()
 ## Documentation
 
 - Explore the [Wiki](https://github.com/Pulumock/Pulumock/wiki) for official documentation and straightforward usage guides.
-- Check out the [Example Project](./Source/Example) for a working demonstration of Pulumock in action across multiple scenarios.
+- Check out the [Example Project](./Source/Example/README.md) for a working demonstration of Pulumock in action across multiple scenarios.
 
 ## Contributing
 
