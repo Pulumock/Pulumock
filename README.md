@@ -76,10 +76,10 @@ public async Task ExampleTest()
             .WithOutput(x => x.Location, "swedencentral")
             .Build()); 
     
-    Fixture fixture = await fixtureBuilder
+    var fixture = await fixtureBuilder
         .BuildAsync(async () => await CoreStack.DefineResourcesAsync()); // Your code that creates resources.
     
-    var resourceGroup = fixture.StackResources.Require<ResourceGroup>("rg-name");
+    var resourceGroup = fixture.StackResources.Require<ResourceGroup>();
     var location = await resourceGroup.Location.GetValueAsync();
     
     location.ShouldBe("swedencentral");
@@ -89,7 +89,7 @@ public async Task ExampleTest()
 ## Documentation
 
 - Explore the [Wiki](https://github.com/Pulumock/Pulumock/wiki) for official documentation and straightforward usage guides.
-- Check out the [Example Project](./Source/Example/README.md) for a working demonstration of Pulumock in action across multiple scenarios.
+- Check out the [Example project](./Source/Example/README.md) for a working demonstration of Pulumock in action across multiple scenarios.
 
 ## Contributing
 
