@@ -11,7 +11,7 @@ namespace Pulumock.TestFixtures;
 /// <param name="Resources">
 /// The Pulumi resources created during the test run, including both component and custom resources.
 /// </param>
-/// <param name="StackOutputs">
+/// <param name="RegisteredOutputs">
 /// The outputs exposed by the Pulumi stack under test.
 /// </param>
 /// <param name="EnrichedResources">
@@ -21,6 +21,6 @@ namespace Pulumock.TestFixtures;
 /// Enriched metadata for all provider function calls made by the stack, including tokens, inputs, and mocked outputs.
 /// </param>
 public record Fixture(ImmutableArray<Resource> Resources, 
-    ImmutableDictionary<string, object?> StackOutputs, 
+    ImmutableDictionary<string, object?> RegisteredOutputs, 
     ImmutableList<EnrichedResource> EnrichedResources,
     ImmutableList<EnrichedCall> EnrichedCalls);

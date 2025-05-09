@@ -124,7 +124,7 @@ public class ComponentResourceTests : IComponentResourceTests
                 };
             });
 
-        Vault keyVault = await fixture.StackOutputs.RequireValueAsync<Vault>("keyVault");
+        Vault keyVault = await fixture.RegisteredOutputs.RequireValueAsync<Vault>("keyVault");
         
         keyVault.GetResourceName().ShouldBe("microservice-kvws-kv");
     }

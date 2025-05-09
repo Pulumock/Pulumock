@@ -29,7 +29,7 @@ public class StackOutputTests : IStackOutputTests
         Vault keyVault = fixture.Resources.Require<Vault>("microservice-kvws-kv");
         VaultPropertiesResponse keyVaultProperties = await keyVault.Properties.GetValueAsync();
         
-        string keyVaultUriStackOutput = await fixture.StackOutputs.RequireValueAsync<string>("keyVaultUri");
+        string keyVaultUriStackOutput = await fixture.RegisteredOutputs.RequireValueAsync<string>("keyVaultUri");
 
         keyVaultUriStackOutput.ShouldBe(keyVaultProperties.VaultUri);
         keyVaultUriStackOutput.ShouldBe(mockedVaultUri);
