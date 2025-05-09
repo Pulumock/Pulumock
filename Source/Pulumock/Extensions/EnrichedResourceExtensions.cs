@@ -10,16 +10,34 @@ namespace Pulumock.Extensions;
 public static class EnrichedResourceExtensions
 {
     /// <summary>
-    /// Retrieves a resource by its logical name. Throws if the resource is not found.
+    /// Returns a single <see cref="EnrichedResource"/> of type <typeparamref name="TResourceType"/> by its logical name.
+    /// Throws if not found or if multiple matches exist.
     /// </summary>
-    public static EnrichedResource Require(this ImmutableList<EnrichedResource> enrichedResources, string logicalName) =>
-        enrichedResources.Single(x => x.LogicalName.Equals(logicalName, StringComparison.Ordinal));
+    public static EnrichedResource Require<TResourceType>(this ImmutableList<EnrichedResource> enrichedResources, string logicalName) =>
+        enrichedResources.Single(x => typeof(TResourceType).MatchesResourceTypeToken(x.TypeToken) && 
+                                      x.LogicalName.Equals(logicalName, StringComparison.Ordinal));
     
     /// <summary>
-    /// Retrieves a resource by its logical name or returns <c>null</c> if not found.
+    /// Returns a single <see cref="EnrichedResource"/> of type <typeparamref name="TResourceType"/>
+    /// Throws if not found or if multiple matches exist.
     /// </summary>
-    public static EnrichedResource? Get(this ImmutableList<EnrichedResource> enrichedResources, string logicalName) =>
-        enrichedResources.SingleOrDefault(x => x.LogicalName.Equals(logicalName, StringComparison.Ordinal));
+    public static EnrichedResource Require<TResourceType>(this ImmutableList<EnrichedResource> enrichedResources) =>
+        enrichedResources.Single(x => typeof(TResourceType).MatchesResourceTypeToken(x.TypeToken));
+    
+    /// <summary>
+    /// Returns an <see cref="EnrichedResource"/> of type <typeparamref name="TResourceType"/>, or <c>null</c> if not found.
+    /// Throws if multiple matches exist.
+    /// </summary>
+    public static EnrichedResource? Get<TResourceType>(this ImmutableList<EnrichedResource> enrichedResources) =>
+        enrichedResources.SingleOrDefault(x => typeof(TResourceType).MatchesResourceTypeToken(x.TypeToken));
+    
+    /// <summary>
+    /// Returns an <see cref="EnrichedResource"/> of type <typeparamref name="TResourceType"/> by its logical name, or <c>null</c> if not found.
+    /// Throws if multiple matches exist.
+    /// </summary>
+    public static EnrichedResource? Get<TResourceType>(this ImmutableList<EnrichedResource> enrichedResources, string logicalName) =>
+        enrichedResources.SingleOrDefault(x => typeof(TResourceType).MatchesResourceTypeToken(x.TypeToken) && 
+                                               x.LogicalName.Equals(logicalName, StringComparison.Ordinal));
     
     /// <summary>
     /// Returns all resources matching the specified resource type.

@@ -10,6 +10,22 @@ namespace Pulumock.Extensions;
 public static class EnrichedCallExtensions
 {
     /// <summary>
+    /// Returns a single <see cref="EnrichedCall"/> by its token type. 
+    /// Throws if not found or if multiple matches exist.
+    /// <param name="type">The provider function type to match.</param>
+    /// </summary>
+    public static EnrichedCall Require(this ImmutableList<EnrichedCall> enrichedCalls, Type type) =>
+        enrichedCalls.Single(x => type.MatchesCallTypeToken(x.Token));
+    
+    /// <summary>
+    /// Returns a single <see cref="EnrichedCall"/> by its token type. 
+    /// Returns null if not found or throws if multiple matches exist.
+    /// <param name="type">The provider function type to match.</param>
+    /// </summary>
+    public static EnrichedCall? Get(this ImmutableList<EnrichedCall> enrichedCalls, Type type) =>
+        enrichedCalls.SingleOrDefault(x => type.MatchesCallTypeToken(x.Token));
+    
+    /// <summary>
     /// Filters the list of enriched calls to those matching a given function call type.
     /// </summary>
     /// <param name="enrichedCalls">The collection of calls to filter.</param>

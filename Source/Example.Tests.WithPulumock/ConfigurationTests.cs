@@ -24,7 +24,7 @@ public class ConfigurationTests : IConfigurationTests
             .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId", TenantId)
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        EnrichedResource enrichedResource = fixture.EnrichedResources.Require("microservice-kvws-kv");
+        EnrichedResource enrichedResource = fixture.EnrichedResources.Require<Vault>("microservice-kvws-kv");
         string vaultTenantId = enrichedResource.RequireInputValue<VaultArgs, VaultPropertiesArgs, string>(
             x => x.Properties, 
             y => y.TenantId);
@@ -57,7 +57,7 @@ public class ConfigurationTests : IConfigurationTests
             .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "tenantId", tenantId)
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        EnrichedResource enrichedResource = fixture.EnrichedResources.Require("microservice-kvws-kv");
+        EnrichedResource enrichedResource = fixture.EnrichedResources.Require<Vault>("microservice-kvws-kv");
         string vaultTenantId = enrichedResource.RequireInputValue<VaultArgs, VaultPropertiesArgs, string>(
             x => x.Properties, 
             y => y.TenantId);
