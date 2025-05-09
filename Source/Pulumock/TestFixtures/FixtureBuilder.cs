@@ -152,12 +152,12 @@ public class FixtureBuilder
 
         var mocks = new Mocks.Mocks(_mockResources.ToImmutableDictionary(), _mockCalls.ToImmutableDictionary());
         
-        (ImmutableArray<Resource> stackResources, IDictionary<string, object?> stackOutputs) = await Deployment.TestAsync(
+        (ImmutableArray<Resource> resources, IDictionary<string, object?> registeredOutputs) = await Deployment.TestAsync(
             mocks,
             testOptions ?? new TestOptions { IsPreview = false, StackName = "dev" },
             async () => await createResourcesFunc());
 
-        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.EnrichedResources, mocks.EnrichedCalls);
+        return new Fixture(resources, registeredOutputs.ToImmutableDictionary(), mocks.EnrichedResources, mocks.EnrichedCalls);
     }
     
     /// <summary>
@@ -173,11 +173,11 @@ public class FixtureBuilder
 
         var mocks = new Mocks.Mocks(_mockResources.ToImmutableDictionary(), _mockCalls.ToImmutableDictionary());
         
-        (ImmutableArray<Resource> stackResources, IDictionary<string, object?> stackOutputs) = await Deployment.TestAsync(
+        (ImmutableArray<Resource> resources, IDictionary<string, object?> registeredOutputs) = await Deployment.TestAsync(
             mocks,
             testOptions ?? new TestOptions { IsPreview = false, StackName = "dev" },
             createResourcesFunc);
 
-        return new Fixture(stackResources, stackOutputs.ToImmutableDictionary(), mocks.EnrichedResources, mocks.EnrichedCalls);
+        return new Fixture(resources, registeredOutputs.ToImmutableDictionary(), mocks.EnrichedResources, mocks.EnrichedCalls);
     }
 }
