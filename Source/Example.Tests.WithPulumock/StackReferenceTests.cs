@@ -27,7 +27,7 @@ public class StackReferenceTests : IStackReferenceTests
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync(),
                 new TestOptions { IsPreview = false, StackName = stackName });
 
-        RoleAssignment roleAssignment = fixture.StackResources.Require<RoleAssignment>("microservice-ra-kvReader");
+        RoleAssignment roleAssignment = fixture.Resources.Require<RoleAssignment>("microservice-ra-kvReader");
         string principalId = await roleAssignment.PrincipalId.GetValueAsync();
         
         principalId.ShouldBe(stackReferenceOutputValue);
@@ -45,7 +45,7 @@ public class StackReferenceTests : IStackReferenceTests
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync(),
                 new TestOptions { IsPreview = false, StackName = TestBase.DevStackName });
 
-        RoleAssignment roleAssignment = fixture.StackResources.Require<RoleAssignment>("microservice-ra-kvReader");
+        RoleAssignment roleAssignment = fixture.Resources.Require<RoleAssignment>("microservice-ra-kvReader");
         string principalId = await roleAssignment.PrincipalId.GetValueAsync();
         
         principalId.ShouldBe(stackReferenceOutputValue);

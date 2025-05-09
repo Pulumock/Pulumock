@@ -21,7 +21,7 @@ public class ResourceTests : IResourceTests
         Fixture fixture = await TestBase.GetBaseFixtureBuilder()
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        EnrichedResource enrichedResourceGroup = fixture.EnrichedStackResources.Require("microservice-rg");
+        EnrichedResource enrichedResourceGroup = fixture.EnrichedResources.Require("microservice-rg");
         string resourceGroupName = enrichedResourceGroup.RequireInputValue<ResourceGroupArgs, string>(x => x.ResourceGroupName);
         
         resourceGroupName.ShouldBe("microservice-rg");
@@ -37,7 +37,7 @@ public class ResourceTests : IResourceTests
                 .Build())
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        ResourceGroup resourceGroup = fixture.StackResources.Require<ResourceGroup>("microservice-rg");
+        ResourceGroup resourceGroup = fixture.Resources.Require<ResourceGroup>("microservice-rg");
         string azureApiVersion = await resourceGroup.AzureApiVersion.GetValueAsync();
         
         azureApiVersion.ShouldBe(expectedAzureApiVersion);
@@ -51,8 +51,8 @@ public class ResourceTests : IResourceTests
             .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "location", location)
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        ResourceGroup resourceGroup = fixture.StackResources.Require<ResourceGroup>("microservice-rg");
-        EnrichedResource enrichedResourceGroup = fixture.EnrichedStackResources.Require("microservice-rg");
+        ResourceGroup resourceGroup = fixture.Resources.Require<ResourceGroup>("microservice-rg");
+        EnrichedResource enrichedResourceGroup = fixture.EnrichedResources.Require("microservice-rg");
 
         string locationFromOutput = await resourceGroup.Location.GetValueAsync();
         string locationFromInput = enrichedResourceGroup.RequireInputValue<ResourceGroupArgs, string>(x => x.Location);
@@ -67,10 +67,10 @@ public class ResourceTests : IResourceTests
         Fixture fixture = await TestBase.GetBaseFixtureBuilder()
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        ResourceGroup resourceGroup = fixture.StackResources.Require<ResourceGroup>("microservice-rg");
+        ResourceGroup resourceGroup = fixture.Resources.Require<ResourceGroup>("microservice-rg");
         string resourceGroupName = await resourceGroup.Name.GetValueAsync();
         
-        EnrichedResource keyVault = fixture.EnrichedStackResources.Require("microservice-kvws-kv");
+        EnrichedResource keyVault = fixture.EnrichedResources.Require("microservice-kvws-kv");
         string keyVaultResourceGroupName = keyVault.RequireInputValue<VaultArgs, string>(x => x.ResourceGroupName);
 
         keyVaultResourceGroupName.ShouldBe(resourceGroupName);
@@ -84,7 +84,7 @@ public class ResourceTests : IResourceTests
             .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "location", location)
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
 
-        ImmutableArray<ResourceGroup> resourceGroups = fixture.StackResources.GetMany<ResourceGroup>();
+        ImmutableArray<ResourceGroup> resourceGroups = fixture.Resources.GetMany<ResourceGroup>();
         string[] locations = await resourceGroups.GetManyValuesAsync(x => x.Location);
         
         resourceGroups.ShouldAllBe(x => !string.Equals(x.GetResourceName(), "forbidden-resource-name", StringComparison.Ordinal));
