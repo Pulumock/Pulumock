@@ -14,7 +14,7 @@ namespace Pulumock.TestFixtures;
 /// <param name="StackOutputs">
 /// The outputs exposed by the Pulumi stack under test.
 /// </param>
-/// <param name="EnrichedStackResources">
+/// <param name="EnrichedResources">
 /// Enriched metadata for created resources, including their logical names and raw input arguments.
 /// </param>
 /// <param name="EnrichedStackCalls">
@@ -22,5 +22,5 @@ namespace Pulumock.TestFixtures;
 /// </param>
 public record Fixture(ImmutableArray<Resource> Resources, 
     ImmutableDictionary<string, object?> StackOutputs, 
-    ImmutableList<EnrichedResource> EnrichedStackResources,
+    ImmutableList<EnrichedResource> EnrichedResources,
     ImmutableList<EnrichedCall> EnrichedStackCalls);
