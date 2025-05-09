@@ -59,7 +59,7 @@ public class CallTests : ICallTests
                 .Build(typeof(GetRoleDefinition)))
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        RoleAssignment roleAssignment = fixture.StackResources.Require<RoleAssignment>("microservice-ra-kvReader");
+        RoleAssignment roleAssignment = fixture.Resources.Require<RoleAssignment>("microservice-ra-kvReader");
 
         string roleDefinitionId = await roleAssignment.RoleDefinitionId.GetValueAsync();
         roleDefinitionId.ShouldBe(getRoleDefinitionId);

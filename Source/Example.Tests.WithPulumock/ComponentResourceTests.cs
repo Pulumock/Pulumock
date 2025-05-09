@@ -36,9 +36,9 @@ public class ComponentResourceTests : IComponentResourceTests
             });
 
         KeyVaultWithSecretsComponentResource componentResource =
-            fixture.StackResources.Require<KeyVaultWithSecretsComponentResource>();
-        Vault keyVault = fixture.StackResources.Require<Vault>();
-        Secret secret = fixture.StackResources.Require<Secret>();
+            fixture.Resources.Require<KeyVaultWithSecretsComponentResource>();
+        Vault keyVault = fixture.Resources.Require<Vault>();
+        Secret secret = fixture.Resources.Require<Secret>();
 
         SecretPropertiesResponse secretProperties = await secret.Properties.GetValueAsync();
         
@@ -67,7 +67,7 @@ public class ComponentResourceTests : IComponentResourceTests
                 };
             });
 
-        Secret? secret = fixture.StackResources.Get<Secret>();
+        Secret? secret = fixture.Resources.Get<Secret>();
         
         secret.ShouldBeNull();
     }
@@ -96,9 +96,9 @@ public class ComponentResourceTests : IComponentResourceTests
             });
 
         KeyVaultWithSecretsComponentResource componentResource =
-            fixture.StackResources.Require<KeyVaultWithSecretsComponentResource>();
-        Vault keyVault = fixture.StackResources.Require<Vault>();
-        Secret secret = fixture.StackResources.Require<Secret>();
+            fixture.Resources.Require<KeyVaultWithSecretsComponentResource>();
+        Vault keyVault = fixture.Resources.Require<Vault>();
+        Secret secret = fixture.Resources.Require<Secret>();
         
         keyVault.IsChildOf(componentResource).ShouldBeTrue();
         secret.IsChildOf(componentResource).ShouldBeTrue();

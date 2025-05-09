@@ -37,7 +37,7 @@ public class ResourceTests : IResourceTests
                 .Build())
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        ResourceGroup resourceGroup = fixture.StackResources.Require<ResourceGroup>("microservice-rg");
+        ResourceGroup resourceGroup = fixture.Resources.Require<ResourceGroup>("microservice-rg");
         string azureApiVersion = await resourceGroup.AzureApiVersion.GetValueAsync();
         
         azureApiVersion.ShouldBe(expectedAzureApiVersion);
@@ -51,7 +51,7 @@ public class ResourceTests : IResourceTests
             .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "location", location)
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        ResourceGroup resourceGroup = fixture.StackResources.Require<ResourceGroup>("microservice-rg");
+        ResourceGroup resourceGroup = fixture.Resources.Require<ResourceGroup>("microservice-rg");
         EnrichedResource enrichedResourceGroup = fixture.EnrichedStackResources.Require("microservice-rg");
 
         string locationFromOutput = await resourceGroup.Location.GetValueAsync();
@@ -67,7 +67,7 @@ public class ResourceTests : IResourceTests
         Fixture fixture = await TestBase.GetBaseFixtureBuilder()
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        ResourceGroup resourceGroup = fixture.StackResources.Require<ResourceGroup>("microservice-rg");
+        ResourceGroup resourceGroup = fixture.Resources.Require<ResourceGroup>("microservice-rg");
         string resourceGroupName = await resourceGroup.Name.GetValueAsync();
         
         EnrichedResource keyVault = fixture.EnrichedStackResources.Require("microservice-kvws-kv");
@@ -84,7 +84,7 @@ public class ResourceTests : IResourceTests
             .WithMockStackConfiguration(PulumiConfigurationNamespace.AzureNative, "location", location)
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
 
-        ImmutableArray<ResourceGroup> resourceGroups = fixture.StackResources.GetMany<ResourceGroup>();
+        ImmutableArray<ResourceGroup> resourceGroups = fixture.Resources.GetMany<ResourceGroup>();
         string[] locations = await resourceGroups.GetManyValuesAsync(x => x.Location);
         
         resourceGroups.ShouldAllBe(x => !string.Equals(x.GetResourceName(), "forbidden-resource-name", StringComparison.Ordinal));

@@ -26,7 +26,7 @@ public class StackOutputTests : IStackOutputTests
                 .Build())
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
 
-        Vault keyVault = fixture.StackResources.Require<Vault>("microservice-kvws-kv");
+        Vault keyVault = fixture.Resources.Require<Vault>("microservice-kvws-kv");
         VaultPropertiesResponse keyVaultProperties = await keyVault.Properties.GetValueAsync();
         
         string keyVaultUriStackOutput = await fixture.StackOutputs.RequireValueAsync<string>("keyVaultUri");

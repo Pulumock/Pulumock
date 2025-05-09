@@ -41,7 +41,7 @@ public class ConfigurationTests : IConfigurationTests
             .WithMockStackConfiguration(PulumiConfigurationNamespace.Default, "databaseConnectionString", databaseConnectionStringSecret)
             .BuildAsync(async () => await CoreStack.DefineResourcesAsync());
         
-        Secret secret = fixture.StackResources.Require<Secret>("microservice-kvws-secret-Database--ConnectionString");
+        Secret secret = fixture.Resources.Require<Secret>("microservice-kvws-secret-Database--ConnectionString");
 
         SecretPropertiesResponse secretProperties = await secret.Properties.GetValueAsync();
         secretProperties.Value.ShouldBe(databaseConnectionStringSecret);
