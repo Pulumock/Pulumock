@@ -17,10 +17,10 @@ namespace Pulumock.TestFixtures;
 /// <param name="EnrichedResources">
 /// Enriched metadata for created resources, including their logical names and raw input arguments.
 /// </param>
-/// <param name="EnrichedStackCalls">
+/// <param name="EnrichedCalls">
 /// Enriched metadata for all provider function calls made by the stack, including tokens, inputs, and mocked outputs.
 /// </param>
 public record Fixture(ImmutableArray<Resource> Resources, 
     ImmutableDictionary<string, object?> StackOutputs, 
     ImmutableList<EnrichedResource> EnrichedResources,
-    ImmutableList<EnrichedCall> EnrichedStackCalls);
+    ImmutableList<EnrichedCall> EnrichedCalls);
