@@ -52,8 +52,8 @@ public async Task ExampleTest()
 }
 ```
 
-#### 2. Apply Mocks
-Use the builder pattern to add any required mocks to your fixture:
+#### 2. Add Mocks
+Add desired mocks:
 ```csharp
 [Fact]
 public async Task ExampleTest() 
@@ -65,8 +65,25 @@ public async Task ExampleTest()
 }
 ```
 
-#### 3. Build the Fixture & Write Assertions
-Build the fixture to run your test setup, then use convenient extension methods to write your assertions:
+#### 3. Execute Test
+Build the `FixtureBuilder` to run the Pulumi program in test mode, resulting in a `Fixture` object 
+that captures the simulated deployment state without performing any real infrastructure changes:
+```csharp
+[Fact]
+public async Task ExampleTest() 
+{
+    var fixtureBuilder = new FixtureBuilder()
+        .WithMockResource(new MockResourceBuilder<ResourceGroup>()
+            .WithOutput(x => x.Location, "swedencentral")
+            .Build()); 
+    
+    var fixture = await fixtureBuilder
+        .BuildAsync(async () => await CoreStack.DefineResourcesAsync()); // Your code that creates resources.
+}
+```
+
+#### 4. Extract information & Write Assertions
+Use convenient extension methods to extract information from the `Fixture` and write your assertions:
 ```csharp
 [Fact]
 public async Task ExampleTest() 
@@ -79,7 +96,7 @@ public async Task ExampleTest()
     var fixture = await fixtureBuilder
         .BuildAsync(async () => await CoreStack.DefineResourcesAsync()); // Your code that creates resources.
     
-    var resourceGroup = fixture.StackResources.Require<ResourceGroup>();
+    var resourceGroup = fixture.Resources.Require<ResourceGroup>();
     var location = await resourceGroup.Location.GetValueAsync();
     
     location.ShouldBe("swedencentral");
