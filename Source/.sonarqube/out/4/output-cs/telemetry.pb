@@ -1,0 +1,1 @@
+eRO/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock/Pulumock.csproj¢net9.0òCSharp13

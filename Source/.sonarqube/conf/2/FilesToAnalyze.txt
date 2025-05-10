@@ -1,0 +1,6 @@
+﻿/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/ComponentResources/KeyVaultWithSecretsComponentResource.cs
+/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/Program.cs
+/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/StackConfiguration.cs
+/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/Stacks/CoreStack.cs
+/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/Pulumi.dev.yaml
+/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example/Pulumi.yaml

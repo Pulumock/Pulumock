@@ -1,0 +1,6 @@
+﻿/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/ICallTests.cs
+/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IComponentResourceTests.cs
+/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IConfigurationTests.cs
+/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IResourceTests.cs
+/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IStackOutputTests.cs
+/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.Shared/Interfaces/IStackReferenceTests.cs

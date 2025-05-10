@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>Example.Tests.WithoutPulumock</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>2bce4300-2271-4d1d-a5cf-196fdf8b4925</ProjectGuid>
+  <FullPath>/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithoutPulumock/Example.Tests.WithoutPulumock.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="/Users/robertopiranamedi/RiderProjects/Pulumock/Source/.sonarqube/conf/3/FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">/Users/robertopiranamedi/RiderProjects/Pulumock/Source/.sonarqube/out/3/Issues.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">/Users/robertopiranamedi/RiderProjects/Pulumock/Source/.sonarqube/out/3</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+  <TargetFramework>net9.0</TargetFramework>
+</ProjectInfo>

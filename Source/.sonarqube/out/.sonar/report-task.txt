@@ -1,0 +1,8 @@
+organization=pulumock
+projectKey=Pulumock_Pulumock
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.62629
+branch=pm-18-test-sonarqube
+dashboardUrl=https://sonarcloud.io/dashboard?id=Pulumock_Pulumock&branch=pm-18-test-sonarqube&resolved=false
+ceTaskId=AZZ28TcBLMk54iGe3JVT
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZZ28TcBLMk54iGe3JVT

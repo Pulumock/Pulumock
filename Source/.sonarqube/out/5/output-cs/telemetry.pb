@@ -1,0 +1,1 @@
+‰Rs/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Example.Tests.WithPulumock/Example.Tests.WithPulumock.csproj¢net9.0òCSharp13

@@ -1,0 +1,5 @@
+﻿/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock.Tests/Extensions/OutputExtensionsTests.cs
+/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock.Tests/Extensions/TypeExtensionsTests.cs
+/Users/robertopiranamedi/.nuget/packages/microsoft.net.test.sdk/17.13.0/build/netcoreapp3.1/Microsoft.NET.Test.Sdk.Program.cs
+/Users/robertopiranamedi/.nuget/packages/xunit.runner.visualstudio/3.0.2/build/net6.0/xunit.abstractions.dll
+/Users/robertopiranamedi/.nuget/packages/xunit.runner.visualstudio/3.0.2/build/net6.0/xunit.runner.visualstudio.testadapter.dll

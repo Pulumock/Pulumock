@@ -1,0 +1,31 @@
+œ
+CExample.ComponentResources.KeyVaultWithSecretsComponentResourceArgsPulumi.ResourceArgsPulumi.InputArgsobjectú
+*KeyVaultWithSecretsComponentResourceArgs()nExample.ComponentResources.KeyVaultWithSecretsComponentResourceArgs.KeyVaultWithSecretsComponentResourceArgs()b
+VaultName.getQExample.ComponentResources.KeyVaultWithSecretsComponentResourceArgs.VaultName.getd
+VaultName.initRExample.ComponentResources.KeyVaultWithSecretsComponentResourceArgs.VaultName.initr
+ResourceGroupName.getYExample.ComponentResources.KeyVaultWithSecretsComponentResourceArgs.ResourceGroupName.gett
+ResourceGroupName.initZExample.ComponentResources.KeyVaultWithSecretsComponentResourceArgs.ResourceGroupName.init`
+TenantId.getPExample.ComponentResources.KeyVaultWithSecretsComponentResourceArgs.TenantId.getb
+TenantId.initQExample.ComponentResources.KeyVaultWithSecretsComponentResourceArgs.TenantId.init^
+Secrets.getOExample.ComponentResources.KeyVaultWithSecretsComponentResourceArgs.Secrets.get`
+Secrets.initPExample.ComponentResources.KeyVaultWithSecretsComponentResourceArgs.Secrets.init1
+Programobject
+	Program()Program.Program()È
+Example.StackConfigurationobjectG
+StackConfiguration()/Example.StackConfiguration.StackConfiguration()7
+TenantId.get'Example.StackConfiguration.TenantId.get7
+TenantId.set'Example.StackConfiguration.TenantId.setC
+SubscriptionId.get-Example.StackConfiguration.SubscriptionId.getC
+SubscriptionId.set-Example.StackConfiguration.SubscriptionId.set7
+Location.get'Example.StackConfiguration.Location.get7
+Location.set'Example.StackConfiguration.Location.setQ
+StackReferenceOrgName.get4Example.StackConfiguration.StackReferenceOrgName.getQ
+StackReferenceOrgName.set4Example.StackConfiguration.StackReferenceOrgName.setY
+StackReferenceProjectName.get8Example.StackConfiguration.StackReferenceProjectName.getY
+StackReferenceProjectName.set8Example.StackConfiguration.StackReferenceProjectName.setW
+DatabaseConnectionString.get7Example.StackConfiguration.DatabaseConnectionString.getW
+DatabaseConnectionString.set7Example.StackConfiguration.DatabaseConnectionString.setü
+?Example.ComponentResources.KeyVaultWithSecretsComponentResourcePulumi.ComponentResourcePulumi.ResourceobjectÏ
+ìKeyVaultWithSecretsComponentResource(string, Example.ComponentResources.KeyVaultWithSecretsComponentResourceArgs, Pulumi.ComponentResourceOptions?)”Example.ComponentResources.KeyVaultWithSecretsComponentResource.KeyVaultWithSecretsComponentResource(string, Example.ComponentResources.KeyVaultWithSecretsComponentResourceArgs, Pulumi.ComponentResourceOptions?)\
+KeyVault.getLExample.ComponentResources.KeyVaultWithSecretsComponentResource.KeyVault.get\
+KeyVault.setLExample.ComponentResources.KeyVaultWithSecretsComponentResource.KeyVault.set

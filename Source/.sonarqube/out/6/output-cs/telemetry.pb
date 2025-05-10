@@ -1,0 +1,1 @@
+qR[/Users/robertopiranamedi/RiderProjects/Pulumock/Source/Pulumock.Tests/Pulumock.Tests.csproj¢net9.0òCSharp13
